@@ -1,0 +1,16 @@
+{
+  "name": "note-website",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "sidebar:gen": "tsx scripts/generate-sidebar.mts",
+    "docs:dev": "tsx scripts/generate-sidebar.mts && vitepress dev",
+    "docs:build": "tsx scripts/generate-sidebar.mts && vitepress build",
+    "docs:preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.3",
+    "tsx": "^4.19.2"
+  }
+}
