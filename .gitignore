@@ -1,0 +1,6 @@
+.DS_Store
+*.mp3
+node_modules/
+dist/
+.vitepress/.temp/
+.vitepress/cache/
