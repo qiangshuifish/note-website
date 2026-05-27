@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted, nextTick } from 'vue';
 import { withBase } from 'vitepress';
 import { navItems } from '../../sidebar';
 
@@ -7,12 +7,6 @@ interface Course {
   text: string;
   link: string;
   count: number;
-}
-
-interface CourseGroup {
-  title: string;
-  icon: string;
-  courses: Course[];
 }
 
 const allCourses: Course[] = navItems.map(item => ({
@@ -24,197 +18,259 @@ const allCourses: Course[] = navItems.map(item => ({
 const totalArticles = computed(() => allCourses.reduce((sum, c) => sum + c.count, 0));
 
 const searchQuery = ref('');
-const activeTab = ref('全部');
+const activeCategory = ref<string | null>(null);
+const catalogRef = ref<HTMLElement | null>(null);
 
-// 课程分类
-const groups: CourseGroup[] = [
-  {
-    title: 'AI 与智能应用',
-    icon: 'AI',
-    courses: allCourses.filter(c =>
-      /ClaudeCode|LLM|RAG|Agent|智能体/.test(c.text)
-    ),
-  },
-  {
-    title: '数据库与存储',
-    icon: 'DB',
-    courses: allCourses.filter(c =>
-      /MySQL|Redis|数据库/.test(c.text)
-    ),
-  },
-  {
-    title: '架构与设计',
-    icon: 'Arch',
-    courses: allCourses.filter(c =>
-      /架构|DDD|微服务/.test(c.text)
-    ),
-  },
-  {
-    title: '基础与工程',
-    icon: 'Eng',
-    courses: allCourses.filter(c =>
-      /算法|容器|左耳|Java业务|工程/.test(c.text)
-    ),
-  },
+// 知识领域分类（关键词匹配）
+const categories: { key: string; label: string; match: (name: string) => boolean }[] = [
+  { key: 'ai', label: 'AI 与智能体', match: n => /ClaudeCode|LLM|RAG|Agent|智能体|人工智能|机器学习|深度学习|推荐系统|NLP/.test(n) },
+  { key: 'frontend', label: '前端开发', match: n => /前端|React|Vue|JavaScript|浏览器|可视化|Flutter|iOS|Android|WebAssembly/.test(n) },
+  { key: 'backend', label: '后端开发', match: n => /Java|Go|Spring|Python|Kafka|Redis|MySQL|RPC|Tomcat|Jetty|后端/.test(n) },
+  { key: 'database', label: '数据库', match: n => /MySQL|Redis|etcd|数据库|SQL|Kafka|消息队列|Kafka/.test(n) },
+  { key: 'infra', label: '基础设施', match: n => /Kubernetes|容器|Docker|Linux|Nginx|OpenResty|Serverless|SRE|运维|DevOps|持续交付|CI\/?CD/.test(n) },
+  { key: 'architecture', label: '架构与设计', match: n => /架构|DDD|微服务|分布式|中台|设计模式|RPC|系统|性能|调优|压测/.test(n) },
+  { key: 'algo', label: '算法与底层', match: n => /算法|数据结构|内存|编译原理|操作系统|V8|网络协议|Linux操作系统|动态规划/.test(n) },
+  { key: 'security', label: '安全', match: n => /安全|密码|OAuth|区块链/.test(n) },
+  { key: 'management', label: '技术管理', match: n => /管理|团队|产品|敏捷|项目管理|OKR|领导力|CTO|晋升|复盘/.test(n) },
+  { key: 'growth', label: '个人成长', match: n => /财富|写作|跑步|恋爱|摄影|音乐|读书|学习高手|诗|画|故事|职场|英语|跑步|阅读|测试|财富|10x/.test(n) },
 ];
 
-// 未分组的课程
-const groupedTexts = new Set(groups.flatMap(g => g.courses.map(c => c.text)));
-const ungrouped = allCourses.filter(c => !groupedTexts.has(c.text));
-if (ungrouped.length > 0) {
-  groups.push({ title: '其他课程', icon: 'Other', courses: ungrouped });
+// 为每门课程分配分类
+function getCourseCategory(course: Course): string {
+  for (const cat of categories) {
+    if (cat.match(course.text)) return cat.key;
+  }
+  return 'other';
 }
 
-// 所有标签
-const tabs = computed(() => ['全部', ...groups.map(g => g.title)]);
-
-// 当前选中的分组
-const activeGroup = computed(() => {
-  if (activeTab.value === '全部') return null;
-  return groups.find(g => g.title === activeTab.value) ?? null;
+// 分类统计
+const categoryStats = computed(() => {
+  const stats: { key: string; label: string; count: number; articles: number }[] = [
+    { key: 'all', label: '全部', count: allCourses.length, articles: totalArticles.value },
+  ];
+  for (const cat of categories) {
+    const courses = allCourses.filter(c => getCourseCategory(c) === cat.key);
+    if (courses.length > 0) {
+      const arts = courses.reduce((s, c) => s + c.count, 0);
+      stats.push({ key: cat.key, label: cat.label, count: courses.length, articles: arts });
+    }
+  }
+  const others = allCourses.filter(c => getCourseCategory(c) === 'other');
+  if (others.length > 0) {
+    const arts = others.reduce((s, c) => s + c.count, 0);
+    stats.push({ key: 'other', label: '其他', count: others.length, articles: arts });
+  }
+  return stats;
 });
 
-// 过滤
-function filterCourses(courses: Course[]): Course[] {
+// 按分类分组
+const groupedCourses = computed(() => {
+  const groups: { key: string; label: string; courses: Course[] }[] = [];
+  if (activeCategory.value === null || activeCategory.value === 'all') {
+    for (const cat of categoryStats.value) {
+      if (cat.key === 'all') continue;
+      const courses = allCourses.filter(c => getCourseCategory(c) === cat.key);
+      const filtered = searchQuery.value ? courses.filter(c => matchesSearch(c)) : courses;
+      if (filtered.length > 0) {
+        groups.push({ key: cat.key, label: cat.label, courses: filtered });
+      }
+    }
+  } else {
+    const courses = allCourses.filter(c => getCourseCategory(c) === activeCategory.value);
+    const filtered = searchQuery.value ? courses.filter(c => matchesSearch(c)) : courses;
+    if (filtered.length > 0) {
+      const catLabel = categoryStats.value.find(s => s.key === activeCategory.value)?.label || '';
+      groups.push({ key: activeCategory.value, label: catLabel, courses: filtered });
+    }
+  }
+  return groups;
+});
+
+// 搜索过滤
+function matchesSearch(course: Course): boolean {
   const q = searchQuery.value.trim().toLowerCase();
-  if (!q) return courses;
-  return courses.filter(c => c.text.toLowerCase().includes(q));
+  if (!q) return true;
+  return course.text.toLowerCase().includes(q);
 }
 
-const filteredAll = computed(() => filterCourses(allCourses));
-const filteredActiveGroup = computed(() => {
-  if (!activeGroup.value) return [];
-  return filterCourses(activeGroup.value.courses);
+const visibleCount = computed(() => {
+  return groupedCourses.value.reduce((sum, g) => sum + g.courses.length, 0);
 });
+
+function selectCategory(key: string) {
+  activeCategory.value = key === 'all' ? null : key;
+  // 滚动到课程区域
+  nextTick(() => {
+    const el = document.getElementById('course-catalog');
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+}
 
 function escapePercent(link: string) {
   return link.replace(/%/g, '%25');
 }
 
-function selectTab(tab: string) {
-  activeTab.value = tab;
+// 文章数量标签
+function sizeLabel(count: number): string {
+  if (count >= 100) return '大部头';
+  if (count >= 50) return '系统课';
+  if (count >= 30) return '专题课';
+  if (count >= 15) return '精讲';
+  return '入门';
 }
 </script>
 
 <template>
-  <section id="courses" class="course-section">
-    <h2 class="section-title">全部课程</h2>
-    <p class="summary">
-      <span class="summary-num">{{ allCourses.length }}</span> 门课程 ·
-      <span class="summary-num">{{ totalArticles }}</span> 篇文章
-    </p>
+  <section class="catalog-page">
+    <!-- 顶部统计 -->
+    <header class="catalog-header">
+      <h2 class="catalog-title">课程索引</h2>
+      <p class="catalog-summary">
+        <span class="num">{{ allCourses.length }}</span> 门课程
+        <span class="sep">·</span>
+        <span class="num">{{ totalArticles }}</span> 篇文章
+        <span class="sep">·</span>
+        <span class="num">{{ categoryStats.length - 1 }}</span> 个知识领域
+      </p>
+    </header>
 
-    <div class="search-wrapper">
+    <!-- 搜索 -->
+    <div class="search-bar">
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <circle cx="11" cy="11" r="8"/>
+        <path d="m21 21-4.3-4.3"/>
+      </svg>
       <input
         v-model="searchQuery"
         type="text"
-        placeholder="搜索课程名称..."
+        placeholder="搜索课程..."
         class="search-input"
+        autocomplete="off"
       />
+      <span v-if="searchQuery" class="search-count">{{ visibleCount }} / {{ allCourses.length }}</span>
     </div>
 
-    <!-- 分类标签栏 -->
-    <div class="tab-bar">
-      <button
-        v-for="tab in tabs"
-        :key="tab"
-        :class="['tab-btn', { active: activeTab === tab }]"
-        @click="selectTab(tab)"
-      >
-        {{ tab }}
-      </button>
-    </div>
+    <!-- 双栏布局 -->
+    <div class="catalog-layout" id="course-catalog">
+      <!-- 左侧分类导航 -->
+      <aside class="catalog-sidebar">
+        <nav class="category-nav">
+          <button
+            v-for="stat in categoryStats"
+            :key="stat.key"
+            :class="[
+              'category-item',
+              { active: activeCategory === (stat.key === 'all' ? null : stat.key) }
+            ]"
+            @click="selectCategory(stat.key)"
+          >
+            <span class="cat-label">{{ stat.label }}</span>
+            <span class="cat-count">{{ stat.count }}</span>
+          </button>
+        </nav>
+      </aside>
 
-    <!-- 空状态 -->
-    <div v-if="filteredAll.length === 0 && activeTab === '全部'" class="empty-hint">
-      <div class="empty-icon">🔍</div>
-      <p>没有找到匹配的课程</p>
-    </div>
-    <div v-else-if="filteredActiveGroup.length === 0 && activeGroup" class="empty-hint">
-      <div class="empty-icon">🔍</div>
-      <p>没有找到匹配的课程</p>
-    </div>
-
-    <!-- 「全部」网格 -->
-    <Transition name="fade" mode="out-in">
-      <div v-if="activeTab === '全部'" :key="'all'" class="course-grid">
-        <a
-          v-for="(course, ci) in filteredAll"
-          :key="course.text"
-          :href="withBase(escapePercent(course.link))"
-          class="card"
-          :style="{ '--card-index': ci }"
-        >
-          <h4 class="card-title">{{ course.text }}</h4>
-          <div class="card-footer">
-            <span class="card-badge">{{ course.count }} 篇</span>
+      <!-- 右侧课程列表 -->
+      <main class="catalog-main">
+        <Transition name="fade" mode="out-in">
+          <div v-if="groupedCourses.length > 0" :key="activeCategory + '-' + searchQuery" class="groups-container">
+            <div v-for="group in groupedCourses" :key="group.key" class="course-group">
+              <h3 class="group-header">
+                <span class="group-dot" />
+                <span class="group-title">{{ group.label }}</span>
+                <span class="group-count">{{ group.courses.length }} 门</span>
+              </h3>
+              <div class="group-grid">
+                <a
+                  v-for="course in group.courses"
+                  :key="course.text"
+                  :href="withBase(escapePercent(course.link))"
+                  class="course-card"
+                >
+                  <div class="course-info">
+                    <h4 class="course-title">{{ course.text }}</h4>
+                    <span class="course-size">{{ sizeLabel(course.count) }}</span>
+                  </div>
+                  <span class="course-count">{{ course.count }}</span>
+                </a>
+              </div>
+            </div>
           </div>
-        </a>
-      </div>
-
-      <!-- 单组网格 -->
-      <div
-        v-else-if="activeGroup"
-        :key="activeTab"
-        class="course-grid course-grid--group"
-      >
-        <a
-          v-for="(course, ci) in filteredActiveGroup"
-          :key="course.text"
-          :href="withBase(escapePercent(course.link))"
-          class="card"
-          :style="{ '--card-index': ci }"
-        >
-          <h4 class="card-title">{{ course.text }}</h4>
-          <div class="card-footer">
-            <span class="card-badge">{{ course.count }} 篇</span>
+          <div v-else class="empty-state">
+            <svg class="empty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+              <circle cx="11" cy="11" r="8"/>
+              <path d="m21 21-4.3-4.3"/>
+            </svg>
+            <p>没有找到匹配的课程</p>
+            <button class="reset-btn" @click="searchQuery = ''; activeCategory = null">清除筛选</button>
           </div>
-        </a>
-      </div>
-    </Transition>
+        </Transition>
+      </main>
+    </div>
   </section>
 </template>
 
 <style scoped>
-.course-section {
-  max-width: 1152px;
-  margin: 48px auto 0;
-  padding: 0 24px 48px;
+.catalog-page {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 32px 24px 64px;
 }
 
-.section-title {
-  font-size: 32px;
-  font-weight: 700;
+/* ---- Header ---- */
+.catalog-header {
   text-align: center;
-  margin: 0 0 12px;
+  margin-bottom: 28px;
+}
+
+.catalog-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 8px;
   color: var(--vp-c-text-1);
   font-family: 'Noto Serif SC', serif;
 }
 
-.summary {
-  text-align: center;
+.catalog-summary {
+  font-size: 14px;
   color: var(--vp-c-text-2);
-  font-size: 15px;
-  margin: 0 0 32px;
+  margin: 0;
 }
 
-.summary-num {
+.catalog-summary .num {
   font-weight: 700;
   color: var(--vp-c-brand-1);
   font-family: 'Noto Serif SC', serif;
 }
 
-/* 搜索框 */
-.search-wrapper {
-  max-width: 420px;
-  margin: 0 auto 28px;
+.catalog-summary .sep {
+  margin: 0 4px;
+  color: var(--vp-c-text-3);
+}
+
+/* ---- Search ---- */
+.search-bar {
+  position: relative;
+  max-width: 480px;
+  margin: 0 auto 32px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  color: var(--vp-c-text-3);
+  pointer-events: none;
 }
 
 .search-input {
   width: 100%;
-  padding: 12px 18px;
+  padding: 12px 80px 12px 42px;
   border: 1.5px solid var(--vp-c-divider);
-  border-radius: 10px;
+  border-radius: 12px;
   font-size: 14px;
   background: var(--vp-c-bg-soft);
   color: var(--vp-c-text-1);
@@ -233,73 +289,255 @@ function selectTab(tab: string) {
   color: var(--vp-c-text-3);
 }
 
-/* 标签栏 */
-.tab-bar {
-  display: flex;
-  gap: 8px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 32px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid var(--vp-c-divider);
+.search-count {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: var(--vp-c-text-3);
+  font-weight: 500;
 }
 
-.tab-btn {
-  padding: 8px 18px;
-  border: 1.5px solid var(--vp-c-divider);
+/* ---- Dual-column layout ---- */
+.catalog-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+/* ---- Sidebar ---- */
+.catalog-sidebar {
+  position: sticky;
+  top: calc(var(--vp-nav-height, 56px) + 16px);
+  max-height: calc(100vh - var(--vp-nav-height, 56px) - 32px);
+  overflow-y: auto;
+}
+
+.category-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.category-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border: none;
   border-radius: 8px;
-  background: var(--vp-c-bg-soft);
+  background: transparent;
   color: var(--vp-c-text-2);
   font-size: 13px;
-  font-weight: 500;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all 0.2s ease;
   font-family: 'Noto Sans SC', sans-serif;
+  text-align: left;
+  width: 100%;
 }
 
-.tab-btn:hover {
-  border-color: var(--vp-c-brand-1);
+.category-item:hover {
+  background: var(--vp-c-bg-soft);
+  color: var(--vp-c-text-1);
+}
+
+.category-item.active {
+  background: var(--vp-c-brand-soft);
   color: var(--vp-c-brand-1);
+  font-weight: 600;
 }
 
-.tab-btn.active {
+.category-item .cat-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.category-item .cat-count {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: var(--vp-c-bg-soft);
+  color: var(--vp-c-text-3);
+  flex-shrink: 0;
+  min-width: 24px;
+  text-align: center;
+}
+
+.category-item.active .cat-count {
   background: var(--vp-c-brand-1);
-  border-color: var(--vp-c-brand-1);
   color: #fff;
 }
 
-/* 空状态 */
-.empty-hint {
-  text-align: center;
+/* ---- Main content ---- */
+.catalog-main {
+  min-width: 0;
+}
+
+.groups-container {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+/* ---- Group header ---- */
+.group-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+
+.group-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--vp-c-brand-1);
+  flex-shrink: 0;
+}
+
+.group-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--vp-c-text-1);
+  margin: 0;
+  font-family: 'Noto Serif SC', serif;
+}
+
+.group-count {
+  font-size: 12px;
   color: var(--vp-c-text-3);
-  padding: 64px 0;
+  font-weight: 500;
+}
+
+/* ---- Course cards in groups ---- */
+.group-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.course-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  background: var(--vp-c-bg);
+  gap: 12px;
+  min-height: 52px;
+}
+
+.course-card:hover {
+  border-color: var(--vp-c-brand-1);
+  background: var(--vp-c-brand-soft);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.course-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  flex: 1;
+}
+
+.course-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--vp-c-text-1);
+  margin: 0;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.2s;
+}
+
+.course-card:hover .course-title {
+  color: var(--vp-c-brand-1);
+}
+
+.course-size {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--vp-c-text-3);
+  background: var(--vp-c-bg-soft);
+  padding: 2px 7px;
+  border-radius: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.course-card:hover .course-size {
+  background: var(--vp-c-brand-1);
+  color: #fff;
+}
+
+.course-count {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--vp-c-text-3);
+  font-family: 'Noto Sans SC', sans-serif;
+  flex-shrink: 0;
+  min-width: 20px;
+  text-align: right;
+}
+
+.course-card:hover .course-count {
+  color: var(--vp-c-brand-1);
+}
+
+/* ---- Empty state ---- */
+.empty-state {
+  text-align: center;
+  padding: 80px 0;
+  color: var(--vp-c-text-3);
 }
 
 .empty-icon {
-  font-size: 40px;
-  margin-bottom: 12px;
-  opacity: 0.5;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 16px;
+  opacity: 0.4;
 }
 
-.empty-hint p {
+.empty-state p {
   font-size: 15px;
+  margin: 0 0 20px;
 }
 
-/* 响应式网格 */
-.course-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+.reset-btn {
+  padding: 8px 20px;
+  border: 1.5px solid var(--vp-c-brand-1);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--vp-c-brand-1);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Noto Sans SC', sans-serif;
 }
 
-.course-grid--group {
-  grid-template-columns: repeat(2, 1fr);
+.reset-btn:hover {
+  background: var(--vp-c-brand-1);
+  color: #fff;
 }
 
-/* Fade 过渡 */
+/* ---- Transitions ---- */
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.25s ease;
+  transition: opacity 0.2s ease;
 }
 
 .fade-enter-from,
@@ -307,123 +545,57 @@ function selectTab(tab: string) {
   opacity: 0;
 }
 
-/* 卡片 */
-.card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 18px 20px;
-  border: 1px solid var(--vp-c-divider);
-  border-radius: 10px;
-  text-decoration: none;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  background: var(--vp-c-bg-soft);
-  min-height: 96px;
-  position: relative;
-  overflow: hidden;
-  animation: cardFadeIn 0.4s ease-out both;
-  animation-delay: calc(var(--card-index) * 0.04s);
-}
-
-@keyframes cardFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* 卡片顶部装饰线 */
-.card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--vp-c-brand-1), var(--vp-c-brand-2));
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.card:hover {
-  border-color: var(--vp-c-brand-1);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-  background: var(--vp-c-bg-elv);
-}
-
-.card:hover::before {
-  opacity: 1;
-}
-
-.card-title {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--vp-c-text-1);
-  margin: 0 0 12px;
-  line-height: 1.55;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.card-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.card-badge {
-  display: inline-flex;
-  align-items: center;
-  padding: 3px 10px;
-  background: var(--vp-c-brand-soft);
-  color: var(--vp-c-brand-1);
-  border-radius: 12px;
-  font-size: 11px;
-  font-weight: 600;
-  transition: all 0.25s;
-}
-
-.card:hover .card-badge {
-  background: var(--vp-c-brand-1);
-  color: #fff;
-}
-
-/* 响应式 */
+/* ---- Responsive ---- */
 @media (max-width: 960px) {
-  .course-grid {
+  .group-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 768px) {
-  .course-section {
-    padding: 0 16px 32px;
+  .catalog-page {
+    padding: 24px 16px 48px;
   }
 
-  .section-title {
-    font-size: 26px;
+  .catalog-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
-  .course-grid,
-  .course-grid--group {
+  .catalog-sidebar {
+    position: static;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .category-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .category-item {
+    padding: 8px 12px;
+    font-size: 12px;
+    width: auto;
+    border: 1.5px solid var(--vp-c-divider);
+    border-radius: 8px;
+  }
+
+  .category-item.active {
+    border-color: var(--vp-c-brand-1);
+  }
+
+  .category-item .cat-count {
+    display: none;
+  }
+
+  .group-grid {
     grid-template-columns: 1fr;
   }
 
-  .tab-bar {
-    gap: 6px;
-    margin-bottom: 24px;
-  }
-
-  .tab-btn {
-    padding: 6px 14px;
-    font-size: 12px;
+  .catalog-title {
+    font-size: 24px;
   }
 }
 </style>
