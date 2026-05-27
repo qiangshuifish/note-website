@@ -41,7 +41,7 @@ function buildNavItems() {
 
 export default defineConfig({
   title: '技术学习笔记',
-  description: '187门技术课程学习笔记',
+  description: '183门技术课程学习笔记',
   base: '/note-website/',
   srcDir: '.',
   outDir: './dist',
