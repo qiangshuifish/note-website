@@ -1,0 +1,83 @@
+import{_ as s,H as a,f as p,i}from"./chunks/framework.BH2BK_3i.js";const y=JSON.parse('{"title":"22 | 并发编程之Asyncio","description":"","frontmatter":{},"headers":[{"level":2,"title":"什么是Asyncio","slug":"什么是asyncio","link":"#什么是asyncio","children":[{"level":3,"title":"Sync VS Async","slug":"sync-vs-async","link":"#sync-vs-async","children":[]},{"level":3,"title":"Asyncio工作原理","slug":"asyncio工作原理","link":"#asyncio工作原理","children":[]},{"level":3,"title":"Asyncio用法","slug":"asyncio用法","link":"#asyncio用法","children":[]}]},{"level":2,"title":"Asyncio有缺陷吗？","slug":"asyncio有缺陷吗","link":"#asyncio有缺陷吗","children":[]},{"level":2,"title":"多线程还是Asyncio","slug":"多线程还是asyncio","link":"#多线程还是asyncio","children":[]},{"level":2,"title":"总结","slug":"总结","link":"#总结","children":[]},{"level":2,"title":"思考题","slug":"思考题","link":"#思考题","children":[]}],"relativePath":"Python核心技术与实战/22-并发编程之Asyncio.md","filePath":"Python核心技术与实战/22-并发编程之Asyncio.md","lastUpdated":1779816143000}'),e={name:"Python核心技术与实战/22-并发编程之Asyncio.md"};function l(o,n,t,c,r,d){return a(),p("div",null,[...n[0]||(n[0]=[i(`<h1 id="_22-并发编程之asyncio" tabindex="-1">22 | 并发编程之Asyncio <a class="header-anchor" href="#_22-并发编程之asyncio" aria-label="Permalink to &quot;22 | 并发编程之Asyncio&quot;">​</a></h1><p>你好，我是景霄。</p><p>上节课，我们一起学习了Python并发编程的一种实现——多线程。今天这节课，我们继续学习Python并发编程的另一种实现方式——Asyncio。不同于协程那章，这节课我们更注重原理的理解。</p><p>通过上节课的学习，我们知道，在处理I/O操作时，使用多线程与普通的单线程相比，效率得到了极大的提高。你可能会想，既然这样，为什么还需要Asyncio？</p><p>诚然，多线程有诸多优点且应用广泛，但也存在一定的局限性：</p><ul><li>比如，多线程运行过程容易被打断，因此有可能出现race condition的情况；</li><li>再如，线程切换本身存在一定的损耗，线程数不能无限增加，因此，如果你的 I/O操作非常heavy，多线程很有可能满足不了高效率、高质量的需求。</li></ul><p>正是为了解决这些问题，Asyncio应运而生。</p><h2 id="什么是asyncio" tabindex="-1">什么是Asyncio <a class="header-anchor" href="#什么是asyncio" aria-label="Permalink to &quot;什么是Asyncio&quot;">​</a></h2><h3 id="sync-vs-async" tabindex="-1">Sync VS Async <a class="header-anchor" href="#sync-vs-async" aria-label="Permalink to &quot;Sync VS Async&quot;">​</a></h3><p>我们首先来区分一下Sync（同步）和Async（异步）的概念。</p><ul><li>所谓Sync，是指操作一个接一个地执行，下一个操作必须等上一个操作完成后才能执行。</li><li>而Async是指不同操作间可以相互交替执行，如果其中的某个操作被block了，程序并不会等待，而是会找出可执行的操作继续执行。</li></ul><p>举个简单的例子，你的老板让你做一份这个季度的报表，并且邮件发给他。</p><ul><li>如果按照Sync的方式，你会先向软件输入这个季度的各项数据，接下来等待5min，等报表明细生成后，再写邮件发给他。</li><li>但如果按照Async的方式，再你输完这个季度的各项数据后，便会开始写邮件。等报表明细生成后，你会暂停邮件，先去查看报表，确认后继续写邮件直到发送完毕。</li></ul><h3 id="asyncio工作原理" tabindex="-1">Asyncio工作原理 <a class="header-anchor" href="#asyncio工作原理" aria-label="Permalink to &quot;Asyncio工作原理&quot;">​</a></h3><p>明白了Sync 和Async，回到我们今天的主题，到底什么是Asyncio呢？</p><p>事实上，Asyncio和其他Python程序一样，是单线程的，它只有一个主线程，但是可以进行多个不同的任务（task），这里的任务，就是特殊的future对象。这些不同的任务，被一个叫做event loop的对象所控制。你可以把这里的任务，类比成多线程版本里的多个线程。</p><p>为了简化讲解这个问题，我们可以假设任务只有两个状态：一是预备状态；二是等待状态。所谓的预备状态，是指任务目前空闲，但随时待命准备运行。而等待状态，是指任务已经运行，但正在等待外部的操作完成，比如I/O操作。</p><p>在这种情况下，event loop会维护两个任务列表，分别对应这两种状态；并且选取预备状态的一个任务（具体选取哪个任务，和其等待的时间长短、占用的资源等等相关），使其运行，一直到这个任务把控制权交还给event loop为止。</p><p>当任务把控制权交还给event loop时，event loop会根据其是否完成，把任务放到预备或等待状态的列表，然后遍历等待状态列表的任务，查看他们是否完成。</p><ul><li>如果完成，则将其放到预备状态的列表；</li><li>如果未完成，则继续放在等待状态的列表。</li></ul><p>而原先在预备状态列表的任务位置仍旧不变，因为它们还未运行。</p><p>这样，当所有任务被重新放置在合适的列表后，新一轮的循环又开始了：event loop继续从预备状态的列表中选取一个任务使其执行…如此周而复始，直到所有任务完成。</p><p>值得一提的是，对于Asyncio来说，它的任务在运行时不会被外部的一些因素打断，因此Asyncio内的操作不会出现race condition的情况，这样你就不需要担心线程安全的问题了。</p><h3 id="asyncio用法" tabindex="-1">Asyncio用法 <a class="header-anchor" href="#asyncio用法" aria-label="Permalink to &quot;Asyncio用法&quot;">​</a></h3><p>讲完了Asyncio的原理，我们结合具体的代码来看一下它的用法。还是以上节课下载网站内容为例，用Asyncio的写法我放在了下面代码中（省略了异常处理的一些操作），接下来我们一起来看：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import asyncio</span></span>
+<span class="line"><span>import aiohttp</span></span>
+<span class="line"><span>import time</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>async def download_one(url):</span></span>
+<span class="line"><span>    async with aiohttp.ClientSession() as session:</span></span>
+<span class="line"><span>        async with session.get(url) as resp:</span></span>
+<span class="line"><span>            print(&#39;Read {} from {}&#39;.format(resp.content_length, url))</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>async def download_all(sites):</span></span>
+<span class="line"><span>    tasks = [asyncio.create_task(download_one(site)) for site in sites]</span></span>
+<span class="line"><span>    await asyncio.gather(*tasks)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>def main():</span></span>
+<span class="line"><span>    sites = [</span></span>
+<span class="line"><span>        &#39;https://en.wikipedia.org/wiki/Portal:Arts&#39;,</span></span>
+<span class="line"><span>        &#39;https://en.wikipedia.org/wiki/Portal:History&#39;,</span></span>
+<span class="line"><span>        &#39;https://en.wikipedia.org/wiki/Portal:Society&#39;,</span></span>
+<span class="line"><span>        &#39;https://en.wikipedia.org/wiki/Portal:Biography&#39;,</span></span>
+<span class="line"><span>        &#39;https://en.wikipedia.org/wiki/Portal:Mathematics&#39;,</span></span>
+<span class="line"><span>        &#39;https://en.wikipedia.org/wiki/Portal:Technology&#39;,</span></span>
+<span class="line"><span>        &#39;https://en.wikipedia.org/wiki/Portal:Geography&#39;,</span></span>
+<span class="line"><span>        &#39;https://en.wikipedia.org/wiki/Portal:Science&#39;,</span></span>
+<span class="line"><span>        &#39;https://en.wikipedia.org/wiki/Computer_science&#39;,</span></span>
+<span class="line"><span>        &#39;https://en.wikipedia.org/wiki/Python_(programming_language)&#39;,</span></span>
+<span class="line"><span>        &#39;https://en.wikipedia.org/wiki/Java_(programming_language)&#39;,</span></span>
+<span class="line"><span>        &#39;https://en.wikipedia.org/wiki/PHP&#39;,</span></span>
+<span class="line"><span>        &#39;https://en.wikipedia.org/wiki/Node.js&#39;,</span></span>
+<span class="line"><span>        &#39;https://en.wikipedia.org/wiki/The_C_Programming_Language&#39;,</span></span>
+<span class="line"><span>        &#39;https://en.wikipedia.org/wiki/Go_(programming_language)&#39;</span></span>
+<span class="line"><span>    ]</span></span>
+<span class="line"><span>    start_time = time.perf_counter()</span></span>
+<span class="line"><span>    asyncio.run(download_all(sites))</span></span>
+<span class="line"><span>    end_time = time.perf_counter()</span></span>
+<span class="line"><span>    print(&#39;Download {} sites in {} seconds&#39;.format(len(sites), end_time - start_time))</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>if __name__ == &#39;__main__&#39;:</span></span>
+<span class="line"><span>    main()</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>## 输出</span></span>
+<span class="line"><span>Read 63153 from https://en.wikipedia.org/wiki/Java_(programming_language)</span></span>
+<span class="line"><span>Read 31461 from https://en.wikipedia.org/wiki/Portal:Society</span></span>
+<span class="line"><span>Read 23965 from https://en.wikipedia.org/wiki/Portal:Biography</span></span>
+<span class="line"><span>Read 36312 from https://en.wikipedia.org/wiki/Portal:History</span></span>
+<span class="line"><span>Read 25203 from https://en.wikipedia.org/wiki/Portal:Arts</span></span>
+<span class="line"><span>Read 15160 from https://en.wikipedia.org/wiki/The_C_Programming_Language</span></span>
+<span class="line"><span>Read 28749 from https://en.wikipedia.org/wiki/Portal:Mathematics</span></span>
+<span class="line"><span>Read 29587 from https://en.wikipedia.org/wiki/Portal:Technology</span></span>
+<span class="line"><span>Read 79318 from https://en.wikipedia.org/wiki/PHP</span></span>
+<span class="line"><span>Read 30298 from https://en.wikipedia.org/wiki/Portal:Geography</span></span>
+<span class="line"><span>Read 73914 from https://en.wikipedia.org/wiki/Python_(programming_language)</span></span>
+<span class="line"><span>Read 62218 from https://en.wikipedia.org/wiki/Go_(programming_language)</span></span>
+<span class="line"><span>Read 22318 from https://en.wikipedia.org/wiki/Portal:Science</span></span>
+<span class="line"><span>Read 36800 from https://en.wikipedia.org/wiki/Node.js</span></span>
+<span class="line"><span>Read 67028 from https://en.wikipedia.org/wiki/Computer_science</span></span>
+<span class="line"><span>Download 15 sites in 0.062144195078872144 seconds</span></span></code></pre></div><p>这里的Async和await关键字是Asyncio的最新写法，表示这个语句/函数是non-block的，正好对应前面所讲的event loop的概念。如果任务执行的过程需要等待，则将其放入等待状态的列表中，然后继续执行预备状态列表里的任务。</p><p>主函数里的asyncio.run(coro)是Asyncio的root call，表示拿到event loop，运行输入的coro，直到它结束，最后关闭这个event loop。事实上，asyncio.run()是Python3.7+才引入的，相当于老版本的以下语句：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>loop = asyncio.get_event_loop()</span></span>
+<span class="line"><span>try:</span></span>
+<span class="line"><span>    loop.run_until_complete(coro)</span></span>
+<span class="line"><span>finally:</span></span>
+<span class="line"><span>    loop.close()</span></span></code></pre></div><p>至于Asyncio版本的函数download_all()，和之前多线程版本有很大的区别：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>tasks = [asyncio.create_task(download_one(site)) for site in sites]</span></span>
+<span class="line"><span>await asyncio.gather(*task)</span></span></code></pre></div><p>这里的 <code>asyncio.create_task(coro)</code>，表示对输入的协程coro创建一个任务，安排它的执行，并返回此任务对象。这个函数也是Python 3.7+新增的，如果是之前的版本，你可以用 <code>asyncio.ensure_future(coro)</code> 等效替代。可以看到，这里我们对每一个网站的下载，都创建了一个对应的任务。</p><p>再往下看， <code>asyncio.gather(*aws, loop=None, return_exception=False)</code>，则表示在event loop中运行 <code>aws序列</code> 的所有任务。当然，除了例子中用到的这几个函数，Asyncio还提供了很多其他的用法，你可以查看 <a href="https://docs.python.org/3/library/asyncio-eventloop.html" target="_blank" rel="noreferrer">相应文档</a> 进行了解。</p><p>最后，我们再来看一下最后的输出结果——用时只有0.06s，效率比起之前的多线程版本，可以说是更上一层楼，充分体现其优势。</p><h2 id="asyncio有缺陷吗" tabindex="-1">Asyncio有缺陷吗？ <a class="header-anchor" href="#asyncio有缺陷吗" aria-label="Permalink to &quot;Asyncio有缺陷吗？&quot;">​</a></h2><p>学了这么多内容，我们认识到了Asyncio的强大，但你要清楚，任何一种方案都不是完美的，都存在一定的局限性，Asyncio同样如此。</p><p>实际工作中，想用好Asyncio，特别是发挥其强大的功能，很多情况下必须得有相应的Python库支持。你可能注意到了，上节课的多线程编程中，我们使用的是requests库，但今天我们并没有使用，而是用了aiohttp库，原因就是requests库并不兼容Asyncio，但是aiohttp库兼容。</p><p>Asyncio软件库的兼容性问题，在Python3的早期一直是个大问题，但是随着技术的发展，这个问题正逐步得到解决。</p><p>另外，使用Asyncio时，因为你在任务的调度方面有了更大的自主权，写代码时就得更加注意，不然很容易出错。</p><p>举个例子，如果你需要await一系列的操作，就得使用asyncio.gather()；如果只是单个的future，或许只用asyncio.wait()就可以了。那么，对于你的future，你是想要让它run_until_complete()还是run_forever()呢？诸如此类，都是你在面对具体问题时需要考虑的。</p><h2 id="多线程还是asyncio" tabindex="-1">多线程还是Asyncio <a class="header-anchor" href="#多线程还是asyncio" aria-label="Permalink to &quot;多线程还是Asyncio&quot;">​</a></h2><p>不知不觉，我们已经把并发编程的两种方式都给学习完了。不过，遇到实际问题时，多线程和Asyncio到底如何选择呢？</p><p>总的来说，你可以遵循以下伪代码的规范：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>if io_bound:</span></span>
+<span class="line"><span>    if io_slow:</span></span>
+<span class="line"><span>        print(&#39;Use Asyncio&#39;)</span></span>
+<span class="line"><span>    else:</span></span>
+<span class="line"><span>        print(&#39;Use multi-threading&#39;)</span></span>
+<span class="line"><span>else if cpu_bound:</span></span>
+<span class="line"><span>    print(&#39;Use multi-processing&#39;)</span></span></code></pre></div><ul><li>如果是I/O bound，并且I/O操作很慢，需要很多任务/线程协同实现，那么使用Asyncio更合适。</li><li>如果是I/O bound，但是I/O操作很快，只需要有限数量的任务/线程，那么使用多线程就可以了。</li><li>如果是CPU bound，则需要使用多进程来提高程序运行效率。</li></ul><h2 id="总结" tabindex="-1">总结 <a class="header-anchor" href="#总结" aria-label="Permalink to &quot;总结&quot;">​</a></h2><p>今天这节课，我们一起学习了Asyncio的原理和用法，并比较了Asyncio和多线程各自的优缺点。</p><p>不同于多线程，Asyncio是单线程的，但其内部event loop的机制，可以让它并发地运行多个不同的任务，并且比多线程享有更大的自主控制权。</p><p>Asyncio中的任务，在运行过程中不会被打断，因此不会出现race condition的情况。尤其是在I/O操作heavy的场景下，Asyncio比多线程的运行效率更高。因为Asyncio内部任务切换的损耗，远比线程切换的损耗要小；并且Asyncio可以开启的任务数量，也比多线程中的线程数量多得多。</p><p>但需要注意的是，很多情况下，使用Asyncio需要特定第三方库的支持，比如前面示例中的aiohttp。而如果I/O操作很快，并不heavy，那么运用多线程，也能很有效地解决问题。</p><h2 id="思考题" tabindex="-1">思考题 <a class="header-anchor" href="#思考题" aria-label="Permalink to &quot;思考题&quot;">​</a></h2><p>这两节课，我们学习了并发编程的两种实现方式，也多次提到了并行编程（multi-processing），其适用于CPU heavy的场景。</p><p>现在有这么一个需求：输入一个列表，对于列表中的每个元素，我想计算0到这个元素的所有整数的平方和。</p><p>我把常规版本的写法放在了下面，你能通过查阅资料，写出它的多进程版本，并且比较程序的耗时吗？</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>import time</span></span>
+<span class="line"><span>def cpu_bound(number):</span></span>
+<span class="line"><span>    print(sum(i * i for i in range(number)))</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>def calculate_sums(numbers):</span></span>
+<span class="line"><span>    for number in numbers:</span></span>
+<span class="line"><span>        cpu_bound(number)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>def main():</span></span>
+<span class="line"><span>    start_time = time.perf_counter()</span></span>
+<span class="line"><span>    numbers = [10000000 + x for x in range(20)]</span></span>
+<span class="line"><span>    calculate_sums(numbers)</span></span>
+<span class="line"><span>    end_time = time.perf_counter()</span></span>
+<span class="line"><span>    print(&#39;Calculation takes {} seconds&#39;.format(end_time - start_time))</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>if __name__ == &#39;__main__&#39;:</span></span>
+<span class="line"><span>    main()</span></span></code></pre></div><p>欢迎在留言区写下你的思考和答案，也欢迎你把今天的内容分享给你的同事朋友，我们一起交流、一起进步。</p>`,56)])])}const u=s(e,[["render",l]]);export{y as __pageData,u as default};

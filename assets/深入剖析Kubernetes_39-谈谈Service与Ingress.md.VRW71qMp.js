@@ -1,0 +1,137 @@
+import{_ as n,H as a,f as e,i as p}from"./chunks/framework.BH2BK_3i.js";const u=JSON.parse('{"title":"39 | 谈谈Service与Ingress","description":"","frontmatter":{},"headers":[{"level":2,"title":"总结","slug":"总结","link":"#总结","children":[]},{"level":2,"title":"思考题","slug":"思考题","link":"#思考题","children":[]}],"relativePath":"深入剖析Kubernetes/39-谈谈Service与Ingress.md","filePath":"深入剖析Kubernetes/39-谈谈Service与Ingress.md","lastUpdated":1779821023000}'),l={name:"深入剖析Kubernetes/39-谈谈Service与Ingress.md"};function i(t,s,c,r,o,g){return a(),e("div",null,[...s[0]||(s[0]=[p(`<h1 id="_39-谈谈service与ingress" tabindex="-1">39 | 谈谈Service与Ingress <a class="header-anchor" href="#_39-谈谈service与ingress" aria-label="Permalink to &quot;39 | 谈谈Service与Ingress&quot;">​</a></h1><p>你好，我是张磊。今天我和你分享的主题是：谈谈Service与Ingress。</p><p>在上一篇文章中，我为你详细讲解了将Service暴露给外界的三种方法。其中有一个叫作LoadBalancer类型的Service，它会为你在Cloud Provider（比如：Google Cloud或者OpenStack）里创建一个与该Service对应的负载均衡服务。</p><p>但是，相信你也应该能感受到，由于每个 Service 都要有一个负载均衡服务，所以这个做法实际上既浪费成本又高。作为用户，我其实更希望看到Kubernetes为我内置一个全局的负载均衡器。然后，通过我访问的URL，把请求转发给不同的后端Service。</p><p><strong>这种全局的、为了代理不同后端Service而设置的负载均衡服务，就是Kubernetes里的Ingress服务。</strong></p><p>所以，Ingress的功能其实很容易理解： <strong>所谓Ingress，就是Service的“Service”。</strong></p><p>举个例子，假如我现在有这样一个站点： <code>https://cafe.example.com</code>。其中， <code>https://cafe.example.com/coffee</code>，对应的是“咖啡点餐系统”。而， <code>https://cafe.example.com/tea</code>，对应的则是“茶水点餐系统”。这两个系统，分别由名叫coffee和tea这样两个Deployment来提供服务。</p><p>那么现在，我如何能使用Kubernetes的Ingress来创建一个统一的负载均衡器，从而实现当用户访问不同的域名时，能够访问到不同的Deployment呢？</p><p>上述功能，在Kubernetes里就需要通过Ingress对象来描述，如下所示：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>apiVersion: extensions/v1beta1</span></span>
+<span class="line"><span>kind: Ingress</span></span>
+<span class="line"><span>metadata:</span></span>
+<span class="line"><span>  name: cafe-ingress</span></span>
+<span class="line"><span>spec:</span></span>
+<span class="line"><span>  tls:</span></span>
+<span class="line"><span>  - hosts:</span></span>
+<span class="line"><span>    - cafe.example.com</span></span>
+<span class="line"><span>    secretName: cafe-secret</span></span>
+<span class="line"><span>  rules:</span></span>
+<span class="line"><span>  - host: cafe.example.com</span></span>
+<span class="line"><span>    http:</span></span>
+<span class="line"><span>      paths:</span></span>
+<span class="line"><span>      - path: /tea</span></span>
+<span class="line"><span>        backend:</span></span>
+<span class="line"><span>          serviceName: tea-svc</span></span>
+<span class="line"><span>          servicePort: 80</span></span>
+<span class="line"><span>      - path: /coffee</span></span>
+<span class="line"><span>        backend:</span></span>
+<span class="line"><span>          serviceName: coffee-svc</span></span>
+<span class="line"><span>          servicePort: 80</span></span></code></pre></div><p>在上面这个名叫cafe-ingress.yaml文件中，最值得我们关注的，是rules字段。在Kubernetes里，这个字段叫作： <strong>IngressRule</strong>。</p><p>IngressRule的Key，就叫做：host。它必须是一个标准的域名格式（Fully Qualified Domain Name）的字符串，而不能是IP地址。</p><blockquote><p>备注：Fully Qualified Domain Name的具体格式，可以参考 <a href="https://tools.ietf.org/html/rfc3986" target="_blank" rel="noreferrer">RFC 3986</a> 标准。</p></blockquote><p>而host字段定义的值，就是这个Ingress的入口。这也就意味着，当用户访问cafe.example.com的时候，实际上访问到的是这个Ingress对象。这样，Kubernetes就能使用IngressRule来对你的请求进行下一步转发。</p><p>而接下来IngressRule规则的定义，则依赖于path字段。你可以简单地理解为，这里的每一个path都对应一个后端Service。所以在我们的例子里，我定义了两个path，它们分别对应coffee和tea这两个Deployment的Service（即：coffee-svc和tea-svc）。</p><p><strong>通过上面的讲解，不难看到，所谓Ingress对象，其实就是Kubernetes项目对“反向代理”的一种抽象。</strong></p><p>一个Ingress对象的主要内容，实际上就是一个“反向代理”服务（比如：Nginx）的配置文件的描述。而这个代理服务对应的转发规则，就是IngressRule。</p><p>这就是为什么在每条IngressRule里，需要有一个host字段来作为这条IngressRule的入口，然后还需要有一系列path字段来声明具体的转发策略。这其实跟Nginx、HAproxy等项目的配置文件的写法是一致的。</p><p>而有了Ingress这样一个统一的抽象，Kubernetes的用户就无需关心Ingress的具体细节了。</p><p>在实际的使用中，你只需要从社区里选择一个具体的Ingress Controller，把它部署在Kubernetes集群里即可。</p><p>然后，这个Ingress Controller会根据你定义的Ingress对象，提供对应的代理能力。目前，业界常用的各种反向代理项目，比如Nginx、HAProxy、Envoy、Traefik等，都已经为Kubernetes专门维护了对应的Ingress Controller。</p><p>接下来，我就以最常用的Nginx Ingress Controller为例，在我们前面用kubeadm部署的Bare-metal环境中，和你实践一下Ingress机制的使用过程。</p><p>部署Nginx Ingress Controller的方法非常简单，如下所示：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>$ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/mandatory.yaml</span></span></code></pre></div><p>其中，在 <a href="https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/mandatory.yaml" target="_blank" rel="noreferrer">mandatory.yaml</a> 这个文件里，正是Nginx官方为你维护的Ingress Controller的定义。我们来看一下它的内容：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>kind: ConfigMap</span></span>
+<span class="line"><span>apiVersion: v1</span></span>
+<span class="line"><span>metadata:</span></span>
+<span class="line"><span>  name: nginx-configuration</span></span>
+<span class="line"><span>  namespace: ingress-nginx</span></span>
+<span class="line"><span>  labels:</span></span>
+<span class="line"><span>    app.kubernetes.io/name: ingress-nginx</span></span>
+<span class="line"><span>    app.kubernetes.io/part-of: ingress-nginx</span></span>
+<span class="line"><span>---</span></span>
+<span class="line"><span>apiVersion: extensions/v1beta1</span></span>
+<span class="line"><span>kind: Deployment</span></span>
+<span class="line"><span>metadata:</span></span>
+<span class="line"><span>  name: nginx-ingress-controller</span></span>
+<span class="line"><span>  namespace: ingress-nginx</span></span>
+<span class="line"><span>  labels:</span></span>
+<span class="line"><span>    app.kubernetes.io/name: ingress-nginx</span></span>
+<span class="line"><span>    app.kubernetes.io/part-of: ingress-nginx</span></span>
+<span class="line"><span>spec:</span></span>
+<span class="line"><span>  replicas: 1</span></span>
+<span class="line"><span>  selector:</span></span>
+<span class="line"><span>    matchLabels:</span></span>
+<span class="line"><span>      app.kubernetes.io/name: ingress-nginx</span></span>
+<span class="line"><span>      app.kubernetes.io/part-of: ingress-nginx</span></span>
+<span class="line"><span>  template:</span></span>
+<span class="line"><span>    metadata:</span></span>
+<span class="line"><span>      labels:</span></span>
+<span class="line"><span>        app.kubernetes.io/name: ingress-nginx</span></span>
+<span class="line"><span>        app.kubernetes.io/part-of: ingress-nginx</span></span>
+<span class="line"><span>      annotations:</span></span>
+<span class="line"><span>        ...</span></span>
+<span class="line"><span>    spec:</span></span>
+<span class="line"><span>      serviceAccountName: nginx-ingress-serviceaccount</span></span>
+<span class="line"><span>      containers:</span></span>
+<span class="line"><span>        - name: nginx-ingress-controller</span></span>
+<span class="line"><span>          image: quay.io/kubernetes-ingress-controller/nginx-ingress-controller:0.20.0</span></span>
+<span class="line"><span>          args:</span></span>
+<span class="line"><span>            - /nginx-ingress-controller</span></span>
+<span class="line"><span>            - --configmap=$(POD_NAMESPACE)/nginx-configuration</span></span>
+<span class="line"><span>            - --publish-service=$(POD_NAMESPACE)/ingress-nginx</span></span>
+<span class="line"><span>            - --annotations-prefix=nginx.ingress.kubernetes.io</span></span>
+<span class="line"><span>          securityContext:</span></span>
+<span class="line"><span>            capabilities:</span></span>
+<span class="line"><span>              drop:</span></span>
+<span class="line"><span>                - ALL</span></span>
+<span class="line"><span>              add:</span></span>
+<span class="line"><span>                - NET_BIND_SERVICE</span></span>
+<span class="line"><span>            # www-data -&gt; 33</span></span>
+<span class="line"><span>            runAsUser: 33</span></span>
+<span class="line"><span>          env:</span></span>
+<span class="line"><span>            - name: POD_NAME</span></span>
+<span class="line"><span>              valueFrom:</span></span>
+<span class="line"><span>                fieldRef:</span></span>
+<span class="line"><span>                  fieldPath: metadata.name</span></span>
+<span class="line"><span>            - name: POD_NAMESPACE</span></span>
+<span class="line"><span>            - name: http</span></span>
+<span class="line"><span>              valueFrom:</span></span>
+<span class="line"><span>                fieldRef:</span></span>
+<span class="line"><span>                  fieldPath: metadata.namespace</span></span>
+<span class="line"><span>          ports:</span></span>
+<span class="line"><span>            - name: http</span></span>
+<span class="line"><span>              containerPort: 80</span></span>
+<span class="line"><span>            - name: https</span></span>
+<span class="line"><span>              containerPort: 443</span></span></code></pre></div><p>可以看到，在上述YAML文件中，我们定义了一个使用nginx-ingress-controller镜像的Pod。需要注意的是，这个Pod的启动命令需要使用该Pod所在的Namespace作为参数。而这个信息，当然是通过Downward API拿到的，即：Pod的env字段里的定义（env.valueFrom.fieldRef.fieldPath）。</p><p>而这个Pod本身，就是一个监听Ingress对象以及它所代理的后端Service变化的控制器。</p><p>当一个新的Ingress对象由用户创建后，nginx-ingress-controller就会根据Ingress对象里定义的内容，生成一份对应的Nginx配置文件（/etc/nginx/nginx.conf），并使用这个配置文件启动一个 Nginx 服务。</p><p>而一旦Ingress对象被更新，nginx-ingress-controller就会更新这个配置文件。需要注意的是，如果这里只是被代理的 Service 对象被更新，nginx-ingress-controller所管理的 Nginx 服务是不需要重新加载（reload）的。这当然是因为nginx-ingress-controller通过 <a href="https://github.com/openresty/lua-nginx-module" target="_blank" rel="noreferrer">Nginx Lua</a> 方案实现了Nginx Upstream的动态配置。</p><p>此外，nginx-ingress-controller还允许你通过Kubernetes的ConfigMap对象来对上述 Nginx 配置文件进行定制。这个ConfigMap的名字，需要以参数的方式传递给nginx-ingress-controller。而你在这个 ConfigMap 里添加的字段，将会被合并到最后生成的 Nginx 配置文件当中。</p><p><strong>可以看到，一个Nginx Ingress Controller为你提供的服务，其实是一个可以根据Ingress对象和被代理后端 Service 的变化，来自动进行更新的Nginx负载均衡器。</strong></p><p>当然，为了让用户能够用到这个Nginx，我们就需要创建一个Service来把Nginx Ingress Controller管理的 Nginx 服务暴露出去，如下所示：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>$ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/provider/baremetal/service-nodeport.yaml</span></span></code></pre></div><p>由于我们使用的是Bare-metal环境，所以service-nodeport.yaml文件里的内容，就是一个NodePort类型的Service，如下所示：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>apiVersion: v1</span></span>
+<span class="line"><span>kind: Service</span></span>
+<span class="line"><span>metadata:</span></span>
+<span class="line"><span>  name: ingress-nginx</span></span>
+<span class="line"><span>  namespace: ingress-nginx</span></span>
+<span class="line"><span>  labels:</span></span>
+<span class="line"><span>    app.kubernetes.io/name: ingress-nginx</span></span>
+<span class="line"><span>    app.kubernetes.io/part-of: ingress-nginx</span></span>
+<span class="line"><span>spec:</span></span>
+<span class="line"><span>  type: NodePort</span></span>
+<span class="line"><span>  ports:</span></span>
+<span class="line"><span>    - name: http</span></span>
+<span class="line"><span>      port: 80</span></span>
+<span class="line"><span>      targetPort: 80</span></span>
+<span class="line"><span>      protocol: TCP</span></span>
+<span class="line"><span>    - name: https</span></span>
+<span class="line"><span>      port: 443</span></span>
+<span class="line"><span>      targetPort: 443</span></span>
+<span class="line"><span>      protocol: TCP</span></span>
+<span class="line"><span>  selector:</span></span>
+<span class="line"><span>    app.kubernetes.io/name: ingress-nginx</span></span>
+<span class="line"><span>    app.kubernetes.io/part-of: ingress-nginx</span></span></code></pre></div><p>可以看到，这个Service的唯一工作，就是将所有携带ingress-nginx标签的Pod的80和433端口暴露出去。</p><blockquote><p>而如果你是公有云上的环境，你需要创建的就是LoadBalancer类型的Service了。</p></blockquote><p><strong>上述操作完成后，你一定要记录下这个Service的访问入口，即：宿主机的地址和NodePort的端口</strong>，如下所示：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>$ kubectl get svc -n ingress-nginx</span></span>
+<span class="line"><span>NAME            TYPE       CLUSTER-IP     EXTERNAL-IP   PORT(S)                      AGE</span></span>
+<span class="line"><span>ingress-nginx   NodePort   10.105.72.96   &lt;​none&gt;        80:30044/TCP,443:31453/TCP   3h</span></span></code></pre></div><p>为了后面方便使用，我会把上述访问入口设置为环境变量：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>$ IC_IP=10.168.0.2 # 任意一台宿主机的地址</span></span>
+<span class="line"><span>$ IC_HTTPS_PORT=31453 # NodePort端口</span></span></code></pre></div><p>在Ingress Controller和它所需要的Service部署完成后，我们就可以使用它了。</p><blockquote><p>备注：这个“咖啡厅”Ingress的所有示例文件，都在 <a href="https://github.com/resouer/kubernetes-ingress/tree/master/examples/complete-example" target="_blank" rel="noreferrer">这里</a>。</p></blockquote><p>首先，我们要在集群里部署我们的应用Pod和它们对应的Service，如下所示：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>$ kubectl create -f cafe.yaml</span></span></code></pre></div><p>然后，我们需要创建Ingress所需的SSL证书（tls.crt）和密钥（tls.key），这些信息都是通过Secret对象定义好的，如下所示：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>$ kubectl create -f cafe-secret.yaml</span></span></code></pre></div><p>这一步完成后，我们就可以创建在本篇文章一开始定义的Ingress对象了，如下所示：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>$ kubectl create -f cafe-ingress.yaml</span></span></code></pre></div><p>这时候，我们就可以查看一下这个Ingress对象的信息，如下所示：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>$ kubectl get ingress</span></span>
+<span class="line"><span>NAME           HOSTS              ADDRESS   PORTS     AGE</span></span>
+<span class="line"><span>cafe-ingress   cafe.example.com             80, 443   2h</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>$ kubectl describe ingress cafe-ingress</span></span>
+<span class="line"><span>Name:             cafe-ingress</span></span>
+<span class="line"><span>Namespace:        default</span></span>
+<span class="line"><span>Address:</span></span>
+<span class="line"><span>Default backend:  default-http-backend:80 (&lt;​none&gt;)</span></span>
+<span class="line"><span>TLS:</span></span>
+<span class="line"><span>  cafe-secret terminates cafe.example.com</span></span>
+<span class="line"><span>Rules:</span></span>
+<span class="line"><span>  Host              Path  Backends</span></span>
+<span class="line"><span>  ----              ----  --------</span></span>
+<span class="line"><span>  cafe.example.com</span></span>
+<span class="line"><span>                    /tea      tea-svc:80 (&lt;​none&gt;)</span></span>
+<span class="line"><span>                    /coffee   coffee-svc:80 (&lt;​none&gt;)</span></span>
+<span class="line"><span>Annotations:</span></span>
+<span class="line"><span>Events:</span></span>
+<span class="line"><span>  Type    Reason  Age   From                      Message</span></span>
+<span class="line"><span>  ----    ------  ----  ----                      -------</span></span>
+<span class="line"><span>  Normal  CREATE  4m    nginx-ingress-controller  Ingress default/cafe-ingress</span></span></code></pre></div><p>可以看到，这个Ingress对象最核心的部分，正是Rules字段。其中，我们定义的Host是 <code>cafe.example.com</code>，它有两条转发规则（Path），分别转发给tea-svc和coffee-svc。</p><blockquote><p>当然，在Ingress的YAML文件里，你还可以定义多个Host，比如 <code>restaurant.example.com</code>、 <code>movie.example.com</code> 等等，来为更多的域名提供负载均衡服务。</p></blockquote><p>接下来，我们就可以通过访问这个Ingress的地址和端口，访问到我们前面部署的应用了，比如，当我们访问 <code>https://cafe.example.com:443/coffee</code> 时，应该是coffee这个Deployment负责响应我的请求。我们可以来尝试一下：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>$ curl --resolve cafe.example.com:$IC_HTTPS_PORT:$IC_IP https://cafe.example.com:$IC_HTTPS_PORT/coffee --insecureServer address: 10.244.1.56:80</span></span>
+<span class="line"><span>Server name: coffee-7dbb5795f6-vglbv</span></span>
+<span class="line"><span>Date: 03/Nov/2018:03:55:32 +0000</span></span>
+<span class="line"><span>URI: /coffee</span></span>
+<span class="line"><span>Request ID: e487e672673195c573147134167cf898</span></span></code></pre></div><p>我们可以看到，访问这个URL 得到的返回信息是：Server name: coffee-7dbb5795f6-vglbv。这正是 coffee 这个 Deployment 的名字。</p><p>而当我访问 <code>https://cafe.example.com:433/tea</code> 的时候，则应该是tea这个Deployment负责响应我的请求（Server name: tea-7d57856c44-lwbnp），如下所示：</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>$ curl --resolve cafe.example.com:$IC_HTTPS_PORT:$IC_IP https://cafe.example.com:$IC_HTTPS_PORT/tea --insecure</span></span>
+<span class="line"><span>Server address: 10.244.1.58:80</span></span>
+<span class="line"><span>Server name: tea-7d57856c44-lwbnp</span></span>
+<span class="line"><span>Date: 03/Nov/2018:03:55:52 +0000</span></span>
+<span class="line"><span>URI: /tea</span></span>
+<span class="line"><span>Request ID: 32191f7ea07cb6bb44a1f43b8299415c</span></span></code></pre></div><p>可以看到，Nginx Ingress Controller为我们创建的Nginx负载均衡器，已经成功地将请求转发给了对应的后端Service。</p><p>以上，就是Kubernetes里Ingress的设计思想和使用方法了。</p><p>不过，你可能会有一个疑问， <strong>如果我的请求没有匹配到任何一条IngressRule，那么会发生什么呢？</strong></p><p>首先，既然Nginx Ingress Controller是用Nginx实现的，那么它当然会为你返回一个 Nginx 的404页面。</p><p>不过，Ingress Controller也允许你通过Pod启动命令里的–default-backend-service参数，设置一条默认规则，比如：–default-backend-service=nginx-default-backend。</p><p>这样，任何匹配失败的请求，就都会被转发到这个名叫nginx-default-backend的Service。所以，你就可以通过部署一个专门的Pod，来为用户返回自定义的404页面了。</p><h2 id="总结" tabindex="-1">总结 <a class="header-anchor" href="#总结" aria-label="Permalink to &quot;总结&quot;">​</a></h2><p>在这篇文章里，我为你详细讲解了Ingress这个概念在Kubernetes里到底是怎么一回事儿。正如我在文章里所描述的，Ingress实际上就是Kubernetes对“反向代理”的抽象。</p><p>目前，Ingress只能工作在七层，而Service只能工作在四层。所以当你想要在Kubernetes里为应用进行TLS配置等HTTP相关的操作时，都必须通过Ingress来进行。</p><p>当然，正如同很多负载均衡项目可以同时提供七层和四层代理一样，将来Ingress的进化中，也会加入四层代理的能力。这样，一个比较完善的“反向代理”机制就比较成熟了。</p><p>而Kubernetes提出Ingress概念的原因其实也非常容易理解，有了Ingress这个抽象，用户就可以根据自己的需求来自由选择Ingress Controller。比如，如果你的应用对代理服务的中断非常敏感，那么你就应该考虑选择类似于Traefik这样支持“热加载”的Ingress Controller实现。</p><p>更重要的是，一旦你对社区里现有的Ingress方案感到不满意，或者你已经有了自己的负载均衡方案时，你只需要做很少的编程工作，就可以实现一个自己的Ingress Controller。</p><p>在实际的生产环境中，Ingress带来的灵活度和自由度，对于使用容器的用户来说，其实是非常有意义的。要知道，当年在Cloud Foundry项目里，不知道有多少人为了给Gorouter组件配置一个TLS而伤透了脑筋。</p><h2 id="思考题" tabindex="-1">思考题 <a class="header-anchor" href="#思考题" aria-label="Permalink to &quot;思考题&quot;">​</a></h2><p>如果我的需求是，当访问 <code>www.mysite.com</code> 和 <code>forums.mysite.com</code> 时，分别访问到不同的Service（比如：site-svc和forums-svc）。那么，这个Ingress该如何定义呢？请你描述出YAML文件中的rules字段。</p><p>感谢你的收听，欢迎你给我留言，也欢迎分享给更多的朋友一起阅读。</p>`,75)])])}const m=n(l,[["render",i]]);export{u as __pageData,m as default};

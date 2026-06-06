@@ -1,0 +1,323 @@
+import{_ as n,H as a,f as e,i as p}from"./chunks/framework.BH2BK_3i.js";const u=JSON.parse('{"title":"05｜明察秋毫 ：构建只读型安全审计子代理","description":"","frontmatter":{},"headers":[{"level":2,"title":"项目场景：代码审查","slug":"项目场景-代码审查","link":"#项目场景-代码审查","children":[]},{"level":2,"title":"从工程痛点到子代理设计：一种思维方式","slug":"从工程痛点到子代理设计-一种思维方式","link":"#从工程痛点到子代理设计-一种思维方式","children":[]},{"level":2,"title":"第一步：理解“有问题”的代码","slug":"第一步-理解-有问题-的代码","link":"#第一步-理解-有问题-的代码","children":[{"level":3,"title":"auth.js 中的安全问题","slug":"auth-js-中的安全问题","link":"#auth-js-中的安全问题","children":[]},{"level":3,"title":"database.js 中的 SQL 注入风险","slug":"database-js-中的-sql-注入风险","link":"#database-js-中的-sql-注入风险","children":[]}]},{"level":2,"title":"第二步：创建代码审查子代理","slug":"第二步-创建代码审查子代理","link":"#第二步-创建代码审查子代理","children":[]},{"level":2,"title":"第三步：运行代码审查","slug":"第三步-运行代码审查","link":"#第三步-运行代码审查","children":[{"level":3,"title":"显式调用","slug":"显式调用","link":"#显式调用","children":[]},{"level":3,"title":"Claude 自动调用","slug":"claude-自动调用","link":"#claude-自动调用","children":[]}]},{"level":2,"title":"第四步：验证权限边界","slug":"第四步-验证权限边界","link":"#第四步-验证权限边界","children":[]},{"level":2,"title":"第五步：扩展审查维度","slug":"第五步-扩展审查维度","link":"#第五步-扩展审查维度","children":[]},{"level":2,"title":"从代码审查到影响面分析——真实工程场景延伸","slug":"从代码审查到影响面分析——真实工程场景延伸","link":"#从代码审查到影响面分析——真实工程场景延伸","children":[{"level":3,"title":"把工程经验翻译成子代理设计","slug":"把工程经验翻译成子代理设计","link":"#把工程经验翻译成子代理设计","children":[]},{"level":3,"title":"设计一个影响面分析子代理","slug":"设计一个影响面分析子代理","link":"#设计一个影响面分析子代理","children":[]},{"level":3,"title":"配合 Skill 沉淀链路知识","slug":"配合-skill-沉淀链路知识","link":"#配合-skill-沉淀链路知识","children":[]}]},{"level":2,"title":"工程决策：什么时候该创建子代理？","slug":"工程决策-什么时候该创建子代理","link":"#工程决策-什么时候该创建子代理","children":[{"level":3,"title":"该创建子代理的场景","slug":"该创建子代理的场景","link":"#该创建子代理的场景","children":[]},{"level":3,"title":"不该创建子代理的场景","slug":"不该创建子代理的场景","link":"#不该创建子代理的场景","children":[]},{"level":3,"title":"我的亲身经历","slug":"我的亲身经历","link":"#我的亲身经历","children":[]}]},{"level":2,"title":"本讲小结","slug":"本讲小结","link":"#本讲小结","children":[]},{"level":2,"title":"思考题","slug":"思考题","link":"#思考题","children":[]}],"relativePath":"ClaudeCode工程化实战/05｜明察秋毫：构建只读型安全审计子代理.md","filePath":"ClaudeCode工程化实战/05｜明察秋毫：构建只读型安全审计子代理.md","lastUpdated":1779815462000}'),i={name:"ClaudeCode工程化实战/05｜明察秋毫：构建只读型安全审计子代理.md"};function l(t,s,c,o,r,d){return a(),e("div",null,[...s[0]||(s[0]=[p(`<h1 id="_05-明察秋毫-构建只读型安全审计子代理" tabindex="-1">05｜明察秋毫 ：构建只读型安全审计子代理 <a class="header-anchor" href="#_05-明察秋毫-构建只读型安全审计子代理" aria-label="Permalink to &quot;05｜明察秋毫 ：构建只读型安全审计子代理&quot;">​</a></h1><p>你好，我是黄佳。</p><p>上一讲我们理解了子代理的核心概念，今天我们要动手实战——创建一个只能看、不能改的代码审查员子代理。</p><p>为什么要从“只读型”子代理开始？</p><p>因为权限边界是子代理最重要的工程价值之一。代码审查是一个完美的场景：审查者需要完整的读取能力来分析代码，但 <strong>绝对不应该</strong> 在审查过程中修改代码。如果你的审查工具可能在“帮你”&quot;的过程中偷偷改了什么，那还叫审查吗？</p><p>今天的目标就下面三个。</p><ol><li><p>创建一个只有读取权限的代码审查子代理。</p></li><li><p>用它来发现示例代码中的安全问题。</p></li><li><p>体验“最小权限原则”的工程价值。</p></li></ol><p>同时，我们也将从真实工程痛点出发，理解&quot;为什么需要这个子代理&quot;的设计思维，并学会将工程经验翻译为子代理的职责边界与调用结构。</p><p>好，现在一起开始动手。</p><h2 id="项目场景-代码审查" tabindex="-1">项目场景：代码审查 <a class="header-anchor" href="#项目场景-代码审查" aria-label="Permalink to &quot;项目场景：代码审查&quot;">​</a></h2><p>一个后端开发项目中，我们刚刚好写完了一段认证逻辑，想让 Claude Code 帮你审查一下有没有安全问题。你在主对话中说：“帮我检查一下 auth.js 的安全性”。</p><p>Claude 完成这个任务当然不在话下，它读了你的代码，发现了硬编码的密钥，然后顺手帮你改成了环境变量读取。等等，发现哪里不对了么？你只是想让它看看有没有问题，并没有让它改啊！而且，它的“好心修复”可能引入了新的问题——比如你根本不想配置任何环境变量。</p><p>这就是为什么我们需要 <strong>只读型子代理</strong>：</p><div class="language-plain vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">plain</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>代码审查员的职责边界：</span></span>
+<span class="line"><span>✅ 可以做：读取代码、分析问题、输出报告</span></span>
+<span class="line"><span> ❌ 不可做：修改文件、执行可能有副作用的命令</span></span></code></pre></div><p><a class="image-link" href="https://raw.githubusercontent.com/qiangshuifish/note-website/note-website/ClaudeCode%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%AE%9E%E6%88%98/images/944205/fdb99aaf99a94b3ff72698544b40ec22.jpg" target="_blank" rel="noopener" title="点击查看原图"><img src="https://raw.githubusercontent.com/qiangshuifish/note-website/note-website/ClaudeCode%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%AE%9E%E6%88%98/images/944205/fdb99aaf99a94b3ff72698544b40ec22.jpg" alt=""></a></p><h2 id="从工程痛点到子代理设计-一种思维方式" tabindex="-1">从工程痛点到子代理设计：一种思维方式 <a class="header-anchor" href="#从工程痛点到子代理设计-一种思维方式" aria-label="Permalink to &quot;从工程痛点到子代理设计：一种思维方式&quot;">​</a></h2><p>在我们动手写配置之前，先停下来想一个问题： <strong>我们为什么要创建这个子代理？</strong></p><p>这不是一个哲学问题，而是一个工程方法论问题。课程留言区有同学提出了一个非常好的观察：</p><blockquote><p>“网上的各类 Skill、SubAgent 排行榜一大堆，如果只是为了获取结果，直接用现成插件就行了。课程到底是在教原理，还是在教工具配置？”</p></blockquote><p>这个问题问到了核心。我们这门课的目标不是教你再造一个 review 工具，而是帮你建立一种 <strong>从痛点出发、反推设计</strong> 的工程思维：</p><div class="language-plain vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">plain</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>工程痛点 → 分析缺什么能力 → 设计职责边界 → 选择工具组合 → 配置子代理</span></span></code></pre></div><p>具体来说，你在真实项目中遇到的每一个“AI 做得不够好”的场景，都可以用这个思路来拆解。</p><p><a class="image-link" href="https://raw.githubusercontent.com/qiangshuifish/note-website/note-website/ClaudeCode%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%AE%9E%E6%88%98/images/944205/f8597b6f0cf05fb9ab4ff5e0052b6b93.jpg" target="_blank" rel="noopener" title="点击查看原图"><img src="https://raw.githubusercontent.com/qiangshuifish/note-website/note-website/ClaudeCode%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%AE%9E%E6%88%98/images/944205/f8597b6f0cf05fb9ab4ff5e0052b6b93.jpg" alt=""></a></p><p>这个表格背后的思维过程，比任何一份具体的配置文件都重要。掌握了它，你就能面对 <strong>任何</strong> 工程场景设计出合适的子代理。</p><p>这一讲使用的实战项目位于我们课程 <a href="https://github.com/huangjia2019/claude-code-engingeering" target="_blank" rel="noreferrer">Repo</a> 的 <code>03-SubAgents/projects/01-code-reviewer/</code> 目录，结构如下：</p><div class="language-plain vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">plain</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>01-code-reviewer/</span></span>
+<span class="line"><span>├── src/</span></span>
+<span class="line"><span>│   ├── auth.js        # 认证模块（包含安全问题）</span></span>
+<span class="line"><span>│   ├── database.js    # 数据库模块（包含 SQL 注入风险）</span></span>
+<span class="line"><span>│   └── api.js         # API 模块（包含不良实践）</span></span>
+<span class="line"><span>├── .claude/</span></span>
+<span class="line"><span>│   └── agents/</span></span>
+<span class="line"><span>│       └── code-reviewer.md   # 代码审查子代理配置</span></span>
+<span class="line"><span>└── README.md</span></span></code></pre></div><p><a class="image-link" href="https://raw.githubusercontent.com/qiangshuifish/note-website/note-website/ClaudeCode%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%AE%9E%E6%88%98/images/944205/6b9476f9cb6d7cb72177a9d1165c96f8.png" target="_blank" rel="noopener" title="点击查看原图"><img src="https://raw.githubusercontent.com/qiangshuifish/note-website/note-website/ClaudeCode%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%AE%9E%E6%88%98/images/944205/6b9476f9cb6d7cb72177a9d1165c96f8.png" alt="图片"></a></p><p>这些js示例代码故意包含了一些安全问题，用于演示审查器的发现能力。</p><p>下面我们一步一步往前走，从理解这些“问题代码”开始，到创建属于我们自己的“代码审查”Sub-Agent，并运行它们，同时验证权限边界、扩展审查维度，完成代码审查子代理的设计和使用闭环。</p><h2 id="第一步-理解-有问题-的代码" tabindex="-1">第一步：理解“有问题”的代码 <a class="header-anchor" href="#第一步-理解-有问题-的代码" aria-label="Permalink to &quot;第一步：理解“有问题”的代码&quot;">​</a></h2><p>在创建审查器之前，让我们先看看它要审查的代码有什么问题，以设计更好的审查 prompt。在我的Repo中，auth.js 以及database.js都存在大量的安全隐患。</p><h3 id="auth-js-中的安全问题" tabindex="-1">auth.js 中的安全问题 <a class="header-anchor" href="#auth-js-中的安全问题" aria-label="Permalink to &quot;auth.js 中的安全问题&quot;">​</a></h3><div class="language-plain vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">plain</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// 问题 1: 硬编码的密钥</span></span>
+<span class="line"><span>const SECRET_KEY = &#39;super-secret-key-12345&#39;;</span></span>
+<span class="line"><span>const API_KEY = &#39;sk-live-abcdef123456&#39;;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// 问题 2: 弱密码验证</span></span>
+<span class="line"><span>function validatePassword(password) {</span></span>
+<span class="line"><span>  // 只检查长度，没有复杂度要求</span></span>
+<span class="line"><span>  return password.length &amp;gt;= 6;</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// 问题 3: 不安全的 token 生成</span></span>
+<span class="line"><span>function generateToken(userId) {</span></span>
+<span class="line"><span>  // 使用可预测的方式生成 token</span></span>
+<span class="line"><span>  const timestamp = Date.now();</span></span>
+<span class="line"><span>  return Buffer.from(\`\${userId}:\${timestamp}\`).toString(&#39;base64&#39;);</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// 问题 4: 明文存储密码比较</span></span>
+<span class="line"><span>function checkPassword(inputPassword, storedPassword) {</span></span>
+<span class="line"><span>  // 应该使用 bcrypt 等哈希比较</span></span>
+<span class="line"><span>  return inputPassword === storedPassword;</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// 问题 5: 信息泄露的错误消息</span></span>
+<span class="line"><span>function login(username, password) {</span></span>
+<span class="line"><span>  const user = findUserByUsername(username);</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  if (!user) {</span></span>
+<span class="line"><span>    // 泄露用户是否存在</span></span>
+<span class="line"><span>    throw new Error(\`User &#39;\${username}&#39; not found\`);</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  if (!checkPassword(password, user.password)) {</span></span>
+<span class="line"><span>    throw new Error(&#39;Invalid password&#39;);</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  return {</span></span>
+<span class="line"><span>    token: generateToken(user.id),</span></span>
+<span class="line"><span>    user: {</span></span>
+<span class="line"><span>      // ...</span></span>
+<span class="line"><span>      password: user.password,  // 问题 6: 返回密码！</span></span>
+<span class="line"><span>    }</span></span>
+<span class="line"><span>  };</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// 问题 7: 无会话过期检查</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>// 问题 8: eval 使用 - 代码注入风险</span></span>
+<span class="line"><span>function processUserConfig(configString) {</span></span>
+<span class="line"><span>  return eval(&#39;(&#39; + configString + &#39;)&#39;);</span></span>
+<span class="line"><span>}</span></span></code></pre></div><p>auth.js 中的问题主要集中在身份认证和敏感凭据的处理上。代码中存在硬编码密钥（SECRET_KEY、API_KEY），这会导致一旦代码仓库泄露，密钥也随之暴露，且无法进行安全轮换。</p><p>此外，密码相关逻辑也存在多处不安全的实现，包括弱密码校验（仅检查长度）、明文密码比较、以及使用可预测数据（用户 ID + 时间戳）生成 token。这些都会降低攻击成本，使暴力破解、重放攻击和伪造身份成为可能。</p><p>同时认证流程中还存在信息泄露问题，例如在登录失败时区分“用户不存在”和“密码错误”，以及在接口返回中直接包含用户密码字段。此外，代码中使用 <code>eval</code> 解析用户提供的配置字符串，带来了严重的代码注入风险。这些问题说明认证模块没有正确假设“用户输入是不可信的”，也未采用成熟的安全实践来处理密码、token 和错误信息。</p><h3 id="database-js-中的-sql-注入风险" tabindex="-1">database.js 中的 SQL 注入风险 <a class="header-anchor" href="#database-js-中的-sql-注入风险" aria-label="Permalink to &quot;database.js 中的 SQL 注入风险&quot;">​</a></h3><div class="language-plain vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">plain</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>// 问题 1: 硬编码数据库凭据</span></span>
+<span class="line"><span>const DB_CONFIG = {</span></span>
+<span class="line"><span>  host: &#39;localhost&#39;,</span></span>
+<span class="line"><span>  user: &#39;root&#39;,</span></span>
+<span class="line"><span>  password: &#39;root123&#39;,  // 硬编码密码</span></span>
+<span class="line"><span>  database: &#39;production_db&#39;</span></span>
+<span class="line"><span>};</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>class Database {</span></span>
+<span class="line"><span>  // 问题 2: SQL 注入漏洞</span></span>
+<span class="line"><span>  async findUser(username) {</span></span>
+<span class="line"><span>    // 直接拼接用户输入到 SQL 语句</span></span>
+<span class="line"><span>    const query = \`SELECT * FROM users WHERE username = &#39;\${username}&#39;\`;</span></span>
+<span class="line"><span>    return this.execute(query);</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  // 问题 3: 多个注入点</span></span>
+<span class="line"><span>  async searchProducts(searchTerm, category) {</span></span>
+<span class="line"><span>    const query = \`</span></span>
+<span class="line"><span>      SELECT * FROM products</span></span>
+<span class="line"><span>      WHERE name LIKE &#39;%\${searchTerm}%&#39;</span></span>
+<span class="line"><span>      AND category = &#39;\${category}&#39;</span></span>
+<span class="line"><span>    \`;</span></span>
+<span class="line"><span>    return this.execute(query);</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>  // 问题 4: 敏感数据日志</span></span>
+<span class="line"><span>  async createUser(userData) {</span></span>
+<span class="line"><span>    // 记录了密码到日志</span></span>
+<span class="line"><span>    console.log(&#39;Creating user:&#39;, JSON.stringify(userData));</span></span>
+<span class="line"><span>    // ...</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>}</span></span></code></pre></div><p>database.js 中的问题主要集中在数据库访问层的输入处理和凭据管理上。代码将数据库账号和密码硬编码在源码中，并使用高权限用户连接数据库，这在生产环境中存在较大风险。一旦源码泄露，攻击者可能直接获取数据库的完全访问权限。</p><p>更严重的问题是 SQL 注入漏洞。findUser 和 searchProducts 等方法直接将用户输入拼接到 SQL 语句中，没有使用参数化查询或预编译语句，攻击者可以通过构造恶意输入篡改查询逻辑，进而绕过认证或读取、修改数据库中的敏感数据。此外，代码在日志中直接打印完整的用户数据对象，可能将密码等敏感信息写入日志系统，进一步扩大数据泄露范围。</p><p>上述这些身份认证以及SQL 注入是最常见的 Web 安全漏洞之一，我们下面要开始创建的代码审查器必须也应该是肯定能识别这类问题。</p><h2 id="第二步-创建代码审查子代理" tabindex="-1">第二步：创建代码审查子代理 <a class="header-anchor" href="#第二步-创建代码审查子代理" aria-label="Permalink to &quot;第二步：创建代码审查子代理&quot;">​</a></h2><p>现在让我们创建代码审查子代理。首先是创建.claude/agents/目录，然后在其中创建代码审查子代理的配置文件 <code>code-reviewer.md</code>：</p><div class="language-plain vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">plain</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>---</span></span>
+<span class="line"><span>name: code-reviewer</span></span>
+<span class="line"><span>description: Review code changes for quality, security, and best practices. Proactively use this after code modifications.</span></span>
+<span class="line"><span>tools: Read, Grep, Glob, Bash</span></span>
+<span class="line"><span>model: sonnet</span></span>
+<span class="line"><span>---</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>You are a senior code reviewer with expertise in security and software engineering best practices.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>## When Invoked</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>1. **Identify Changes**: Run \`git diff\` or read specified files</span></span>
+<span class="line"><span>2. **Analyze Code**: Check against multiple dimensions</span></span>
+<span class="line"><span>3. **Report Issues**: Categorize by severity</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>## Review Dimensions</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>### Security (Critical Priority)</span></span>
+<span class="line"><span>- SQL injection vulnerabilities</span></span>
+<span class="line"><span>- XSS vulnerabilities</span></span>
+<span class="line"><span>- Hardcoded secrets/credentials</span></span>
+<span class="line"><span>- Authentication/authorization issues</span></span>
+<span class="line"><span>- Input validation gaps</span></span>
+<span class="line"><span>- Insecure cryptographic practices</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>### Performance</span></span>
+<span class="line"><span>- N+1 query patterns</span></span>
+<span class="line"><span>- Memory leaks</span></span>
+<span class="line"><span>- Blocking operations in async code</span></span>
+<span class="line"><span>- Missing caching opportunities</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>### Maintainability</span></span>
+<span class="line"><span>- Code complexity</span></span>
+<span class="line"><span>- Missing error handling</span></span>
+<span class="line"><span>- Poor naming conventions</span></span>
+<span class="line"><span>- Lack of documentation for complex logic</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>### Best Practices</span></span>
+<span class="line"><span>- SOLID principles violations</span></span>
+<span class="line"><span>- Anti-patterns</span></span>
+<span class="line"><span>- Code duplication</span></span>
+<span class="line"><span>- Missing type safety</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>## Output Format</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>\`\`\`markdown</span></span>
+<span class="line"><span>## Code Review Report</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>### Critical Issues</span></span>
+<span class="line"><span>- [FILE:LINE] Issue description</span></span>
+<span class="line"><span>  - Why it matters</span></span>
+<span class="line"><span>  - Suggested fix</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>### Warnings</span></span>
+<span class="line"><span>- [FILE:LINE] Issue description</span></span>
+<span class="line"><span>  - Recommendation</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>### Suggestions</span></span>
+<span class="line"><span>- [FILE:LINE] Improvement opportunity</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>### Summary</span></span>
+<span class="line"><span>- Total issues: X</span></span>
+<span class="line"><span>- Critical: X | Warnings: X | Suggestions: X</span></span>
+<span class="line"><span>- Overall risk assessment: HIGH/MEDIUM/LOW</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>### Guidelines</span></span>
+<span class="line"><span>- Prioritize security issues</span></span>
+<span class="line"><span>- Be specific about locations (file:line)</span></span>
+<span class="line"><span>- Provide actionable fix suggestions</span></span>
+<span class="line"><span>- Focus on the changes, not existing code (unless security-critical)</span></span>
+<span class="line"><span>- Keep explanations concise</span></span></code></pre></div><p>解释一下这个子代理配置的设计。</p><p><strong>name</strong>：code-reviewer - 这是一个用户和 Claude 都能直观理解的简洁、语义化的名字。</p><p><strong>description</strong>：Review code changes for quality, security, and best practices. Proactively use this after code modifications.（审阅代码变更，把控质量、安全与最佳实践。每次改动代码后，建议主动执行。）</p><ul><li><p>说明 <strong>做什么</strong>：审查代码质量、安全、最佳实践。</p></li><li><p>说明 <strong>什么时候用</strong>：代码修改后主动使用</p></li><li><p>“Proactively” 关键词则告诉 Claude 可以 <strong>主动调用。</strong></p></li></ul><p><strong>tools</strong> 包括 Read，Grep，Glob，Bash 四种，此处是代码审查子代理最为关键的设计决策部分。</p><p><a class="image-link" href="https://raw.githubusercontent.com/qiangshuifish/note-website/note-website/ClaudeCode%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%AE%9E%E6%88%98/images/944205/daeabfa0e1b5bc15ef50ac19e3945e50.jpg" target="_blank" rel="noopener" title="点击查看原图"><img src="https://raw.githubusercontent.com/qiangshuifish/note-website/note-website/ClaudeCode%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%AE%9E%E6%88%98/images/944205/daeabfa0e1b5bc15ef50ac19e3945e50.jpg" alt=""></a></p><p>此处的工具中，为什么没有 <code>Edit</code> 和 <code>Write</code>？不言自明，这确保了审查器只能看，不能改——我们只给子代理它所真正需要的最小权限。</p><p><strong>model</strong>：选择sonnet，这是根据模型的能力和任务的特点权衡而定的。</p><ul><li><p>sonnet代码审查需要较强的分析能力 ✅</p></li><li><p>haiku可能漏掉细微的安全问题 ❌</p></li><li><p>opus对于审查任务来说成本太高 ❌</p></li></ul><p><a class="image-link" href="https://raw.githubusercontent.com/qiangshuifish/note-website/note-website/ClaudeCode%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%AE%9E%E6%88%98/images/944205/c45f0e57179bf44945f12fc222b877f0.jpg" target="_blank" rel="noopener" title="点击查看原图"><img src="https://raw.githubusercontent.com/qiangshuifish/note-website/note-website/ClaudeCode%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%AE%9E%E6%88%98/images/944205/c45f0e57179bf44945f12fc222b877f0.jpg" alt=""></a></p><h2 id="第三步-运行代码审查" tabindex="-1">第三步：运行代码审查 <a class="header-anchor" href="#第三步-运行代码审查" aria-label="Permalink to &quot;第三步：运行代码审查&quot;">​</a></h2><p>现在让我们实际运行代码审查器。可以通过下面两种方式调用它。</p><h3 id="显式调用" tabindex="-1">显式调用 <a class="header-anchor" href="#显式调用" aria-label="Permalink to &quot;显式调用&quot;">​</a></h3><p>可以进入项目目录，在 Claude Code 中输入：</p><div class="language-plain vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">plain</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>让 code-reviewer 审查 src/ 目录下的所有代码</span></span></code></pre></div><p><a class="image-link" href="https://raw.githubusercontent.com/qiangshuifish/note-website/note-website/ClaudeCode%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%AE%9E%E6%88%98/images/944205/bca684f718638d0e458df73924e5a74d.png" target="_blank" rel="noopener" title="点击查看原图"><img src="https://raw.githubusercontent.com/qiangshuifish/note-website/note-website/ClaudeCode%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%AE%9E%E6%88%98/images/944205/bca684f718638d0e458df73924e5a74d.png" alt="图片"></a></p><p>code-reviewer子代理被自动激活</p><p>或者更具体一些：</p><div class="language-plain vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">plain</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>用 code-reviewer 检查 src/auth.js 的安全问题</span></span></code></pre></div><h3 id="claude-自动调用" tabindex="-1">Claude 自动调用 <a class="header-anchor" href="#claude-自动调用" aria-label="Permalink to &quot;Claude 自动调用&quot;">​</a></h3><p>其实，当我们按照上面的结构在项目中配置好子代理之后，不需要显式指定code-reviewer。Claude 会自动选择使用 code-reviewer：</p><div class="language-plain vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">plain</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>用子代理帮我看看代码有没有安全问题</span></span></code></pre></div><p>但是下面这样说，有可能无法触发子代理。</p><div class="language-plain vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">plain</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>审查一下最近的改动 （因为没有明确提子代理）</span></span>
+<span class="line"><span>检查一下代码质量（因为没有明确提子代理）</span></span></code></pre></div><p><a class="image-link" href="https://raw.githubusercontent.com/qiangshuifish/note-website/note-website/ClaudeCode%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%AE%9E%E6%88%98/images/944205/b6a469640b413b64bb1c6e5cd9b37f3c.png" target="_blank" rel="noopener" title="点击查看原图"><img src="https://raw.githubusercontent.com/qiangshuifish/note-website/note-website/ClaudeCode%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%AE%9E%E6%88%98/images/944205/b6a469640b413b64bb1c6e5cd9b37f3c.png" alt="图片"></a></p><p>运行审查后，你会得到类似这样的报告：</p><div class="language-plain vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">plain</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>## Code Review Report</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>### Critical Issues</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>- [auth.js:7-8] Hardcoded credentials in source code</span></span>
+<span class="line"><span>  - SECRET_KEY and API_KEY are exposed in plain text</span></span>
+<span class="line"><span>  - These should be loaded from environment variables</span></span>
+<span class="line"><span>  - Anyone with code access can see these secrets</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>- [auth.js:68] Use of eval() with user input</span></span>
+<span class="line"><span>  - processUserConfig() uses eval() which allows code injection</span></span>
+<span class="line"><span>  - Attacker could execute arbitrary code</span></span>
+<span class="line"><span>  - Use JSON.parse() instead for config parsing</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>- [database.js:21-23] SQL Injection vulnerability</span></span>
+<span class="line"><span>  - findUser() directly concatenates username into SQL query</span></span>
+<span class="line"><span>  - Attacker could input: \`&#39; OR &#39;1&#39;=&#39;1\` to bypass authentication</span></span>
+<span class="line"><span>  - Use parameterized queries instead</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>- [database.js:27-34] Multiple SQL Injection points</span></span>
+<span class="line"><span>  - searchProducts() has two injection points</span></span>
+<span class="line"><span>  - Both searchTerm and category are directly interpolated</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>- [auth.js:24-27] Plain text password comparison</span></span>
+<span class="line"><span>  - checkPassword() compares passwords as plain strings</span></span>
+<span class="line"><span>  - Passwords should be hashed with bcrypt/argon2</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>### Warnings</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>- [auth.js:11-14] Weak password validation</span></span>
+<span class="line"><span>  - Only checks length &gt;= 6</span></span>
+<span class="line"><span>  - Should require complexity (uppercase, numbers, special chars)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>- [auth.js:50] Password included in response</span></span>
+<span class="line"><span>  - login() returns user.password in the response object</span></span>
+<span class="line"><span>  - Sensitive data should never be sent to client</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>- [database.js:54-55] Sensitive data logging</span></span>
+<span class="line"><span>  - createUser() logs the entire userData including password</span></span>
+<span class="line"><span>  - Passwords should never appear in logs</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>### Suggestions</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>- [auth.js:58-62] Missing token expiration check</span></span>
+<span class="line"><span>  - verifyToken() doesn&#39;t validate timestamp</span></span>
+<span class="line"><span>  - Tokens should have TTL (time-to-live)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>### Summary</span></span>
+<span class="line"><span>- Total issues: 11</span></span>
+<span class="line"><span>- Critical: 5 | Warnings: 3 | Suggestions: 3</span></span>
+<span class="line"><span>- Overall risk assessment: **HIGH**</span></span></code></pre></div><p><a class="image-link" href="https://raw.githubusercontent.com/qiangshuifish/note-website/note-website/ClaudeCode%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%AE%9E%E6%88%98/images/944205/0695f34b5503978aaa699dc5e22494ca.png" target="_blank" rel="noopener" title="点击查看原图"><img src="https://raw.githubusercontent.com/qiangshuifish/note-website/note-website/ClaudeCode%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%AE%9E%E6%88%98/images/944205/0695f34b5503978aaa699dc5e22494ca.png" alt="图片"></a></p><p>有的时候，我会在交互过程的提示语中，告诉Claude：“请把整理好的分析报告以Markdown的格式保存“，或者”生成分析日志并按照时戳命名后保存。”—— 你也可以增强子代理的配置文件让它直接这样做。</p><h2 id="第四步-验证权限边界" tabindex="-1">第四步：验证权限边界 <a class="header-anchor" href="#第四步-验证权限边界" aria-label="Permalink to &quot;第四步：验证权限边界&quot;">​</a></h2><p>现在，让我们验证审查器确实 <strong>无法修改</strong> 代码。</p><p>在 Claude Code 中说：</p><div class="language-plain vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">plain</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>让 code-reviewer 修复 auth.js 中的硬编码密钥问题</span></span></code></pre></div><p>你会看到类似这样的响应：</p><div class="language-plain vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">plain</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>code-reviewer 只有读取权限，无法修改文件。</span></span>
+<span class="line"><span>如需修复问题，请使用其他方式或直接请求修改。</span></span></code></pre></div><p><a class="image-link" href="https://raw.githubusercontent.com/qiangshuifish/note-website/note-website/ClaudeCode%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%AE%9E%E6%88%98/images/944205/9fyy8e469241050b86e88851b1553ef7.png" target="_blank" rel="noopener" title="点击查看原图"><img src="https://raw.githubusercontent.com/qiangshuifish/note-website/note-website/ClaudeCode%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%AE%9E%E6%88%98/images/944205/9fyy8e469241050b86e88851b1553ef7.png" alt="图片"></a></p><p><strong>这正是我们想要的行为！</strong> 审查器的职责是发现问题，不是解决问题。因此，我们能够确保code-reviewer的设计遵循了下述重要原则：</p><ol><li><p><strong>职责清晰</strong>：审查和修复是两个不同的阶段。</p></li><li><p><strong>风险控制</strong>：自动修复可能引入新问题。</p></li><li><p><strong>审计追踪</strong>：修改应该是显式的、可追踪的。</p></li><li><p><strong>团队协作</strong>：在真实项目中，审查者通常不是代码作者。</p></li></ol><h2 id="第五步-扩展审查维度" tabindex="-1">第五步：扩展审查维度 <a class="header-anchor" href="#第五步-扩展审查维度" aria-label="Permalink to &quot;第五步：扩展审查维度&quot;">​</a></h2><p>这个基础版本的审查器已经能发现很多问题了，当然你可以根据项目需求扩展到其它的审查维度。</p><p>如果你的项目使用 React，可以在配置中添加框架特定检查。</p><div class="language-plain vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">plain</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>### React Specific</span></span>
+<span class="line"><span>- Missing key props in lists</span></span>
+<span class="line"><span>- Unnecessary re-renders</span></span>
+<span class="line"><span>- Direct state mutation</span></span>
+<span class="line"><span>- Missing cleanup in useEffect</span></span>
+<span class="line"><span>- Prop drilling anti-pattern</span></span></code></pre></div><p>还可以添加如下的项目规范审查标准。</p><div class="language-plain vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">plain</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>### Team Conventions</span></span>
+<span class="line"><span>- File naming: should use kebab-case</span></span>
+<span class="line"><span>- Export style: should use named exports</span></span>
+<span class="line"><span>- Import order: third-party → internal → relative</span></span>
+<span class="line"><span>- Max file length: 300 lines</span></span></code></pre></div><p>也可以添加如下的合规性检查标准。</p><div class="language-plain vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">plain</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>### Compliance</span></span>
+<span class="line"><span>- PII data handling</span></span>
+<span class="line"><span>- GDPR consent checks</span></span>
+<span class="line"><span>- Audit logging requirements</span></span>
+<span class="line"><span>- Data retention policies</span></span></code></pre></div><h2 id="从代码审查到影响面分析——真实工程场景延伸" tabindex="-1">从代码审查到影响面分析——真实工程场景延伸 <a class="header-anchor" href="#从代码审查到影响面分析——真实工程场景延伸" aria-label="Permalink to &quot;从代码审查到影响面分析——真实工程场景延伸&quot;">​</a></h2><p>到这里，我们已经掌握了代码审查子代理的创建和使用。但如果你以为“只读型子代理”就只能做代码审查，那就把它想窄了。</p><p>让我分享一个课程留言区同学提到的 <strong>真实线上事故场景</strong>：</p><p>&gt; 他让 AI 按照 SDD 设计了存量系统中一个老功能的链路迭代，代码开发完成并上线了。但在线上，用户端 7 秒拿不到操作结果——爆雷了。 &gt; &gt; 原因是什么？AI 并不知道这条链路上的改动会影响到哪些下游服务，也不知道端用户的体验 SLA 是多少。代码本身没有 bug，但 <strong>全链路的影响面</strong> 被忽略了。</p><p>这个案例的本质是什么？ <strong>不是 AI 写错了代码，而是 AI 没有被赋予“在设计阶段审视影响面”的职责和上下文。</strong></p><h3 id="把工程经验翻译成子代理设计" tabindex="-1">把工程经验翻译成子代理设计 <a class="header-anchor" href="#把工程经验翻译成子代理设计" aria-label="Permalink to &quot;把工程经验翻译成子代理设计&quot;">​</a></h3><p>现在，让我们用前面学到的“痛点驱动设计”思维来分析这个场景。<a class="image-link" href="https://raw.githubusercontent.com/qiangshuifish/note-website/note-website/ClaudeCode%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%AE%9E%E6%88%98/images/944205/68fd5d69244018593c02df4dee8f2c9c.jpg" target="_blank" rel="noopener" title="点击查看原图"><img src="https://raw.githubusercontent.com/qiangshuifish/note-website/note-website/ClaudeCode%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%AE%9E%E6%88%98/images/944205/68fd5d69244018593c02df4dee8f2c9c.jpg" alt=""></a></p><h3 id="设计一个影响面分析子代理" tabindex="-1">设计一个影响面分析子代理 <a class="header-anchor" href="#设计一个影响面分析子代理" aria-label="Permalink to &quot;设计一个影响面分析子代理&quot;">​</a></h3><p>基于上述分析，我们可以设计这样一个子代理：</p><div class="language-plain vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">plain</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>---</span></span>
+<span class="line"><span>name: impact-analyzer</span></span>
+<span class="line"><span>description: Analyze the impact scope of code changes on the full call chain. Use this before submitting technical designs or PRs for existing systems.</span></span>
+<span class="line"><span>tools: Read, Grep, Glob, Bash</span></span>
+<span class="line"><span>model: sonnet</span></span>
+<span class="line"><span>permissionMode: plan</span></span>
+<span class="line"><span>skills:</span></span>
+<span class="line"><span>  - chain-knowledge          # 链路拓扑和 SLA 约束</span></span>
+<span class="line"><span>  - recent-incidents         # 近期事故记录（如有）</span></span>
+<span class="line"><span>---</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>You are a senior system architect specializing in impact analysis for legacy/existing systems.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>## Your Mission</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>When code changes are proposed for an existing system, analyze:</span></span>
+<span class="line"><span>1. Which call chains are affected by this change</span></span>
+<span class="line"><span>2. What downstream services may be impacted</span></span>
+<span class="line"><span>3. Whether any SLA/performance constraints could be violated</span></span>
+<span class="line"><span>4. What edge cases the change author might not have considered</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>## Analysis Process</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>1. **Read the changed files** to understand the modification</span></span>
+<span class="line"><span>2. **Trace call chains**: Use Grep to find all callers of modified functions/APIs</span></span>
+<span class="line"><span>3. **Check integration points**: Look for HTTP calls, message queue producers/consumers, database queries that touch affected tables</span></span>
+<span class="line"><span>4. **Cross-reference with preloaded chain knowledge**: Use the chain topology and SLA constraints that have been loaded into your context at startup</span></span>
+<span class="line"><span>5. **Assess SLA impact**: Flag any path where added latency or changed behavior could affect user-facing response times</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>## Output Format</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>\`\`\`markdown</span></span>
+<span class="line"><span>## Impact Analysis Report</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>### Changed Components</span></span>
+<span class="line"><span>- [FILE:LINE] Description of change</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>### Affected Call Chains</span></span>
+<span class="line"><span>- Chain 1: ServiceA → ServiceB → **ChangedModule** → ServiceC → UserEndpoint</span></span>
+<span class="line"><span>  - SLA risk: The added DB query may add ~200ms to a chain with 3s SLA budget</span></span>
+<span class="line"><span>  - Current budget usage: ~2.5s (estimated)</span></span>
+<span class="line"><span>  - Remaining headroom: ~500ms → may be insufficient after change</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>### Downstream Impact</span></span>
+<span class="line"><span>- [Service/Module] How it&#39;s affected</span></span>
+<span class="line"><span>  - Severity: HIGH/MEDIUM/LOW</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>### Unreviewed Dependencies</span></span>
+<span class="line"><span>- Components that depend on the changed interface but were not analyzed</span></span>
+<span class="line"><span>  - Reason: outside current repo / insufficient context</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>### Recommendations</span></span>
+<span class="line"><span>- [ ] Verify SLA headroom with load test</span></span>
+<span class="line"><span>- [ ] Notify downstream team X about interface change</span></span>
+<span class="line"><span>- [ ] Add timeout/circuit breaker for the new external call</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>##Important Constraints</span></span>
+<span class="line"><span>- You are READ-ONLY. Never suggest running modifications.</span></span>
+<span class="line"><span>- If you lack information about the full chain, explicitly say so. Don&#39;t guess.</span></span>
+<span class="line"><span>- Always flag when your analysis is incomplete due to missing cross-service context.</span></span></code></pre></div><h3 id="配合-skill-沉淀链路知识" tabindex="-1">配合 Skill 沉淀链路知识 <a class="header-anchor" href="#配合-skill-沉淀链路知识" aria-label="Permalink to &quot;配合 Skill 沉淀链路知识&quot;">​</a></h3><p>光有分析子代理还不够。同学在留言中提到了一个很关键的洞察：</p><blockquote><p>“对于存量系统，有时候维护一个你的接口在整个链路如何串联起来的知识库，这样 AI 去改动现有代码的时候，就知道帮你排查这个改动影响了什么链路。”</p></blockquote><p>这就是 Skill 的用武之地——把链路知识结构化沉淀下来。注意看上面 impact-analyzer 配置中的 <code>skills</code> 字段：</p><div class="language-plain vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">plain</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>skills:</span></span>
+<span class="line"><span>  - chain-knowledge          # 链路拓扑和 SLA 约束</span></span>
+<span class="line"><span>  - recent-incidents         # 近期事故记录（如有）</span></span></code></pre></div><p><a href="https://time.geekbang.org/column/article/943368" target="_blank" rel="noreferrer">第 3 讲</a> 已经介绍过，介绍的 <code>skills</code> 字段——子代理启动时，Claude Code 会把对应 Skill 的完整内容注入到子代理的上下文中。子代理不需要在分析过程中“去读”某个文件，链路知识在它“开始工作之前”就已经在脑子里了。</p><p>对比下面两种实现方式：</p><p><a class="image-link" href="https://raw.githubusercontent.com/qiangshuifish/note-website/note-website/ClaudeCode%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%AE%9E%E6%88%98/images/944205/acf4580449d3e5b45702f471a0df1300.jpg" target="_blank" rel="noopener" title="点击查看原图"><img src="https://raw.githubusercontent.com/qiangshuifish/note-website/note-website/ClaudeCode%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%AE%9E%E6%88%98/images/944205/acf4580449d3e5b45702f471a0df1300.jpg" alt=""></a></p><p>子代理 <strong>不会</strong> 自动继承主对话中可用的 Skill。你必须在 <code>skills</code> 字段中显式列出需要的 Skill 名称，它才会被注入。</p><p>下面是 <code>chain-knowledge</code> Skill 的内容示例：</p><div class="language-plain vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">plain</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span># .claude/skills/chain-knowledge.md</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>## 用户下单链路</span></span>
+<span class="line"><span>用户端App → API Gateway (SLA: 5s) → OrderService.createOrder() (SLA: 2s) → InventoryService.reserve() (SLA: 500ms) → PaymentService.preAuth() (SLA: 1s) → NotificationService.push() (async, 不阻塞主链路) → 返回订单确认</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>## 关键 SLA 约束</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>| 链路 | 端到端 SLA | 备注 |</span></span>
+<span class="line"><span>|------|-----------|------|</span></span>
+<span class="line"><span>| 用户下单 | 5s | 超时则展示&quot;处理中&quot;兜底页 |</span></span>
+<span class="line"><span>| 商品搜索 | 1s | P99 要求 |</span></span>
+<span class="line"><span>| 支付回调 | 30s | 异步可容忍 |</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>## 最近事故记录</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>- 2024-12: OrderService 增加风控调用，链路增加 800ms，触发 5s SLA 告警</span></span>
+<span class="line"><span>  - 根因：风控服务未配置超时，极端情况 3s+</span></span>
+<span class="line"><span>  - 修复：增加 500ms 超时 + 降级策略</span></span></code></pre></div><p>这样，当 <code>impact-analyzer</code> 子代理启动时，上述知识已经通过 <code>skills</code> 字段注入到上下文中。子代理可以直接：</p><ol><li><p>引用链路拓扑判断改动影响的路径</p></li><li><p>根据 SLA 约束判断改动是否可能超时</p></li><li><p>参考历史事故避免重蹈覆辙</p></li></ol><p><strong>这就是 SubAgent + Skill 的组合威力：子代理通过 <code>skills</code> 字段获得领域知识，通过工具获得分析能力。</strong> 知识注入是系统级的（不依赖 prompt 提示），分析能力是工具级的（受 <code>tools</code> 和 <code>permissionMode</code> 约束）。两者结合，才会让 AI 既知道又能做。</p><h2 id="工程决策-什么时候该创建子代理" tabindex="-1">工程决策：什么时候该创建子代理？ <a class="header-anchor" href="#工程决策-什么时候该创建子代理" aria-label="Permalink to &quot;工程决策：什么时候该创建子代理？&quot;">​</a></h2><p>学到这里，你可能会想，以后每个任务都搞个子代理？</p><p>当然不是。创建子代理是有成本的——需要设计、维护、调试。我来给你提供一个实用的决策框架。</p><h3 id="该创建子代理的场景" tabindex="-1">该创建子代理的场景 <a class="header-anchor" href="#该创建子代理的场景" aria-label="Permalink to &quot;该创建子代理的场景&quot;">​</a></h3><p><a class="image-link" href="https://raw.githubusercontent.com/qiangshuifish/note-website/note-website/ClaudeCode%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%AE%9E%E6%88%98/images/944205/bdbd2fb45b7406301448bfb25d57c3c7.jpg" target="_blank" rel="noopener" title="点击查看原图"><img src="https://raw.githubusercontent.com/qiangshuifish/note-website/note-website/ClaudeCode%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%AE%9E%E6%88%98/images/944205/bdbd2fb45b7406301448bfb25d57c3c7.jpg" alt=""></a></p><p>具体判断标准可以参考下表。</p><p><a class="image-link" href="https://raw.githubusercontent.com/qiangshuifish/note-website/note-website/ClaudeCode%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%AE%9E%E6%88%98/images/944205/a3yy35625e1842b7989939928616229a.jpg" target="_blank" rel="noopener" title="点击查看原图"><img src="https://raw.githubusercontent.com/qiangshuifish/note-website/note-website/ClaudeCode%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%AE%9E%E6%88%98/images/944205/a3yy35625e1842b7989939928616229a.jpg" alt=""></a></p><h3 id="不该创建子代理的场景" tabindex="-1">不该创建子代理的场景 <a class="header-anchor" href="#不该创建子代理的场景" aria-label="Permalink to &quot;不该创建子代理的场景&quot;">​</a></h3><ul><li><p><strong>一次性任务</strong>：直接在主对话中完成即可。</p></li><li><p><strong>简单的 prompt 模板</strong>：直接用 Skill 文件，不需要独立上下文和工具隔离。</p></li><li><p><strong>自动化触发动作</strong>：用 Hook，不需要 AI 分析判断。</p></li></ul><h3 id="我的亲身经历" tabindex="-1">我的亲身经历 <a class="header-anchor" href="#我的亲身经历" aria-label="Permalink to &quot;我的亲身经历&quot;">​</a></h3><p>分享一个我自己训练大模型时的例子。项目初期，日志分析就是在主对话里让 Claude 看一下 W&amp;B 截图、读一下训练 log。后来日志越来越多，项目结构越来越乱，主对话的上下文已经被训练输出淹没了。</p><p>这时我才开始思考：是不是该来一个专门负责日志分析的 SubAgent？把 500 行训练输出扔给它，让它在独立上下文中消化，只返回关键结论。</p><p>你看， <strong>这个决策是动态的</strong>。不是一开始就知道需要子代理，而是在工程实践中，当痛点足够明确时，才反推出“此处需要一个子代理”。但前提是——你需要先知道子代理的能力边界和设计方法，才能在那个时刻做出正确判断。</p><h2 id="本讲小结" tabindex="-1">本讲小结 <a class="header-anchor" href="#本讲小结" aria-label="Permalink to &quot;本讲小结&quot;">​</a></h2><p>好，至此，今天我们成功创建了第一个实战子代理——只读型代码审查员。技术层面的关键收获是子代理配置文件的完整结构（frontmatter + prompt），工具权限的精确控制（Read/Grep/Glob/Bash，无 Edit/Write），以及输出格式的规范化设计。</p><p>在工程层面，我们遵循最小权限原则的实践，采用审查与修复分离的工作流，确保输出格式清晰，同时确保了职责边界的重要性。</p><p>配置要点回顾如下：</p><div class="language-plain vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">plain</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>---</span></span>
+<span class="line"><span>name: code-reviewer</span></span>
+<span class="line"><span>description: Review code changes for quality, security, and best practices.</span></span>
+<span class="line"><span>tools: Read, Grep, Glob, Bash  # 注意：没有 Edit 和 Write</span></span>
+<span class="line"><span>model: sonnet</span></span>
+<span class="line"><span>---</span></span></code></pre></div><p><strong>最小权限原则</strong>：只给必要的工具，子代理没法越权干活。</p><div class="language-plain vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">plain</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span># 只给必要的工具</span></span>
+<span class="line"><span>tools: Read, Grep, Glob, Bash</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># 不给的工具</span></span>
+<span class="line"><span># Edit - 不需要编辑</span></span>
+<span class="line"><span># Write - 不需要创建文件</span></span></code></pre></div><p><strong>清晰的输出格式</strong>：规定输出格式确保结果易于阅读、问题位置精确、建议可操作。</p><div class="language-plain vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">plain</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>## Output Format</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>### Critical Issues</span></span>
+<span class="line"><span>- [FILE:LINE] Issue description</span></span>
+<span class="line"><span>  - Why it matters</span></span>
+<span class="line"><span>  - Suggested fix</span></span></code></pre></div><p><strong>问题的严重级别</strong>：根据代码问题严重程度指导下一步操作</p><div class="language-plain vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">plain</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>Critical → 必须立即修复（安全漏洞）</span></span>
+<span class="line"><span>Warnings → 应该修复（潜在风险）</span></span>
+<span class="line"><span>Suggestions → 可以改进（代码质量）</span></span></code></pre></div><p><strong>审查维度覆盖</strong>：从最重要的（安全）到次要的（代码风格），确保优先级正确。</p><div class="language-plain vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">plain</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>Security → Performance → Maintainability → Best Practices</span></span></code></pre></div><p>有了这个只读审查器，你可以建立这样的工作流：</p><p><a class="image-link" href="https://raw.githubusercontent.com/qiangshuifish/note-website/note-website/ClaudeCode%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%AE%9E%E6%88%98/images/944205/beb26aaee6efb31982bca643eac6cb4f.jpg" target="_blank" rel="noopener" title="点击查看原图"><img src="https://raw.githubusercontent.com/qiangshuifish/note-website/note-website/ClaudeCode%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%AE%9E%E6%88%98/images/944205/beb26aaee6efb31982bca643eac6cb4f.jpg" alt=""></a></p><p>这里的关键点我们已经反复强调，审查和修复是分离的两个步骤，审查器只负责发现问题。</p><p>同时，我们从评论区中得到启发，将视角从“代码是否有问题”，提升到“ <strong>这个改动会影响谁</strong>”。 很多线上事故并非代码 bug，而是影响面被低估：下游链路、SLA 预算、历史事故经验没有被纳入设计判断。</p><p>因此我们引入 impact-analyzer 子代理： 只读、可审计，专注分析调用链、下游影响与 SLA 风险； 并通过 Skill 把链路拓扑与历史事故提前注入上下文。这再次印证一个核心原则： <strong>子代理不是一开始就需要的，而是在工程痛点清晰后反推出来的设计选择。</strong></p><p>因此，如果你愿意，我也非常鼓励你在留言区分享真实工程场景，比如：</p><ul><li><p>有没有遇到过 “代码本身没 bug，但上线后还是炸了” 的经历？</p></li><li><p>有没有遇到过 AI 帮你“好心修复”，结果反而引入新问题 的情况？</p></li><li><p>在你们的项目里，最容易被忽略的影响面通常在哪里？数据库？缓存？下游服务？用户体验？</p></li></ul><p>你不需要给出完整答案，哪怕只是一两句话的场景描述都非常有价值。我会在后续内容中，优先挑选这些真实案例，我们一起探讨、一起拆解 <strong>这个地方，值不值得一个 SubAgent？应该怎么设计它的职责和边界？</strong> 这门课并不是单向讲解，而是希望和你一起，把工程经验一步步“翻译”为可复用的 Agent 设计模式。</p><h2 id="思考题" tabindex="-1">思考题 <a class="header-anchor" href="#思考题" aria-label="Permalink to &quot;思考题&quot;">​</a></h2><ol><li><p>请你动手实操：进入 projects/01-code-reviewer/ 目录，在命令行中输入 “让 code-reviewer 审查 src/ 目录”，然后查看审查报告，数一数它发现了多少问题，尝试让审查器修复一个问题，观察它的行为。</p></li><li><p>如果要创建一个“数据库 schema 审查器”，你会配置哪些工具？它应该能“读”什么，不能“改”什么？</p></li><li><p>除了安全和性能，你的项目中还有哪些值得纳入自动审查的维度？</p></li><li><p>我在上面给出了代码审查工作流，你能否画出存量系统的设计阶段审查工作流？</p></li></ol><p>下一讲我们将处理另一类重要场景： <strong>高噪声输出任务</strong>。我们会创建测试运行器和日志分析器两个子代理，学习如何把 500 行输出浓缩成 5 行结论。</p><p>欢迎你在留言区和我交流讨论。如果这一讲对你有启发，别忘了分享给身边更多朋友。</p>`,152)])])}const g=n(i,[["render",l]]);export{u as __pageData,g as default};
