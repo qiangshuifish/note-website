@@ -1,86 +1,82 @@
 <script setup lang="ts">
-import { ref, computed, onMounted, nextTick } from 'vue';
+import { ref, computed, nextTick } from 'vue';
 import { withBase } from 'vitepress';
-import { navItems } from '../../sidebar';
+import { courseCategories, navItems } from '../../sidebar';
 
 interface Course {
   text: string;
   link: string;
   count: number;
+  category: string;
+  categoryLabel: string;
+  tags: string[];
 }
 
 const allCourses: Course[] = navItems.map(item => ({
   text: item.text,
   link: item.link,
   count: item.count,
+  category: item.category || 'other',
+  categoryLabel: item.categoryLabel || '其他',
+  tags: item.tags || [item.categoryLabel || '其他'],
 }));
 
 const totalArticles = computed(() => allCourses.reduce((sum, c) => sum + c.count, 0));
 
 const searchQuery = ref('');
 const activeCategory = ref<string | null>(null);
-const catalogRef = ref<HTMLElement | null>(null);
 
-// 知识领域分类（关键词匹配）
-const categories: { key: string; label: string; match: (name: string) => boolean }[] = [
-  { key: 'ai', label: 'AI 与智能体', match: n => /ClaudeCode|LLM|RAG|Agent|智能体|人工智能|机器学习|深度学习|推荐系统|NLP/.test(n) },
-  { key: 'frontend', label: '前端开发', match: n => /前端|React|Vue|JavaScript|浏览器|可视化|Flutter|iOS|Android|WebAssembly/.test(n) },
-  { key: 'backend', label: '后端开发', match: n => /Java|Go|Spring|Python|Kafka|Redis|MySQL|RPC|Tomcat|Jetty|后端/.test(n) },
-  { key: 'database', label: '数据库', match: n => /MySQL|Redis|etcd|数据库|SQL|Kafka|消息队列|Kafka/.test(n) },
-  { key: 'infra', label: '基础设施', match: n => /Kubernetes|容器|Docker|Linux|Nginx|OpenResty|Serverless|SRE|运维|DevOps|持续交付|CI\/?CD/.test(n) },
-  { key: 'architecture', label: '架构与设计', match: n => /架构|DDD|微服务|分布式|中台|设计模式|RPC|系统|性能|调优|压测/.test(n) },
-  { key: 'algo', label: '算法与底层', match: n => /算法|数据结构|内存|编译原理|操作系统|V8|网络协议|Linux操作系统|动态规划/.test(n) },
-  { key: 'security', label: '安全', match: n => /安全|密码|OAuth|区块链/.test(n) },
-  { key: 'management', label: '技术管理', match: n => /管理|团队|产品|敏捷|项目管理|OKR|领导力|CTO|晋升|复盘/.test(n) },
-  { key: 'growth', label: '个人成长', match: n => /财富|写作|跑步|恋爱|摄影|音乐|读书|学习高手|诗|画|故事|职场|英语|跑步|阅读|测试|财富|10x/.test(n) },
-];
-
-// 为每门课程分配分类
-function getCourseCategory(course: Course): string {
-  for (const cat of categories) {
-    if (cat.match(course.text)) return cat.key;
+const categoryList = computed(() => {
+  const categories = [...courseCategories];
+  if (allCourses.some(course => course.category === 'other')) {
+    categories.push({ key: 'other', label: '其他' });
   }
-  return 'other';
-}
+  return categories;
+});
 
 // 分类统计
 const categoryStats = computed(() => {
   const stats: { key: string; label: string; count: number; articles: number }[] = [
     { key: 'all', label: '全部', count: allCourses.length, articles: totalArticles.value },
   ];
-  for (const cat of categories) {
-    const courses = allCourses.filter(c => getCourseCategory(c) === cat.key);
+  for (const cat of categoryList.value) {
+    const courses = allCourses.filter(c => c.category === cat.key);
     if (courses.length > 0) {
       const arts = courses.reduce((s, c) => s + c.count, 0);
       stats.push({ key: cat.key, label: cat.label, count: courses.length, articles: arts });
     }
-  }
-  const others = allCourses.filter(c => getCourseCategory(c) === 'other');
-  if (others.length > 0) {
-    const arts = others.reduce((s, c) => s + c.count, 0);
-    stats.push({ key: 'other', label: '其他', count: others.length, articles: arts });
   }
   return stats;
 });
 
 // 按分类分组
 const groupedCourses = computed(() => {
-  const groups: { key: string; label: string; courses: Course[] }[] = [];
+  const groups: { key: string; label: string; courses: Course[]; articles: number }[] = [];
   if (activeCategory.value === null || activeCategory.value === 'all') {
     for (const cat of categoryStats.value) {
       if (cat.key === 'all') continue;
-      const courses = allCourses.filter(c => getCourseCategory(c) === cat.key);
+      const courses = allCourses.filter(c => c.category === cat.key);
       const filtered = searchQuery.value ? courses.filter(c => matchesSearch(c)) : courses;
       if (filtered.length > 0) {
-        groups.push({ key: cat.key, label: cat.label, courses: filtered });
+        groups.push({
+          key: cat.key,
+          label: cat.label,
+          courses: filtered,
+          articles: filtered.reduce((sum, course) => sum + course.count, 0),
+        });
       }
     }
   } else {
-    const courses = allCourses.filter(c => getCourseCategory(c) === activeCategory.value);
+    const courses = allCourses.filter(c => c.category === activeCategory.value);
     const filtered = searchQuery.value ? courses.filter(c => matchesSearch(c)) : courses;
     if (filtered.length > 0) {
       const catLabel = categoryStats.value.find(s => s.key === activeCategory.value)?.label || '';
-      groups.push({ key: activeCategory.value, label: catLabel, courses: filtered });
+      groups.push({
+        key: activeCategory.value,
+        label: catLabel,
+        courses: filtered,
+        articles: filtered.reduce((sum, course) => sum + course.count, 0),
+      });
     }
   }
   return groups;
@@ -90,7 +86,11 @@ const groupedCourses = computed(() => {
 function matchesSearch(course: Course): boolean {
   const q = searchQuery.value.trim().toLowerCase();
   if (!q) return true;
-  return course.text.toLowerCase().includes(q);
+  return [
+    course.text,
+    course.categoryLabel,
+    ...course.tags,
+  ].some(text => text.toLowerCase().includes(q));
 }
 
 const visibleCount = computed(() => {
@@ -117,6 +117,10 @@ function sizeLabel(count: number): string {
   if (count >= 30) return '专题课';
   if (count >= 15) return '精讲';
   return '入门';
+}
+
+function displayTags(course: Course): string[] {
+  return course.tags.filter(tag => tag !== course.categoryLabel).slice(0, 2);
 }
 </script>
 
@@ -178,7 +182,7 @@ function sizeLabel(count: number): string {
               <h3 class="group-header">
                 <span class="group-dot" />
                 <span class="group-title">{{ group.label }}</span>
-                <span class="group-count">{{ group.courses.length }} 门</span>
+                <span class="group-count">{{ group.courses.length }} 门 · {{ group.articles }} 篇</span>
               </h3>
               <div class="group-grid">
                 <a
@@ -189,9 +193,18 @@ function sizeLabel(count: number): string {
                 >
                   <div class="course-info">
                     <h4 class="course-title">{{ course.text }}</h4>
-                    <span class="course-size">{{ sizeLabel(course.count) }}</span>
+                    <div class="course-meta">
+                      <span class="course-size">{{ sizeLabel(course.count) }}</span>
+                      <span
+                        v-for="tag in displayTags(course)"
+                        :key="tag"
+                        class="course-tag"
+                      >
+                        {{ tag }}
+                      </span>
+                    </div>
                   </div>
-                  <span class="course-count">{{ course.count }}</span>
+                  <span class="course-count">{{ course.count }} 篇</span>
                 </a>
               </div>
             </div>
@@ -424,7 +437,7 @@ function sizeLabel(count: number): string {
 
 .course-card {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   padding: 14px 16px;
   border: 1px solid var(--vp-c-divider);
@@ -433,7 +446,7 @@ function sizeLabel(count: number): string {
   transition: all 0.2s ease;
   background: var(--vp-c-bg);
   gap: 12px;
-  min-height: 52px;
+  min-height: 82px;
 }
 
 .course-card:hover {
@@ -445,8 +458,9 @@ function sizeLabel(count: number): string {
 
 .course-info {
   display: flex;
-  align-items: center;
-  gap: 8px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
   min-width: 0;
   flex: 1;
 }
@@ -457,9 +471,10 @@ function sizeLabel(count: number): string {
   color: var(--vp-c-text-1);
   margin: 0;
   line-height: 1.4;
-  white-space: nowrap;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   overflow: hidden;
-  text-overflow: ellipsis;
   transition: color 0.2s;
 }
 
@@ -467,7 +482,16 @@ function sizeLabel(count: number): string {
   color: var(--vp-c-brand-1);
 }
 
-.course-size {
+.course-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+.course-size,
+.course-tag {
   font-size: 10px;
   font-weight: 600;
   color: var(--vp-c-text-3);
@@ -478,9 +502,19 @@ function sizeLabel(count: number): string {
   flex-shrink: 0;
 }
 
+.course-tag {
+  background: transparent;
+  border: 1px solid var(--vp-c-divider);
+}
+
 .course-card:hover .course-size {
   background: var(--vp-c-brand-1);
   color: #fff;
+}
+
+.course-card:hover .course-tag {
+  border-color: var(--vp-c-brand-1);
+  color: var(--vp-c-brand-1);
 }
 
 .course-count {
@@ -489,8 +523,9 @@ function sizeLabel(count: number): string {
   color: var(--vp-c-text-3);
   font-family: 'Noto Sans SC', sans-serif;
   flex-shrink: 0;
-  min-width: 20px;
+  min-width: 42px;
   text-align: right;
+  padding-top: 1px;
 }
 
 .course-card:hover .course-count {

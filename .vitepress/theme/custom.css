@@ -222,6 +222,36 @@ html {
   color: var(--vp-c-text-1);
 }
 
+/* ---------- 文章右侧目录：作为长文阅读的固定定位器 ---------- */
+.VPDocAsideOutline.has-outline .content {
+  border-left-color: var(--vp-c-divider);
+  padding-left: 18px;
+}
+
+.VPDocAsideOutline.has-outline .outline-title {
+  margin-bottom: 6px;
+  color: var(--vp-c-text-1);
+  font-size: 13px;
+  letter-spacing: 0;
+}
+
+.VPDocAsideOutline.has-outline .outline-marker {
+  background: var(--vp-c-brand-1);
+}
+
+.VPDocAsideOutline.has-outline .outline-link {
+  border-bottom: 0;
+  border-radius: 4px;
+  color: var(--vp-c-text-2);
+  line-height: 28px;
+  white-space: normal;
+}
+
+.VPDocAsideOutline.has-outline .outline-link:hover,
+.VPDocAsideOutline.has-outline .outline-link.active {
+  color: var(--vp-c-brand-1);
+}
+
 /* ---------- Markdown 内容优化 ---------- */
 
 /* 引用块：左侧琥珀竖线 + 淡色背景 */

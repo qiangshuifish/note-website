@@ -6,7 +6,7 @@
   "scripts": {
     "sidebar:gen": "tsx scripts/generate-sidebar.mts",
     "docs:dev": "tsx scripts/generate-sidebar.mts && vitepress dev",
-    "docs:build": "tsx scripts/generate-sidebar.mts && vitepress build",
+    "docs:build": "tsx scripts/generate-sidebar.mts && NODE_OPTIONS=\"${NODE_OPTIONS:---max-old-space-size=12288}\" vitepress build",
     "docs:preview": "vitepress preview",
     "deploy": "bash scripts/deploy.sh"
   },

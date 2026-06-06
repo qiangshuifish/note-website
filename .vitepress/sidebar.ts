@@ -2682,8 +2682,8 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/JavaScript核心原理解析/04-exportdefaultfunction(){}：你无法导出一个匿名函数表达式"
     },
     {
-      "text": "for(letxof[1,2,3])...：for循环并不比使用函数递归节省开销",
-      "link": "/JavaScript核心原理解析/05-for(letxof[1,2,3])...：for循环并不比使用函数递归节省开销"
+      "text": "for(letxof［1,2,3］)...：for循环并不比使用函数递归节省开销",
+      "link": "/JavaScript核心原理解析/05-for(letxof［1,2,3］)...：for循环并不比使用函数递归节省开销"
     },
     {
       "text": "x-breakx;搞懂如何在循环外使用break，方知语句执行真解",
@@ -2726,8 +2726,8 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/JavaScript核心原理解析/15-returnObject.create(new.target.prototype)：做框架设计的基本功：写一个根类"
     },
     {
-      "text": "[a,b]={a,b}：让你从一行代码看到对象的本质",
-      "link": "/JavaScript核心原理解析/16-[a,b]={a,b}：让你从一行代码看到对象的本质"
+      "text": "［a,b］={a,b}：让你从一行代码看到对象的本质",
+      "link": "/JavaScript核心原理解析/16-［a,b］={a,b}：让你从一行代码看到对象的本质"
     },
     {
       "text": "Object.setPrototypeOf(x,null)：连BrendanEich都认错，但null值还活着",
@@ -4828,8 +4828,8 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/OpenResty从入门到实战/04-如何管理第三方包？从包管理工具luarocks和opm说起"
     },
     {
-      "text": "[视频]opm项目导读",
-      "link": "/OpenResty从入门到实战/05-[视频]opm项目导读"
+      "text": "［视频］opm项目导读",
+      "link": "/OpenResty从入门到实战/05-［视频］opm项目导读"
     },
     {
       "text": "OpenResty中用到的NGINX知识",
@@ -4860,8 +4860,8 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/OpenResty从入门到实战/12-高手秘诀：识别Lua的独有概念和坑"
     },
     {
-      "text": "[视频]实战：基于FFI实现的lua-resty-lrucache",
-      "link": "/OpenResty从入门到实战/13-[视频]实战：基于FFI实现的lua-resty-lrucache"
+      "text": "［视频］实战：基于FFI实现的lua-resty-lrucache",
+      "link": "/OpenResty从入门到实战/13-［视频］实战：基于FFI实现的lua-resty-lrucache"
     },
     {
       "text": "答疑（一）：Lua规则和NGINX配置文件产生冲突怎么办？",
@@ -4896,12 +4896,12 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/OpenResty从入门到实战/21-带你玩转时间、正则表达式等常用API"
     },
     {
-      "text": "[视频]从一个安全漏洞说起，探寻API性能和安全的平衡",
-      "link": "/OpenResty从入门到实战/22-[视频]从一个安全漏洞说起，探寻API性能和安全的平衡"
+      "text": "［视频］从一个安全漏洞说起，探寻API性能和安全的平衡",
+      "link": "/OpenResty从入门到实战/22-［视频］从一个安全漏洞说起，探寻API性能和安全的平衡"
     },
     {
-      "text": "[视频]导读lua-resty-requests：优秀的lua-resty-是如何编写的？",
-      "link": "/OpenResty从入门到实战/23-[视频]导读lua-resty-requests：优秀的lua-resty-是如何编写的？"
+      "text": "［视频］导读lua-resty-requests：优秀的lua-resty-是如何编写的？",
+      "link": "/OpenResty从入门到实战/23-［视频］导读lua-resty-requests：优秀的lua-resty-是如何编写的？"
     },
     {
       "text": "实战：处理四层流量，实现MemcachedServer",
@@ -4948,8 +4948,8 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/OpenResty从入门到实战/34-特别放送：OpenResty编码指南"
     },
     {
-      "text": "[视频]实际项目中的性能优化：ingress-nginx中的几个PR解读",
-      "link": "/OpenResty从入门到实战/35-[视频]实际项目中的性能优化：ingress-nginx中的几个PR解读"
+      "text": "［视频］实际项目中的性能优化：ingress-nginx中的几个PR解读",
+      "link": "/OpenResty从入门到实战/35-［视频］实际项目中的性能优化：ingress-nginx中的几个PR解读"
     },
     {
       "text": "盘点OpenResty的各种调试手段",
@@ -4960,8 +4960,8 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/OpenResty从入门到实战/37-systemtap-toolkit和stapxx：如何用数据搞定“疑难杂症”？"
     },
     {
-      "text": "[视频]巧用wrk和火焰图，科学定位性能瓶颈",
-      "link": "/OpenResty从入门到实战/38-[视频]巧用wrk和火焰图，科学定位性能瓶颈"
+      "text": "［视频］巧用wrk和火焰图，科学定位性能瓶颈",
+      "link": "/OpenResty从入门到实战/38-［视频］巧用wrk和火焰图，科学定位性能瓶颈"
     },
     {
       "text": "高性能的关键：shareddict缓存和lru缓存",
@@ -12444,8 +12444,8 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/如何成为学习高手/17｜如何合理地制订计划？"
     },
     {
-      "text": "如何保证100%完成你制订的计划？",
-      "link": "/如何成为学习高手/18｜如何保证100%25完成你制订的计划？"
+      "text": "如何保证100％完成你制订的计划？",
+      "link": "/如何成为学习高手/18｜如何保证100％完成你制订的计划？"
     },
     {
       "text": "如何高效完成复杂艰难的、不喜欢的任务？",
@@ -13944,8 +13944,8 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/性能优化高手课/27-解决一个互斥问题，系统并发用户数提升了10倍！"
     },
     {
-      "text": "Web服务业务代码一行不动，性能提升20%，怎么做到的？",
-      "link": "/性能优化高手课/28-Web服务业务代码一行不动，性能提升20%25，怎么做到的？"
+      "text": "Web服务业务代码一行不动，性能提升20％，怎么做到的？",
+      "link": "/性能优化高手课/28-Web服务业务代码一行不动，性能提升20％，怎么做到的？"
     },
     {
       "text": "结束语-千里之行，始于足下，你已踏上修炼之道！",
@@ -18554,8 +18554,8 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/数据分析思维课/04-随机对照试验：章鱼保罗真的是“预言帝”么？"
     },
     {
-      "text": "直方图与幂分布：为什么全世界1%的人掌握着50%的财富？",
-      "link": "/数据分析思维课/05-直方图与幂分布：为什么全世界1%25的人掌握着50%25的财富？"
+      "text": "直方图与幂分布：为什么全世界1％的人掌握着50％的财富？",
+      "link": "/数据分析思维课/05-直方图与幂分布：为什么全世界1％的人掌握着50％的财富？"
     },
     {
       "text": "数据分布：房子应该是买贵的还是买便宜的？",
@@ -19766,8 +19766,8 @@ export const sidebar: DefaultTheme.Sidebar = {
   ],
   "/浏览器工作原理与实践/": [
     {
-      "text": "开篇词-参透了浏览器的工作原理，你就能解决80%的前端难题",
-      "link": "/浏览器工作原理与实践/开篇词-参透了浏览器的工作原理，你就能解决80%25的前端难题"
+      "text": "开篇词-参透了浏览器的工作原理，你就能解决80％的前端难题",
+      "link": "/浏览器工作原理与实践/开篇词-参透了浏览器的工作原理，你就能解决80％的前端难题"
     },
     {
       "text": "Chrome架构：仅仅打开了1个页面，为什么有4个进程？",
@@ -29270,8 +29270,8 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/陈天·Rust编程第一课/15｜数据结构：这些浓眉大眼的结构竟然都是智能指针？"
     },
     {
-      "text": "数据结构：Vec-T-、&[T]、Box-[T]-，你真的了解集合容器么？",
-      "link": "/陈天·Rust编程第一课/16｜数据结构：Vec-T-、&[T]、Box-[T]-，你真的了解集合容器么？"
+      "text": "数据结构：Vec-T-、&［T］、Box-［T］-，你真的了解集合容器么？",
+      "link": "/陈天·Rust编程第一课/16｜数据结构：Vec-T-、&［T］、Box-［T］-，你真的了解集合容器么？"
     },
     {
       "text": "数据结构：软件系统核心部件哈希表，内存如何布局？",
@@ -30510,920 +30510,2232 @@ export const sidebar: DefaultTheme.Sidebar = {
   ]
 };
 
+export const courseCategories = [
+  {
+    "key": "ai",
+    "label": "AI 与数据智能"
+  },
+  {
+    "key": "frontend",
+    "label": "前端与客户端"
+  },
+  {
+    "key": "backend",
+    "label": "后端与中间件"
+  },
+  {
+    "key": "database",
+    "label": "数据库与存储"
+  },
+  {
+    "key": "infra",
+    "label": "云原生与基础设施"
+  },
+  {
+    "key": "architecture",
+    "label": "架构与分布式"
+  },
+  {
+    "key": "foundation",
+    "label": "算法与计算机基础"
+  },
+  {
+    "key": "security",
+    "label": "安全与区块链"
+  },
+  {
+    "key": "quality",
+    "label": "工程效能与测试"
+  },
+  {
+    "key": "product",
+    "label": "产品与商业"
+  },
+  {
+    "key": "management",
+    "label": "技术管理与职场"
+  },
+  {
+    "key": "growth",
+    "label": "个人成长与表达"
+  }
+];
+
 export const navItems = [
   {
     "text": "10x程序员工作法",
     "link": "/10x程序员工作法/开篇词-程序员解决的问题，大多不是程序问题",
-    "count": 68
+    "count": 68,
+    "category": "quality",
+    "categoryLabel": "工程效能与测试",
+    "tags": [
+      "工程效能与测试",
+      "产品与商业",
+      "技术管理与职场"
+    ]
   },
   {
     "text": "A-B测试从0到1",
     "link": "/A-B测试从0到1/开篇词｜用好A-B测试，你得这么学",
-    "count": 20
+    "count": 20,
+    "category": "quality",
+    "categoryLabel": "工程效能与测试",
+    "tags": [
+      "工程效能与测试",
+      "技术管理与职场",
+      "产品与商业"
+    ]
   },
   {
     "text": "AI技术内参",
     "link": "/AI技术内参/开篇词-你的360度人工智能信息助理",
-    "count": 166
+    "count": 166,
+    "category": "ai",
+    "categoryLabel": "AI 与数据智能",
+    "tags": [
+      "AI 与数据智能",
+      "算法与计算机基础",
+      "技术管理与职场"
+    ]
   },
   {
     "text": "Android开发高手课",
     "link": "/Android开发高手课/开篇词-焦虑的移动开发者该如何破局？",
-    "count": 62
+    "count": 62,
+    "category": "frontend",
+    "categoryLabel": "前端与客户端",
+    "tags": [
+      "前端与客户端",
+      "工程效能与测试",
+      "云原生与基础设施"
+    ]
   },
   {
     "text": "ClaudeCode企业级全链路开发实战",
     "link": "/ClaudeCode企业级全链路开发实战/开篇词｜一个人用ClaudeCode造一个简版Dify，需要多久？",
-    "count": 36
+    "count": 36,
+    "category": "ai",
+    "categoryLabel": "AI 与数据智能",
+    "tags": [
+      "AI 与数据智能",
+      "架构与分布式",
+      "产品与商业"
+    ]
   },
   {
     "text": "ClaudeCode企业级老项目改造实战",
     "link": "/ClaudeCode企业级老项目改造实战/开篇词｜怎么用ClaudeCode改好一个跑了几年的老项目？",
-    "count": 20
+    "count": 20,
+    "category": "ai",
+    "categoryLabel": "AI 与数据智能",
+    "tags": [
+      "AI 与数据智能",
+      "工程效能与测试",
+      "产品与商业"
+    ]
   },
   {
     "text": "ClaudeCode工程化实战",
     "link": "/ClaudeCode工程化实战/开篇词｜共生而非替代：极客和AI的共舞",
-    "count": 33
+    "count": 33,
+    "category": "ai",
+    "categoryLabel": "AI 与数据智能",
+    "tags": [
+      "AI 与数据智能",
+      "架构与分布式",
+      "安全与区块链"
+    ]
   },
   {
     "text": "DDD实战课",
     "link": "/DDD实战课/开篇词-学好了DDD，你能做什么？",
-    "count": 26
+    "count": 26,
+    "category": "architecture",
+    "categoryLabel": "架构与分布式",
+    "tags": [
+      "架构与分布式",
+      "产品与商业",
+      "工程效能与测试"
+    ]
   },
   {
     "text": "DevOps实战笔记",
     "link": "/DevOps实战笔记/开篇词-从默默无闻到风靡全球，DevOps究竟有什么魔力？",
-    "count": 41
+    "count": 41,
+    "category": "infra",
+    "categoryLabel": "云原生与基础设施",
+    "tags": [
+      "云原生与基础设施",
+      "技术管理与职场",
+      "工程效能与测试"
+    ]
   },
   {
     "text": "Flutter核心技术与实战",
     "link": "/Flutter核心技术与实战/开篇词-为什么每一位大前端从业者都应该学习Flutter？",
-    "count": 48
+    "count": 48,
+    "category": "frontend",
+    "categoryLabel": "前端与客户端",
+    "tags": [
+      "前端与客户端",
+      "技术管理与职场",
+      "工程效能与测试"
+    ]
   },
   {
     "text": "Go并发编程实战课",
     "link": "/Go并发编程实战课/开篇词-想吃透Go并发编程，你得这样学！",
-    "count": 22
+    "count": 22,
+    "category": "backend",
+    "categoryLabel": "后端与中间件",
+    "tags": [
+      "后端与中间件",
+      "架构与分布式",
+      "AI 与数据智能"
+    ]
   },
   {
     "text": "Go语言核心36讲",
     "link": "/Go语言核心36讲/开篇词-跟着学，你也能成为Go语言高手",
-    "count": 55
+    "count": 55,
+    "category": "backend",
+    "categoryLabel": "后端与中间件",
+    "tags": [
+      "后端与中间件",
+      "工程效能与测试",
+      "AI 与数据智能"
+    ]
   },
   {
     "text": "Go语言项目开发实战",
     "link": "/Go语言项目开发实战/开篇词-从0开始搭建一个企业级Go应用",
-    "count": 61
+    "count": 61,
+    "category": "backend",
+    "categoryLabel": "后端与中间件",
+    "tags": [
+      "后端与中间件",
+      "产品与商业",
+      "架构与分布式"
+    ]
   },
   {
     "text": "JavaScript核心原理解析",
     "link": "/JavaScript核心原理解析/开篇词-如何解决语言问题？",
-    "count": 28
+    "count": 28,
+    "category": "frontend",
+    "categoryLabel": "前端与客户端",
+    "tags": [
+      "前端与客户端",
+      "后端与中间件",
+      "产品与商业"
+    ]
   },
   {
     "text": "Java业务开发常见错误100例",
     "link": "/Java业务开发常见错误100例/开篇词-业务代码真的会有这么多坑？",
-    "count": 48
+    "count": 48,
+    "category": "backend",
+    "categoryLabel": "后端与中间件",
+    "tags": [
+      "后端与中间件",
+      "数据库与存储",
+      "产品与商业"
+    ]
   },
   {
     "text": "Java并发编程实战",
     "link": "/Java并发编程实战/开篇词-你为什么需要学习并发编程？",
-    "count": 51
+    "count": 51,
+    "category": "backend",
+    "categoryLabel": "后端与中间件",
+    "tags": [
+      "后端与中间件",
+      "架构与分布式",
+      "数据库与存储"
+    ]
   },
   {
     "text": "Java性能调优实战",
     "link": "/Java性能调优实战/开篇词-怎样才能做好性能调优？",
-    "count": 49
+    "count": 49,
+    "category": "architecture",
+    "categoryLabel": "架构与分布式",
+    "tags": [
+      "架构与分布式",
+      "后端与中间件",
+      "数据库与存储"
+    ]
   },
   {
     "text": "Java核心技术面试精讲",
     "link": "/Java核心技术面试精讲/开篇词-以面试题为切入点，有效提升你的Java内功",
-    "count": 44
+    "count": 44,
+    "category": "backend",
+    "categoryLabel": "后端与中间件",
+    "tags": [
+      "后端与中间件",
+      "技术管理与职场",
+      "架构与分布式"
+    ]
   },
   {
     "text": "Kafka核心技术与实战",
     "link": "/Kafka核心技术与实战/开篇词-为什么要学习Kafka？",
-    "count": 47
+    "count": 47,
+    "category": "backend",
+    "categoryLabel": "后端与中间件",
+    "tags": [
+      "后端与中间件",
+      "云原生与基础设施",
+      "技术管理与职场"
+    ]
   },
   {
     "text": "Kafka核心源码解读",
     "link": "/Kafka核心源码解读/开篇词-阅读源码，逐渐成了职业进阶道路上的“必选项”",
-    "count": 44
+    "count": 44,
+    "category": "backend",
+    "categoryLabel": "后端与中间件",
+    "tags": [
+      "后端与中间件",
+      "技术管理与职场",
+      "数据库与存储"
+    ]
   },
   {
     "text": "LLM自主智能体应用实战课",
     "link": "/LLM自主智能体应用实战课/开篇词｜天作之合：LLM助力业务流程自动化",
-    "count": 26
+    "count": 26,
+    "category": "ai",
+    "categoryLabel": "AI 与数据智能",
+    "tags": [
+      "AI 与数据智能",
+      "产品与商业",
+      "架构与分布式"
+    ]
   },
   {
     "text": "Linux内核技术实战课",
     "link": "/Linux内核技术实战课/开篇词-如何让Linux内核更好地服务应用程序？",
-    "count": 26
+    "count": 26,
+    "category": "infra",
+    "categoryLabel": "云原生与基础设施",
+    "tags": [
+      "云原生与基础设施",
+      "算法与计算机基础",
+      "架构与分布式"
+    ]
   },
   {
     "text": "Linux性能优化实战",
     "link": "/Linux性能优化实战/开篇词-别再让Linux性能问题成为你的绊脚石",
-    "count": 65
+    "count": 65,
+    "category": "infra",
+    "categoryLabel": "云原生与基础设施",
+    "tags": [
+      "云原生与基础设施",
+      "架构与分布式",
+      "算法与计算机基础"
+    ]
   },
   {
     "text": "MySQL实战45讲",
     "link": "/MySQL实战45讲/开篇词-这一次，让我们一起来搞懂MySQL",
-    "count": 49
+    "count": 49,
+    "category": "database",
+    "categoryLabel": "数据库与存储",
+    "tags": [
+      "数据库与存储",
+      "架构与分布式",
+      "云原生与基础设施"
+    ]
   },
   {
     "text": "MySQL必知必会",
     "link": "/MySQL必知必会/开篇词-在实战中学习，是解锁MySQL技能的最佳方法",
-    "count": 36
+    "count": 36,
+    "category": "database",
+    "categoryLabel": "数据库与存储",
+    "tags": [
+      "数据库与存储",
+      "产品与商业",
+      "技术管理与职场"
+    ]
   },
   {
     "text": "OAuth2.0实战课",
     "link": "/OAuth2.0实战课/开篇词-为什么要学OAuth2.0？",
-    "count": 17
+    "count": 17,
+    "category": "security",
+    "categoryLabel": "安全与区块链",
+    "tags": [
+      "安全与区块链",
+      "架构与分布式",
+      "后端与中间件"
+    ]
   },
   {
     "text": "OpenResty从入门到实战",
     "link": "/OpenResty从入门到实战/开篇词-OpenResty，为你打开高性能开发的大门",
-    "count": 52
+    "count": 52,
+    "category": "backend",
+    "categoryLabel": "后端与中间件",
+    "tags": [
+      "后端与中间件",
+      "架构与分布式",
+      "云原生与基础设施"
+    ]
   },
   {
     "text": "PyTorch深度学习实战",
     "link": "/PyTorch深度学习实战/开篇词-如何高效入门PyTorch？",
-    "count": 32
+    "count": 32,
+    "category": "ai",
+    "categoryLabel": "AI 与数据智能",
+    "tags": [
+      "AI 与数据智能",
+      "算法与计算机基础",
+      "前端与客户端"
+    ]
   },
   {
     "text": "Python核心技术与实战",
     "link": "/Python核心技术与实战/开篇词-从工程的角度深入理解Python",
-    "count": 47
+    "count": 47,
+    "category": "backend",
+    "categoryLabel": "后端与中间件",
+    "tags": [
+      "后端与中间件",
+      "工程效能与测试",
+      "数据库与存储"
+    ]
   },
   {
     "text": "Python自动化办公实战课",
     "link": "/Python自动化办公实战课/开篇词-重复工作这么多，怎样才能提高工作效率？",
-    "count": 37
+    "count": 37,
+    "category": "backend",
+    "categoryLabel": "后端与中间件",
+    "tags": [
+      "后端与中间件",
+      "工程效能与测试",
+      "技术管理与职场"
+    ]
   },
   {
     "text": "RAG系统实战课",
     "link": "/RAG系统实战课/开篇词｜RAG，传统开发者加入AI的最佳路线",
-    "count": 29
+    "count": 29,
+    "category": "ai",
+    "categoryLabel": "AI 与数据智能",
+    "tags": [
+      "AI 与数据智能",
+      "安全与区块链",
+      "产品与商业"
+    ]
   },
   {
     "text": "RPC实战与核心原理",
     "link": "/RPC实战与核心原理/开篇词-别老想着怎么用好RPC框架，你得多花时间琢磨原理",
-    "count": 29
+    "count": 29,
+    "category": "backend",
+    "categoryLabel": "后端与中间件",
+    "tags": [
+      "后端与中间件",
+      "架构与分布式",
+      "安全与区块链"
+    ]
   },
   {
     "text": "ReactHooks核心原理与实战",
     "link": "/ReactHooks核心原理与实战/开篇词-全面拥抱Hooks，掌握最新React开发方式",
-    "count": 25
+    "count": 25,
+    "category": "frontend",
+    "categoryLabel": "前端与客户端",
+    "tags": [
+      "前端与客户端",
+      "技术管理与职场",
+      "架构与分布式"
+    ]
   },
   {
     "text": "Redis核心技术与实战",
     "link": "/Redis核心技术与实战/开篇词-这样学Redis，才能技高一筹",
-    "count": 53
+    "count": 53,
+    "category": "database",
+    "categoryLabel": "数据库与存储",
+    "tags": [
+      "数据库与存储",
+      "算法与计算机基础",
+      "架构与分布式"
+    ]
   },
   {
     "text": "Redis源码剖析与实战",
     "link": "/Redis源码剖析与实战/开篇词-阅读Redis源码能给你带来什么？",
-    "count": 47
+    "count": 47,
+    "category": "database",
+    "categoryLabel": "数据库与存储",
+    "tags": [
+      "数据库与存储",
+      "工程效能与测试",
+      "架构与分布式"
+    ]
   },
   {
     "text": "SQL必知必会",
     "link": "/SQL必知必会/开篇词丨SQL可能是你掌握的最有用的技能",
-    "count": 57
+    "count": 57,
+    "category": "database",
+    "categoryLabel": "数据库与存储",
+    "tags": [
+      "数据库与存储",
+      "架构与分布式",
+      "产品与商业"
+    ]
   },
   {
     "text": "SRE实战手册",
     "link": "/SRE实战手册/开篇词｜SRE是解决系统稳定性问题的灵丹妙药吗？",
-    "count": 13
+    "count": 13,
+    "category": "infra",
+    "categoryLabel": "云原生与基础设施",
+    "tags": [
+      "云原生与基础设施",
+      "技术管理与职场",
+      "架构与分布式"
+    ]
   },
   {
     "text": "Serverless入门课",
     "link": "/Serverless入门课/开篇词-说来说去，到底Serverless要解决什么问题？",
-    "count": 16
+    "count": 16,
+    "category": "infra",
+    "categoryLabel": "云原生与基础设施",
+    "tags": [
+      "云原生与基础设施",
+      "后端与中间件",
+      "架构与分布式"
+    ]
   },
   {
     "text": "Spark性能调优实战",
     "link": "/Spark性能调优实战/开篇词-Spark性能调优，你该掌握这些“套路”",
-    "count": 36
+    "count": 36,
+    "category": "architecture",
+    "categoryLabel": "架构与分布式",
+    "tags": [
+      "架构与分布式",
+      "算法与计算机基础",
+      "数据库与存储"
+    ]
   },
   {
     "text": "Spring编程常见错误50例",
     "link": "/Spring编程常见错误50例/开篇词｜贴心“保姆”Spring罢工了怎么办？",
-    "count": 28
+    "count": 28,
+    "category": "backend",
+    "categoryLabel": "后端与中间件",
+    "tags": [
+      "后端与中间件",
+      "数据库与存储",
+      "云原生与基础设施"
+    ]
   },
   {
     "text": "ToB市场品牌实战课",
     "link": "/ToB市场品牌实战课/开篇词-成为下一个万亿市场风口上的操盘人",
-    "count": 21
+    "count": 21,
+    "category": "product",
+    "categoryLabel": "产品与商业",
+    "tags": [
+      "产品与商业",
+      "个人成长与表达",
+      "工程效能与测试"
+    ]
   },
   {
     "text": "TonyBai·Go语言第一课",
     "link": "/TonyBai·Go语言第一课/开篇词｜这样入门Go，才能少走弯路",
-    "count": 66
+    "count": 66,
+    "category": "backend",
+    "categoryLabel": "后端与中间件",
+    "tags": [
+      "后端与中间件",
+      "AI 与数据智能",
+      "架构与分布式"
+    ]
   },
   {
     "text": "Vim实用技巧必知必会",
     "link": "/Vim实用技巧必知必会/开篇词｜我们为什么要学Vim？",
-    "count": 25
+    "count": 25,
+    "category": "frontend",
+    "categoryLabel": "前端与客户端",
+    "tags": [
+      "前端与客户端",
+      "后端与中间件",
+      "工程效能与测试"
+    ]
   },
   {
     "text": "WebAssembly入门课",
     "link": "/WebAssembly入门课/开篇词-我们为什么要了解WebAssembly？",
-    "count": 23
+    "count": 23,
+    "category": "frontend",
+    "categoryLabel": "前端与客户端",
+    "tags": [
+      "前端与客户端",
+      "产品与商业",
+      "后端与中间件"
+    ]
   },
   {
     "text": "etcd实战课",
     "link": "/etcd实战课/开篇词｜为什么你要学习etcd",
-    "count": 28
+    "count": 28,
+    "category": "database",
+    "categoryLabel": "数据库与存储",
+    "tags": [
+      "数据库与存储",
+      "架构与分布式",
+      "云原生与基础设施"
+    ]
   },
   {
     "text": "iOS开发高手课",
     "link": "/iOS开发高手课/开篇词-锚定一个点，然后在这个点上深耕",
-    "count": 47
+    "count": 47,
+    "category": "frontend",
+    "categoryLabel": "前端与客户端",
+    "tags": [
+      "前端与客户端",
+      "云原生与基础设施",
+      "架构与分布式"
+    ]
   },
   {
     "text": "乔新亮的CTO成长复盘",
     "link": "/乔新亮的CTO成长复盘/开篇词-削弱运气的价值",
-    "count": 29
+    "count": 29,
+    "category": "management",
+    "categoryLabel": "技术管理与职场",
+    "tags": [
+      "技术管理与职场",
+      "产品与商业",
+      "架构与分布式"
+    ]
   },
   {
     "text": "互联网人的英语私教课",
     "link": "/互联网人的英语私教课/开篇词-把技能当知识，是学英语最大的坑",
-    "count": 44
+    "count": 44,
+    "category": "growth",
+    "categoryLabel": "个人成长与表达",
+    "tags": [
+      "个人成长与表达",
+      "产品与商业",
+      "工程效能与测试"
+    ]
   },
   {
     "text": "人人都用得上的写作课",
     "link": "/人人都用得上的写作课/开篇词｜碎片化时代如何写出吸引人的好文章？",
-    "count": 21
+    "count": 21,
+    "category": "growth",
+    "categoryLabel": "个人成长与表达",
+    "tags": [
+      "个人成长与表达",
+      "产品与商业",
+      "工程效能与测试"
+    ]
   },
   {
     "text": "人人都能学会的编程入门课",
     "link": "/人人都能学会的编程入门课/开篇词-别闹了，学编程≠学语言",
-    "count": 38
+    "count": 38,
+    "category": "foundation",
+    "categoryLabel": "算法与计算机基础",
+    "tags": [
+      "算法与计算机基础",
+      "工程效能与测试",
+      "产品与商业"
+    ]
   },
   {
     "text": "人工智能基础课",
     "link": "/人工智能基础课/开篇词-人工智能：新时代的必修课",
-    "count": 59
+    "count": 59,
+    "category": "ai",
+    "categoryLabel": "AI 与数据智能",
+    "tags": [
+      "AI 与数据智能",
+      "算法与计算机基础",
+      "个人成长与表达"
+    ]
   },
   {
     "text": "从0开始做增长",
     "link": "/从0开始做增长/开篇词-人人都是增长官",
-    "count": 44
+    "count": 44,
+    "category": "product",
+    "categoryLabel": "产品与商业",
+    "tags": [
+      "产品与商业",
+      "AI 与数据智能",
+      "架构与分布式"
+    ]
   },
   {
     "text": "从0开始学大数据",
     "link": "/从0开始学大数据/开篇词-为什么说每个软件工程师都应该懂大数据技术？",
-    "count": 47
+    "count": 47,
+    "category": "ai",
+    "categoryLabel": "AI 与数据智能",
+    "tags": [
+      "AI 与数据智能",
+      "产品与商业",
+      "工程效能与测试"
+    ]
   },
   {
     "text": "从0开始学微服务",
     "link": "/从0开始学微服务/开篇词-微服务，从放弃到入门",
-    "count": 43
+    "count": 43,
+    "category": "architecture",
+    "categoryLabel": "架构与分布式",
+    "tags": [
+      "架构与分布式",
+      "云原生与基础设施",
+      "后端与中间件"
+    ]
   },
   {
     "text": "从0开始学架构",
     "link": "/从0开始学架构/开篇词-照着做，你也能成为架构师！",
-    "count": 73
+    "count": 73,
+    "category": "architecture",
+    "categoryLabel": "架构与分布式",
+    "tags": [
+      "架构与分布式",
+      "产品与商业",
+      "数据库与存储"
+    ]
   },
   {
     "text": "从0开始学游戏开发",
     "link": "/从0开始学游戏开发/开篇词-跟我学，你也可以开发一款游戏！",
-    "count": 42
+    "count": 42,
+    "category": "frontend",
+    "categoryLabel": "前端与客户端",
+    "tags": [
+      "前端与客户端",
+      "个人成长与表达",
+      "AI 与数据智能"
+    ]
   },
   {
     "text": "从0开始构建AgentHarness",
     "link": "/从0开始构建AgentHarness/开篇词｜框架正在坍塌：像写操作系统一样，复刻OpenClaw的底层Harness",
-    "count": 15
+    "count": 15,
+    "category": "ai",
+    "categoryLabel": "AI 与数据智能",
+    "tags": [
+      "AI 与数据智能",
+      "算法与计算机基础",
+      "前端与客户端"
+    ]
   },
   {
     "text": "从0打造音视频直播系统",
     "link": "/从0打造音视频直播系统/开篇词-5G的到来将会为音视频插上飞翔的翅膀",
-    "count": 41
+    "count": 41,
+    "category": "frontend",
+    "categoryLabel": "前端与客户端",
+    "tags": [
+      "前端与客户端",
+      "安全与区块链",
+      "云原生与基础设施"
+    ]
   },
   {
     "text": "代码之丑",
     "link": "/代码之丑/开篇词-这一次，我们从“丑”代码出发",
-    "count": 25
+    "count": 25,
+    "category": "quality",
+    "categoryLabel": "工程效能与测试",
+    "tags": [
+      "工程效能与测试",
+      "产品与商业",
+      "AI 与数据智能"
+    ]
   },
   {
     "text": "代码精进之路",
     "link": "/代码精进之路/开篇词-你写的每一行代码，都是你的名片",
-    "count": 48
+    "count": 48,
+    "category": "security",
+    "categoryLabel": "安全与区块链",
+    "tags": [
+      "安全与区块链",
+      "产品与商业",
+      "技术管理与职场"
+    ]
   },
   {
     "text": "体验设计案例课",
     "link": "/体验设计案例课/开篇词-不解决实际问题的体验设计都是耍流氓",
-    "count": 32
+    "count": 32,
+    "category": "product",
+    "categoryLabel": "产品与商业",
+    "tags": [
+      "产品与商业",
+      "个人成长与表达",
+      "架构与分布式"
+    ]
   },
   {
     "text": "全栈工程师修炼指南",
     "link": "/全栈工程师修炼指南/开篇词-从成长角度看，为什么你应该成为全栈工程师？",
-    "count": 46
+    "count": 46,
+    "category": "backend",
+    "categoryLabel": "后端与中间件",
+    "tags": [
+      "后端与中间件",
+      "前端与客户端",
+      "架构与分布式"
+    ]
   },
   {
     "text": "全链路压测实战30讲",
     "link": "/全链路压测实战30讲/开篇词-打破认知神话，做接地气的全链路压测",
-    "count": 38
+    "count": 38,
+    "category": "architecture",
+    "categoryLabel": "架构与分布式",
+    "tags": [
+      "架构与分布式",
+      "云原生与基础设施",
+      "数据库与存储"
+    ]
   },
   {
     "text": "分布式协议与算法实战",
     "link": "/分布式协议与算法实战/开篇词-想成为分布式高手？那就先把协议和算法烂熟于心吧",
-    "count": 31
+    "count": 31,
+    "category": "foundation",
+    "categoryLabel": "算法与计算机基础",
+    "tags": [
+      "算法与计算机基础",
+      "架构与分布式",
+      "数据库与存储"
+    ]
   },
   {
     "text": "分布式技术原理与算法解析",
     "link": "/分布式技术原理与算法解析/开篇词-四纵四横，带你透彻理解分布式技术",
-    "count": 43
+    "count": 43,
+    "category": "architecture",
+    "categoryLabel": "架构与分布式",
+    "tags": [
+      "架构与分布式",
+      "算法与计算机基础",
+      "数据库与存储"
+    ]
   },
   {
     "text": "分布式数据库30讲",
     "link": "/分布式数据库30讲/开篇词｜为什么要学习分布式数据库？",
-    "count": 34
+    "count": 34,
+    "category": "database",
+    "categoryLabel": "数据库与存储",
+    "tags": [
+      "数据库与存储",
+      "架构与分布式",
+      "产品与商业"
+    ]
   },
   {
     "text": "分布式金融架构课",
     "link": "/分布式金融架构课/开篇词-如何成为金融级人才？",
-    "count": 30
+    "count": 30,
+    "category": "architecture",
+    "categoryLabel": "架构与分布式",
+    "tags": [
+      "架构与分布式",
+      "产品与商业",
+      "数据库与存储"
+    ]
   },
   {
     "text": "动态规划面试宝典",
     "link": "/动态规划面试宝典/开篇词｜为什么大厂都爱考动态规划？",
-    "count": 23
+    "count": 23,
+    "category": "foundation",
+    "categoryLabel": "算法与计算机基础",
+    "tags": [
+      "算法与计算机基础",
+      "技术管理与职场",
+      "产品与商业"
+    ]
   },
   {
     "text": "即时消息技术剖析与实战",
     "link": "/即时消息技术剖析与实战/开篇词-搞懂“实时交互”的IM技术，将会有什么新机遇？",
-    "count": 25
+    "count": 25,
+    "category": "architecture",
+    "categoryLabel": "架构与分布式",
+    "tags": [
+      "架构与分布式",
+      "云原生与基础设施",
+      "产品与商业"
+    ]
   },
   {
     "text": "后端存储实战课",
     "link": "/后端存储实战课/开篇词-从今天起，换种方式学存储",
-    "count": 30
+    "count": 30,
+    "category": "database",
+    "categoryLabel": "数据库与存储",
+    "tags": [
+      "数据库与存储",
+      "后端与中间件",
+      "架构与分布式"
+    ]
   },
   {
     "text": "后端技术面试38讲",
     "link": "/后端技术面试38讲/开篇词-掌握软件开发技术的第一性原理",
-    "count": 46
+    "count": 46,
+    "category": "architecture",
+    "categoryLabel": "架构与分布式",
+    "tags": [
+      "架构与分布式",
+      "产品与商业",
+      "后端与中间件"
+    ]
   },
   {
     "text": "图解GoogleV8",
     "link": "/图解GoogleV8/开篇词-如何学习谷歌高性能JavaScript引擎V8？",
-    "count": 25
+    "count": 25,
+    "category": "backend",
+    "categoryLabel": "后端与中间件",
+    "tags": [
+      "后端与中间件",
+      "前端与客户端",
+      "算法与计算机基础"
+    ]
   },
   {
     "text": "基于人因的用户体验设计课",
     "link": "/基于人因的用户体验设计课/开篇词-你为什么要学人因学？",
-    "count": 34
+    "count": 34,
+    "category": "product",
+    "categoryLabel": "产品与商业",
+    "tags": [
+      "产品与商业",
+      "安全与区块链",
+      "个人成长与表达"
+    ]
   },
   {
     "text": "大厂晋升指南",
     "link": "/大厂晋升指南/开篇词-重新理解晋升",
-    "count": 45
+    "count": 45,
+    "category": "management",
+    "categoryLabel": "技术管理与职场",
+    "tags": [
+      "技术管理与职场",
+      "产品与商业",
+      "个人成长与表达"
+    ]
   },
   {
     "text": "大数据经典论文解读",
     "link": "/大数据经典论文解读/开篇词-读论文是成为优秀工程师的成年礼",
-    "count": 59
+    "count": 59,
+    "category": "backend",
+    "categoryLabel": "后端与中间件",
+    "tags": [
+      "后端与中间件",
+      "架构与分布式",
+      "数据库与存储"
+    ]
   },
   {
     "text": "大规模数据处理实战",
     "link": "/大规模数据处理实战/开篇词-从这里开始，带你走上硅谷一线系统架构师之路",
-    "count": 46
+    "count": 46,
+    "category": "architecture",
+    "categoryLabel": "架构与分布式",
+    "tags": [
+      "架构与分布式",
+      "产品与商业",
+      "后端与中间件"
+    ]
   },
   {
     "text": "如何成为学习高手",
     "link": "/如何成为学习高手/01｜如何减少对学习的排斥和厌恶心理，使其变得相对愉悦？",
-    "count": 24
+    "count": 24,
+    "category": "growth",
+    "categoryLabel": "个人成长与表达",
+    "tags": [
+      "个人成长与表达"
+    ]
   },
   {
     "text": "如何看懂一幅画",
     "link": "/如何看懂一幅画/开篇词-先看懂一幅画，再去看这个世界",
-    "count": 24
+    "count": 24,
+    "category": "growth",
+    "categoryLabel": "个人成长与表达",
+    "tags": [
+      "个人成长与表达"
+    ]
   },
   {
     "text": "如何落地业务建模",
     "link": "/如何落地业务建模/开篇词｜为什么你需要学习业务建模？",
-    "count": 32
+    "count": 32,
+    "category": "architecture",
+    "categoryLabel": "架构与分布式",
+    "tags": [
+      "架构与分布式",
+      "后端与中间件",
+      "产品与商业"
+    ]
   },
   {
     "text": "如何设计一个秒杀系统",
     "link": "/如何设计一个秒杀系统/开篇词-秒杀系统架构设计都有哪些关键点？",
-    "count": 10
+    "count": 10,
+    "category": "product",
+    "categoryLabel": "产品与商业",
+    "tags": [
+      "产品与商业",
+      "架构与分布式",
+      "数据库与存储"
+    ]
   },
   {
     "text": "如何读懂一首诗",
     "link": "/如何读懂一首诗/开篇词｜有刷抖音的功夫，我们还不如读读诗词",
-    "count": 29
+    "count": 29,
+    "category": "growth",
+    "categoryLabel": "个人成长与表达",
+    "tags": [
+      "个人成长与表达",
+      "技术管理与职场"
+    ]
   },
   {
     "text": "安全攻防技能30讲",
     "link": "/安全攻防技能30讲/开篇词-别说你没被安全困扰过",
-    "count": 47
+    "count": 47,
+    "category": "security",
+    "categoryLabel": "安全与区块链",
+    "tags": [
+      "安全与区块链",
+      "产品与商业",
+      "AI 与数据智能"
+    ]
   },
   {
     "text": "实用密码学",
     "link": "/实用密码学/开篇词-人人都要会点密码学",
-    "count": 24
+    "count": 24,
+    "category": "security",
+    "categoryLabel": "安全与区块链",
+    "tags": [
+      "安全与区块链",
+      "算法与计算机基础",
+      "工程效能与测试"
+    ]
   },
   {
     "text": "容器实战高手课",
     "link": "/容器实战高手课/开篇词-一个态度两个步骤，成为容器实战高手",
-    "count": 31
+    "count": 31,
+    "category": "infra",
+    "categoryLabel": "云原生与基础设施",
+    "tags": [
+      "云原生与基础设施",
+      "算法与计算机基础",
+      "安全与区块链"
+    ]
   },
   {
     "text": "容量保障核心技术与实战",
     "link": "/容量保障核心技术与实战/开篇词-互联网时代，人人肩负容量保障的职责",
-    "count": 19
+    "count": 19,
+    "category": "architecture",
+    "categoryLabel": "架构与分布式",
+    "tags": [
+      "架构与分布式",
+      "工程效能与测试",
+      "AI 与数据智能"
+    ]
   },
   {
     "text": "左耳听风",
     "link": "/左耳听风/开篇词-洞悉技术的本质，享受科技的乐趣",
-    "count": 119
+    "count": 119,
+    "category": "product",
+    "categoryLabel": "产品与商业",
+    "tags": [
+      "产品与商业",
+      "架构与分布式",
+      "技术管理与职场"
+    ]
   },
   {
     "text": "性能优化高手课",
     "link": "/性能优化高手课/开篇词-与我一起修炼，成为一名软件性能大师吧！",
-    "count": 31
+    "count": 31,
+    "category": "architecture",
+    "categoryLabel": "架构与分布式",
+    "tags": [
+      "架构与分布式",
+      "产品与商业",
+      "工程效能与测试"
+    ]
   },
   {
     "text": "性能工程高手课",
     "link": "/性能工程高手课/开篇词-代码不要眼前的苟且，而要效率的提升和性能的优化",
-    "count": 40
+    "count": 40,
+    "category": "architecture",
+    "categoryLabel": "架构与分布式",
+    "tags": [
+      "架构与分布式",
+      "工程效能与测试",
+      "产品与商业"
+    ]
   },
   {
     "text": "性能测试实战30讲",
     "link": "/性能测试实战30讲/开篇词丨“老板，之前咱TPS是100，我优化完是10000”",
-    "count": 37
+    "count": 37,
+    "category": "architecture",
+    "categoryLabel": "架构与分布式",
+    "tags": [
+      "架构与分布式",
+      "工程效能与测试",
+      "云原生与基础设施"
+    ]
   },
   {
     "text": "恋爱必修课",
     "link": "/恋爱必修课/开篇词-爱与被爱，是人一生最值得学习的能力",
-    "count": 18
+    "count": 18,
+    "category": "growth",
+    "categoryLabel": "个人成长与表达",
+    "tags": [
+      "个人成长与表达"
+    ]
   },
   {
     "text": "成为AI产品经理",
     "link": "/成为AI产品经理/开篇词-你好，产品经理！你的未来价值壁垒在哪儿？",
-    "count": 38
+    "count": 38,
+    "category": "product",
+    "categoryLabel": "产品与商业",
+    "tags": [
+      "产品与商业",
+      "AI 与数据智能",
+      "算法与计算机基础"
+    ]
   },
   {
     "text": "手把手带你写一个Web框架",
     "link": "/手把手带你写一个Web框架/开篇词｜为什么我们要从零开发框架？",
-    "count": 48
+    "count": 48,
+    "category": "backend",
+    "categoryLabel": "后端与中间件",
+    "tags": [
+      "后端与中间件",
+      "产品与商业",
+      "数据库与存储"
+    ]
   },
   {
     "text": "手把手带你写一门编程语言",
     "link": "/手把手带你写一门编程语言/开篇词｜让我们来写一门计算机语言吧",
-    "count": 49
+    "count": 49,
+    "category": "foundation",
+    "categoryLabel": "算法与计算机基础",
+    "tags": [
+      "算法与计算机基础",
+      "前端与客户端",
+      "架构与分布式"
+    ]
   },
   {
     "text": "手把手带你搭建秒杀系统",
     "link": "/手把手带你搭建秒杀系统/开篇词｜如何设计一个高并发、高可用的秒杀系统？",
-    "count": 18
+    "count": 18,
+    "category": "architecture",
+    "categoryLabel": "架构与分布式",
+    "tags": [
+      "架构与分布式",
+      "产品与商业",
+      "后端与中间件"
+    ]
   },
   {
     "text": "手把手教你玩音乐",
     "link": "/手把手教你玩音乐/开篇词｜听了那么多首歌，不如来动手“玩”音乐",
-    "count": 22
+    "count": 22,
+    "category": "growth",
+    "categoryLabel": "个人成长与表达",
+    "tags": [
+      "个人成长与表达",
+      "架构与分布式"
+    ]
   },
   {
     "text": "手机摄影",
     "link": "/手机摄影/开篇词｜手机拍照这件小事",
-    "count": 16
+    "count": 16,
+    "category": "growth",
+    "categoryLabel": "个人成长与表达",
+    "tags": [
+      "个人成长与表达"
+    ]
   },
   {
     "text": "打造爆款短视频",
     "link": "/打造爆款短视频/开篇词-短视频时代下，怎么把握好变现风口？",
-    "count": 31
+    "count": 31,
+    "category": "product",
+    "categoryLabel": "产品与商业",
+    "tags": [
+      "产品与商业",
+      "工程效能与测试"
+    ]
   },
   {
     "text": "技术与商业案例解读",
     "link": "/技术与商业案例解读/开篇词-突破技术思维，站在商业的角度看问题",
-    "count": 164
+    "count": 164,
+    "category": "product",
+    "categoryLabel": "产品与商业",
+    "tags": [
+      "产品与商业",
+      "技术管理与职场",
+      "数据库与存储"
+    ]
   },
   {
     "text": "技术管理实战36讲",
     "link": "/技术管理实战36讲/开篇词-你为什么需要学管理？",
-    "count": 44
+    "count": 44,
+    "category": "management",
+    "categoryLabel": "技术管理与职场",
+    "tags": [
+      "技术管理与职场",
+      "工程效能与测试",
+      "个人成长与表达"
+    ]
   },
   {
     "text": "技术管理案例课",
     "link": "/技术管理案例课/开篇词-一个技术总监的管理“自白”",
-    "count": 28
+    "count": 28,
+    "category": "management",
+    "categoryLabel": "技术管理与职场",
+    "tags": [
+      "技术管理与职场",
+      "个人成长与表达",
+      "产品与商业"
+    ]
   },
   {
     "text": "技术面试官识人手册",
     "link": "/技术面试官识人手册/开篇词-世事洞明皆学问，人情练达即文章：小面试，大道理",
-    "count": 19
+    "count": 19,
+    "category": "management",
+    "categoryLabel": "技术管理与职场",
+    "tags": [
+      "技术管理与职场",
+      "产品与商业",
+      "架构与分布式"
+    ]
   },
   {
     "text": "技术领导力实战笔记",
     "link": "/技术领导力实战笔记/开篇词-卓越的团队，必然有一个卓越的领导者",
-    "count": 265
+    "count": 265,
+    "category": "management",
+    "categoryLabel": "技术管理与职场",
+    "tags": [
+      "技术管理与职场",
+      "产品与商业",
+      "个人成长与表达"
+    ]
   },
   {
     "text": "持续交付36讲",
     "link": "/持续交付36讲/开篇词-量身定制你的持续交付体系",
-    "count": 42
+    "count": 42,
+    "category": "quality",
+    "categoryLabel": "工程效能与测试",
+    "tags": [
+      "工程效能与测试",
+      "云原生与基础设施",
+      "产品与商业"
+    ]
   },
   {
     "text": "接口测试入门课",
     "link": "/接口测试入门课/开篇词-把接口测试这件小事做深、做透",
-    "count": 12
+    "count": 12,
+    "category": "quality",
+    "categoryLabel": "工程效能与测试",
+    "tags": [
+      "工程效能与测试",
+      "架构与分布式",
+      "个人成长与表达"
+    ]
   },
   {
     "text": "推荐系统三十六式",
     "link": "/推荐系统三十六式/开篇词-用知识去对抗技术不平等",
-    "count": 40
+    "count": 40,
+    "category": "ai",
+    "categoryLabel": "AI 与数据智能",
+    "tags": [
+      "AI 与数据智能",
+      "算法与计算机基础",
+      "产品与商业"
+    ]
   },
   {
     "text": "搞定音频技术",
     "link": "/搞定音频技术/开篇词｜实时互动强势发展，如何快速入门音频技术？",
-    "count": 19
+    "count": 19,
+    "category": "foundation",
+    "categoryLabel": "算法与计算机基础",
+    "tags": [
+      "算法与计算机基础",
+      "AI 与数据智能",
+      "工程效能与测试"
+    ]
   },
   {
     "text": "摄影入门课",
     "link": "/摄影入门课/开篇词-拍了十三年照片，我还是个小白",
-    "count": 27
+    "count": 27,
+    "category": "growth",
+    "categoryLabel": "个人成长与表达",
+    "tags": [
+      "个人成长与表达"
+    ]
   },
   {
     "text": "操作系统实战45讲",
     "link": "/操作系统实战45讲/开篇词-为什么要学写一个操作系统？",
-    "count": 60
+    "count": 60,
+    "category": "foundation",
+    "categoryLabel": "算法与计算机基础",
+    "tags": [
+      "算法与计算机基础",
+      "云原生与基础设施",
+      "产品与商业"
+    ]
   },
   {
     "text": "攻克视频技术",
     "link": "/攻克视频技术/开篇词｜为什么说视频开发是程序员的一片蓝海？",
-    "count": 19
+    "count": 19,
+    "category": "foundation",
+    "categoryLabel": "算法与计算机基础",
+    "tags": [
+      "算法与计算机基础",
+      "前端与客户端",
+      "工程效能与测试"
+    ]
   },
   {
     "text": "数据中台实战课",
     "link": "/数据中台实战课/开篇词-数据中台，是陷阱？还是金钥匙？",
-    "count": 19
+    "count": 19,
+    "category": "architecture",
+    "categoryLabel": "架构与分布式",
+    "tags": [
+      "架构与分布式",
+      "技术管理与职场",
+      "工程效能与测试"
+    ]
   },
   {
     "text": "数据分析实战45讲",
     "link": "/数据分析实战45讲/开篇词-你为什么需要数据分析能力？",
-    "count": 57
+    "count": 57,
+    "category": "ai",
+    "categoryLabel": "AI 与数据智能",
+    "tags": [
+      "AI 与数据智能",
+      "后端与中间件",
+      "产品与商业"
+    ]
   },
   {
     "text": "数据分析思维课",
     "link": "/数据分析思维课/开篇词-数据给你一双看透本质的眼睛",
-    "count": 44
+    "count": 44,
+    "category": "ai",
+    "categoryLabel": "AI 与数据智能",
+    "tags": [
+      "AI 与数据智能",
+      "个人成长与表达",
+      "算法与计算机基础"
+    ]
   },
   {
     "text": "数据结构与算法之美",
     "link": "/数据结构与算法之美/开篇词-从今天起，跨过“数据结构与算法”这道坎",
-    "count": 81
+    "count": 81,
+    "category": "foundation",
+    "categoryLabel": "算法与计算机基础",
+    "tags": [
+      "算法与计算机基础",
+      "数据库与存储",
+      "架构与分布式"
+    ]
   },
   {
     "text": "朱赟的技术管理课",
     "link": "/朱赟的技术管理课/开篇词-从工程师到管理者，我的思考与实践",
-    "count": 39
+    "count": 39,
+    "category": "management",
+    "categoryLabel": "技术管理与职场",
+    "tags": [
+      "技术管理与职场",
+      "后端与中间件",
+      "产品与商业"
+    ]
   },
   {
     "text": "机器学习40讲",
     "link": "/机器学习40讲/开篇词-打通修炼机器学习的任督二脉",
-    "count": 51
+    "count": 51,
+    "category": "ai",
+    "categoryLabel": "AI 与数据智能",
+    "tags": [
+      "AI 与数据智能",
+      "算法与计算机基础",
+      "产品与商业"
+    ]
   },
   {
     "text": "架构实战案例解析",
     "link": "/架构实战案例解析/开篇词-想吃透架构？你得看看真实、接地气的架构案例",
-    "count": 23
+    "count": 23,
+    "category": "architecture",
+    "categoryLabel": "架构与分布式",
+    "tags": [
+      "架构与分布式",
+      "产品与商业",
+      "后端与中间件"
+    ]
   },
   {
     "text": "检索技术核心20讲",
     "link": "/检索技术核心20讲/开篇词-学会检索，快人一步！",
-    "count": 29
+    "count": 29,
+    "category": "database",
+    "categoryLabel": "数据库与存储",
+    "tags": [
+      "数据库与存储",
+      "架构与分布式",
+      "产品与商业"
+    ]
   },
   {
     "text": "正则表达式入门课",
     "link": "/正则表达式入门课/开篇词丨学习正则，我们到底要学什么？",
-    "count": 18
+    "count": 18,
+    "category": "foundation",
+    "categoryLabel": "算法与计算机基础",
+    "tags": [
+      "算法与计算机基础",
+      "个人成长与表达",
+      "AI 与数据智能"
+    ]
   },
   {
     "text": "流程型组织15讲",
     "link": "/流程型组织15讲/开篇词-成为一家“笨公司”",
-    "count": 19
+    "count": 19,
+    "category": "management",
+    "categoryLabel": "技术管理与职场",
+    "tags": [
+      "技术管理与职场"
+    ]
   },
   {
     "text": "浏览器工作原理与实践",
-    "link": "/浏览器工作原理与实践/开篇词-参透了浏览器的工作原理，你就能解决80%25的前端难题",
-    "count": 46
+    "link": "/浏览器工作原理与实践/开篇词-参透了浏览器的工作原理，你就能解决80％的前端难题",
+    "count": 46,
+    "category": "frontend",
+    "categoryLabel": "前端与客户端",
+    "tags": [
+      "前端与客户端",
+      "后端与中间件",
+      "云原生与基础设施"
+    ]
   },
   {
     "text": "消息队列高手课",
     "link": "/消息队列高手课/开篇词-优秀的程序员，你的技术栈中不能只有“增删改查”",
-    "count": 48
+    "count": 48,
+    "category": "backend",
+    "categoryLabel": "后端与中间件",
+    "tags": [
+      "后端与中间件",
+      "数据库与存储",
+      "架构与分布式"
+    ]
   },
   {
     "text": "深入剖析Java新特性",
     "link": "/深入剖析Java新特性/开篇词-拥抱Java新特性，像设计者一样工作和思考",
-    "count": 23
+    "count": 23,
+    "category": "backend",
+    "categoryLabel": "后端与中间件",
+    "tags": [
+      "后端与中间件",
+      "个人成长与表达",
+      "产品与商业"
+    ]
   },
   {
     "text": "深入剖析Kubernetes",
     "link": "/深入剖析Kubernetes/开篇词-打通“容器技术”的任督二脉",
-    "count": 57
+    "count": 57,
+    "category": "infra",
+    "categoryLabel": "云原生与基础设施",
+    "tags": [
+      "云原生与基础设施",
+      "技术管理与职场",
+      "后端与中间件"
+    ]
   },
   {
     "text": "深入拆解Java虚拟机",
     "link": "/深入拆解Java虚拟机/开篇词-为什么我们要学习Java虚拟机？",
-    "count": 45
+    "count": 45,
+    "category": "backend",
+    "categoryLabel": "后端与中间件",
+    "tags": [
+      "后端与中间件",
+      "算法与计算机基础",
+      "工程效能与测试"
+    ]
   },
   {
     "text": "深入拆解Tomcat&Jetty",
     "link": "/深入拆解Tomcat&Jetty/开篇词-Java程序员如何快速成长？",
-    "count": 45
+    "count": 45,
+    "category": "backend",
+    "categoryLabel": "后端与中间件",
+    "tags": [
+      "后端与中间件",
+      "架构与分布式",
+      "云原生与基础设施"
+    ]
   },
   {
     "text": "深入浅出云计算",
     "link": "/深入浅出云计算/开篇词-云计算，这是开发者最好的时代",
-    "count": 19
+    "count": 19,
+    "category": "infra",
+    "categoryLabel": "云原生与基础设施",
+    "tags": [
+      "云原生与基础设施",
+      "算法与计算机基础",
+      "数据库与存储"
+    ]
   },
   {
     "text": "深入浅出区块链",
     "link": "/深入浅出区块链/开篇词-帮你从0到1深入学习区块链技术",
-    "count": 40
+    "count": 40,
+    "category": "security",
+    "categoryLabel": "安全与区块链",
+    "tags": [
+      "安全与区块链",
+      "架构与分布式",
+      "算法与计算机基础"
+    ]
   },
   {
     "text": "深入浅出计算机组成原理",
     "link": "/深入浅出计算机组成原理/开篇词-为什么你需要学习计算机组成原理？",
-    "count": 62
+    "count": 62,
+    "category": "foundation",
+    "categoryLabel": "算法与计算机基础",
+    "tags": [
+      "算法与计算机基础",
+      "数据库与存储",
+      "架构与分布式"
+    ]
   },
   {
     "text": "深度学习推荐系统实战",
     "link": "/深度学习推荐系统实战/开篇词-从0开始搭建一个深度学习推荐系统",
-    "count": 50
+    "count": 50,
+    "category": "ai",
+    "categoryLabel": "AI 与数据智能",
+    "tags": [
+      "AI 与数据智能",
+      "架构与分布式",
+      "工程效能与测试"
+    ]
   },
   {
     "text": "爱上跑步",
     "link": "/爱上跑步/开篇词-跑步，不那么简单的事儿",
-    "count": 13
+    "count": 13,
+    "category": "growth",
+    "categoryLabel": "个人成长与表达",
+    "tags": [
+      "个人成长与表达"
+    ]
   },
   {
     "text": "物联网开发实战",
     "link": "/物联网开发实战/开篇词-物联网这个趋势，你不应该错过",
-    "count": 36
+    "count": 36,
+    "category": "infra",
+    "categoryLabel": "云原生与基础设施",
+    "tags": [
+      "云原生与基础设施",
+      "产品与商业",
+      "安全与区块链",
+      "工程效能与测试"
+    ]
   },
   {
     "text": "玩转Vue3全家桶",
     "link": "/玩转Vue3全家桶/开篇词-如何借助Vue3建构你的前端知识体系？",
-    "count": 44
+    "count": 44,
+    "category": "frontend",
+    "categoryLabel": "前端与客户端",
+    "tags": [
+      "前端与客户端",
+      "产品与商业",
+      "算法与计算机基础"
+    ]
   },
   {
     "text": "现代C++编程实战",
     "link": "/现代C++编程实战/开篇词-C++这么难，为什么我们还要用C++？",
-    "count": 60
+    "count": 60,
+    "category": "foundation",
+    "categoryLabel": "算法与计算机基础",
+    "tags": [
+      "算法与计算机基础",
+      "云原生与基础设施",
+      "工程效能与测试"
+    ]
   },
   {
     "text": "用户体验设计实战课",
     "link": "/用户体验设计实战课/开篇词-用户体验，未来十年撬动商业的思维",
-    "count": 35
+    "count": 35,
+    "category": "product",
+    "categoryLabel": "产品与商业",
+    "tags": [
+      "产品与商业",
+      "工程效能与测试",
+      "个人成长与表达"
+    ]
   },
   {
     "text": "白话法律42讲",
     "link": "/白话法律42讲/开篇词-这年头，你真应该懂点法律常识",
-    "count": 47
+    "count": 47,
+    "category": "growth",
+    "categoryLabel": "个人成长与表达",
+    "tags": [
+      "个人成长与表达",
+      "工程效能与测试"
+    ]
   },
   {
     "text": "研发效率破局之道",
     "link": "/研发效率破局之道/开篇词-为什么你要关注研发效能？",
-    "count": 40
+    "count": 40,
+    "category": "quality",
+    "categoryLabel": "工程效能与测试",
+    "tags": [
+      "工程效能与测试",
+      "技术管理与职场",
+      "前端与客户端"
+    ]
   },
   {
     "text": "硅谷产品实战36讲",
     "link": "/硅谷产品实战36讲/开篇词-打造千万用户的世界级产品",
-    "count": 40
+    "count": 40,
+    "category": "product",
+    "categoryLabel": "产品与商业",
+    "tags": [
+      "产品与商业",
+      "技术管理与职场",
+      "工程效能与测试"
+    ]
   },
   {
     "text": "程序员的个人财富课",
     "link": "/程序员的个人财富课/开篇词｜为什么说程序员最适合学财富管理？",
-    "count": 36
+    "count": 36,
+    "category": "growth",
+    "categoryLabel": "个人成长与表达",
+    "tags": [
+      "个人成长与表达",
+      "技术管理与职场",
+      "AI 与数据智能"
+    ]
   },
   {
     "text": "程序员的数学基础课",
     "link": "/程序员的数学基础课/开篇词-作为程序员，为什么你应该学好数学？",
-    "count": 58
+    "count": 58,
+    "category": "foundation",
+    "categoryLabel": "算法与计算机基础",
+    "tags": [
+      "算法与计算机基础",
+      "数据库与存储",
+      "工程效能与测试"
+    ]
   },
   {
     "text": "程序员的测试课",
     "link": "/程序员的测试课/开篇词-为什么写测试是程序员的本职工作？",
-    "count": 23
+    "count": 23,
+    "category": "quality",
+    "categoryLabel": "工程效能与测试",
+    "tags": [
+      "工程效能与测试",
+      "AI 与数据智能",
+      "后端与中间件"
+    ]
   },
   {
     "text": "程序员进阶攻略",
     "link": "/程序员进阶攻略/开篇词-程序行知：走在同样的路上，遇见自己的风景",
-    "count": 65
+    "count": 65,
+    "category": "architecture",
+    "categoryLabel": "架构与分布式",
+    "tags": [
+      "架构与分布式",
+      "个人成长与表达",
+      "技术管理与职场"
+    ]
   },
   {
     "text": "系统性能调优必知必会",
     "link": "/系统性能调优必知必会/开篇词-万变不离其宗，性能优化也有章可循",
-    "count": 47
+    "count": 47,
+    "category": "architecture",
+    "categoryLabel": "架构与分布式",
+    "tags": [
+      "架构与分布式",
+      "云原生与基础设施",
+      "数据库与存储"
+    ]
   },
   {
     "text": "编程高手必学的内存知识",
     "link": "/编程高手必学的内存知识/开篇词｜为什么你要系统学习计算机的内存知识？",
-    "count": 35
+    "count": 35,
+    "category": "foundation",
+    "categoryLabel": "算法与计算机基础",
+    "tags": [
+      "算法与计算机基础",
+      "技术管理与职场",
+      "后端与中间件"
+    ]
   },
   {
     "text": "编译原理之美",
     "link": "/编译原理之美/开篇词-为什么你要学习编译原理？",
-    "count": 45
+    "count": 45,
+    "category": "foundation",
+    "categoryLabel": "算法与计算机基础",
+    "tags": [
+      "算法与计算机基础",
+      "前端与客户端",
+      "后端与中间件"
+    ]
   },
   {
     "text": "编译原理实战课",
     "link": "/编译原理实战课/开篇词-在真实世界的编译器中游历",
-    "count": 55
+    "count": 55,
+    "category": "foundation",
+    "categoryLabel": "算法与计算机基础",
+    "tags": [
+      "算法与计算机基础",
+      "后端与中间件",
+      "前端与客户端"
+    ]
   },
   {
     "text": "编辑训练营",
     "link": "/编辑训练营/开篇词-把内容交付这件事做好",
-    "count": 9
+    "count": 9,
+    "category": "growth",
+    "categoryLabel": "个人成长与表达",
+    "tags": [
+      "个人成长与表达",
+      "技术管理与职场"
+    ]
   },
   {
     "text": "网络编程实战",
     "link": "/网络编程实战/开篇词-学好网络编程，需要掌握哪些核心问题？",
-    "count": 40
+    "count": 40,
+    "category": "backend",
+    "categoryLabel": "后端与中间件",
+    "tags": [
+      "后端与中间件",
+      "架构与分布式",
+      "云原生与基础设施"
+    ]
   },
   {
     "text": "罗剑锋的C++实战笔记",
     "link": "/罗剑锋的C++实战笔记/开篇词-把C++从“神坛”上拉下来，这次咱这么学",
-    "count": 32
+    "count": 32,
+    "category": "foundation",
+    "categoryLabel": "算法与计算机基础",
+    "tags": [
+      "算法与计算机基础",
+      "架构与分布式",
+      "云原生与基础设施"
+    ]
   },
   {
     "text": "职场求生攻略",
     "link": "/职场求生攻略/开篇词-学会如何工作，和学习技术同等重要",
-    "count": 34
+    "count": 34,
+    "category": "management",
+    "categoryLabel": "技术管理与职场",
+    "tags": [
+      "技术管理与职场",
+      "架构与分布式",
+      "工程效能与测试"
+    ]
   },
   {
     "text": "苏杰的产品创新课",
     "link": "/苏杰的产品创新课/开篇词-人人都是产品经理吗？",
-    "count": 32
+    "count": 32,
+    "category": "product",
+    "categoryLabel": "产品与商业",
+    "tags": [
+      "产品与商业",
+      "技术管理与职场",
+      "工程效能与测试"
+    ]
   },
   {
     "text": "视觉笔记入门课",
     "link": "/视觉笔记入门课/开篇词-一图胜千言",
-    "count": 16
+    "count": 16,
+    "category": "growth",
+    "categoryLabel": "个人成长与表达",
+    "tags": [
+      "个人成长与表达",
+      "云原生与基础设施"
+    ]
   },
   {
     "text": "讲好故事",
     "link": "/讲好故事/开篇词-讲好故事是这个时代必备的技能",
-    "count": 17
+    "count": 17,
+    "category": "growth",
+    "categoryLabel": "个人成长与表达",
+    "tags": [
+      "个人成长与表达",
+      "产品与商业",
+      "技术管理与职场"
+    ]
   },
   {
     "text": "许式伟的架构课",
     "link": "/许式伟的架构课/开篇词-怎样成长为优秀的软件架构师？",
-    "count": 89
+    "count": 89,
+    "category": "architecture",
+    "categoryLabel": "架构与分布式",
+    "tags": [
+      "架构与分布式",
+      "产品与商业",
+      "后端与中间件"
+    ]
   },
   {
     "text": "设计模式之美",
     "link": "/设计模式之美/开篇词-一对一的设计与编码集训，让你告别没有成长的烂代码！",
-    "count": 113
+    "count": 113,
+    "category": "architecture",
+    "categoryLabel": "架构与分布式",
+    "tags": [
+      "架构与分布式",
+      "产品与商业",
+      "后端与中间件"
+    ]
   },
   {
     "text": "说透5G",
     "link": "/说透5G/开篇词｜除了使用5G手机，你为什么还得了解5G行业？",
-    "count": 19
+    "count": 19,
+    "category": "architecture",
+    "categoryLabel": "架构与分布式",
+    "tags": [
+      "架构与分布式"
+    ]
   },
   {
     "text": "说透中台",
     "link": "/说透中台/开篇词-中台，昙花一现还是下一个风口？",
-    "count": 14
+    "count": 14,
+    "category": "architecture",
+    "categoryLabel": "架构与分布式",
+    "tags": [
+      "架构与分布式",
+      "产品与商业"
+    ]
   },
   {
     "text": "说透区块链",
     "link": "/说透区块链/开篇词-区块链，一种面向未来的思维方式",
-    "count": 19
+    "count": 19,
+    "category": "security",
+    "categoryLabel": "安全与区块链",
+    "tags": [
+      "安全与区块链",
+      "个人成长与表达",
+      "数据库与存储"
+    ]
   },
   {
     "text": "说透敏捷",
     "link": "/说透敏捷/开篇词-重识敏捷，让你的研发管理少走一些弯路",
-    "count": 13
+    "count": 13,
+    "category": "management",
+    "categoryLabel": "技术管理与职场",
+    "tags": [
+      "技术管理与职场",
+      "工程效能与测试",
+      "个人成长与表达"
+    ]
   },
   {
     "text": "说透数字化转型",
     "link": "/说透数字化转型/开篇词-数字化转型箭在弦上，如何抓住机遇？",
-    "count": 18
+    "count": 18,
+    "category": "architecture",
+    "categoryLabel": "架构与分布式",
+    "tags": [
+      "架构与分布式",
+      "个人成长与表达",
+      "产品与商业"
+    ]
   },
   {
     "text": "说透芯片",
     "link": "/说透芯片/开篇词-为什么你一定要了解芯片行业",
-    "count": 22
+    "count": 22,
+    "category": "foundation",
+    "categoryLabel": "算法与计算机基础",
+    "tags": [
+      "算法与计算机基础",
+      "产品与商业",
+      "个人成长与表达",
+      "AI 与数据智能"
+    ]
   },
   {
     "text": "赵成的运维体系管理课",
     "link": "/赵成的运维体系管理课/开篇词-带给你不一样的运维思考",
-    "count": 49
+    "count": 49,
+    "category": "infra",
+    "categoryLabel": "云原生与基础设施",
+    "tags": [
+      "云原生与基础设施",
+      "技术管理与职场",
+      "架构与分布式"
+    ]
   },
   {
     "text": "超级访谈：对话张雪峰",
     "link": "/超级访谈：对话张雪峰/01-收购百度外卖：“土八路”收购“正规军”",
-    "count": 18
+    "count": 18,
+    "category": "management",
+    "categoryLabel": "技术管理与职场",
+    "tags": [
+      "技术管理与职场",
+      "产品与商业",
+      "个人成长与表达"
+    ]
   },
   {
     "text": "趣谈Linux操作系统",
     "link": "/趣谈Linux操作系统/开篇词-为什么要学习Linux操作系统？",
-    "count": 72
+    "count": 72,
+    "category": "foundation",
+    "categoryLabel": "算法与计算机基础",
+    "tags": [
+      "算法与计算机基础",
+      "云原生与基础设施",
+      "技术管理与职场"
+    ]
   },
   {
     "text": "趣谈网络协议",
     "link": "/趣谈网络协议/开篇词-想成为技术牛人？先搞定网络协议！",
-    "count": 51
+    "count": 51,
+    "category": "infra",
+    "categoryLabel": "云原生与基础设施",
+    "tags": [
+      "云原生与基础设施",
+      "个人成长与表达",
+      "后端与中间件"
+    ]
   },
   {
     "text": "跟月影学可视化",
     "link": "/跟月影学可视化/开篇词-不写网页的前端工程师，还能干什么？",
-    "count": 54
+    "count": 54,
+    "category": "frontend",
+    "categoryLabel": "前端与客户端",
+    "tags": [
+      "前端与客户端",
+      "产品与商业",
+      "架构与分布式"
+    ]
   },
   {
     "text": "跟着高手学复盘",
     "link": "/跟着高手学复盘/开篇词-为什么每个人都应该学会复盘？",
-    "count": 23
+    "count": 23,
+    "category": "management",
+    "categoryLabel": "技术管理与职场",
+    "tags": [
+      "技术管理与职场",
+      "产品与商业",
+      "个人成长与表达"
+    ]
   },
   {
     "text": "软件工程之美",
     "link": "/软件工程之美/开篇词-你为什么应该学好软件工程？",
-    "count": 55
+    "count": 55,
+    "category": "quality",
+    "categoryLabel": "工程效能与测试",
+    "tags": [
+      "工程效能与测试",
+      "技术管理与职场",
+      "产品与商业"
+    ]
   },
   {
     "text": "软件测试52讲",
     "link": "/软件测试52讲/开篇词-从“小工”到“专家”，我的软件测试修炼之道",
-    "count": 63
+    "count": 63,
+    "category": "quality",
+    "categoryLabel": "工程效能与测试",
+    "tags": [
+      "工程效能与测试",
+      "架构与分布式",
+      "产品与商业"
+    ]
   },
   {
     "text": "软件设计之美",
     "link": "/软件设计之美/开篇词-软件设计，应对需求规模的“算法”",
-    "count": 43
+    "count": 43,
+    "category": "architecture",
+    "categoryLabel": "架构与分布式",
+    "tags": [
+      "架构与分布式",
+      "产品与商业",
+      "AI 与数据智能",
+      "后端与中间件"
+    ]
   },
   {
     "text": "透视HTTP协议",
     "link": "/透视HTTP协议/开篇词｜ToBeaHTTPHero",
-    "count": 48
+    "count": 48,
+    "category": "infra",
+    "categoryLabel": "云原生与基础设施",
+    "tags": [
+      "云原生与基础设施",
+      "架构与分布式",
+      "数据库与存储"
+    ]
   },
   {
     "text": "邱岳的产品实战",
     "link": "/邱岳的产品实战/开篇词-和自己较劲，一个产品经理的实战历程",
-    "count": 58
+    "count": 58,
+    "category": "product",
+    "categoryLabel": "产品与商业",
+    "tags": [
+      "产品与商业",
+      "技术管理与职场",
+      "AI 与数据智能"
+    ]
   },
   {
     "text": "邱岳的产品手记",
     "link": "/邱岳的产品手记/开篇词-产品经理的世界没有对错",
-    "count": 49
+    "count": 49,
+    "category": "product",
+    "categoryLabel": "产品与商业",
+    "tags": [
+      "产品与商业",
+      "AI 与数据智能",
+      "个人成长与表达"
+    ]
   },
   {
     "text": "郭东白的架构课",
     "link": "/郭东白的架构课/开篇词｜没有战略意图，就成不了一个顶尖的架构师",
-    "count": 67
+    "count": 67,
+    "category": "architecture",
+    "categoryLabel": "架构与分布式",
+    "tags": [
+      "架构与分布式",
+      "产品与商业",
+      "技术管理与职场"
+    ]
   },
   {
     "text": "重学前端",
     "link": "/重学前端/开篇词-从今天起，重新理解前端",
-    "count": 62
+    "count": 62,
+    "category": "frontend",
+    "categoryLabel": "前端与客户端",
+    "tags": [
+      "前端与客户端",
+      "后端与中间件",
+      "产品与商业"
+    ]
   },
   {
     "text": "重学线性代数",
     "link": "/重学线性代数/开篇词-从今天起，学会线性代数",
-    "count": 19
+    "count": 19,
+    "category": "foundation",
+    "categoryLabel": "算法与计算机基础",
+    "tags": [
+      "算法与计算机基础",
+      "AI 与数据智能",
+      "个人成长与表达"
+    ]
   },
   {
     "text": "陈天·Rust编程第一课",
     "link": "/陈天·Rust编程第一课/开篇词｜让Rust成为你的下一门主力语言",
-    "count": 65
+    "count": 65,
+    "category": "foundation",
+    "categoryLabel": "算法与计算机基础",
+    "tags": [
+      "算法与计算机基础",
+      "数据库与存储",
+      "AI 与数据智能"
+    ]
   },
   {
     "text": "零基础入门Spark",
     "link": "/零基础入门Spark/开篇词-入门Spark，你需要学会“三步走”",
-    "count": 38
+    "count": 38,
+    "category": "architecture",
+    "categoryLabel": "架构与分布式",
+    "tags": [
+      "架构与分布式",
+      "算法与计算机基础",
+      "数据库与存储"
+    ]
   },
   {
     "text": "零基础实战机器学习",
     "link": "/零基础实战机器学习/开篇词｜开发者为什么要从实战出发学机器学习？",
-    "count": 24
+    "count": 24,
+    "category": "ai",
+    "categoryLabel": "AI 与数据智能",
+    "tags": [
+      "AI 与数据智能",
+      "产品与商业",
+      "架构与分布式"
+    ]
   },
   {
     "text": "雷蓓蓓的项目管理实战课",
     "link": "/雷蓓蓓的项目管理实战课/开篇词｜使众人行：如何带领一群人把事做成？",
-    "count": 29
+    "count": 29,
+    "category": "management",
+    "categoryLabel": "技术管理与职场",
+    "tags": [
+      "技术管理与职场",
+      "产品与商业",
+      "云原生与基础设施"
+    ]
   },
   {
     "text": "面试现场",
     "link": "/面试现场/开篇词-面试，这样做会功到自然成",
-    "count": 40
+    "count": 40,
+    "category": "management",
+    "categoryLabel": "技术管理与职场",
+    "tags": [
+      "技术管理与职场",
+      "个人成长与表达",
+      "架构与分布式"
+    ]
   },
   {
     "text": "高并发系统设计40问",
     "link": "/高并发系统设计40问/开篇词-为什么你要学习高并发系统设计？",
-    "count": 49
+    "count": 49,
+    "category": "architecture",
+    "categoryLabel": "架构与分布式",
+    "tags": [
+      "架构与分布式",
+      "产品与商业",
+      "数据库与存储"
+    ]
   },
   {
     "text": "高楼的性能工程实战课",
     "link": "/高楼的性能工程实战课/开篇词-打破四大认知局限，进阶高级性能工程师",
-    "count": 35
+    "count": 35,
+    "category": "architecture",
+    "categoryLabel": "架构与分布式",
+    "tags": [
+      "架构与分布式",
+      "产品与商业",
+      "数据库与存储"
+    ]
   },
   {
     "text": "黄勇的OKR实战笔记",
     "link": "/黄勇的OKR实战笔记/开篇词-神奇的OKR工作法",
-    "count": 42
+    "count": 42,
+    "category": "management",
+    "categoryLabel": "技术管理与职场",
+    "tags": [
+      "技术管理与职场",
+      "产品与商业",
+      "个人成长与表达"
+    ]
   }
 ];
