@@ -1,6 +1,5 @@
 import { defineConfig } from 'vitepress';
 import { sidebar, navItems } from './sidebar';
-import { escapeAngleBrackets } from './escape-plugin';
 import { vPreForMustache } from './vpre-plugin';
 
 // 按知识领域对课程进行分组导航（避免 187 项单一下拉）
@@ -48,7 +47,70 @@ export default defineConfig({
   cleanUrls: true,
 
   vite: {
-    plugins: [escapeAngleBrackets()],
+    plugins: [
+      {
+        name: 'vitepress:escape-tags',
+        enforce: 'pre',
+        transform(code, id) {
+          // 只处理 .md 文件，在 VitePress 转换之前
+          if (!id.endsWith('.md')) return null;
+          
+          // 排除首页和特殊组件页，它们有自定义 Vue 组件
+          if (id.includes('index.md')) return null;
+          
+          const lines = code.split('\n');
+          const output = [];
+          let inFrontmatter = false;
+          
+          for (let lineIdx = 0; lineIdx < lines.length; lineIdx++) {
+            let line = lines[lineIdx];
+            
+            // 处理 frontmatter
+            if (lineIdx === 0 && line.trim() === '---') {
+              inFrontmatter = true;
+              output.push(line);
+              continue;
+            }
+            if (inFrontmatter && line.trim() === '---') {
+              inFrontmatter = false;
+              output.push(line);
+              continue;
+            }
+            if (inFrontmatter) {
+              output.push(line);
+              continue;
+            }
+            
+            // 跳过 Vue 组件调用行（如 <CourseCards />）
+            if (line.trim().match(/^<\/?[A-Z][\w]*[^>]*\/?>\s*$/)) {
+              output.push(line);
+              continue;
+            }
+            
+            // 用零宽空格打断所有的 < 和 </ 模式
+            // 注意：这里我们故意不排除 HTML 标签，因为在 Markdown 中它们会被正确的 HTML 解析
+            // 我们只排除 Vue 组件（上面已经处理了）
+            let escaped = line;
+            
+            // 打断所有开始标签 <letter
+            escaped = escaped.replace(/<([a-zA-Z])/g, '<\u200B$1');
+            
+            // 打断所有结束标签 </letter
+            escaped = escaped.replace(/<\/([a-zA-Z])/g, '<\u200B/$1');
+            
+            // 也处理 {{ }} 和 }}
+            escaped = escaped.replace(/\{\{/g, '{\u200B{').replace(/\}\}/g, '}\u200B}');
+            
+            output.push(escaped);
+          }
+          
+          return {
+            code: output.join('\n'),
+            map: null
+          };
+        }
+      }
+    ],
   },
 
   // 忽略死链接检查（课程笔记中包含大量示例 URL）

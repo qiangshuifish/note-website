@@ -3,8 +3,7 @@ import type Token from 'markdown-it/lib/token';
 
 /**
  * Markdown-it 插件：
- * 1. 将包含 {{ }} 的内容包裹在 <div v-pre> 中，防止 Vue 解析
- * 2. 将图片包裹在 <a class="image-link"> 中，支持点击放大
+ * 将图片包裹在 <a class="image-link"> 中，支持点击放大
  */
 export function vPreForMustache() {
   return (md: MarkdownIt) => {
@@ -25,18 +24,6 @@ export function vPreForMustache() {
         ? defaultImageRender(tokens, idx, options, env, self)
         : self.renderToken(tokens, idx, options);
       return `<a class="image-link" href="${src}" target="_blank" rel="noopener" title="点击查看原图">${rendered}</a>`;
-    };
-
-    const defaultRender = md.renderer.render.bind(md.renderer);
-
-    md.renderer.render = function (tokens: Token[], options: any, env: any) {
-      let rendered = defaultRender(tokens, options, env);
-
-      if (/\{\{[^}]+\}\}/.test(rendered)) {
-        rendered = `<div v-pre>${rendered}</div>`;
-      }
-
-      return rendered;
     };
   };
 }
