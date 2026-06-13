@@ -1,13 +1,21 @@
 import DefaultTheme from 'vitepress/theme';
 import type { Theme } from 'vitepress';
+import { h } from 'vue';
 import CourseCards from './components/CourseCards.vue';
+import CurrentCourseName from './components/CurrentCourseName.vue';
 import ReadingProgress from './components/ReadingProgress.vue';
 import './custom.css';
 
 export default {
   extends: DefaultTheme,
+  Layout() {
+    return h(DefaultTheme.Layout, null, {
+      'nav-bar-content-before': () => h(CurrentCourseName),
+    });
+  },
   enhanceApp({ app }) {
     app.component('CourseCards', CourseCards);
+    app.component('CurrentCourseName', CurrentCourseName);
     app.component('ReadingProgress', ReadingProgress);
     if (typeof window !== 'undefined') {
       setupLightbox();

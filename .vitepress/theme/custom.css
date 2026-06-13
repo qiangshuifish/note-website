@@ -196,6 +196,65 @@ html {
   opacity: 0.5;
 }
 
+.current-course-name {
+  position: fixed;
+  z-index: 40;
+  top: 0;
+  left: 50vw;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  max-width: min(38vw, 620px);
+  height: var(--vp-nav-height);
+  padding: 0 8px;
+  color: var(--vp-c-text-1);
+  pointer-events: none;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.current-course-name .course-mark {
+  flex: 0 0 auto;
+  width: 2px;
+  height: 20px;
+  margin-right: 12px;
+  border-radius: 2px;
+  background: var(--vp-c-brand-1);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--vp-c-brand-soft) 52%, transparent);
+}
+
+.current-course-name .course-meta {
+  flex: 0 0 auto;
+  margin-right: 10px;
+  color: var(--vp-c-brand-1);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.current-course-name .course-meta::after {
+  content: '/';
+  margin-left: 10px;
+  color: var(--vp-c-divider);
+  font-weight: 600;
+}
+
+.current-course-name .course-title {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--vp-c-text-1);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 960px) {
+  .current-course-name {
+    display: none;
+  }
+}
+
 /* ---------- 侧边栏优化 ---------- */
 .VPSidebar {
   border-right: 1px solid var(--vp-c-divider) !important;
