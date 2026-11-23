@@ -696,6 +696,136 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/AI原生开发工作流实战/精彩答疑｜建立AI原生世界世界观"
     }
   ],
+  "/AI大模型之美/": [
+    {
+      "text": "GPT来了，跑步迎接AI爆发的时代",
+      "link": "/AI大模型之美/开篇词｜GPT来了，跑步迎接AI爆发的时代"
+    },
+    {
+      "text": "重新出发，让我们学会和AI说话",
+      "link": "/AI大模型之美/01｜重新出发，让我们学会和AI说话"
+    },
+    {
+      "text": "无需任何机器学习，如何利用大语言模型做情感分析？",
+      "link": "/AI大模型之美/02｜无需任何机器学习，如何利用大语言模型做情感分析？"
+    },
+    {
+      "text": "巧用提示语，说说话就能做个聊天机器人",
+      "link": "/AI大模型之美/03｜巧用提示语，说说话就能做个聊天机器人"
+    },
+    {
+      "text": "新时代模型性能大比拼，GPT-3到底胜在哪里？",
+      "link": "/AI大模型之美/04｜新时代模型性能大比拼，GPT-3到底胜在哪里？"
+    },
+    {
+      "text": "善用Embedding，我们来给文本分分类",
+      "link": "/AI大模型之美/05｜善用Embedding，我们来给文本分分类"
+    },
+    {
+      "text": "ChatGPT来了，让我们快速做个AI应用",
+      "link": "/AI大模型之美/06｜ChatGPT来了，让我们快速做个AI应用"
+    },
+    {
+      "text": "文本聚类与摘要，让AI帮你做个总结",
+      "link": "/AI大模型之美/07｜文本聚类与摘要，让AI帮你做个总结"
+    },
+    {
+      "text": "文本改写和内容审核，别让你的机器人说错话",
+      "link": "/AI大模型之美/08｜文本改写和内容审核，别让你的机器人说错话"
+    },
+    {
+      "text": "语义检索，利用Embedding优化你的搜索功能",
+      "link": "/AI大模型之美/09｜语义检索，利用Embedding优化你的搜索功能"
+    },
+    {
+      "text": "AI连接外部资料库，让LlamaIndex带你阅读一本书",
+      "link": "/AI大模型之美/10｜AI连接外部资料库，让LlamaIndex带你阅读一本书"
+    },
+    {
+      "text": "省下钱买显卡，如何利用开源模型节约成本？",
+      "link": "/AI大模型之美/11｜省下钱买显卡，如何利用开源模型节约成本？"
+    },
+    {
+      "text": "让AI帮你写个小插件，轻松处理Excel文件",
+      "link": "/AI大模型之美/12｜让AI帮你写个小插件，轻松处理Excel文件"
+    },
+    {
+      "text": "让AI帮你写测试，体验多步提示语",
+      "link": "/AI大模型之美/13｜让AI帮你写测试，体验多步提示语"
+    },
+    {
+      "text": "链式调用，用LangChain简化多步提示语",
+      "link": "/AI大模型之美/14｜链式调用，用LangChain简化多步提示语"
+    },
+    {
+      "text": "深入使用LLMChain，给AI连上Google和计算器",
+      "link": "/AI大模型之美/15｜深入使用LLMChain，给AI连上Google和计算器"
+    },
+    {
+      "text": "流式生成与模型微调，打造极致的对话体验",
+      "link": "/AI大模型之美/18｜流式生成与模型微调，打造极致的对话体验"
+    },
+    {
+      "text": "Whisper+ChatGPT：请AI代你听播客",
+      "link": "/AI大模型之美/19｜Whisper+ChatGPT：请AI代你听播客"
+    },
+    {
+      "text": "TTS与语音合成：让你的机器人拥有声音",
+      "link": "/AI大模型之美/20｜TTS与语音合成：让你的机器人拥有声音"
+    },
+    {
+      "text": "DID和PaddleGAN：表情生动的数字人播报员",
+      "link": "/AI大模型之美/21｜DID和PaddleGAN：表情生动的数字人播报员"
+    },
+    {
+      "text": "再探HuggingFace：一键部署自己的大模型",
+      "link": "/AI大模型之美/22｜再探HuggingFace：一键部署自己的大模型"
+    },
+    {
+      "text": "OpenClip：让我们搞清楚图片说了些什么",
+      "link": "/AI大模型之美/23｜OpenClip：让我们搞清楚图片说了些什么"
+    },
+    {
+      "text": "StableDiffusion：最热门的开源AI画图工具",
+      "link": "/AI大模型之美/24｜StableDiffusion：最热门的开源AI画图工具"
+    },
+    {
+      "text": "ControlNet：让你的图拥有一个“骨架”",
+      "link": "/AI大模型之美/25｜ControlNet：让你的图拥有一个“骨架”"
+    },
+    {
+      "text": "VisualChatGPT是如何做到边聊边画的？",
+      "link": "/AI大模型之美/26｜VisualChatGPT是如何做到边聊边画的？"
+    },
+    {
+      "text": "从Midjourney开始，探索AI产品的用户体验",
+      "link": "/AI大模型之美/27｜从Midjourney开始，探索AI产品的用户体验"
+    },
+    {
+      "text": "让你的GPT稳定输出，JSON模式和Fingerprint",
+      "link": "/AI大模型之美/加餐一｜让你的GPT稳定输出，JSON模式和Fingerprint"
+    },
+    {
+      "text": "不用Langchain也能调用函数，一起来学FunctionCalling",
+      "link": "/AI大模型之美/加餐二｜不用Langchain也能调用函数，一起来学FunctionCalling"
+    },
+    {
+      "text": "送你一张通往未来“通用人工智能”时代的船票",
+      "link": "/AI大模型之美/结束语｜送你一张通往未来“通用人工智能”时代的船票"
+    },
+    {
+      "text": "来赴一场满分之约！",
+      "link": "/AI大模型之美/结课测试｜来赴一场满分之约！"
+    },
+    {
+      "text": "从今天开始，让AI成为你的贴身助理",
+      "link": "/AI大模型之美/导读｜从今天开始，让AI成为你的贴身助理"
+    },
+    {
+      "text": "6个月过去了，重新认识大语言模型",
+      "link": "/AI大模型之美/直播加餐｜6个月过去了，重新认识大语言模型"
+    }
+  ],
   "/AI技术内参/": [
     {
       "text": "开篇词-你的360度人工智能信息助理",
@@ -31056,6 +31186,18 @@ export const navItems = [
       "AI 与数据智能",
       "工程效能与测试",
       "产品与商业"
+    ]
+  },
+  {
+    "text": "AI大模型之美",
+    "link": "/AI大模型之美/开篇词｜GPT来了，跑步迎接AI爆发的时代",
+    "count": 32,
+    "category": "ai",
+    "categoryLabel": "AI 与数据智能",
+    "tags": [
+      "AI 与数据智能",
+      "个人成长与表达",
+      "后端与中间件"
     ]
   },
   {
