@@ -2134,6 +2134,144 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/AI重塑云原生应用开发实战/结课测试｜来赴一场满分之约！"
     }
   ],
+  "/Agent驾驭工程之美/": [
+    {
+      "text": "驾驭工程：Agent时代必修课",
+      "link": "/Agent驾驭工程之美/开篇词｜驾驭工程：Agent时代必修课"
+    },
+    {
+      "text": "操控循环：驾驭工程的核心框架",
+      "link": "/Agent驾驭工程之美/01｜操控循环：驾驭工程的核心框架"
+    },
+    {
+      "text": "四个子系统：构成框架与内置Harness拆解",
+      "link": "/Agent驾驭工程之美/02｜四个子系统：构成框架与内置Harness拆解"
+    },
+    {
+      "text": "一个例子：从零搭建背单词Harness",
+      "link": "/Agent驾驭工程之美/03｜一个例子：从零搭建背单词Harness"
+    },
+    {
+      "text": "封装技能：把操控循环装进SKILL",
+      "link": "/Agent驾驭工程之美/04｜封装技能：把操控循环装进SKILL"
+    },
+    {
+      "text": "驾驭工程的六个最佳实践",
+      "link": "/Agent驾驭工程之美/05｜驾驭工程的六个最佳实践"
+    },
+    {
+      "text": "知识固化：从头构造一个Harness",
+      "link": "/Agent驾驭工程之美/06｜知识固化：从头构造一个Harness"
+    },
+    {
+      "text": "需求模糊：Agent不知道“好”长什么样",
+      "link": "/Agent驾驭工程之美/07｜需求模糊：Agent不知道“好”长什么样"
+    },
+    {
+      "text": "隐式约定：规则只存在于人的脑子里",
+      "link": "/Agent驾驭工程之美/08｜隐式约定：规则只存在于人的脑子里"
+    },
+    {
+      "text": "信息散落：知识来源不唯一且更新不及时",
+      "link": "/Agent驾驭工程之美/09｜信息散落：知识来源不唯一且更新不及时"
+    },
+    {
+      "text": "虚假胜利：Agent以为自己做完了，其实没有",
+      "link": "/Agent驾驭工程之美/10｜虚假胜利：Agent以为自己做完了，其实没有"
+    },
+    {
+      "text": "指令文件腐化：AGENTS.md越来越长，Agent反而变笨了",
+      "link": "/Agent驾驭工程之美/11｜指令文件腐化：AGENTS.md越来越长，Agent反而变笨了"
+    },
+    {
+      "text": "前馈痴迷：Agent做完就交，从来没人检查",
+      "link": "/Agent驾驭工程之美/12｜前馈痴迷：Agent做完就交，从来没人检查"
+    },
+    {
+      "text": "反馈过载：Sensors太多，Agent不知道哪个信号重要？",
+      "link": "/Agent驾驭工程之美/13｜反馈过载：Sensors太多，Agent不知道哪个信号重要？"
+    },
+    {
+      "text": "上下文倾倒：信息过多，Agent反而迷失",
+      "link": "/Agent驾驭工程之美/14｜上下文倾倒：信息过多，Agent反而迷失"
+    },
+    {
+      "text": "上下文焦虑：Agent在长对话中丢失关键信息",
+      "link": "/Agent驾驭工程之美/15｜上下文焦虑：Agent在长对话中丢失关键信息"
+    },
+    {
+      "text": "跨会话知识丢失：每次对话Agent都不记得上次的事",
+      "link": "/Agent驾驭工程之美/16｜跨会话知识丢失：每次对话Agent都不记得上次的事"
+    },
+    {
+      "text": "状态污染：状态存在但不可信",
+      "link": "/Agent驾驭工程之美/17｜状态污染：状态存在但不可信"
+    },
+    {
+      "text": "环境漂移：为什么Agent昨天能跑，今天就不行了",
+      "link": "/Agent驾驭工程之美/18｜环境漂移：为什么Agent昨天能跑，今天就不行了"
+    },
+    {
+      "text": "模式复制漂移：Agent总在抄你最想淘汰的代码",
+      "link": "/Agent驾驭工程之美/19｜模式复制漂移：Agent总在抄你最想淘汰的代码"
+    },
+    {
+      "text": "Skills最佳实践：如何高效编写和优化技能写法？",
+      "link": "/Agent驾驭工程之美/20｜Skills最佳实践：如何高效编写和优化技能写法？"
+    },
+    {
+      "text": "示例驱动与锚定：用具体例子约束Agent的输出",
+      "link": "/Agent驾驭工程之美/21｜示例驱动与锚定：用具体例子约束Agent的输出"
+    },
+    {
+      "text": "内建质量：把验收做进循环里",
+      "link": "/Agent驾驭工程之美/22｜内建质量：把验收做进循环里"
+    },
+    {
+      "text": "自我改进：让Harness越用越聪明",
+      "link": "/Agent驾驭工程之美/23｜自我改进：让Harness越用越聪明"
+    },
+    {
+      "text": "LoopEngineering：设计高效的控制循环",
+      "link": "/Agent驾驭工程之美/24｜LoopEngineering：设计高效的控制循环"
+    },
+    {
+      "text": "多Agent编排：什么时候该用多个Agent而不是一个",
+      "link": "/Agent驾驭工程之美/25｜多Agent编排：什么时候该用多个Agent而不是一个"
+    },
+    {
+      "text": "构造内部Harness",
+      "link": "/Agent驾驭工程之美/26｜构造内部Harness"
+    },
+    {
+      "text": "AgentFirstWorkspace：使用外部Harness的基准模式",
+      "link": "/Agent驾驭工程之美/27｜AgentFirstWorkspace：使用外部Harness的基准模式"
+    },
+    {
+      "text": "这门课的Harness如何构建",
+      "link": "/Agent驾驭工程之美/28｜这门课的Harness如何构建"
+    },
+    {
+      "text": "遗留系统上的Harness驱动开发实践（一）",
+      "link": "/Agent驾驭工程之美/29｜遗留系统上的Harness驱动开发实践（一）"
+    },
+    {
+      "text": "遗留系统上的Harness驱动开发实践（二）",
+      "link": "/Agent驾驭工程之美/30｜遗留系统上的Harness驱动开发实践（二）"
+    },
+    {
+      "text": "驾驭工程，让人的判断发挥更大价值",
+      "link": "/Agent驾驭工程之美/结束语｜驾驭工程，让人的判断发挥更大价值"
+    },
+    {
+      "text": "来赴一场满分之约！",
+      "link": "/Agent驾驭工程之美/结课测试｜来赴一场满分之约！"
+    },
+    {
+      "text": "AgentHarness会是新时代的App吗？",
+      "link": "/Agent驾驭工程之美/直播回放｜AgentHarness会是新时代的App吗？"
+    }
+  ],
   "/Android开发高手课/": [
     {
       "text": "开篇词-焦虑的移动开发者该如何破局？",
@@ -31912,6 +32050,18 @@ export const navItems = [
       "AI 与数据智能",
       "后端与中间件",
       "云原生与基础设施"
+    ]
+  },
+  {
+    "text": "Agent驾驭工程之美",
+    "link": "/Agent驾驭工程之美/开篇词｜驾驭工程：Agent时代必修课",
+    "count": 34,
+    "category": "ai",
+    "categoryLabel": "AI 与数据智能",
+    "tags": [
+      "AI 与数据智能",
+      "产品与商业",
+      "工程效能与测试"
     ]
   },
   {
