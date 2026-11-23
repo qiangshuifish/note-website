@@ -99,6 +99,21 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 FENCE = "`" * 3
 TERMINAL = "。？！；：…”’）】?!;:"
 
+SECRET_PATTERNS = [
+    (re.compile(r'sk-ant-[A-Za-z0-9_-]{20,}'), 'sk-ant-xxxx'),
+    (re.compile(r'sk-[A-Za-z0-9_-]{20,}'), 'sk-xxxx'),
+    (re.compile(r'ghp_[A-Za-z0-9]{30,}'), 'ghp_xxxx'),
+    (re.compile(r'AKIA[0-9A-Z]{16}'), 'AKIAxxxx'),
+    (re.compile(r'xox[baprs]-[A-Za-z0-9-]{10,}'), 'xox-xxxx'),
+]
+
+
+def redact_secrets(text):
+    """脱敏代码示例中可能出现的 API 密钥等凭据，避免触发 GitHub 推送保护。"""
+    for pattern, placeholder in SECRET_PATTERNS:
+        text = pattern.sub(placeholder, text)
+    return text
+
 
 def fix_text(text):
     """去除私用区字符，规范化 CJK 部首区字符和不停顿空格。"""
@@ -354,7 +369,7 @@ def convert(pdf_path, out_dir, course_name, dry_run=False, img_subdir=None):
             parts.append('![](images/' + num + '/' + fname + ')')
     flush_para()
     flush_code()
-    md = '\n\n'.join(parts) + '\n'
+    md = redact_secrets('\n\n'.join(parts) + '\n')
     out_path = os.path.join(out_dir, stem + '.md')
     if not dry_run:
         with open(out_path, 'w', encoding='utf-8') as fh:
