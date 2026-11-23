@@ -152,6 +152,7 @@ def collect(pdf_path, course_name):
     """按页提取正文、标题、代码、列表和图片元素，遇到留言区即截断。"""
     doc = fitz.open(pdf_path)
     elements = []
+    course_name_nospace = re.sub(r'\s+', '', course_name)
     for pno in range(len(doc)):
         page = doc[pno]
         page_items = []
@@ -167,7 +168,8 @@ def collect(pdf_path, course_name):
                 text = fix_text(raw).strip()
                 if not text:
                     continue
-                if text == '打开APP' or '复制代码' in text:
+                text_nospace = re.sub(r'\s+', '', text)
+                if text_nospace == '打开APP' or '复制代码' in text_nospace:
                     continue
                 size = round(spans[0]['size'], 1)
                 x0 = line['bbox'][0]
@@ -175,11 +177,11 @@ def collect(pdf_path, course_name):
                 fonts = {s['font'] for s in spans}
                 if size >= 16:
                     continue
-                if course_name in text and '·' in text:
+                if course_name_nospace in text_nospace and '·' in text:
                     continue
                 if text.startswith('©'):
                     continue
-                if re.match(r'^(全部留言|精选留言)', text) or text.startswith('由作者筛选后的优质留言'):
+                if re.match(r'^(全部留言|精选留言)', text_nospace) or text_nospace.startswith('由作者筛选后的优质留言'):
                     page_items.append({'kind': 'cut', 'y': y0, 'text': text, 'page': pno})
                     continue
                 if any('SourceCodePro' in f for f in fonts):
