@@ -68,7 +68,7 @@ Agent Teams 目前（截至 2026 年 2 月初）在 Claude Code 中仍属于实�
 
 Code 版本，就像下图这样：
 
-![](images/前沿技术速递/1.png)
+![](images/前沿技术速递-AgentTeams：打造你的第一支“虚拟研发团队”/1.png)
 
 要使用 Agent Teams，你首先需要显式开启它：
 
@@ -99,23 +99,23 @@ export CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1
 
 此时，Claude 会化身为 Team Lead。它会分析你的请求，并初始化团队，如下图所示：
 
-![](images/前沿技术速递/2.png)
+![](images/前沿技术速递-AgentTeams：打造你的第一支“虚拟研发团队”/2.png)
 
-![](images/前沿技术速递/3.png)
+![](images/前沿技术速递-AgentTeams：打造你的第一支“虚拟研发团队”/3.png)
 
 接下来，各个 Teammate 开始领任务并开始工作，以 qa-engineer 为例，我们看到它的过程输出：
 
-![](images/前沿技术速递/4.png)
+![](images/前沿技术速递-AgentTeams：打造你的第一支“虚拟研发团队”/4.png)
 
 如果任务被其他 teammate 的任务阻塞，那么该 agent 会等待。就像 qa-engineer 要等待backend-dev 和 frontend-dev 完成一些开发任务后才能开始执行测试。
 
 Team lead 会定期收集各个 Teammate 的工作进展：
 
-![](images/前沿技术速递/5.png)
+![](images/前沿技术速递-AgentTeams：打造你的第一支“虚拟研发团队”/5.png)
 
 作为人类指挥官，你可以随时介入，查看各个 teammate 的当前状态（使用 ctrl+t 打开teammate 列表）：
 
-![](images/前沿技术速递/6.png)
+![](images/前沿技术速递-AgentTeams：打造你的第一支“虚拟研发团队”/6.png)
 
 ```
 注：teammate 的初始权限设置与 team lead 相同。如果 lead 权限设置为 --
@@ -131,30 +131,30 @@ skip-permissions。使用--dangerously-skip-permissions权限会让 team 工作
 
 Frontend-dev 确认已经关闭：
 
-![](images/前沿技术速递/7.png)
+![](images/前沿技术速递-AgentTeams：打造你的第一支“虚拟研发团队”/7.png)
 
 Qa-engineer 确认已经完成所有测试：
 
-![](images/前沿技术速递/8.png)
+![](images/前沿技术速递-AgentTeams：打造你的第一支“虚拟研发团队”/8.png)
 
 Qa-engineer 确认已经关闭：
 
-![](images/前沿技术速递/9.png)
+![](images/前沿技术速递-AgentTeams：打造你的第一支“虚拟研发团队”/9.png)
 
 最后等待 Backend-dev 确认关闭：
 
-![](images/前沿技术速递/10.png)
+![](images/前沿技术速递-AgentTeams：打造你的第一支“虚拟研发团队”/10.png)
 
 当所有任务完成且所有 Teammate 都确认关闭后，Team Lead 会清理团队并向你汇报：
 
-![](images/前沿技术速递/11.png)
+![](images/前沿技术速递-AgentTeams：打造你的第一支“虚拟研发团队”/11.png)
 
 ```
 这里 team 的工作痕迹可能依然会存留在你的环境里，你可以显式输入 Clean up the
 team，清除这些“痕迹”，并确认团队都已经清理完毕：
 ```
 
-![](images/前沿技术速递/12.png)
+![](images/前沿技术速递-AgentTeams：打造你的第一支“虚拟研发团队”/12.png)
 
 从图片中可以看到，Agent Team 工作时，团队配置信息和 task 信息都存储在本地：
 
