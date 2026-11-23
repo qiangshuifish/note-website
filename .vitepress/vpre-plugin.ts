@@ -59,7 +59,7 @@ export function vPreForMustache() {
       const token = tokens[idx];
       const srcIndex = token.attrIndex('src');
       const src = token.attrs?.[srcIndex]?.[1] || '';
-      const rawSrc = toRawAssetUrl(src, env?.relativePath);
+      const rawSrc = process.env.NODE_ENV === 'development' ? src : toRawAssetUrl(src, env?.relativePath);
       if (srcIndex >= 0 && rawSrc !== src) {
         token.attrSet('src', rawSrc);
       }
