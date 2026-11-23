@@ -2016,6 +2016,124 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/AI时代程序员职业发展必修课/结课测试｜来赴一场满分之约！"
     }
   ],
+  "/AI重塑云原生应用开发实战/": [
+    {
+      "text": "AI+云原生：孔明与刘备的互相成就",
+      "link": "/AI重塑云原生应用开发实战/开篇词｜AI+云原生：孔明与刘备的互相成就"
+    },
+    {
+      "text": "Agent的前辈：FunctionCalling",
+      "link": "/AI重塑云原生应用开发实战/01｜Agent的前辈：FunctionCalling"
+    },
+    {
+      "text": "Agent的原理：什么是AIAgent？",
+      "link": "/AI重塑云原生应用开发实战/02｜Agent的原理：什么是AIAgent？"
+    },
+    {
+      "text": "Agent的常见推理模式：CoT、ReAct、Reflexion究竟是什么？",
+      "link": "/AI重塑云原生应用开发实战/03｜Agent的常见推理模式：CoT、ReAct、Reflexion究竟是什么？"
+    },
+    {
+      "text": "实践篇：用Go语言实现一个简单Agent",
+      "link": "/AI重塑云原生应用开发实战/04｜实践篇：用Go语言实现一个简单Agent"
+    },
+    {
+      "text": "设计：用自然语言调用Agent操控K8s",
+      "link": "/AI重塑云原生应用开发实战/05｜设计：用自然语言调用Agent操控K8s"
+    },
+    {
+      "text": "client-go进阶玩法之RestMapper",
+      "link": "/AI重塑云原生应用开发实战/06｜client-go进阶玩法之RestMapper"
+    },
+    {
+      "text": "client-go进阶玩法之Informer机制",
+      "link": "/AI重塑云原生应用开发实战/07｜client-go进阶玩法之Informer机制"
+    },
+    {
+      "text": "Gin+client-go：构建API工具",
+      "link": "/AI重塑云原生应用开发实战/08｜Gin+client-go：构建API工具"
+    },
+    {
+      "text": "多集群资源管理Karmada",
+      "link": "/AI重塑云原生应用开发实战/09｜多集群资源管理Karmada"
+    },
+    {
+      "text": "实践：用Go语言实现用自然语言操控K8s",
+      "link": "/AI重塑云原生应用开发实战/10｜实践：用Go语言实现用自然语言操控K8s"
+    },
+    {
+      "text": "实践：如何让Agent联网以及利用kubectl排查问题？",
+      "link": "/AI重塑云原生应用开发实战/11｜实践：如何让Agent联网以及利用kubectl排查问题？"
+    },
+    {
+      "text": "实践：如何让Agent利用日志和事件排查问题？",
+      "link": "/AI重塑云原生应用开发实战/12｜实践：如何让Agent利用日志和事件排查问题？"
+    },
+    {
+      "text": "1分钟构建一个地图助手应用：GPTs详解",
+      "link": "/AI重塑云原生应用开发实战/13｜1分钟构建一个地图助手应用：GPTs详解"
+    },
+    {
+      "text": "国产之光：开源项目Dify详解",
+      "link": "/AI重塑云原生应用开发实战/14｜国产之光：开源项目Dify详解"
+    },
+    {
+      "text": "原理：可定制APIAgent原理详解",
+      "link": "/AI重塑云原生应用开发实战/15｜原理：可定制APIAgent原理详解"
+    },
+    {
+      "text": "实践：用Go语言手写可定制APIAgent（上）",
+      "link": "/AI重塑云原生应用开发实战/16｜实践：用Go语言手写可定制APIAgent（上）"
+    },
+    {
+      "text": "实践：用Go语言手写可定制APIAgent（下）",
+      "link": "/AI重塑云原生应用开发实战/17｜实践：用Go语言手写可定制APIAgent（下）"
+    },
+    {
+      "text": "开源项目：云原生API网关Higress",
+      "link": "/AI重塑云原生应用开发实战/18｜开源项目：云原生API网关Higress"
+    },
+    {
+      "text": "轻量级网关插件Wasm初体验",
+      "link": "/AI重塑云原生应用开发实战/19｜轻量级网关插件Wasm初体验"
+    },
+    {
+      "text": "Wasm编程基础（上）",
+      "link": "/AI重塑云原生应用开发实战/20｜Wasm编程基础（上）"
+    },
+    {
+      "text": "Wasm编程基础（下）",
+      "link": "/AI重塑云原生应用开发实战/21｜Wasm编程基础（下）"
+    },
+    {
+      "text": "实践：用Wasm实现AIProxy",
+      "link": "/AI重塑云原生应用开发实战/22｜实践：用Wasm实现AIProxy"
+    },
+    {
+      "text": "实践：用Wasm实现APIAgent",
+      "link": "/AI重塑云原生应用开发实战/23｜实践：用Wasm实现APIAgent"
+    },
+    {
+      "text": "实践：通过WasmAPIAgent操控与运维K8s",
+      "link": "/AI重塑云原生应用开发实战/24｜实践：通过WasmAPIAgent操控与运维K8s"
+    },
+    {
+      "text": "体验：使用LobeChat体验AI网关",
+      "link": "/AI重塑云原生应用开发实战/25｜体验：使用LobeChat体验AI网关"
+    },
+    {
+      "text": "展望：云原生网关如何进化为AI网关？",
+      "link": "/AI重塑云原生应用开发实战/26｜展望：云原生网关如何进化为AI网关？"
+    },
+    {
+      "text": "思维的竞赛",
+      "link": "/AI重塑云原生应用开发实战/结束语｜思维的竞赛"
+    },
+    {
+      "text": "来赴一场满分之约！",
+      "link": "/AI重塑云原生应用开发实战/结课测试｜来赴一场满分之约！"
+    }
+  ],
   "/Android开发高手课/": [
     {
       "text": "开篇词-焦虑的移动开发者该如何破局？",
@@ -31782,6 +31900,18 @@ export const navItems = [
       "AI 与数据智能",
       "产品与商业",
       "技术管理与职场"
+    ]
+  },
+  {
+    "text": "AI重塑云原生应用开发实战",
+    "link": "/AI重塑云原生应用开发实战/开篇词｜AI+云原生：孔明与刘备的互相成就",
+    "count": 29,
+    "category": "ai",
+    "categoryLabel": "AI 与数据智能",
+    "tags": [
+      "AI 与数据智能",
+      "后端与中间件",
+      "云原生与基础设施"
     ]
   },
   {
