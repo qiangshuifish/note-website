@@ -148,6 +148,22 @@ def lecture_num(stem):
     return re.split(r'[｜：:]', stem, maxsplit=1)[0]
 
 
+def image_subdirs(pdf_paths):
+    """为每个 PDF 计算图片子目录名。同编号讲次（如多场直播回放）改用完整文件名，避免图片互相覆盖。"""
+    stems = [os.path.splitext(os.path.basename(p))[0] for p in pdf_paths]
+    nums = [lecture_num(s) for s in stems]
+    counts = {}
+    for n in nums:
+        counts[n] = counts.get(n, 0) + 1
+    result = {}
+    for p, stem, num in zip(pdf_paths, stems, nums):
+        if counts[num] > 1:
+            result[p] = re.sub(r'[()｜\s]+', '-', stem)
+        else:
+            result[p] = num
+    return result
+
+
 def collect(pdf_path, course_name):
     """按页提取正文、标题、代码、列表和图片元素，遇到留言区即截断。"""
     doc = fitz.open(pdf_path)
@@ -259,10 +275,10 @@ def same_paragraph(prev, cur):
     return False
 
 
-def convert(pdf_path, out_dir, course_name, dry_run=False):
+def convert(pdf_path, out_dir, course_name, dry_run=False, img_subdir=None):
     doc, elements = collect(pdf_path, course_name)
     stem = os.path.splitext(os.path.basename(pdf_path))[0]
-    num = lecture_num(stem)
+    num = img_subdir or lecture_num(stem)
     img_dir = os.path.join(out_dir, 'images', num)
     heading = '# ' + stem.replace('｜', ' | ')
     parts = [heading]
@@ -386,6 +402,9 @@ def main():
         Logger.error(f'输入目录中没有 PDF 文件: {input_path}')
         sys.exit(1)
 
+    siblings = pdf_files if input_path.is_dir() else sorted(p for p in input_path.parent.iterdir() if p.suffix.lower() == '.pdf')
+    subdirs = image_subdirs([str(p) for p in siblings])
+
     out_dir = Path(args.output).expanduser().resolve() if args.output else default_out
     course_name = args.course_name or (input_path.name if input_path.is_dir() else input_path.parent.name)
 
@@ -426,7 +445,7 @@ def main():
                 continue
             if args.verbose:
                 Logger.debug(f'{page_count} 页 | {name}')
-            out_path, blocks, imgs = convert(str(pdf_path), str(out_dir), course_name, dry_run=args.dry_run)
+            out_path, blocks, imgs = convert(str(pdf_path), str(out_dir), course_name, dry_run=args.dry_run, img_subdir=subdirs.get(str(pdf_path)))
             converted += 1
             total_images += imgs
             prefix = '[dry-run] 将生成' if args.dry_run else '已生成'
