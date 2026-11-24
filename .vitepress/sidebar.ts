@@ -24176,6 +24176,348 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/徐昊·AI时代的软件工程/直播专场（四）｜构建AI辅助的团队"
     }
   ],
+  "/徐昊·TDD项目实战70讲/": [
+    {
+      "text": "为什么TDD是当前最具工程效能的研发流程？",
+      "link": "/徐昊·TDD项目实战70讲/开篇词｜为什么TDD是当前最具工程效能的研发流程？"
+    },
+    {
+      "text": "TDD演示（1）：任务分解法与整体工作流程",
+      "link": "/徐昊·TDD项目实战70讲/01｜TDD演示（1）：任务分解法与整体工作流程"
+    },
+    {
+      "text": "TDD演示（2）：识别坏味道与代码重构",
+      "link": "/徐昊·TDD项目实战70讲/02｜TDD演示（2）：识别坏味道与代码重构"
+    },
+    {
+      "text": "TDD演示（3）：按测试策略重组测试",
+      "link": "/徐昊·TDD项目实战70讲/03｜TDD演示（3）：按测试策略重组测试"
+    },
+    {
+      "text": "TDD演示（4）：实现对于列表参数的支持",
+      "link": "/徐昊·TDD项目实战70讲/04｜TDD演示（4）：实现对于列表参数的支持"
+    },
+    {
+      "text": "TDD中的测试（1）：状态验证为什么是主要的使用方式？",
+      "link": "/徐昊·TDD项目实战70讲/05｜TDD中的测试（1）：状态验证为什么是主要的使用方式？"
+    },
+    {
+      "text": "TDD中的测试（3）：集成测试还是单元测试？",
+      "link": "/徐昊·TDD项目实战70讲/07｜TDD中的测试（3）：集成测试还是单元测试？"
+    },
+    {
+      "text": "TDD中的驱动（1）：驱动的极限是什么？",
+      "link": "/徐昊·TDD项目实战70讲/08｜TDD中的驱动（1）：驱动的极限是什么？"
+    },
+    {
+      "text": "TDD中的驱动（2）：重构发挥了什么作用？",
+      "link": "/徐昊·TDD项目实战70讲/09｜TDD中的驱动（2）：重构发挥了什么作用？"
+    },
+    {
+      "text": "TDD中的驱动（3）：何为经典学派？何为伦敦学派？",
+      "link": "/徐昊·TDD项目实战70讲/10｜TDD中的驱动（3）：何为经典学派？何为伦敦学派？"
+    },
+    {
+      "text": "作为工程化方法的TDD：更低的成本与更高的效能",
+      "link": "/徐昊·TDD项目实战70讲/11｜作为工程化方法的TDD：更低的成本与更高的效能"
+    },
+    {
+      "text": "实战中的TDD：RESTfulAPI的开发框架",
+      "link": "/徐昊·TDD项目实战70讲/12｜实战中的TDD：RESTfulAPI的开发框架"
+    },
+    {
+      "text": "DIContainer（1）：如何实现基本的DI容器结构？",
+      "link": "/徐昊·TDD项目实战70讲/13｜DIContainer（1）：如何实现基本的DI容器结构？"
+    },
+    {
+      "text": "DIContainer（2）：如何通过SadPath为容器增加功能？",
+      "link": "/徐昊·TDD项目实战70讲/14｜DIContainer（2）：如何通过SadPath为容器增加功能？"
+    },
+    {
+      "text": "DIContainer（3）：如何重构已有的代码？",
+      "link": "/徐昊·TDD项目实战70讲/15｜DIContainer（3）：如何重构已有的代码？"
+    },
+    {
+      "text": "DIContainer（4）：如何实现对循环依赖的处理？",
+      "link": "/徐昊·TDD项目实战70讲/16｜DIContainer（4）：如何实现对循环依赖的处理？"
+    },
+    {
+      "text": "DIContainer（5）：API接口该怎么设计？",
+      "link": "/徐昊·TDD项目实战70讲/17｜DIContainer（5）：API接口该怎么设计？"
+    },
+    {
+      "text": "DIContainer（6）：如何实现循环依赖的检查？",
+      "link": "/徐昊·TDD项目实战70讲/18｜DIContainer（6）：如何实现循环依赖的检查？"
+    },
+    {
+      "text": "DIContainer（7）：如何实现FieldInjection部分的功能？",
+      "link": "/徐昊·TDD项目实战70讲/19｜DIContainer（7）：如何实现FieldInjection部分的功能？"
+    },
+    {
+      "text": "DIContainer（8）：如何实现MethodInjection部分的功能？",
+      "link": "/徐昊·TDD项目实战70讲/20｜DIContainer（8）：如何实现MethodInjection部分的功能？"
+    },
+    {
+      "text": "DIContainer（9）：怎样重构测试代码？",
+      "link": "/徐昊·TDD项目实战70讲/21｜DIContainer（9）：怎样重构测试代码？"
+    },
+    {
+      "text": "DIContainer（10）：怎样将大粒度的测试重构为等效的小粒度测试代码？",
+      "link": "/徐昊·TDD项目实战70讲/22｜DIContainer（10）：怎样将大粒度的测试重构为等效的小粒度测试代码？"
+    },
+    {
+      "text": "DIContainer（11）：如何对ContainerTest进行文档化改造？",
+      "link": "/徐昊·TDD项目实战70讲/23｜DIContainer（11）：如何对ContainerTest进行文档化改造？"
+    },
+    {
+      "text": "DIContainer（12）：如何增补功能？",
+      "link": "/徐昊·TDD项目实战70讲/24｜DIContainer（12）：如何增补功能？"
+    },
+    {
+      "text": "DIContainer（13）：任务上的遗漏该怎么处理？",
+      "link": "/徐昊·TDD项目实战70讲/25｜DIContainer（13）：任务上的遗漏该怎么处理？"
+    },
+    {
+      "text": "DIContainer（14）：如何重构对Type类型判断的逻辑？",
+      "link": "/徐昊·TDD项目实战70讲/26｜DIContainer（14）：如何重构对Type类型判断的逻辑？"
+    },
+    {
+      "text": "DIContainer（15）：如何封装类型判断逻辑？",
+      "link": "/徐昊·TDD项目实战70讲/27｜DIContainer（15）：如何封装类型判断逻辑？"
+    },
+    {
+      "text": "DIContainer（16）：行为封装会对测试产生什么影响？",
+      "link": "/徐昊·TDD项目实战70讲/28｜DIContainer（16）：行为封装会对测试产生什么影响？"
+    },
+    {
+      "text": "DIContainer（17）：如何重构ContextConfig内部的实现？",
+      "link": "/徐昊·TDD项目实战70讲/29｜DIContainer（17）：如何重构ContextConfig内部的实现？"
+    },
+    {
+      "text": "DIContainer（18）：如何增补依赖缺失和循环依赖的测试？",
+      "link": "/徐昊·TDD项目实战70讲/30｜DIContainer（18）：如何增补依赖缺失和循环依赖的测试？"
+    },
+    {
+      "text": "DIContainer（19）：Qualifier部分的功能要如何完成？",
+      "link": "/徐昊·TDD项目实战70讲/31｜DIContainer（19）：Qualifier部分的功能要如何完成？"
+    },
+    {
+      "text": "DIContainer（20）：如何对代码和测试进行重构？",
+      "link": "/徐昊·TDD项目实战70讲/32｜DIContainer（20）：如何对代码和测试进行重构？"
+    },
+    {
+      "text": "DIContainer（21）：如何处理Singleton生命周期部分的功能？",
+      "link": "/徐昊·TDD项目实战70讲/33｜DIContainer（21）：如何处理Singleton生命周期部分的功能？"
+    },
+    {
+      "text": "DIContainer（22）：如何对Bind的逻辑进行重构？",
+      "link": "/徐昊·TDD项目实战70讲/34｜DIContainer（22）：如何对Bind的逻辑进行重构？"
+    },
+    {
+      "text": "DIContainer（23）：项目回顾与总结",
+      "link": "/徐昊·TDD项目实战70讲/35｜DIContainer（23）：项目回顾与总结"
+    },
+    {
+      "text": "实战中的TDD：RESTfulWebServices",
+      "link": "/徐昊·TDD项目实战70讲/36｜实战中的TDD：RESTfulWebServices"
+    },
+    {
+      "text": "RESTfulWebServices（1）：明确架构愿景与架构组件间的交互",
+      "link": "/徐昊·TDD项目实战70讲/37｜RESTfulWebServices（1）：明确架构愿景与架构组件间的交互"
+    },
+    {
+      "text": "RESTfulWebServices（2）：根据Spike的结果，要如何调整架构愿景？",
+      "link": "/徐昊·TDD项目实战70讲/38｜RESTfulWebServices（2）：根据Spike的结果，要如何调整架构愿景？"
+    },
+    {
+      "text": "RESTfulWebServices（3）：明确架构愿景与调用栈顺序",
+      "link": "/徐昊·TDD项目实战70讲/39｜RESTfulWebServices（3）：明确架构愿景与调用栈顺序"
+    },
+    {
+      "text": "RESTfulWebServices（4）：在当前架构愿景下，要如何分解任务？",
+      "link": "/徐昊·TDD项目实战70讲/40｜RESTfulWebServices（4）：在当前架构愿景下，要如何分解任务？"
+    },
+    {
+      "text": "RESTfulWebServices（5）：如何通过对数据测试的管理来凸显意图？",
+      "link": "/徐昊·TDD项目实战70讲/41｜RESTfulWebServices（5）：如何通过对数据测试的管理来凸显意图？"
+    },
+    {
+      "text": "RESTfulWebServices（6）：如何处理JAX-RS定义的异常类？",
+      "link": "/徐昊·TDD项目实战70讲/42｜RESTfulWebServices（6）：如何处理JAX-RS定义的异常类？"
+    },
+    {
+      "text": "RESTfulWebServices（7）：剩下两个SadPath场景该如何处理？",
+      "link": "/徐昊·TDD项目实战70讲/43｜RESTfulWebServices（7）：剩下两个SadPath场景该如何处理？"
+    },
+    {
+      "text": "RESTfulWebServices（8）：如何在现有代码的基础上构造测试？",
+      "link": "/徐昊·TDD项目实战70讲/44｜RESTfulWebServices（8）：如何在现有代码的基础上构造测试？"
+    },
+    {
+      "text": "RESTfulWebServices（9）：通过伦敦学派得到的测试风格是什么样的？",
+      "link": "/徐昊·TDD项目实战70讲/45｜RESTfulWebServices（9）：通过伦敦学派得到的测试风格是什么样的？"
+    },
+    {
+      "text": "RESTfulWebServices（10）：伦敦学派与经典学派的测试节奏有何不同？",
+      "link": "/徐昊·TDD项目实战70讲/46｜RESTfulWebServices（10）：伦敦学派与经典学派的测试节奏有何不同？"
+    },
+    {
+      "text": "RESTfulWebServices（11）：如何通过Spike来验证架构愿景？",
+      "link": "/徐昊·TDD项目实战70讲/47｜RESTfulWebServices（11）：如何通过Spike来验证架构愿景？"
+    },
+    {
+      "text": "RESTfulWebServices（12）：如何调整接口和架构愿景？",
+      "link": "/徐昊·TDD项目实战70讲/48｜RESTfulWebServices（12）：如何调整接口和架构愿景？"
+    },
+    {
+      "text": "RESTfulWebService（13）：如何SpikeSub-ResourceLocator？",
+      "link": "/徐昊·TDD项目实战70讲/49｜RESTfulWebService（13）：如何SpikeSub-ResourceLocator？"
+    },
+    {
+      "text": "RESTfulWebServices（14）：分解任务与Setup测试",
+      "link": "/徐昊·TDD项目实战70讲/50｜RESTfulWebServices（14）：分解任务与Setup测试"
+    },
+    {
+      "text": "RESTfulWebServices（15）：为什么选择在第一个测试之后就开始重构？",
+      "link": "/徐昊·TDD项目实战70讲/51｜RESTfulWebServices（15）：为什么选择在第一个测试之后就开始重构？"
+    },
+    {
+      "text": "RESTfulWebServices（16）：重构手法之设计方法名的名称",
+      "link": "/徐昊·TDD项目实战70讲/52｜RESTfulWebServices（16）：重构手法之设计方法名的名称"
+    },
+    {
+      "text": "RESTfulWebServices（17）：如何进行Spike的架构愿景细化？",
+      "link": "/徐昊·TDD项目实战70讲/53｜RESTfulWebServices（17）：如何进行Spike的架构愿景细化？"
+    },
+    {
+      "text": "RESTfulWebServices（18）：如何实现UriTemplate的主要功能？",
+      "link": "/徐昊·TDD项目实战70讲/54｜RESTfulWebServices（18）：如何实现UriTemplate的主要功能？"
+    },
+    {
+      "text": "RESTfulWebServices（19）：如何更有效地构造测试数据？",
+      "link": "/徐昊·TDD项目实战70讲/55｜RESTfulWebServices（19）：如何更有效地构造测试数据？"
+    },
+    {
+      "text": "RESTfulWebServices（20）：为什么要通过测试的方法来驱动出代码结构？",
+      "link": "/徐昊·TDD项目实战70讲/56｜RESTfulWebServices（20）：为什么要通过测试的方法来驱动出代码结构？"
+    },
+    {
+      "text": "RESTfulWebServices（21）：按照三角法，该如何增加新的测试案例？",
+      "link": "/徐昊·TDD项目实战70讲/57｜RESTfulWebServices（21）：按照三角法，该如何增加新的测试案例？"
+    },
+    {
+      "text": "RESTfulWebServices（22）：重构还是继续完成功能？",
+      "link": "/徐昊·TDD项目实战70讲/58｜RESTfulWebServices（22）：重构还是继续完成功能？"
+    },
+    {
+      "text": "RESTfulWebServices（23）：如何构造测试数据？",
+      "link": "/徐昊·TDD项目实战70讲/59｜RESTfulWebServices（23）：如何构造测试数据？"
+    },
+    {
+      "text": "RESTfulWebServices（24）：RootResource的测试要如何改造？",
+      "link": "/徐昊·TDD项目实战70讲/60｜RESTfulWebServices（24）：RootResource的测试要如何改造？"
+    },
+    {
+      "text": "RESTfulWebServices（25）：如何重构DefaultResourceRouter中的Result结构？",
+      "link": "/徐昊·TDD项目实战70讲/61｜RESTfulWebServices（25）：如何重构DefaultResourceRouter中的Result结构？"
+    },
+    {
+      "text": "RESTfulWebServices（27）：如何通过重构修改接口？",
+      "link": "/徐昊·TDD项目实战70讲/63｜RESTfulWebServices（27）：如何通过重构修改接口？"
+    },
+    {
+      "text": "RESTfulWebServices（28）：如何重构Resource、SubResource等接口与实现？",
+      "link": "/徐昊·TDD项目实战70讲/64｜RESTfulWebServices（28）：如何重构Resource、SubResource等接口与实现？"
+    },
+    {
+      "text": "RESTfulWebServices（29）：后续任务将要如何划分与实现？",
+      "link": "/徐昊·TDD项目实战70讲/65｜RESTfulWebServices（29）：后续任务将要如何划分与实现？"
+    },
+    {
+      "text": "RESTfulWebServices（30）：什么情况下应该使用行为验证？",
+      "link": "/徐昊·TDD项目实战70讲/66｜RESTfulWebServices（30）：什么情况下应该使用行为验证？"
+    },
+    {
+      "text": "RESTfulWebServices（31）：对于option的测试策略应该是怎样的？",
+      "link": "/徐昊·TDD项目实战70讲/67｜RESTfulWebServices（31）：对于option的测试策略应该是怎样的？"
+    },
+    {
+      "text": "RESTfulWebServices（32）：目前代码中的一个重大Bug是什么？",
+      "link": "/徐昊·TDD项目实战70讲/68｜RESTfulWebServices（32）：目前代码中的一个重大Bug是什么？"
+    },
+    {
+      "text": "RESTfulWebServices（33）：如何拆分对于injection部分的需求？",
+      "link": "/徐昊·TDD项目实战70讲/69｜RESTfulWebServices（33）：如何拆分对于injection部分的需求？"
+    },
+    {
+      "text": "RESTfulWebServices（34）：在当前代码结构下，要如何进行重构？",
+      "link": "/徐昊·TDD项目实战70讲/70｜RESTfulWebServices（34）：在当前代码结构下，要如何进行重构？"
+    },
+    {
+      "text": "RESTfulWebServices（35）：如何将测试改为动态测试？",
+      "link": "/徐昊·TDD项目实战70讲/71｜RESTfulWebServices（35）：如何将测试改为动态测试？"
+    },
+    {
+      "text": "RESTfulWebServices（36）：在现有结构下，如何支持转换构造函数？",
+      "link": "/徐昊·TDD项目实战70讲/72｜RESTfulWebServices（36）：在现有结构下，如何支持转换构造函数？"
+    },
+    {
+      "text": "RESTfulWebServices（37）：再增加converter方法时，步骤有什么不同？",
+      "link": "/徐昊·TDD项目实战70讲/73｜RESTfulWebServices（37）：再增加converter方法时，步骤有什么不同？"
+    },
+    {
+      "text": "RESTfulWebServices（38）：如何提取方法调用部分？",
+      "link": "/徐昊·TDD项目实战70讲/74｜RESTfulWebServices（38）：如何提取方法调用部分？"
+    },
+    {
+      "text": "RESTfulWebServices（39）：如何使用继承的方式来复用测试？",
+      "link": "/徐昊·TDD项目实战70讲/75｜RESTfulWebServices（39）：如何使用继承的方式来复用测试？"
+    },
+    {
+      "text": "RESTfulWebServices（40）：如何开展有效的集成测试？",
+      "link": "/徐昊·TDD项目实战70讲/76｜RESTfulWebServices（40）：如何开展有效的集成测试？"
+    },
+    {
+      "text": "RESTfulWebServices（41）：对于资源的访问，我们需要补充哪些相关功能？",
+      "link": "/徐昊·TDD项目实战70讲/77｜RESTfulWebServices（41）：对于资源的访问，我们需要补充哪些相关功能？"
+    },
+    {
+      "text": "RESTfulWebServices（42）：项目总结与回顾",
+      "link": "/徐昊·TDD项目实战70讲/78｜RESTfulWebServices（42）：项目总结与回顾"
+    },
+    {
+      "text": "线段编辑器：架构思路与任务拆分",
+      "link": "/徐昊·TDD项目实战70讲/79｜线段编辑器：架构思路与任务拆分"
+    },
+    {
+      "text": "LineEditor（2）：如何重构生成与更新锚点控制点的逻辑？",
+      "link": "/徐昊·TDD项目实战70讲/80｜LineEditor（2）：如何重构生成与更新锚点控制点的逻辑？"
+    },
+    {
+      "text": "结束语：掌握TDD的那天，我才成为了可靠高效的职业程序员",
+      "link": "/徐昊·TDD项目实战70讲/81｜结束语：掌握TDD的那天，我才成为了可靠高效的职业程序员"
+    },
+    {
+      "text": "不同语言TDD的节奏有何不同？",
+      "link": "/徐昊·TDD项目实战70讲/代码评点01｜不同语言TDD的节奏有何不同？"
+    },
+    {
+      "text": "什么是合适TDD的语言和IDE？",
+      "link": "/徐昊·TDD项目实战70讲/代码评点02｜什么是合适TDD的语言和IDE？"
+    },
+    {
+      "text": "赴一场100分之约！",
+      "link": "/徐昊·TDD项目实战70讲/期末测试｜赴一场100分之约！"
+    },
+    {
+      "text": "aoe：如果把《重构》这本书拍成电视剧",
+      "link": "/徐昊·TDD项目实战70讲/用户故事01｜aoe：如果把《重构》这本书拍成电视剧"
+    },
+    {
+      "text": "程序员究竟是搞技术的，还是做工程的？",
+      "link": "/徐昊·TDD项目实战70讲/课前必读02｜程序员究竟是搞技术的，还是做工程的？"
+    }
+  ],
   "/快手·音视频技术入门课/": [
     {
       "text": "想快速入门音视频技术，你得这么学",
@@ -48351,6 +48693,18 @@ export const navItems = [
       "AI 与数据智能",
       "工程效能与测试",
       "技术管理与职场"
+    ]
+  },
+  {
+    "text": "徐昊·TDD项目实战70讲",
+    "link": "/徐昊·TDD项目实战70讲/开篇词｜为什么TDD是当前最具工程效能的研发流程？",
+    "count": 85,
+    "category": "quality",
+    "categoryLabel": "工程效能与测试",
+    "tags": [
+      "工程效能与测试",
+      "AI 与数据智能",
+      "架构与分布式"
     ]
   },
   {
