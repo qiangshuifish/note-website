@@ -762,6 +762,14 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/AI大模型之美/15｜深入使用LLMChain，给AI连上Google和计算器"
     },
     {
+      "text": "Langchain里的“记忆力”，让AI只记住有用的事儿",
+      "link": "/AI大模型之美/16｜Langchain里的“记忆力”，让AI只记住有用的事儿"
+    },
+    {
+      "text": "让AI做决策，LangChain里的“中介”和“特工”",
+      "link": "/AI大模型之美/17｜让AI做决策，LangChain里的“中介”和“特工”"
+    },
+    {
       "text": "流式生成与模型微调，打造极致的对话体验",
       "link": "/AI大模型之美/18｜流式生成与模型微调，打造极致的对话体验"
     },
@@ -6844,6 +6852,104 @@ export const sidebar: DefaultTheme.Sidebar = {
     {
       "text": "重磅加餐-带你快速入门Scala语言",
       "link": "/Kafka核心源码解读/重磅加餐-带你快速入门Scala语言"
+    }
+  ],
+  "/Kubernetes源码剖析与实战/": [
+    {
+      "text": "究竟什么是云原生？",
+      "link": "/Kubernetes源码剖析与实战/01｜究竟什么是云原生？"
+    },
+    {
+      "text": "云原生中有哪些核心技术栈？（上）",
+      "link": "/Kubernetes源码剖析与实战/02｜云原生中有哪些核心技术栈？（上）"
+    },
+    {
+      "text": "云原生中有哪些核心技术栈？（下）",
+      "link": "/Kubernetes源码剖析与实战/03｜云原生中有哪些核心技术栈？（下）"
+    },
+    {
+      "text": "为什么要学习云原生技术及开发？",
+      "link": "/Kubernetes源码剖析与实战/04｜为什么要学习云原生技术及开发？"
+    },
+    {
+      "text": "如何学习云原生技术？",
+      "link": "/Kubernetes源码剖析与实战/05｜如何学习云原生技术？"
+    },
+    {
+      "text": "如何高效阅读Kubernetes源码？",
+      "link": "/Kubernetes源码剖析与实战/06｜如何高效阅读Kubernetes源码？"
+    },
+    {
+      "text": "如何给Kubernetes社区贡献源码？",
+      "link": "/Kubernetes源码剖析与实战/07｜如何给Kubernetes社区贡献源码？"
+    },
+    {
+      "text": "Kubernetes架构及核心组件介绍",
+      "link": "/Kubernetes源码剖析与实战/08｜Kubernetes架构及核心组件介绍"
+    },
+    {
+      "text": "Kubernetes核心概念和资源介绍",
+      "link": "/Kubernetes源码剖析与实战/09｜Kubernetes核心概念和资源介绍"
+    },
+    {
+      "text": "通过Pod创建流程来了解Kubernetes",
+      "link": "/Kubernetes源码剖析与实战/10｜通过Pod创建流程来了解Kubernetes"
+    },
+    {
+      "text": "Kubernetes代码仓库介绍",
+      "link": "/Kubernetes源码剖析与实战/11｜Kubernetes代码仓库介绍"
+    },
+    {
+      "text": "Kubernetes集群部署方法有哪些及如何选择？",
+      "link": "/Kubernetes源码剖析与实战/12-Kubernetes集群部署方法有哪些及如何选择？"
+    },
+    {
+      "text": "如何配置和创建一个Kind集群？",
+      "link": "/Kubernetes源码剖析与实战/13-如何配置和创建一个Kind集群？"
+    },
+    {
+      "text": "如何在Kubernetes集群中部署Web服务？",
+      "link": "/Kubernetes源码剖析与实战/14｜如何在Kubernetes集群中部署Web服务？"
+    },
+    {
+      "text": "通过Kubernetes应用构建模型来看如何构建应用？",
+      "link": "/Kubernetes源码剖析与实战/15｜通过Kubernetes应用构建模型来看如何构建应用？"
+    },
+    {
+      "text": "剖析Kubernetes应用构建模型",
+      "link": "/Kubernetes源码剖析与实战/16-剖析Kubernetes应用构建模型"
+    },
+    {
+      "text": "Kubernetes如何设计REST资源？",
+      "link": "/Kubernetes源码剖析与实战/17-Kubernetes如何设计REST资源？"
+    },
+    {
+      "text": "Kubernetes如何定义标准化资源对象？",
+      "link": "/Kubernetes源码剖析与实战/18｜Kubernetes如何定义标准化资源对象？"
+    },
+    {
+      "text": "Kubernetes资源对象实现源码剖析",
+      "link": "/Kubernetes源码剖析与实战/19｜Kubernetes资源对象实现源码剖析"
+    },
+    {
+      "text": "请求路径构建（上）：如何设置RESTfulAPI接口路径？",
+      "link": "/Kubernetes源码剖析与实战/20-请求路径构建（上）：如何设置RESTfulAPI接口路径？"
+    },
+    {
+      "text": "请求路径构建（下）：如何根据资源对象构建请求路径？",
+      "link": "/Kubernetes源码剖析与实战/21-请求路径构建（下）：如何根据资源对象构建请求路径？"
+    },
+    {
+      "text": "Kubernetes支持哪些RESTfulAPI接口？",
+      "link": "/Kubernetes源码剖析与实战/22｜Kubernetes支持哪些RESTfulAPI接口？"
+    },
+    {
+      "text": "如何使用go-restful开发一个Web服务器？",
+      "link": "/Kubernetes源码剖析与实战/23｜如何使用go-restful开发一个Web服务器？"
+    },
+    {
+      "text": "Kubernetes路由构建源码剖析",
+      "link": "/Kubernetes源码剖析与实战/24｜Kubernetes路由构建源码剖析"
     }
   ],
   "/LLM自主智能体应用实战课/": [
@@ -33651,7 +33757,7 @@ export const navItems = [
   {
     "text": "AI大模型之美",
     "link": "/AI大模型之美/开篇词｜GPT来了，跑步迎接AI爆发的时代",
-    "count": 32,
+    "count": 34,
     "category": "ai",
     "categoryLabel": "AI 与数据智能",
     "tags": [
@@ -34090,6 +34196,18 @@ export const navItems = [
       "后端与中间件",
       "技术管理与职场",
       "数据库与存储"
+    ]
+  },
+  {
+    "text": "Kubernetes源码剖析与实战",
+    "link": "/Kubernetes源码剖析与实战/01｜究竟什么是云原生？",
+    "count": 24,
+    "category": "infra",
+    "categoryLabel": "云原生与基础设施",
+    "tags": [
+      "云原生与基础设施",
+      "后端与中间件",
+      "架构与分布式"
     ]
   },
   {
