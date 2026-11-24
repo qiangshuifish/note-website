@@ -34556,6 +34556,148 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/现代C++编程实战/课前必读-有关术语发音及环境要求"
     }
   ],
+  "/现代ReactWeb开发实战/": [
+    {
+      "text": "ReactWeb开发这样学，才能独当一面！",
+      "link": "/现代ReactWeb开发实战/开篇词｜ReactWeb开发这样学，才能独当一面！"
+    },
+    {
+      "text": "身为Web前端工程师，我都在开发什么？",
+      "link": "/现代ReactWeb开发实战/01｜身为Web前端工程师，我都在开发什么？"
+    },
+    {
+      "text": "开发前端有哪些要点？React框架是如何应对的？",
+      "link": "/现代ReactWeb开发实战/02｜开发前端有哪些要点？React框架是如何应对的？"
+    },
+    {
+      "text": "看板应用：从零开始快速搭建一个React项目",
+      "link": "/现代ReactWeb开发实战/03｜看板应用：从零开始快速搭建一个React项目"
+    },
+    {
+      "text": "JSX：如何理解这种声明式语法糖？",
+      "link": "/现代ReactWeb开发实战/04｜JSX：如何理解这种声明式语法糖？"
+    },
+    {
+      "text": "前端组件化：如何将完整应用拆分成React组件？",
+      "link": "/现代ReactWeb开发实战/05｜前端组件化：如何将完整应用拆分成React组件？"
+    },
+    {
+      "text": "虚拟DOM：为什么要关心React组件的渲染机制？",
+      "link": "/现代ReactWeb开发实战/06｜虚拟DOM：为什么要关心React组件的渲染机制？"
+    },
+    {
+      "text": "组件样式：聊聊CSS-in-JS的特点和典型使用场景",
+      "link": "/现代ReactWeb开发实战/07｜组件样式：聊聊CSS-in-JS的特点和典型使用场景"
+    },
+    {
+      "text": "组件生命周期：React新老版本中生命周期的演化",
+      "link": "/现代ReactWeb开发实战/08｜组件生命周期：React新老版本中生命周期的演化"
+    },
+    {
+      "text": "ReactHooks（上）：为什么说在React中函数组件和Hooks是绝配？",
+      "link": "/现代ReactWeb开发实战/09｜ReactHooks（上）：为什么说在React中函数组件和Hooks是绝配？"
+    },
+    {
+      "text": "ReactHooks（下）：用Hooks处理函数组件的副作用",
+      "link": "/现代ReactWeb开发实战/10｜ReactHooks（下）：用Hooks处理函数组件的副作用"
+    },
+    {
+      "text": "事件处理：React合成事件是什么？为什么不用原生DOM事件？",
+      "link": "/现代ReactWeb开发实战/11｜事件处理：React合成事件是什么？为什么不用原生DOM事件？"
+    },
+    {
+      "text": "组件表与里（上）：数据是如何在React组件之间流转的？",
+      "link": "/现代ReactWeb开发实战/12｜组件表与里（上）：数据是如何在React组件之间流转的？"
+    },
+    {
+      "text": "组件表与里（下）：用接口的思路设计开发React组件",
+      "link": "/现代ReactWeb开发实战/13｜组件表与里（下）：用接口的思路设计开发React组件"
+    },
+    {
+      "text": "现代化React：现代工程化技术下的React项目",
+      "link": "/现代ReactWeb开发实战/14｜现代化React：现代工程化技术下的React项目"
+    },
+    {
+      "text": "不可变数据：为什么对React这么重要？",
+      "link": "/现代ReactWeb开发实战/15｜不可变数据：为什么对React这么重要？"
+    },
+    {
+      "text": "应用状态管理（上）：应用状态管理框架Redux",
+      "link": "/现代ReactWeb开发实战/16｜应用状态管理（上）：应用状态管理框架Redux"
+    },
+    {
+      "text": "应用状态管理（下）：该用React组件状态还是Redux？",
+      "link": "/现代ReactWeb开发实战/17｜应用状态管理（下）：该用React组件状态还是Redux？"
+    },
+    {
+      "text": "数据类型：活用TypeScript做类型检查",
+      "link": "/现代ReactWeb开发实战/18｜数据类型：活用TypeScript做类型检查"
+    },
+    {
+      "text": "代码复用：如何设计开发自定义Hooks和高阶组件？",
+      "link": "/现代ReactWeb开发实战/19｜代码复用：如何设计开发自定义Hooks和高阶组件？"
+    },
+    {
+      "text": "大型项目：源码越来越多，项目该如何扩展？",
+      "link": "/现代ReactWeb开发实战/20｜大型项目：源码越来越多，项目该如何扩展？"
+    },
+    {
+      "text": "性能优化：保证优秀的用户体验",
+      "link": "/现代ReactWeb开发实战/21｜性能优化：保证优秀的用户体验"
+    },
+    {
+      "text": "质量保证（上）：每次上线都出Bug？你需要E2E测试",
+      "link": "/现代ReactWeb开发实战/22｜质量保证（上）：每次上线都出Bug？你需要E2E测试"
+    },
+    {
+      "text": "质量保证（下）：测试金字塔与React单元测试",
+      "link": "/现代ReactWeb开发实战/23｜质量保证（下）：测试金字塔与React单元测试"
+    },
+    {
+      "text": "工程化与团队协作：让我们合作开发一个大型React项目",
+      "link": "/现代ReactWeb开发实战/24｜工程化与团队协作：让我们合作开发一个大型React项目"
+    },
+    {
+      "text": "留言区心愿单：真·子组件以及jsx-runtime",
+      "link": "/现代ReactWeb开发实战/加餐01｜留言区心愿单：真·子组件以及jsx-runtime"
+    },
+    {
+      "text": "留言区心愿单：Fiber协调引擎",
+      "link": "/现代ReactWeb开发实战/加餐02｜留言区心愿单：Fiber协调引擎"
+    },
+    {
+      "text": "对React和前端技术未来的展望",
+      "link": "/现代ReactWeb开发实战/结束语｜对React和前端技术未来的展望"
+    },
+    {
+      "text": "React19新增的Action和表单相关API",
+      "link": "/现代ReactWeb开发实战/React19新增的Action和表单相关API"
+    },
+    {
+      "text": "React19新增的use以及其他API",
+      "link": "/现代ReactWeb开发实战/React19新增的use以及其他API"
+    },
+    {
+      "text": "SSR、Next.js与服务器组件",
+      "link": "/现代ReactWeb开发实战/SSR、Next.js与服务器组件"
+    },
+    {
+      "text": "解读React19新特性",
+      "link": "/现代ReactWeb开发实战/旅程再启｜解读React19新特性"
+    },
+    {
+      "text": "用ChatGPT开发一个看板项目",
+      "link": "/现代ReactWeb开发实战/特别加餐｜用ChatGPT开发一个看板项目"
+    },
+    {
+      "text": "前端开发为什么要工程化？",
+      "link": "/现代ReactWeb开发实战/直播加餐01｜前端开发为什么要工程化？"
+    },
+    {
+      "text": "Freewheel前端工程化的演进和最佳实践",
+      "link": "/现代ReactWeb开发实战/直播加餐02｜Freewheel前端工程化的演进和最佳实践"
+    }
+  ],
   "/用户体验设计实战课/": [
     {
       "text": "开篇词-用户体验，未来十年撬动商业的思维",
@@ -45649,6 +45791,18 @@ export const navItems = [
       "算法与计算机基础",
       "云原生与基础设施",
       "工程效能与测试"
+    ]
+  },
+  {
+    "text": "现代ReactWeb开发实战",
+    "link": "/现代ReactWeb开发实战/开篇词｜ReactWeb开发这样学，才能独当一面！",
+    "count": 35,
+    "category": "frontend",
+    "categoryLabel": "前端与客户端",
+    "tags": [
+      "前端与客户端",
+      "产品与商业",
+      "技术管理与职场"
     ]
   },
   {
