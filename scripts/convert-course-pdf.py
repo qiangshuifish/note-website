@@ -102,6 +102,7 @@ TERMINAL = "。？！；：…”’）】?!;:"
 SECRET_PATTERNS = [
     (re.compile(r'sk-ant-[A-Za-z0-9_-]{20,}'), 'sk-ant-xxxx'),
     (re.compile(r'sk-[A-Za-z0-9_-]{20,}'), 'sk-xxxx'),
+    (re.compile(r'(?:sk|rk)_(?:test|live)_[A-Za-z0-9]{10,}'), 'sk_test_xxxx'),
     (re.compile(r'ghp_[A-Za-z0-9]{30,}'), 'ghp_xxxx'),
     (re.compile(r'AKIA[0-9A-Z]{16}'), 'AKIAxxxx'),
     (re.compile(r'xox[baprs]-[A-Za-z0-9-]{10,}'), 'xox-xxxx'),
@@ -449,6 +450,7 @@ def main():
     converted = 0
     total_images = 0
     skipped_empty = []
+    skipped_corrupt = []
     skipped_existing = 0
     failed_operations = []
 
@@ -458,7 +460,11 @@ def main():
         try:
             with fitz.open(pdf_path) as doc:
                 page_count = len(doc)
-                is_empty = page_count <= 1 and not doc[0].get_text().strip()
+                if page_count == 0:
+                    skipped_corrupt.append(name)
+                    Logger.warn(f'损坏 PDF（无页面），已跳过 | {name}')
+                    continue
+                is_empty = page_count == 1 and not doc[0].get_text().strip()
             if is_empty:
                 skipped_empty.append(name)
                 Logger.warn(f'空 PDF，已跳过 | {name}')
@@ -475,6 +481,9 @@ def main():
             total_images += imgs
             prefix = '[dry-run] 将生成' if args.dry_run else '已生成'
             Logger.info(f'{prefix} {blocks} 个内容块, {imgs} 张图片 | {os.path.basename(out_path)}')
+        except fitz.FileDataError as e:
+            skipped_corrupt.append(name)
+            Logger.warn(f'损坏 PDF，已跳过 | {name}: {e}')
         except Exception as e:
             failed_operations.append({
                 'file': str(pdf_path),
@@ -492,6 +501,10 @@ def main():
     if skipped_empty:
         print(f'  {Colors.YELLOW}空 PDF 跳过: {len(skipped_empty)} 个{Colors.RESET}')
         for name in skipped_empty:
+            print(f'    {Colors.YELLOW}⚠ {name}{Colors.RESET}')
+    if skipped_corrupt:
+        print(f'  {Colors.YELLOW}损坏 PDF 跳过: {len(skipped_corrupt)} 个{Colors.RESET}')
+        for name in skipped_corrupt:
             print(f'    {Colors.YELLOW}⚠ {name}{Colors.RESET}')
 
     if failed_operations:
