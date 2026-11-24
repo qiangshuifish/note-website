@@ -9868,6 +9868,52 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/Python自动化办公实战课/春节特别放送3｜揭晓项目作业的答案"
     }
   ],
+  "/RAG快速开发实战/": [
+    {
+      "text": "为什么说RAG是AI2.0时代的“杀手级”应用？",
+      "link": "/RAG快速开发实战/开篇词｜为什么说RAG是AI2.0时代的“杀手级”应用？"
+    },
+    {
+      "text": "RAG的场景及技术原理",
+      "link": "/RAG快速开发实战/01｜RAG的场景及技术原理"
+    },
+    {
+      "text": "从0到1快速搭建RAG应用",
+      "link": "/RAG快速开发实战/02｜从0到1快速搭建RAG应用"
+    },
+    {
+      "text": "RAG索引（一）：文档解析技术",
+      "link": "/RAG快速开发实战/03｜RAG索引（一）：文档解析技术"
+    },
+    {
+      "text": "RAG索引（二）：分块策略与Embedding技术",
+      "link": "/RAG快速开发实战/04｜RAG索引（二）：分块策略与Embedding技术"
+    },
+    {
+      "text": "RAG向量数据库原理与常用向量库",
+      "link": "/RAG快速开发实战/05｜RAG向量数据库原理与常用向量库"
+    },
+    {
+      "text": "RAG检索：混合检索与重排序技术",
+      "link": "/RAG快速开发实战/06｜RAG检索：混合检索与重排序技术"
+    },
+    {
+      "text": "RAG生成：大模型与Prompt提示工程",
+      "link": "/RAG快速开发实战/07｜RAG生成：大模型与Prompt提示工程"
+    },
+    {
+      "text": "RAG效果提升：检索精度的优化与RAG效果评估",
+      "link": "/RAG快速开发实战/08｜RAG效果提升：检索精度的优化与RAG效果评估"
+    },
+    {
+      "text": "进阶（一）：AdvancedRAG与ModularRAG",
+      "link": "/RAG快速开发实战/09｜进阶（一）：AdvancedRAG与ModularRAG"
+    },
+    {
+      "text": "进阶（二）：微软GraphRAG",
+      "link": "/RAG快速开发实战/10｜进阶（二）：微软GraphRAG"
+    }
+  ],
   "/RAG系统实战课/": [
     {
       "text": "RAG，传统开发者加入AI的最佳路线",
@@ -35956,6 +36002,17 @@ export const navItems = [
       "后端与中间件",
       "工程效能与测试",
       "技术管理与职场"
+    ]
+  },
+  {
+    "text": "RAG快速开发实战",
+    "link": "/RAG快速开发实战/开篇词｜为什么说RAG是AI2.0时代的“杀手级”应用？",
+    "count": 11,
+    "category": "ai",
+    "categoryLabel": "AI 与数据智能",
+    "tags": [
+      "AI 与数据智能",
+      "数据库与存储"
     ]
   },
   {
