@@ -5512,6 +5512,196 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/JavaScript核心原理解析/结课测试-这些JavaScript知识，你真的掌握了吗？"
     }
   ],
+  "/JavaScript进阶实战课/": [
+    {
+      "text": "开篇词-JavaScript的进阶之路",
+      "link": "/JavaScript进阶实战课/开篇词-JavaScript的进阶之路"
+    },
+    {
+      "text": "函数式vs.面向对象：响应未知和不确定",
+      "link": "/JavaScript进阶实战课/01-函数式vs.面向对象：响应未知和不确定"
+    },
+    {
+      "text": "如何通过闭包对象管理程序中状态的变化？",
+      "link": "/JavaScript进阶实战课/02-如何通过闭包对象管理程序中状态的变化？"
+    },
+    {
+      "text": "如何通过部分应用和柯里化让函数具象化？",
+      "link": "/JavaScript进阶实战课/03-如何通过部分应用和柯里化让函数具象化？"
+    },
+    {
+      "text": "如何通过组合、管道和reducer让函数抽象化？",
+      "link": "/JavaScript进阶实战课/04-如何通过组合、管道和reducer让函数抽象化？"
+    },
+    {
+      "text": "map、reduce和monad如何围绕值进行操作？",
+      "link": "/JavaScript进阶实战课/05｜map、reduce和monad如何围绕值进行操作？"
+    },
+    {
+      "text": "如何通过模块化、异步和观察做到动态加载？",
+      "link": "/JavaScript进阶实战课/06-如何通过模块化、异步和观察做到动态加载？"
+    },
+    {
+      "text": "深入理解对象的私有和静态属性",
+      "link": "/JavaScript进阶实战课/07-深入理解对象的私有和静态属性"
+    },
+    {
+      "text": "深入理解继承、Delegation和组合",
+      "link": "/JavaScript进阶实战课/08｜深入理解继承、Delegation和组合"
+    },
+    {
+      "text": "面向对象：通过词法作用域和调用点理解this绑定",
+      "link": "/JavaScript进阶实战课/09｜面向对象：通过词法作用域和调用点理解this绑定"
+    },
+    {
+      "text": "JS有哪8种数据类型，你需要注意什么？",
+      "link": "/JavaScript进阶实战课/10｜JS有哪8种数据类型，你需要注意什么？"
+    },
+    {
+      "text": "通过JS引擎的堆栈了解闭包原理",
+      "link": "/JavaScript进阶实战课/11｜通过JS引擎的堆栈了解闭包原理"
+    },
+    {
+      "text": "JS语义分析该用迭代还是递归？",
+      "link": "/JavaScript进阶实战课/12｜JS语义分析该用迭代还是递归？"
+    },
+    {
+      "text": "JS引擎如何实现数组的稳定排序？",
+      "link": "/JavaScript进阶实战课/13-JS引擎如何实现数组的稳定排序？"
+    },
+    {
+      "text": "通过SparkPlug深入了解调用栈",
+      "link": "/JavaScript进阶实战课/14-通过SparkPlug深入了解调用栈"
+    },
+    {
+      "text": "如何通过哈希查找JS对象内存地址？",
+      "link": "/JavaScript进阶实战课/15-如何通过哈希查找JS对象内存地址？"
+    },
+    {
+      "text": "为什么环形队列适合做Node数据流缓存？",
+      "link": "/JavaScript进阶实战课/16-为什么环形队列适合做Node数据流缓存？"
+    },
+    {
+      "text": "如何通过链表做LRU-LFU缓存？",
+      "link": "/JavaScript进阶实战课/17-如何通过链表做LRU-LFU缓存？"
+    },
+    {
+      "text": "TurboFan如何用图做JS编译优化？",
+      "link": "/JavaScript进阶实战课/18-TurboFan如何用图做JS编译优化？"
+    },
+    {
+      "text": "通过树和图看如何在无序中找到路径和秩序",
+      "link": "/JavaScript进阶实战课/19-通过树和图看如何在无序中找到路径和秩序"
+    },
+    {
+      "text": "算法思想：JS中分治、贪心、回溯和动态规划",
+      "link": "/JavaScript进阶实战课/20-算法思想：JS中分治、贪心、回溯和动态规划"
+    },
+    {
+      "text": "创建型：为什么说Redux可以替代单例状态管理",
+      "link": "/JavaScript进阶实战课/21-创建型：为什么说Redux可以替代单例状态管理"
+    },
+    {
+      "text": "结构型：Vue.js如何通过代理实现响应式编程",
+      "link": "/JavaScript进阶实战课/22｜结构型：Vue.js如何通过代理实现响应式编程"
+    },
+    {
+      "text": "结构型：通过jQuery看结构型模式",
+      "link": "/JavaScript进阶实战课/23-结构型：通过jQuery看结构型模式"
+    },
+    {
+      "text": "行为型：通过观察者、迭代器模式看JS异步回调",
+      "link": "/JavaScript进阶实战课/24-行为型：通过观察者、迭代器模式看JS异步回调"
+    },
+    {
+      "text": "行为型：模版、策略和状态模式有什么区别？",
+      "link": "/JavaScript进阶实战课/25-行为型：模版、策略和状态模式有什么区别？"
+    },
+    {
+      "text": "特殊型：前端有哪些处理加载和渲染的特殊“模式”？",
+      "link": "/JavaScript进阶实战课/26｜特殊型：前端有哪些处理加载和渲染的特殊“模式”？"
+    },
+    {
+      "text": "性能：如何理解JavaScript中的并行、并发？（上）",
+      "link": "/JavaScript进阶实战课/27｜性能：如何理解JavaScript中的并行、并发？（上）"
+    },
+    {
+      "text": "性能：如何理解JavaScript中的并行、并发？（下）",
+      "link": "/JavaScript进阶实战课/28｜性能：如何理解JavaScript中的并行、并发？（下）"
+    },
+    {
+      "text": "性能：通过Orinoco、JankBusters看垃圾回收",
+      "link": "/JavaScript进阶实战课/29｜性能：通过Orinoco、JankBusters看垃圾回收"
+    },
+    {
+      "text": "网络：从HTTP-1到HTTP-3，你都需要了解什么？",
+      "link": "/JavaScript进阶实战课/30｜网络：从HTTP-1到HTTP-3，你都需要了解什么？"
+    },
+    {
+      "text": "安全：JS代码和程序都需要注意哪些安全问题？",
+      "link": "/JavaScript进阶实战课/31｜安全：JS代码和程序都需要注意哪些安全问题？"
+    },
+    {
+      "text": "测试（一）：开发到重构中的测试",
+      "link": "/JavaScript进阶实战课/32｜测试（一）：开发到重构中的测试"
+    },
+    {
+      "text": "测试（二）：功能性测试",
+      "link": "/JavaScript进阶实战课/33｜测试（二）：功能性测试"
+    },
+    {
+      "text": "测试（三）：非功能性测试",
+      "link": "/JavaScript进阶实战课/34｜测试（三）：非功能性测试"
+    },
+    {
+      "text": "静态类型检查：ESLint语法规则和代码风格的检查",
+      "link": "/JavaScript进阶实战课/35｜静态类型检查：ESLint语法规则和代码风格的检查"
+    },
+    {
+      "text": "Flow：通过Flow类看JS的类型检查",
+      "link": "/JavaScript进阶实战课/36｜Flow：通过Flow类看JS的类型检查"
+    },
+    {
+      "text": "包管理和分发：通过NPM做包的管理和分发",
+      "link": "/JavaScript进阶实战课/37｜包管理和分发：通过NPM做包的管理和分发"
+    },
+    {
+      "text": "编译和打包：通过Webpack、Babel做编译和打包",
+      "link": "/JavaScript进阶实战课/38｜编译和打包：通过Webpack、Babel做编译和打包"
+    },
+    {
+      "text": "语法扩展：通过JSX来做语法扩展",
+      "link": "/JavaScript进阶实战课/39｜语法扩展：通过JSX来做语法扩展"
+    },
+    {
+      "text": "Polyfill：通过Polyfill让浏览器提供原生支持",
+      "link": "/JavaScript进阶实战课/40｜Polyfill：通过Polyfill让浏览器提供原生支持"
+    },
+    {
+      "text": "微前端：从MVC贫血模式到DDD充血模式",
+      "link": "/JavaScript进阶实战课/41｜微前端：从MVC贫血模式到DDD充血模式"
+    },
+    {
+      "text": "大前端：通过一云多端搭建跨PC-移动的平台应用",
+      "link": "/JavaScript进阶实战课/42｜大前端：通过一云多端搭建跨PC-移动的平台应用"
+    },
+    {
+      "text": "元编程：通过Proxies和Reflect赋能元编程",
+      "link": "/JavaScript进阶实战课/43｜元编程：通过Proxies和Reflect赋能元编程"
+    },
+    {
+      "text": "JavaScript的未来之路：源于一个以终为始的初心",
+      "link": "/JavaScript进阶实战课/结束语｜JavaScript的未来之路：源于一个以终为始的初心"
+    },
+    {
+      "text": "来赴一场100分之约！",
+      "link": "/JavaScript进阶实战课/期末测验｜来赴一场100分之约！"
+    },
+    {
+      "text": "当JS遇到AIGC，会碰撞出什么样的火花？",
+      "link": "/JavaScript进阶实战课/特别加餐｜当JS遇到AIGC，会碰撞出什么样的火花？"
+    }
+  ],
   "/Java业务开发常见错误100例/": [
     {
       "text": "开篇词-业务代码真的会有这么多坑？",
@@ -33816,6 +34006,18 @@ export const navItems = [
       "前端与客户端",
       "后端与中间件",
       "产品与商业"
+    ]
+  },
+  {
+    "text": "JavaScript进阶实战课",
+    "link": "/JavaScript进阶实战课/开篇词-JavaScript的进阶之路",
+    "count": 47,
+    "category": "frontend",
+    "categoryLabel": "前端与客户端",
+    "tags": [
+      "前端与客户端",
+      "后端与中间件",
+      "架构与分布式"
     ]
   },
   {
