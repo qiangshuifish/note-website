@@ -30332,6 +30332,208 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/智能原生架构实战/直播回放｜当架构遇到大模型：毁灭，还是重生"
     }
   ],
+  "/朱涛·Kotlin编程第一课/": [
+    {
+      "text": "开篇词-入门Kotlin有多容易，精通Kotlin就有多难",
+      "link": "/朱涛·Kotlin编程第一课/开篇词-入门Kotlin有多容易，精通Kotlin就有多难"
+    },
+    {
+      "text": "Kotlin基础语法：正式开启学习之旅",
+      "link": "/朱涛·Kotlin编程第一课/01-Kotlin基础语法：正式开启学习之旅"
+    },
+    {
+      "text": "面向对象：理解Kotlin设计者的良苦用心",
+      "link": "/朱涛·Kotlin编程第一课/02-面向对象：理解Kotlin设计者的良苦用心"
+    },
+    {
+      "text": "Kotlin原理：编译器在幕后干了哪些“好事”？",
+      "link": "/朱涛·Kotlin编程第一课/03-Kotlin原理：编译器在幕后干了哪些“好事”？"
+    },
+    {
+      "text": "实战：构建一个Kotlin版本的四则运算计算器",
+      "link": "/朱涛·Kotlin编程第一课/04-实战：构建一个Kotlin版本的四则运算计算器"
+    },
+    {
+      "text": "object关键字：你到底有多少种用法？",
+      "link": "/朱涛·Kotlin编程第一课/05-object关键字：你到底有多少种用法？"
+    },
+    {
+      "text": "扩展：你的能力边界到底在哪里？",
+      "link": "/朱涛·Kotlin编程第一课/06-扩展：你的能力边界到底在哪里？"
+    },
+    {
+      "text": "高阶函数：为什么说函数是Kotlin的“一等公民”？",
+      "link": "/朱涛·Kotlin编程第一课/07-高阶函数：为什么说函数是Kotlin的“一等公民”？"
+    },
+    {
+      "text": "实战：用Kotlin写一个英语词频统计程序",
+      "link": "/朱涛·Kotlin编程第一课/08-实战：用Kotlin写一个英语词频统计程序"
+    },
+    {
+      "text": "委托：你为何总是被低估？",
+      "link": "/朱涛·Kotlin编程第一课/09-委托：你为何总是被低估？"
+    },
+    {
+      "text": "泛型：逆变or协变，傻傻分不清？",
+      "link": "/朱涛·Kotlin编程第一课/10-泛型：逆变or协变，傻傻分不清？"
+    },
+    {
+      "text": "注解与反射：进阶必备技能",
+      "link": "/朱涛·Kotlin编程第一课/11-注解与反射：进阶必备技能"
+    },
+    {
+      "text": "实战：用Kotlin实现一个网络请求框架KtHttp",
+      "link": "/朱涛·Kotlin编程第一课/12-实战：用Kotlin实现一个网络请求框架KtHttp"
+    },
+    {
+      "text": "什么是“协程思维模型”？",
+      "link": "/朱涛·Kotlin编程第一课/13-什么是“协程思维模型”？"
+    },
+    {
+      "text": "如何启动协程？",
+      "link": "/朱涛·Kotlin编程第一课/14-如何启动协程？"
+    },
+    {
+      "text": "挂起函数：Kotlin协程的核心",
+      "link": "/朱涛·Kotlin编程第一课/15-挂起函数：Kotlin协程的核心"
+    },
+    {
+      "text": "Job：协程也有生命周期吗？",
+      "link": "/朱涛·Kotlin编程第一课/16-Job：协程也有生命周期吗？"
+    },
+    {
+      "text": "Context：万物皆为Context？",
+      "link": "/朱涛·Kotlin编程第一课/17-Context：万物皆为Context？"
+    },
+    {
+      "text": "实战：让KtHttp支持挂起函数",
+      "link": "/朱涛·Kotlin编程第一课/18-实战：让KtHttp支持挂起函数"
+    },
+    {
+      "text": "Channel：为什么说Channel是“热”的？",
+      "link": "/朱涛·Kotlin编程第一课/19-Channel：为什么说Channel是“热”的？"
+    },
+    {
+      "text": "Flow：为什么说Flow是“冷”的？",
+      "link": "/朱涛·Kotlin编程第一课/20-Flow：为什么说Flow是“冷”的？"
+    },
+    {
+      "text": "select：到底是在选择什么？",
+      "link": "/朱涛·Kotlin编程第一课/21-select：到底是在选择什么？"
+    },
+    {
+      "text": "并发：协程不需要处理同步吗？",
+      "link": "/朱涛·Kotlin编程第一课/22-并发：协程不需要处理同步吗？"
+    },
+    {
+      "text": "异常：try-catch居然会不起作用？坑！",
+      "link": "/朱涛·Kotlin编程第一课/23-异常：try-catch居然会不起作用？坑！"
+    },
+    {
+      "text": "实战：让KtHttp支持Flow",
+      "link": "/朱涛·Kotlin编程第一课/24-实战：让KtHttp支持Flow"
+    },
+    {
+      "text": "集合操作符：你也会“看完就忘”吗？",
+      "link": "/朱涛·Kotlin编程第一课/25-集合操作符：你也会“看完就忘”吗？"
+    },
+    {
+      "text": "协程源码的地图：如何读源码才不会迷失？",
+      "link": "/朱涛·Kotlin编程第一课/26-协程源码的地图：如何读源码才不会迷失？"
+    },
+    {
+      "text": "图解挂起函数：原来你就是个状态机？",
+      "link": "/朱涛·Kotlin编程第一课/27-图解挂起函数：原来你就是个状态机？"
+    },
+    {
+      "text": "launch的背后到底发生了什么？",
+      "link": "/朱涛·Kotlin编程第一课/28-launch的背后到底发生了什么？"
+    },
+    {
+      "text": "Dispatchers是如何工作的？",
+      "link": "/朱涛·Kotlin编程第一课/29-Dispatchers是如何工作的？"
+    },
+    {
+      "text": "CoroutineScope是如何管理协程的？",
+      "link": "/朱涛·Kotlin编程第一课/30-CoroutineScope是如何管理协程的？"
+    },
+    {
+      "text": "图解Channel：如何理解它的CSP通信模型？",
+      "link": "/朱涛·Kotlin编程第一课/31-图解Channel：如何理解它的CSP通信模型？"
+    },
+    {
+      "text": "图解Flow：原来你是只纸老虎？",
+      "link": "/朱涛·Kotlin编程第一课/32-图解Flow：原来你是只纸老虎？"
+    },
+    {
+      "text": "JavaAndroid开发者还会有未来吗？",
+      "link": "/朱涛·Kotlin编程第一课/33-JavaAndroid开发者还会有未来吗？"
+    },
+    {
+      "text": "Kotlin与Jetpack简直是天生一对！",
+      "link": "/朱涛·Kotlin编程第一课/34-Kotlin与Jetpack简直是天生一对！"
+    },
+    {
+      "text": "用Kotlin写一个GitHubTrendingApp",
+      "link": "/朱涛·Kotlin编程第一课/35-用Kotlin写一个GitHubTrendingApp"
+    },
+    {
+      "text": "加餐一-初识Kotlin函数式编程",
+      "link": "/朱涛·Kotlin编程第一课/加餐一-初识Kotlin函数式编程"
+    },
+    {
+      "text": "加餐三-什么是“不变性思维”？",
+      "link": "/朱涛·Kotlin编程第一课/加餐三-什么是“不变性思维”？"
+    },
+    {
+      "text": "加餐二-什么是“表达式思维”？",
+      "link": "/朱涛·Kotlin编程第一课/加餐二-什么是“表达式思维”？"
+    },
+    {
+      "text": "加餐五-深入理解协程基础元素",
+      "link": "/朱涛·Kotlin编程第一课/加餐五-深入理解协程基础元素"
+    },
+    {
+      "text": "加餐四-什么是“空安全思维”？",
+      "link": "/朱涛·Kotlin编程第一课/加餐四-什么是“空安全思维”？"
+    },
+    {
+      "text": "答疑（一）-Java和Kotlin到底谁好谁坏？",
+      "link": "/朱涛·Kotlin编程第一课/答疑（一）-Java和Kotlin到底谁好谁坏？"
+    },
+    {
+      "text": "结束语-不忘初心",
+      "link": "/朱涛·Kotlin编程第一课/结束语-不忘初心"
+    },
+    {
+      "text": "结课测试-“Kotlin编程第一课”100分试卷等你来挑战！",
+      "link": "/朱涛·Kotlin编程第一课/结课测试-“Kotlin编程第一课”100分试卷等你来挑战！"
+    },
+    {
+      "text": "春节刷题计划（一）-当Kotlin遇上LeetCode",
+      "link": "/朱涛·Kotlin编程第一课/春节刷题计划（一）-当Kotlin遇上LeetCode"
+    },
+    {
+      "text": "春节刷题计划（三）-一题双解，搞定求解方程",
+      "link": "/朱涛·Kotlin编程第一课/春节刷题计划（三）-一题双解，搞定求解方程"
+    },
+    {
+      "text": "春节刷题计划（二）-一题三解，搞定版本号判断",
+      "link": "/朱涛·Kotlin编程第一课/春节刷题计划（二）-一题三解，搞定版本号判断"
+    },
+    {
+      "text": "春节刷题计划（四）-一题三解，搞定分式加减法",
+      "link": "/朱涛·Kotlin编程第一课/春节刷题计划（四）-一题三解，搞定分式加减法"
+    },
+    {
+      "text": "期中考试-用Kotlin实现图片处理程序",
+      "link": "/朱涛·Kotlin编程第一课/期中考试-用Kotlin实现图片处理程序"
+    },
+    {
+      "text": "题目解答-期中考试版本参考实现",
+      "link": "/朱涛·Kotlin编程第一课/题目解答-期中考试版本参考实现"
+    }
+  ],
   "/朱赟的技术管理课/": [
     {
       "text": "开篇词-从工程师到管理者，我的思考与实践",
@@ -44415,6 +44617,18 @@ export const navItems = [
       "架构与分布式",
       "产品与商业",
       "工程效能与测试"
+    ]
+  },
+  {
+    "text": "朱涛·Kotlin编程第一课",
+    "link": "/朱涛·Kotlin编程第一课/开篇词-入门Kotlin有多容易，精通Kotlin就有多难",
+    "count": 50,
+    "category": "growth",
+    "categoryLabel": "个人成长与表达",
+    "tags": [
+      "个人成长与表达",
+      "云原生与基础设施",
+      "后端与中间件"
     ]
   },
   {
