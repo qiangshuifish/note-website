@@ -1,0 +1,13 @@
+# 直播回放 | 畅谈AIGC，从AI绘画到GPT-4Vision
+
+直播主要话题：
+
+- 历史脉络：从 ChatGPT 到多模态大模型
+
+- 方案推演：GPT-4 Vision、Gemini 背后的技术方案
+
+- 技术梳理：从事多模态大模型方向，需要掌握哪些技术
+
+- 发展趋势：未来 AGI 长什么样？
+
+![](images/直播回放-畅谈AIGC，从AI绘画到GPT-4Vision/1.jpeg)
