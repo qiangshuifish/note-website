@@ -7306,16 +7306,20 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/LLM自主智能体应用实战课/22｜课程回顾和内容提炼"
     },
     {
-      "text": "使用AgentSDK实现AutonomousAgent应用",
-      "link": "/LLM自主智能体应用实战课/23｜使用AgentSDK实现AutonomousAgent应用"
-    },
-    {
       "text": "机会留给有准备的人",
       "link": "/LLM自主智能体应用实战课/结束语｜机会留给有准备的人"
     },
     {
       "text": "来赴一场满分之约吧",
       "link": "/LLM自主智能体应用实战课/结课测试｜来赴一场满分之约吧"
+    },
+    {
+      "text": "OpenClaw保姆式安装部署指南",
+      "link": "/LLM自主智能体应用实战课/前沿技术追踪（一）｜OpenClaw保姆式安装部署指南"
+    },
+    {
+      "text": "使用AgentSDK实现AutonomousAgent应用",
+      "link": "/LLM自主智能体应用实战课/前沿技术追踪（一）｜使用AgentSDK实现AutonomousAgent应用"
     }
   ],
   "/Linux内核技术实战课/": [
@@ -34473,7 +34477,7 @@ export const navItems = [
   {
     "text": "LLM自主智能体应用实战课",
     "link": "/LLM自主智能体应用实战课/开篇词｜天作之合：LLM助力业务流程自动化",
-    "count": 26,
+    "count": 27,
     "category": "ai",
     "categoryLabel": "AI 与数据智能",
     "tags": [
