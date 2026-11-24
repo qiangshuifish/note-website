@@ -49,7 +49,7 @@ const fullTextSearchConfig = process.env.ENABLE_FULL_TEXT_SEARCH === '1'
 
 export default defineConfig({
   title: '技术学习笔记',
-  description: '235门技术课程学习笔记',
+  description: '236门技术课程学习笔记',
   base: '/note-website/',
   srcDir: '.',
   outDir: './dist',
