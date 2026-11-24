@@ -281,7 +281,7 @@ func (e *AgentEngine) Run(ctx context.Context, session *ctxpkg.Session, reporter
                if result.IsError {
                    // 发生错误，交由 RecoveryManager 诊断并注入“锦囊妙计”
                    finalOutput = e.recovery.AnalyzeAndInject(call.Name, result.O
-                   log.Printf("  -> [Go-%d]   注入救援指南: %s\n", idx, finalOutpu
+                   log.Printf("  -> [Go-%d]  注入救援指南: %s\n", idx, finalOutpu
                } else {
                    log.Printf("  -> [Go-%d] ✅ 工具执行成功 (返回 %d 字节)\n", idx,
                }
@@ -427,9 +427,9 @@ func main() {
 🤖 Agent 回复:
 [🛠️ 调用工具] edit_file
   参数: {"path":"auth.go","old_text":"    // 鉴权入口函数\n    func login(user stri
-2026/04/12 14:16:11   -> [Go-0]   注入救援指南: Error executing edit_file: 在文件中未
+2026/04/12 14:16:11   -> [Go-0]  注入救援指南: Error executing edit_file: 在文件中未
 [系统救援指南]: 你提供的 old_text 与文件当前内容不一致，或者缺少必要的缩进。请先使用 `read_fi
-[  执行失败] edit_file
+[ 执行失败] edit_file
   错误: Error executing edit_file: 在文件中未找到 old_text，请检查内容和缩进
 [系统救援指南]: 你提供的 old_text 与文件当前内容不一致，或者缺少必要的缩进。请先?... (已截断)
 🤖 Agent 回复:

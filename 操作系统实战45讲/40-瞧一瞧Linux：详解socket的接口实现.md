@@ -244,7 +244,7 @@ int __sys_listen(int fd, int backlog)
 	struct socket *sock;
 	int err, fput_needed;
 	int somaxconn;
-    // 通过套接字描述符找到struct socket
+    // 通过套接字描述符找到struct socket
 	sock = sockfd_lookup_light(fd, &err, &fput_needed);
 	if (sock) {
 		somaxconn = sock_net(sock-&gt;sk)-&gt;core.sysctl_somaxconn;
@@ -377,7 +377,7 @@ int __sys_recvfrom(int fd, void __user *ubuf, size_t size, unsigned int flags,
 	err = import_single_range(READ, ubuf, size, &iov, &msg.msg_iter);
 	if (unlikely(err))
 		return err;
-    // 通过套接字描述符找到struct socket
+    // 通过套接字描述符找到struct socket
 	sock = sockfd_lookup_light(fd, &err, &fput_needed);
 	if (!sock)
 		goto out;

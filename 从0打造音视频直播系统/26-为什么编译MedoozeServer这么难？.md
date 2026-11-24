@@ -5,7 +5,7 @@
 
 也许你会觉得Linux下的程序编译有什么可讲的呢，直接在Linux系统下执行一下 build 命令不就行了，还需要专门理解系统的编译过程和构建工具的使用吗？实际上，根据我多年的工作经验来看，理解项目的编译过程、熟悉各种构建工具的使用是非常有必要的。下面我就举几个例子，通过这几个例子，我想你就会对它们有一个深刻感悟了。
 
-第一个例子，伴随着技术的飞速发展，构建工具也有了很大的变化，从最早的手动编写 Makefile，逐渐过渡到使用 Autotools、CMake、GYP 等构建工具来生成 Makefile，这些构建工具可以大大提高你的工作效率。比如，通过Andorid Studio 创建JNI程序时，在 Android Studio 底层会使用 CMake 来构建项目，你会发现使用 CMake 构建 JNI 非常方便。然而像Chrome浏览器这种大型项目也用 CMake构建就很不合适了，因为Chrome浏览器的代码量巨大，使用 CMake 构建它会花费特别长的时间（好几个小时），为了解决这个问题 Chrome 团队自己开发了一个新的构建工具，即GYP，来构建这种大型项目，从而大大提高了构建的效率。由此可见，不同的项目使用不同的构建工具对开发效率的提升是巨大的。
+第一个例子，伴随着技术的飞速发展，构建工具也有了很大的变化，从最早的手动编写 Makefile，逐渐过渡到使用 Autotools、CMake、GYP 等构建工具来生成 Makefile，这些构建工具可以大大提高你的工作效率。比如，通过Andorid Studio 创建JNI程序时，在 Android Studio 底层会使用 CMake 来构建项目，你会发现使用 CMake 构建 JNI 非常方便。然而像Chrome浏览器这种大型项目也用 CMake构建就很不合适了，因为Chrome浏览器的代码量巨大，使用 CMake 构建它会花费特别长的时间（好几个小时），为了解决这个问题 Chrome 团队自己开发了一个新的构建工具，即GYP，来构建这种大型项目，从而大大提高了构建的效率。由此可见，不同的项目使用不同的构建工具对开发效率的提升是巨大的。
 
 第二个例子，当你研究某个开源项目的源代码时，如果你对 Makefile语法非常熟悉的话，它对你研读项目的源码会起到事半功倍的效果。因为通过 Makefile 你可以了解到项目中引入了哪些第三方库、源文件编译的先后顺序是怎样的、都定义了那些宏等信息，这些信息都可以帮助你更好地理解源码中的实现逻辑。
 
@@ -23,7 +23,7 @@ Media-server-node 是一个 Node.js 项目，其目录结构如下图所示：
 
 目录结构图
 
-通过上图你可以看到，在 Media-server-node 项目中，用红框框出来的四个目录比较重要。其中 **src 目录** 中存放的是 C++ 语言实现的 Native 代码，用于生成 JavaScript 脚本可以调用的 C++ 接口，从而使 JavaScript 编写的业务层代码可以调用 Medooze 核心层的 C++代码； **lib 目录** 里存放的是在 Node.js 端执行的，控制 Medooze 业务逻辑的 JavaScript 代码； **external 目录** 中存放的是 Medooze 使用的第三方库，如 MP4v2 和 SRTP； **media-server 目录** 是一个比较重要的目录，它里面存放的是 **Medooze 的核心代码，即 C++ 实现的流媒体服务器代码**。
+通过上图你可以看到，在 Media-server-node 项目中，用红框框出来的四个目录比较重要。其中 **src 目录** 中存放的是 C++ 语言实现的 Native 代码，用于生成 JavaScript 脚本可以调用的 C++ 接口，从而使 JavaScript 编写的业务层代码可以调用 Medooze 核心层的 C++代码； **lib 目录** 里存放的是在 Node.js 端执行的，控制 Medooze 业务逻辑的 JavaScript 代码； **external 目录** 中存放的是 Medooze 使用的第三方库，如 MP4v2 和 SRTP； **media-server 目录** 是一个比较重要的目录，它里面存放的是 **Medooze 的核心代码，即 C++ 实现的流媒体服务器代码**。
 
 这里需要注意的是，Media-server-node 中的 media-server 目录是一个独立的项目，它是通过外部链接引用到Media-server-node项目中的。它既可以随 Media-server-node 一起编译，也可以自己单独编译。对于这一点我们后面还会做详细介绍。
 

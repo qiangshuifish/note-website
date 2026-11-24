@@ -146,7 +146,7 @@ Nathan的思路是这样的，我们先不去看具体数据是通过什么计�
 
 ## 小结
 
-好了，到这里，我们对于Kafka、Lambda架构，以及Kappa架构也就学习完了。在今天这节课里，我们看到，Kafka的分布式架构其实非常简单。
+好了，到这里，我们对于Kafka、Lambda架构，以及Kappa架构也就学习完了。在今天这节课里，我们看到，Kafka的分布式架构其实非常简单。
 
 Kafka本身没有Master，每一个Broker节点都会把自己注册到ZooKeeper上。所有的Broker本身也不维护任何状态，对应的状态信息也是放在ZooKeeper上，而下游的Consumer也是一样。对应Consumer处理数据到哪里了，就是简单地 **在ZooKeeper上，为每一个分区维护了一个最新的Offset**。而对应的数据分区分配给哪一个Consumer，也是通过ZooKeeper里的“ **所有权注册表**”记录下来的，分配的逻辑也非常简单，也就是按照分区和Consumer的数量，均匀地根据ID顺序分配。
 

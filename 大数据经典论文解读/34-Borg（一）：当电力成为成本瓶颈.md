@@ -80,7 +80,7 @@
 
 Borg是一个典型的 **Master-Slave** 类型的系统。一个Borg Cell通常由这样几部分组成。
 
-首先是 **用户界面**，你可以通过配置文件、命令行以及浏览器内的Web界面，向Borg发起请求，所有这些请求都会统一发送给Borg的Master。和我们之前看过的MapReduce和Hive一样，Borg的UI界面里，同样有一个对于所有Job和Task的监控系统。每一个直接部署执行的Task，都会内置一个HTTP服务器，你通过浏览器，就能拿到Job和Task的各种监控指标和运行日志，这个系统在Borg里叫做Sigma。
+首先是 **用户界面**，你可以通过配置文件、命令行以及浏览器内的Web界面，向Borg发起请求，所有这些请求都会统一发送给Borg的Master。和我们之前看过的MapReduce和Hive一样，Borg的UI界面里，同样有一个对于所有Job和Task的监控系统。每一个直接部署执行的Task，都会内置一个HTTP服务器，你通过浏览器，就能拿到Job和Task的各种监控指标和运行日志，这个系统在Borg里叫做Sigma。
 
 然后就是一个 **Master集群**，为了保障高可用性，Master的所有数据当然是通过Paxos协议来维护多个同步复制的副本的。它一样，也是通过Checkpoint来建立快照，通过日志记录所有的操作，整个Master的集群里，也有一个选举出来的master中的master。而这个master中的master，则是通过获取一个Chubby里的锁来确保唯一性。
 

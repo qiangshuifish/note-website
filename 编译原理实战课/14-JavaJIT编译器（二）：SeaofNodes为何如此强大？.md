@@ -237,7 +237,7 @@ Canonicalize的意思是规范化。如果某段程序有多种写法，那么�
 比如，对于下面这个简单的函数，它是把a乘以2。在CanonicalizerPhase运行之后，乘法运算被替换成了移位运算，也就是 `a&lt;&lt;1`。它的效果与乘以2是相同的，但运行效率更高。
 
 ```
-public int doDouble(int a){
+public int doDouble(int a){
     return 2*a;
 }
 

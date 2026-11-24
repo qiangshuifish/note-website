@@ -323,7 +323,7 @@ function handleRemoteStreamAdded(event) {
 
 ```
 
-上面代码的关键点是 **addstream** 事件。 在创建好 RTCPeerConnection 对象后，我们需要给 RTCPeerConnection 的 addstream 事件添加回调处理函数，即onaddstream 函数。也就是说，当有数据流到来的时候，浏览器会回调它，在我们的代码中设置的回调处理函数就是 **handleRemoteStreamAdded** 。
+上面代码的关键点是 **addstream** 事件。 在创建好 RTCPeerConnection 对象后，我们需要给 RTCPeerConnection 的 addstream 事件添加回调处理函数，即onaddstream 函数。也就是说，当有数据流到来的时候，浏览器会回调它，在我们的代码中设置的回调处理函数就是 **handleRemoteStreamAdded** 。
 
 当远端有数据到达时，WebRTC 底层就会调用 addstream 事件的回调函数，即handleRemoteStreamAdded。在 handleRemoteStreamAdded 函数的输入参数event中，包括了远端的音视频流，即 MediaStream 对象，此时将该对象赋值给 video 标签的 srcObject 字段，这样 video 就与 RTCPeerConnection 进行了绑定。
 

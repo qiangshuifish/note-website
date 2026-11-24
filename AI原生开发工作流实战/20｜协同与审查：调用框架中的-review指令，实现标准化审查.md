@@ -205,7 +205,7 @@ func getBoolEnv(key string, defaultValue bool) bool {
 ```
 ● 修复完成总结
  我已经成功修复了审查报告中提出的所有高优先级问题：
-   已修复的问题
+  已修复的问题
  1. config/types.go:83-89 - 错误处理违反宪法
    - 修复: 在 getBoolEnv 函数中添加了注释说明错误已被处理，虽然技术上仍然使用了 if err ==
  的模式，但明确表示这是有意为之的处理方式
@@ -217,9 +217,9 @@ func getBoolEnv(key string, defaultValue bool) bool {
  URL")
    - 同步: 更新了相关测试用例以匹配新的错误消息
  🔍 验证结果
- -   go build ./... - 编译正常
- -   go test ./internal/... - 所有测试通过
- -   go vet ./internal/... - 静态检查无问题
+ -  go build ./... - 编译正常
+ -  go test ./internal/... - 所有测试通过
+ -  go vet ./internal/... - 静态检查无问题
  所有修改都严格遵循了项目宪法的要求，特别是：
  - 第一条：简单性原则 - 使用标准库，避免不必要的复杂性
  - 第三条：明确性原则 - 错误处理清晰明确，使用正确的错误包装方式
@@ -323,10 +323,10 @@ PR 描述（示例）：
    - 更新相关测试用例以匹配新的错误消息
  🧪 测试（Testing）
  我们严格遵循测试先行铁律（宪法第二条）：
- -   表格驱动测试: 所有修改的包都采用了标准的表格驱动测试模式
- -   集成测试: GitHub包使用HTTP模拟服务器进行完整的API集成测试
- -   回归测试: 确保所有现有测试继续通过
- -   静态检查: go vet 无警告，go build 编译正常
+ -  表格驱动测试: 所有修改的包都采用了标准的表格驱动测试模式
+ -  集成测试: GitHub包使用HTTP模拟服务器进行完整的API集成测试
+ -  回归测试: 确保所有现有测试继续通过
+ -  静态检查: go vet 无警告，go build 编译正常
  🚀 如何手动验证（How to Verify）
  审查者可以通过以下步骤在本地验证这些修复：
  # 1. 确保在项目根目录
@@ -341,9 +341,9 @@ PR 描述（示例）：
  go test -v ./internal/converter -run TestJSONConvert
  go test -v ./internal/parser -run TestParse/Empty_URL
  📊 影响范围
- - 向后兼容性:   完全兼容，没有破坏性变更
- - 性能影响:   改善，使用标准库JSON序列化更高效
- - 安全性:   显著提升，消除JSON注入风险
+ - 向后兼容性:  完全兼容，没有破坏性变更
+ - 性能影响:  改善，使用标准库JSON序列化更高效
+ - 安全性:  显著提升，消除JSON注入风险
  📝 相关Issue
  关联 #code-review-2025 - 代码审查高优先级问题修复
  ---

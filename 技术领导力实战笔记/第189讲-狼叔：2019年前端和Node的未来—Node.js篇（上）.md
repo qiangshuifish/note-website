@@ -9,7 +9,7 @@ Node.js在大前端布局里意义重大，除了基本构建和Web服务外，�
 
 该调查远非 Node 快速增长的唯一指征。根据ModuleCounts.com的数据，Node 的包注册中心 NPM 每天会增加 507 个包，相比下一名要多 4 倍多。2018 年 Stack Overflow 调查也有类似的结果，JavaScript 是使用最广泛的语言，Node.js 是使用最广泛的框架。
 
-本节我会主要分享一些跟Node.js结合比较密切的点：首先介绍一下 API演进与GraphQL，然后讲一下SSR如何结合API落地，构建出具有Node.js特色的服务，然后再简要介绍下Node.js的新特性、新书等，最后聊聊我对
+本节我会主要分享一些跟Node.js结合比较密切的点：首先介绍一下 API演进与GraphQL，然后讲一下SSR如何结合API落地，构建出具有Node.js特色的服务，然后再简要介绍下Node.js的新特性、新书等，最后聊聊我对
 
 Deno的一点看法。
 

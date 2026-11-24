@@ -251,7 +251,7 @@ func (t *CostTracker) Generate(ctx context.Context, msgs []schema.Message, avail
    latency := time.Since(startTime)
    // 如果报错了，只打印报错时间，不计费
    if err != nil {
-       log.Printf("[Tracker]   API 调用失败，耗时: %v\n", latency)
+       log.Printf("[Tracker]  API 调用失败，耗时: %v\n", latency)
        return respMsg, err
    }
    // 4. 解析 Token 并计算成本

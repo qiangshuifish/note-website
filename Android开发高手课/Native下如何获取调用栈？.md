@@ -100,7 +100,7 @@ void debugger::print_backtrace() {
 
 如果是Debug版本，我们可以通过“.debug\_frame”（有兴趣的同学可以了解一下 [DWARF](http://www.dwarfstd.org/doc/DWARF4.pdf)）来帮助我们进行unwind。这种方法十分高效也十分准确，但缺点是调试信息本身很大，甚至会比程序段（.TEXT段）更大，所以我们是无法在Release版本中包含这个信息的。
 
-> DWARF 是一种标准调试信息格式。DWARF最早与ELF文件格式一起设计, 但DWARF本身是独立的一种对象文件格式。本身DAWRF和ELF的名字并没有任何意义（侏儒、精灵，是不是像魔兽世界的角色 :)），后续为了方便宣传，才命名为Debugging With Attributed Record Formats。引自 [wiki](https://en.wikipedia.org/wiki/DWARF#cite_note-eager-1)
+> DWARF 是一种标准调试信息格式。DWARF最早与ELF文件格式一起设计, 但DWARF本身是独立的一种对象文件格式。本身DAWRF和ELF的名字并没有任何意义（侏儒、精灵，是不是像魔兽世界的角色 :)），后续为了方便宣传，才命名为Debugging With Attributed Record Formats。引自 [wiki](https://en.wikipedia.org/wiki/DWARF#cite_note-eager-1)
 
 **2\. Release版本unwind**
 

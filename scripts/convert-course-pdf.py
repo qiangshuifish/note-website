@@ -112,14 +112,19 @@ def redact_secrets(text):
     """脱敏代码示例中可能出现的 API 密钥等凭据，避免触发 GitHub 推送保护。"""
     for pattern, placeholder in SECRET_PATTERNS:
         text = pattern.sub(placeholder, text)
+    text = re.sub(r'(?i)((?:openweather\w*|appid)\s*[=:]\s*["\']?)[a-f0-9]{32}', r'\1xxxx', text)
     return text
 
 
 def fix_text(text):
-    """去除私用区字符，规范化 CJK 部首区字符和不停顿空格。"""
+    """去除私用区字符和控制字符，规范化 CJK 部首区字符和不停顿空格。"""
     out = []
     for ch in text:
         code = ord(ch)
+        if code < 32 and ch not in '\t\n\r':
+            continue
+        if code == 0x7F:
+            continue
         if 0xE000 <= code <= 0xF8FF:
             continue
         if 0x2E80 <= code <= 0x2FFF:

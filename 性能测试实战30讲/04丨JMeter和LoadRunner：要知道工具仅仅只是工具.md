@@ -111,7 +111,7 @@ JMeter和LoadRunner是我们常用的两个性能测试工具。曾经有人问�
 
 你从网络上可以很容易地找到这几个工具的特点，这几个都支持分布式。从上面那张表格中，你可以很容易对比出来，知道自己应该学什么工具了。
 
-Gatling有免费版和收费版，基于Scala语言，而Scala又是基于Java的，你看这复杂的关系就让人不想用，但是这个工具性能很高，虽说只支持HTTP，但是由于支持Akka Actors和Async IO，可以达到很高的性能。Actors简化并发编译的异步消息特性让Gatling性能很高。
+Gatling有免费版和收费版，基于Scala语言，而Scala又是基于Java的，你看这复杂的关系就让人不想用，但是这个工具性能很高，虽说只支持HTTP，但是由于支持Akka Actors和Async IO，可以达到很高的性能。Actors简化并发编译的异步消息特性让Gatling性能很高。
 
 Locust这个工具是基于Python的，中文名翻译过来就是蝗虫，这名字取得挺有意思。在一个压力场景下，对服务器来说确实就像一堆蝗虫来了。
 
@@ -139,7 +139,7 @@ Locust这个工具是基于Python的，中文名翻译过来就是蝗虫，这�
 
 至此，MicroFocus同时拥有了LoadRunner和Silk Performer。但可惜的是，这也照样干不过一个无心插柳柳成荫的开源工具JMeter。
 
-JMeter的历史，可以说是屌丝逆袭的典型案例。1998年，Apache基金会的Stefano Mazzocchi是它最初的开发者，当时他只是为了测试Apache JServlet的性能（这个项目后来被Tomcat取代），后来JMeter被重构，又被用来测试Tomcat。其实一开始，JMeter的功能很简单。但是Apache Tomcat的势头实在是阻挡不住，再加上Java市场覆盖率实在是太高了，而JMeter做为一个开源免费的Java压力工具，有着众多的contributors，顶着Apache的大旗，想失败都难。就像ab工具是为了测试Apache HTTP server一样，JMeter应该说是和Apache Tomcat一起成长的。
+JMeter的历史，可以说是屌丝逆袭的典型案例。1998年，Apache基金会的Stefano Mazzocchi是它最初的开发者，当时他只是为了测试Apache JServlet的性能（这个项目后来被Tomcat取代），后来JMeter被重构，又被用来测试Tomcat。其实一开始，JMeter的功能很简单。但是Apache Tomcat的势头实在是阻挡不住，再加上Java市场覆盖率实在是太高了，而JMeter做为一个开源免费的Java压力工具，有着众多的contributors，顶着Apache的大旗，想失败都难。就像ab工具是为了测试Apache HTTP server一样，JMeter应该说是和Apache Tomcat一起成长的。
 
 与此同时，还有另一个Java开源工具The Grinder，这个工具的主要贡献者是Philip Aston、Calum Fitzgerald。
 

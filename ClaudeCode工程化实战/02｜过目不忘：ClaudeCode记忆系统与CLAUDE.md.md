@@ -463,7 +463,7 @@ paths:
 - 测试文件放在同目录: `Button.test.tsx`
 - 优先测试用户行为，而非实现细节
 ```typescript
-//   好
+//  好
 expect(screen.getByRole('button')).toBeEnabled();
 // ❌ 不好
 expect(component.state.isLoading).toBe(false);

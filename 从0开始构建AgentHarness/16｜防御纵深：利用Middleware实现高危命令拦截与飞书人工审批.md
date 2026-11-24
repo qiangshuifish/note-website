@@ -269,7 +269,7 @@ Agent 试图执行以下动作:
 - 工具: %s
 - 参数: %s
 任务 ID: **%s**
-  请在此消息下方回复 "approve %s" 或 "reject %s" 来决定是否放行。`, toolName, args, tas
+ 请在此消息下方回复 "approve %s" 或 "reject %s" 来决定是否放行。`, toolName, args, tas
    // 注意：因为 Middleware 的签名里没有带 Reporter，我们在 main.go 里初始化时必须把 rep
    if reporter != nil {
        reporter.sendMsg(noticeMsg)

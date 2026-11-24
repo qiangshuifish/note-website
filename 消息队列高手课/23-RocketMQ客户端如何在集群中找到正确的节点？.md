@@ -320,7 +320,7 @@ public TopicRouteData pickupTopicRouteData(final String topic) {
 
 这个方法的实现流程是这样的：
 
-1. 初始化返回的topicRouteData后，获取读锁。
+1. 初始化返回的topicRouteData后，获取读锁。
 2. 在topicQueueTable中获取主题对应的队列信息，并写入返回结果中。
 3. 遍历队列，找出相关的所有BrokerName。
 4. 遍历这些BrokerName，从brokerAddrTable中找到对应的BrokerData，并写入返回结果中。

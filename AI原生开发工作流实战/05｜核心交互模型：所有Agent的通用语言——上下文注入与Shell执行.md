@@ -268,7 +268,7 @@ utils/math_test.go 文件内容：
 ● Bash(go list -m all)
  ⎿  github.com/bigwhite/issue2md
 ● issue2md 项目分析报告
-   项目整体结构
+  项目整体结构
  这是一个GitHub Issue/Discussion/PR 转 Markdown工具，采用标准Go项目结构：
  issue2md/
  ├── cmd/                    # 命令行工具入口

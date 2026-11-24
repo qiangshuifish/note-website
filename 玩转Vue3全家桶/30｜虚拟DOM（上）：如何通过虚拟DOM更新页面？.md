@@ -42,7 +42,7 @@ const vnode = createVNode(
 )
 function _createVNode() {
 
-  // 处理属性和class
+  // 处理属性和class
   if (props) {
     ...
   }
@@ -97,7 +97,7 @@ function createBaseVNode(type,props,children,...){
 
 ```
 
-createVNode负责创建Vue中的虚拟DOM，而上一讲中我们讲过mount函数的核心逻辑就是使用setupComponent执行我们写的&lt;script setup>，使用setupRenderEffect监听组件的数据变化。所以我们来到setupRenderEffect函数中，去完整地剖析Vue中虚拟DOM的更新逻辑。
+createVNode负责创建Vue中的虚拟DOM，而上一讲中我们讲过mount函数的核心逻辑就是使用setupComponent执行我们写的&lt;script setup>，使用setupRenderEffect监听组件的数据变化。所以我们来到setupRenderEffect函数中，去完整地剖析Vue中虚拟DOM的更新逻辑。
 
 我们给组件注册了update方法，这个方法使用effect包裹后，当组件内的ref、reactive包裹的响应式数据变化的时候就会执行update方法，触发组件内部的更新机制。
 

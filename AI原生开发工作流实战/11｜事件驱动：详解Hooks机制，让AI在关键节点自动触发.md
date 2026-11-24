@@ -414,7 +414,7 @@ def main():
    # Block operations on main/master branch
    if _is_main_branch(current_branch):
        print(
-           f"  Cannot modify files on '{current_branch}' branch.\n"
+           f" Cannot modify files on '{current_branch}' branch.\n"
            f"   Please switch to a feature branch before making changes.",
            file=sys.stderr
        )

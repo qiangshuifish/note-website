@@ -182,7 +182,7 @@ func (e *AgentEngine) Run(ctx context.Context, session *Session, reporter Report
    defer func() {
        rootSpan.EndSpan()
        _ = observability.ExportTraceToFile(rootSpan, session.WorkDir, session.ID
-       log.Printf("  [Tracing] 本次任务的执行回放链路已保存至工作区的 .claw/traces 目录
+       log.Printf(" [Tracing] 本次任务的执行回放链路已保存至工作区的 .claw/traces 目录
    }()
    composer := ctxpkg.NewPromptComposer(session.WorkDir, e.PlanMode)
    systemMsg := composer.Build()
@@ -391,8 +391,8 @@ $go run cmd/claw/main.go
 - 两个工具调用都是独立的，没有合并命令，实现了真正的并行执行。文件已验证创建成功且内容正确。
 
 ```
-2026/05/01 18:01:26   [Tracing] 本次任务的执行回放链路已保存至工作区的 .claw/traces 目录
-我们看到：任务结束后，终端打印出了：  [Tracing] 本次任务的执行回放链路已保存至
+2026/05/01 18:01:26  [Tracing] 本次任务的执行回放链路已保存至工作区的 .claw/traces 目录
+我们看到：任务结束后，终端打印出了： [Tracing] 本次任务的执行回放链路已保存至
 工作区的 .claw/traces 目录下。
 现在，进入你的工作区./workspace，找到
 .claw/traces/trace_test_trace_001_xxx.json 文件。

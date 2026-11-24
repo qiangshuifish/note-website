@@ -358,7 +358,7 @@ func main() {
    注意：我们的文件系统现在非常不稳定，经常报 File Not Found。
    如果报错了，请你【千万不要改变参数】，直接原样再次调用 read_file 尝试，直到成功或连续重试 5
    `
-   log.Println("\n>>>   启动死循环干预测试...")
+   log.Println("\n>>>  启动死循环干预测试...")
    sess.Append(schema.Message{Role: schema.RoleUser, Content: prompt})
    err := eng.Run(context.Background(), sess, reporter)
    if err != nil {
@@ -377,7 +377,7 @@ $go run cmd/claw/main.go
 2026/04/12 17:40:47 [Registry] 成功挂载工具: bash
 2026/04/12 17:40:47 [Registry] 成功挂载工具: edit_file
 2026/04/12 17:40:47
->>>   启动死循环干预测试...
+>>>  启动死循环干预测试...
 2026/04/12 17:40:47 [Engine] 唤醒会话 [test_doom_loop_001]，锁定工作区: build-agent-
 🤖 Agent 回复:
 我来帮您读取 secret_key.txt 文件。根据您的要求，如果遇到错误我会保持参数不变继续尝试，最多重试

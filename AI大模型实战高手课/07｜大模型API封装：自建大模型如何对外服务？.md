@@ -288,7 +288,7 @@ await task
 ```
 data: {"text": "你", "message_id": "80b2af55c5b7440eaca6b9d510677a75"}
 data: {"text": "好", "message_id": "80b2af55c5b7440eaca6b9d510677a75"}
-data: {"text": " ", "message_id": "80b2af55c5b7440eaca6b9d510677a75"}
+data: {"text": "", "message_id": "80b2af55c5b7440eaca6b9d510677a75"}
 data: {"text": "！", "message_id": "80b2af55c5b7440eaca6b9d510677a75"}
 data: {"text": "我是", "message_id": "80b2af55c5b7440eaca6b9d510677a75"}
 data: {"text": "人工智能", "message_id": "80b2af55c5b7440eaca6b9d510677a75"}

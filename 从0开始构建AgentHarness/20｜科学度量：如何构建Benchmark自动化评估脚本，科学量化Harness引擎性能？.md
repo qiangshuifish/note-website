@@ -197,7 +197,7 @@ func NewBenchmarkRunner(model string) *BenchmarkRunner {
 // RunSuite 执行一组评测集，并返回跑分报告
 func (b *BenchmarkRunner) RunSuite(ctx context.Context, testcases []TestCase) {
    log.Println("==================================================")
-   log.Printf("  启动自动化 Harness Benchmark 评估... | 模型: %s\n", b.modelName)
+   log.Printf(" 启动自动化 Harness Benchmark 评估... | 模型: %s\n", b.modelName)
    log.Println("==================================================")
    var results []TestResult
    passedCount := 0
@@ -352,7 +352,7 @@ go run cmd/bench/main.go
 ```
 $go run cmd/bench/main.go
 2026/05/01 20:19:12 ==================================================
-2026/05/01 20:19:12   启动自动化 Harness Benchmark 评估... | 模型: glm-4.5-air
+2026/05/01 20:19:12  启动自动化 Harness Benchmark 评估... | 模型: glm-4.5-air
 2026/05/01 20:19:12 ==================================================
 2026/05/01 20:19:12
 >>> ⏳ 正在执行用例 [test_001_edit]: 测试模糊替换工具的准确性

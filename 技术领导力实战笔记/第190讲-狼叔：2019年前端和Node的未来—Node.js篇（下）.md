@@ -166,7 +166,7 @@ Chrome作为入口是可怕，再结合Android，使得Google轻松完成技术�
 
 做一个坚定的Web信仰者，把握趋势，选择比努力更重要！
 
-最后给自己打一个广告，今年6月20日北京举办的GMTC大会上( [https://gmtc2019.geekbang.org/](https://gmtc2019.geekbang.org/))，我会担任Node专场出品人，主要关注Serverless，TypeScript在Web开发框架里相关实践，以及性能，SSR，架构相关的topic，如果你有想法，想分享的话，欢迎联系我。
+最后给自己打一个广告，今年6月20日北京举办的GMTC大会上( [https://gmtc2019.geekbang.org/](https://gmtc2019.geekbang.org/))，我会担任Node专场出品人，主要关注Serverless，TypeScript在Web开发框架里相关实践，以及性能，SSR，架构相关的topic，如果你有想法，想分享的话，欢迎联系我。
 
 ## 作者简介
 

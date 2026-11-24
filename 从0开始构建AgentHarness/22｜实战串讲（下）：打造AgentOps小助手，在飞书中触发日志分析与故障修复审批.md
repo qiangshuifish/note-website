@@ -241,7 +241,7 @@ func (b *FeishuBot) GetEventDispatcher() *dispatcher.EventDispatcher {
                taskID := strings.TrimPrefix(contentStr, "approve ")
                taskID = strings.TrimSpace(taskID)
                GlobalApprovalMgr.ResolveApproval(taskID, true, "人类管理员已批准操作
-               log.Printf("[Feishu] 会话 %s:   已为您批准任务 %s", chatId, taskID)
+               log.Printf("[Feishu] 会话 %s:  已为您批准任务 %s", chatId, taskID)
                return nil
            }
            if strings.HasPrefix(contentStr, "reject ") {
@@ -311,7 +311,7 @@ func (r *FeishuReporter) OnToolResult(ctx context.Context, toolName string, resu
    if isError {
        r.sendMsg(fmt.Sprintf("⚠️ **执行报错** (%s)：\n%s", toolName, result))
    } else {
-       r.sendMsg(fmt.Sprintf("  **执行成功** (%s)", toolName))
+       r.sendMsg(fmt.Sprintf(" **执行成功** (%s)", toolName))
    }
 }
 func (r *FeishuReporter) OnMessage(ctx context.Context, content string) {
@@ -542,7 +542,7 @@ $go run cmd/agentops/main.go
 ```
 2026/05/05 20:59:53 [Feishu] 收到会话 oc_0c2df00c01b9fffbac47b57ed39e1cc2 消息: app
 2026/05/05 20:59:53 [Approval] 收到飞书审批结果 (TaskID: call_-7666589397285863215,
-2026/05/05 20:59:53 [Feishu] 会话 oc_0c2df00c01b9fffbac47b57ed39e1cc2:   已为您批准任
+2026/05/05 20:59:53 [Feishu] 会话 oc_0c2df00c01b9fffbac47b57ed39e1cc2:  已为您批准任
 2026/05/05 20:59:55 [Tracker] 📊 API 调用完成 | 耗时: 1.094474297s | 输入: 3486 tk |
 2026/05/05 20:59:55 [Tracker] 💰 当前会话 (oc_0c2df00c01b9fffbac47b57ed39e1cc2) 累计
 ```
