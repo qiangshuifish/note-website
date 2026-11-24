@@ -5222,6 +5222,108 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/Go进阶·分布式爬虫实战/特别放送｜让系统自己说话：用语义锚点颠覆传统日志范式"
     }
   ],
+  "/HarnessAgent脚手架实战课/": [
+    {
+      "text": "掌握四套脚手架，让Agent开发回归业务本身",
+      "link": "/HarnessAgent脚手架实战课/开篇词｜掌握四套脚手架，让Agent开发回归业务本身"
+    },
+    {
+      "text": "全景：Agent开发的技术演进与课程定位",
+      "link": "/HarnessAgent脚手架实战课/01｜全景：Agent开发的技术演进与课程定位"
+    },
+    {
+      "text": "起点：从数据分析场景看CodeAct模式",
+      "link": "/HarnessAgent脚手架实战课/02｜起点：从数据分析场景看CodeAct模式"
+    },
+    {
+      "text": "核心：用Smolagents结合自定义工具完成数据分析报告生成",
+      "link": "/HarnessAgent脚手架实战课/03｜核心：用Smolagents结合自定义工具完成数据分析报告生成"
+    },
+    {
+      "text": "扩展：通过多Agent协同机制提升分析深度",
+      "link": "/HarnessAgent脚手架实战课/04｜扩展：通过多Agent协同机制提升分析深度"
+    },
+    {
+      "text": "起点：从复杂金融任务看ClaudeAgentSDK",
+      "link": "/HarnessAgent脚手架实战课/05｜起点：从复杂金融任务看ClaudeAgentSDK"
+    },
+    {
+      "text": "核心：快速构建AgentLoop并接入研报所需的工具集",
+      "link": "/HarnessAgent脚手架实战课/06｜核心：快速构建AgentLoop并接入研报所需的工具集"
+    },
+    {
+      "text": "应用：构建替代工作流的Skills完成金融研报的生成",
+      "link": "/HarnessAgent脚手架实战课/07-应用：构建替代工作流的Skills完成金融研报的生成"
+    },
+    {
+      "text": "起点：多代理编排设计支持复杂投研场景",
+      "link": "/HarnessAgent脚手架实战课/08｜起点：多代理编排设计支持复杂投研场景"
+    },
+    {
+      "text": "进阶：会话Session与Fork分叉管理探索不同投资逻辑",
+      "link": "/HarnessAgent脚手架实战课/09｜进阶：会话Session与Fork分叉管理探索不同投资逻辑"
+    },
+    {
+      "text": "扩展：Hooks机制的实战应用",
+      "link": "/HarnessAgent脚手架实战课/10｜扩展：Hooks机制的实战应用"
+    },
+    {
+      "text": "扩展：OpenTelemetry全链路监控与成本管理",
+      "link": "/HarnessAgent脚手架实战课/11｜扩展：OpenTelemetry全链路监控与成本管理"
+    },
+    {
+      "text": "起点：Deepagents快速入门与LangChain老项目升级",
+      "link": "/HarnessAgent脚手架实战课/12｜起点：Deepagents快速入门与LangChain老项目升级"
+    },
+    {
+      "text": "基础：LLM-Wiki快速理解与入门",
+      "link": "/HarnessAgent脚手架实战课/13｜基础：LLM-Wiki快速理解与入门"
+    },
+    {
+      "text": "应用：基于Deepagents与LLM-Wiki方法论沉淀构建知识库",
+      "link": "/HarnessAgent脚手架实战课/14｜应用：基于Deepagents与LLM-Wiki方法论沉淀构建知识库"
+    },
+    {
+      "text": "起点：基于pimono打造生产级合同审查AgentRuntime",
+      "link": "/HarnessAgent脚手架实战课/15｜起点：基于pimono打造生产级合同审查AgentRuntime"
+    },
+    {
+      "text": "基础：统一工具接口与结构化输出实现合同文档解析与分类",
+      "link": "/HarnessAgent脚手架实战课/16｜基础：统一工具接口与结构化输出实现合同文档解析与分类"
+    },
+    {
+      "text": "进阶：长上下文与Skill调用构建大合同审查流水线",
+      "link": "/HarnessAgent脚手架实战课/17｜进阶：长上下文与Skill调用构建大合同审查流水线"
+    },
+    {
+      "text": "进阶：拦截管道构建合同敏感信息的多层安全护栏",
+      "link": "/HarnessAgent脚手架实战课/18｜进阶：拦截管道构建合同敏感信息的多层安全护栏"
+    },
+    {
+      "text": "扩展：ChatPanel助力Agent丝滑接入聊天对话Web页面",
+      "link": "/HarnessAgent脚手架实战课/19｜扩展：ChatPanel助力Agent丝滑接入聊天对话Web页面"
+    },
+    {
+      "text": "TUI：PimonoTUI自绘引擎与内置组件库实战",
+      "link": "/HarnessAgent脚手架实战课/20｜TUI：PimonoTUI自绘引擎与内置组件库实战"
+    },
+    {
+      "text": "行动交给现在，结果交给时间",
+      "link": "/HarnessAgent脚手架实战课/结束语｜行动交给现在，结果交给时间"
+    },
+    {
+      "text": "来赴一场满分之约！",
+      "link": "/HarnessAgent脚手架实战课/结课测试｜来赴一场满分之约！"
+    },
+    {
+      "text": "DeepSeekHarness：插件化Agent框架与生态入门",
+      "link": "/HarnessAgent脚手架实战课/DeepSeekHarness：插件化Agent框架与生态入门"
+    },
+    {
+      "text": "直播回放：5倍效率提升，用DeepAgents重构Agent开发流",
+      "link": "/HarnessAgent脚手架实战课/直播回放：5倍效率提升，用DeepAgents重构Agent开发流"
+    }
+  ],
   "/JavaScript核心原理解析/": [
     {
       "text": "开篇词-如何解决语言问题？",
@@ -33603,6 +33705,18 @@ export const navItems = [
     "tags": [
       "架构与分布式",
       "后端与中间件",
+      "云原生与基础设施"
+    ]
+  },
+  {
+    "text": "HarnessAgent脚手架实战课",
+    "link": "/HarnessAgent脚手架实战课/开篇词｜掌握四套脚手架，让Agent开发回归业务本身",
+    "count": 25,
+    "category": "ai",
+    "categoryLabel": "AI 与数据智能",
+    "tags": [
+      "AI 与数据智能",
+      "技术管理与职场",
       "云原生与基础设施"
     ]
   },
