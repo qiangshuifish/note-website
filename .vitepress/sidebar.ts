@@ -11936,6 +11936,160 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/Spark性能调优实战/期末考试-“Spark性能调优”100分试卷等你来挑战！"
     }
   ],
+  "/SpringCloud微服务项目实战/": [
+    {
+      "text": "开篇词-跟着学，你也能成为微服务高手",
+      "link": "/SpringCloud微服务项目实战/开篇词-跟着学，你也能成为微服务高手"
+    },
+    {
+      "text": "是什么推动了单体应用到微服务架构的演进？",
+      "link": "/SpringCloud微服务项目实战/01-是什么推动了单体应用到微服务架构的演进？"
+    },
+    {
+      "text": "微服务全家桶：走进SpringCloud的世界",
+      "link": "/SpringCloud微服务项目实战/02-微服务全家桶：走进SpringCloud的世界"
+    },
+    {
+      "text": "初窥门径：我们要搭建一个怎样的微服务实战项目？",
+      "link": "/SpringCloud微服务项目实战/03-初窥门径：我们要搭建一个怎样的微服务实战项目？"
+    },
+    {
+      "text": "十八般兵器：如何搭建项目所需的开发环境？",
+      "link": "/SpringCloud微服务项目实战/04-十八般兵器：如何搭建项目所需的开发环境？"
+    },
+    {
+      "text": "牛刀小试：如何搭建优惠券模板服务？",
+      "link": "/SpringCloud微服务项目实战/05-牛刀小试：如何搭建优惠券模板服务？"
+    },
+    {
+      "text": "牛刀小试：如何搭建优惠券计算服务和用户服务？",
+      "link": "/SpringCloud微服务项目实战/06-牛刀小试：如何搭建优惠券计算服务和用户服务？"
+    },
+    {
+      "text": "Nacos体系架构：什么是服务治理？",
+      "link": "/SpringCloud微服务项目实战/07-Nacos体系架构：什么是服务治理？"
+    },
+    {
+      "text": "服务治理：Nacos集群环境搭建",
+      "link": "/SpringCloud微服务项目实战/08-服务治理：Nacos集群环境搭建"
+    },
+    {
+      "text": "集成Nacos：如何将服务提供者注册到Nacos服务器？",
+      "link": "/SpringCloud微服务项目实战/09-集成Nacos：如何将服务提供者注册到Nacos服务器？"
+    },
+    {
+      "text": "集成Nacos：如何通过服务发现机制向服务提供者发起调用？",
+      "link": "/SpringCloud微服务项目实战/10-集成Nacos：如何通过服务发现机制向服务提供者发起调用？"
+    },
+    {
+      "text": "Loadbalancer实战：通过自定义负载均衡策略实现金丝雀测试",
+      "link": "/SpringCloud微服务项目实战/11-Loadbalancer实战：通过自定义负载均衡策略实现金丝雀测试"
+    },
+    {
+      "text": "OpenFeign：服务间调用组件OpenFeign是怎么“隔空取物”的？",
+      "link": "/SpringCloud微服务项目实战/12-OpenFeign：服务间调用组件OpenFeign是怎么“隔空取物”的？"
+    },
+    {
+      "text": "OpenFeign实战：如何实现服务间调用功能？",
+      "link": "/SpringCloud微服务项目实战/13-OpenFeign实战：如何实现服务间调用功能？"
+    },
+    {
+      "text": "OpenFeign实战：OpenFeign组件有哪些高级玩法？",
+      "link": "/SpringCloud微服务项目实战/14-OpenFeign实战：OpenFeign组件有哪些高级玩法？"
+    },
+    {
+      "text": "配置中心在微服务中发挥着怎样的作用？",
+      "link": "/SpringCloud微服务项目实战/15-配置中心在微服务中发挥着怎样的作用？"
+    },
+    {
+      "text": "如何集成NacosConfig实现配置项动态刷新？",
+      "link": "/SpringCloud微服务项目实战/16-如何集成NacosConfig实现配置项动态刷新？"
+    },
+    {
+      "text": "Sentinel体系结构：什么是服务容错（降级熔断、流量整形）",
+      "link": "/SpringCloud微服务项目实战/17-Sentinel体系结构：什么是服务容错（降级熔断、流量整形）"
+    },
+    {
+      "text": "Sentinel实战：如何实施流量整形与限流策略？",
+      "link": "/SpringCloud微服务项目实战/18-Sentinel实战：如何实施流量整形与限流策略？"
+    },
+    {
+      "text": "Sentinel实战：如何为项目添加异常降级方案？",
+      "link": "/SpringCloud微服务项目实战/19-Sentinel实战：如何为项目添加异常降级方案？"
+    },
+    {
+      "text": "Sentinel实战：如何接入Nacos实现规则持久化？",
+      "link": "/SpringCloud微服务项目实战/20-Sentinel实战：如何接入Nacos实现规则持久化？"
+    },
+    {
+      "text": "Sleuth体系架构：为什么微服务架构需要链路追踪？",
+      "link": "/SpringCloud微服务项目实战/21-Sleuth体系架构：为什么微服务架构需要链路追踪？"
+    },
+    {
+      "text": "调用链追踪：集成Sleuth和Zipkin，实现链路打标",
+      "link": "/SpringCloud微服务项目实战/22-调用链追踪：集成Sleuth和Zipkin，实现链路打标"
+    },
+    {
+      "text": "调用链追踪：如何通过ELK实现日志检索？",
+      "link": "/SpringCloud微服务项目实战/23-调用链追踪：如何通过ELK实现日志检索？"
+    },
+    {
+      "text": "为什么微服务架构少不了微服务网关？",
+      "link": "/SpringCloud微服务项目实战/24-为什么微服务架构少不了微服务网关？"
+    },
+    {
+      "text": "微服务网关：Gateway中的路由和谓词有何应用？",
+      "link": "/SpringCloud微服务项目实战/25-微服务网关：Gateway中的路由和谓词有何应用？"
+    },
+    {
+      "text": "微服务网关：如何设置请求转发、跨域和限流规则？",
+      "link": "/SpringCloud微服务项目实战/26-微服务网关：如何设置请求转发、跨域和限流规则？"
+    },
+    {
+      "text": "微服务网关：如何借助Nacos实现动态路由规则？",
+      "link": "/SpringCloud微服务项目实战/27-微服务网关：如何借助Nacos实现动态路由规则？"
+    },
+    {
+      "text": "消息驱动：谁说消息队列只能削峰填谷？",
+      "link": "/SpringCloud微服务项目实战/28-消息驱动：谁说消息队列只能削峰填谷？"
+    },
+    {
+      "text": "消息驱动：如何集成Stream实现消息驱动？",
+      "link": "/SpringCloud微服务项目实战/29-消息驱动：如何集成Stream实现消息驱动？"
+    },
+    {
+      "text": "消息驱动：如何高效处理Stream中的异常？",
+      "link": "/SpringCloud微服务项目实战/30-消息驱动：如何高效处理Stream中的异常？"
+    },
+    {
+      "text": "消息驱动：如何通过RabbitMQ插件实现延迟消息？",
+      "link": "/SpringCloud微服务项目实战/31-消息驱动：如何通过RabbitMQ插件实现延迟消息？"
+    },
+    {
+      "text": "AlibabaSeata框架：什么是分布式事务？",
+      "link": "/SpringCloud微服务项目实战/32-AlibabaSeata框架：什么是分布式事务？"
+    },
+    {
+      "text": "分布式事务：搭建Seata服务器",
+      "link": "/SpringCloud微服务项目实战/33-分布式事务：搭建Seata服务器"
+    },
+    {
+      "text": "分布式事务：使用Nacos+Seata实现AT模式",
+      "link": "/SpringCloud微服务项目实战/34-分布式事务：使用Nacos+Seata实现AT模式"
+    },
+    {
+      "text": "分布式事务：使用Nacos+Seata实现TCC补偿模式",
+      "link": "/SpringCloud微服务项目实战/35-分布式事务：使用Nacos+Seata实现TCC补偿模式"
+    },
+    {
+      "text": "加餐：说透微服务-什么是主链路规划？",
+      "link": "/SpringCloud微服务项目实战/加餐：说透微服务-什么是主链路规划？"
+    },
+    {
+      "text": "结束语-站在聚光灯下",
+      "link": "/SpringCloud微服务项目实战/结束语-站在聚光灯下"
+    }
+  ],
   "/Spring编程常见错误50例/": [
     {
       "text": "贴心“保姆”Spring罢工了怎么办？",
@@ -36976,6 +37130,18 @@ export const navItems = [
     "tags": [
       "架构与分布式",
       "算法与计算机基础",
+      "数据库与存储"
+    ]
+  },
+  {
+    "text": "SpringCloud微服务项目实战",
+    "link": "/SpringCloud微服务项目实战/开篇词-跟着学，你也能成为微服务高手",
+    "count": 38,
+    "category": "architecture",
+    "categoryLabel": "架构与分布式",
+    "tags": [
+      "架构与分布式",
+      "后端与中间件",
       "数据库与存储"
     ]
   },
