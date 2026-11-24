@@ -1110,12 +1110,20 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/AI大模型系统实战/答疑课堂｜前两章思考题答案"
     },
     {
+      "text": "AI大模型，技术人的双城记",
+      "link": "/AI大模型系统实战/结束语｜AI大模型，技术人的双城记"
+    },
+    {
       "text": "来赴一场满分之约",
       "link": "/AI大模型系统实战/结课测试｜来赴一场满分之约"
     },
     {
       "text": "DeepSeekR1-比大模型更重要的是聪明模型",
       "link": "/AI大模型系统实战/DeepSeekR1-比大模型更重要的是聪明模型"
+    },
+    {
+      "text": "DeepSeekV3怎样实现“1+1+1-3”的工程优化效果？",
+      "link": "/AI大模型系统实战/DeepSeekV3怎样实现“1+1+1-3”的工程优化效果？"
     },
     {
       "text": "DeepSeekV3提示语工程和后训练的完美闭环",
@@ -1136,6 +1144,10 @@ export const sidebar: DefaultTheme.Sidebar = {
     {
       "text": "我带着LLaMA3新课回来了！",
       "link": "/AI大模型系统实战/第二季回归｜我带着LLaMA3新课回来了！"
+    },
+    {
+      "text": "自我进化，Agent的下一道分水岭",
+      "link": "/AI大模型系统实战/自我进化，Agent的下一道分水岭"
     },
     {
       "text": "深度剖析DeepSeekV3和DeepSeekR1",
@@ -33781,7 +33793,7 @@ export const navItems = [
   {
     "text": "AI大模型系统实战",
     "link": "/AI大模型系统实战/开篇词｜漫游未来，一起开启AI大模型系统修炼之旅",
-    "count": 43,
+    "count": 46,
     "category": "ai",
     "categoryLabel": "AI 与数据智能",
     "tags": [
