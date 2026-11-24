@@ -3534,6 +3534,176 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/DeepSeekHarness前沿工程实践/结课测试｜来赴一场满分之约！"
     }
   ],
+  "/DeepSeek应用开发实战/": [
+    {
+      "text": "借DeepSeek东风，开启AI应用开发之旅",
+      "link": "/DeepSeek应用开发实战/开篇词｜借DeepSeek东风，开启AI应用开发之旅"
+    },
+    {
+      "text": "DeepSeek“民用级”程序员使用指北",
+      "link": "/DeepSeek应用开发实战/01｜DeepSeek“民用级”程序员使用指北"
+    },
+    {
+      "text": "特训套路：FunctionCalling和ReAct如何让大模型更加智能？",
+      "link": "/DeepSeek应用开发实战/02｜特训套路：FunctionCalling和ReAct如何让大模型更加智能？"
+    },
+    {
+      "text": "快速上手（一）：LobeChat+AI网关+Ollama打造高可用大模型集群",
+      "link": "/DeepSeek应用开发实战/03｜快速上手（一）：LobeChat+AI网关+Ollama打造高可用大模型集群"
+    },
+    {
+      "text": "快速上手（二）：LobeChat+AI网关+Ollama打造高可用大模型集群",
+      "link": "/DeepSeek应用开发实战/04｜快速上手（二）：LobeChat+AI网关+Ollama打造高可用大模型集群"
+    },
+    {
+      "text": "进阶部署（一）：Kubernetes资源创建与部署",
+      "link": "/DeepSeek应用开发实战/05｜进阶部署（一）：Kubernetes资源创建与部署"
+    },
+    {
+      "text": "进阶部署（二）：非量化版DeepSeek分布式部署方案实战",
+      "link": "/DeepSeek应用开发实战/06-进阶部署（二）：非量化版DeepSeek分布式部署方案实战"
+    },
+    {
+      "text": "进阶部署（三）：非量化版DeepSeek分布式部署方案实战",
+      "link": "/DeepSeek应用开发实战/07-进阶部署（三）：非量化版DeepSeek分布式部署方案实战"
+    },
+    {
+      "text": "llama.cpp部署：无GPU服务器如何部署DeepSeek？",
+      "link": "/DeepSeek应用开发实战/08-llama.cpp部署：无GPU服务器如何部署DeepSeek？"
+    },
+    {
+      "text": "体验微调：微调DeepSeek-R1大模型，实现新闻分类器",
+      "link": "/DeepSeek应用开发实战/09｜体验微调：微调DeepSeek-R1大模型，实现新闻分类器"
+    },
+    {
+      "text": "体验蒸馏：如何蒸馏一个自己的DeepSeek-R1大模型",
+      "link": "/DeepSeek应用开发实战/10｜体验蒸馏：如何蒸馏一个自己的DeepSeek-R1大模型"
+    },
+    {
+      "text": "凤雏来了：什么是模型上下文协议MCP？",
+      "link": "/DeepSeek应用开发实战/11｜凤雏来了：什么是模型上下文协议MCP？"
+    },
+    {
+      "text": "动手实现一个简单的MCPServer",
+      "link": "/DeepSeek应用开发实战/12｜动手实现一个简单的MCPServer"
+    },
+    {
+      "text": "动手实现一个简单的MCPClient",
+      "link": "/DeepSeek应用开发实战/13｜动手实现一个简单的MCPClient"
+    },
+    {
+      "text": "网络爬虫：无头浏览器抓取技术",
+      "link": "/DeepSeek应用开发实战/14｜网络爬虫：无头浏览器抓取技术"
+    },
+    {
+      "text": "找工作：如何让DeepSeek帮我们找工作？",
+      "link": "/DeepSeek应用开发实战/15｜找工作：如何让DeepSeek帮我们找工作？"
+    },
+    {
+      "text": "写简历：如何让AI自动拿到我们的简历，并浓缩成精华",
+      "link": "/DeepSeek应用开发实战/16｜写简历：如何让AI自动拿到我们的简历，并浓缩成精华"
+    },
+    {
+      "text": "写简历：如何根据岗位需求自动编写简历？",
+      "link": "/DeepSeek应用开发实战/17｜写简历：如何根据岗位需求自动编写简历？"
+    },
+    {
+      "text": "加餐：MCP产品化！高德、百度、腾讯三大地图服务接入MCP",
+      "link": "/DeepSeek应用开发实战/18｜加餐：MCP产品化！高德、百度、腾讯三大地图服务接入MCP"
+    },
+    {
+      "text": "平台化开发：零代码Agent+工作流开发",
+      "link": "/DeepSeek应用开发实战/19｜平台化开发：零代码Agent+工作流开发"
+    },
+    {
+      "text": "平台化开发：工具开发套路",
+      "link": "/DeepSeek应用开发实战/20｜平台化开发：工具开发套路"
+    },
+    {
+      "text": "视觉模型：试卷题目分析解答",
+      "link": "/DeepSeek应用开发实战/21｜视觉模型：试卷题目分析解答"
+    },
+    {
+      "text": "RAG技术：如何利用RAG技术提升题目解答准确率？",
+      "link": "/DeepSeek应用开发实战/22｜RAG技术：如何利用RAG技术提升题目解答准确率？"
+    },
+    {
+      "text": "校验机制：如何通过校验提升题目解答准确率？",
+      "link": "/DeepSeek应用开发实战/23-校验机制：如何通过校验提升题目解答准确率？"
+    },
+    {
+      "text": "热门AI开发脚手架：一节课快速入门LangGraph",
+      "link": "/DeepSeek应用开发实战/24｜热门AI开发脚手架：一节课快速入门LangGraph"
+    },
+    {
+      "text": "使用LangGraph定制编写Web后端项目",
+      "link": "/DeepSeek应用开发实战/25｜使用LangGraph定制编写Web后端项目"
+    },
+    {
+      "text": "如何根据数据表文档生成实体？",
+      "link": "/DeepSeek应用开发实战/26｜如何根据数据表文档生成实体？"
+    },
+    {
+      "text": "如何根据代码库代码生成新的代码？",
+      "link": "/DeepSeek应用开发实战/27｜如何根据代码库代码生成新的代码？"
+    },
+    {
+      "text": "思路拓展：如何使用GraphRAG分析代码结构？",
+      "link": "/DeepSeek应用开发实战/28｜思路拓展：如何使用GraphRAG分析代码结构？"
+    },
+    {
+      "text": "如何抓取金融市场数据？",
+      "link": "/DeepSeek应用开发实战/29｜如何抓取金融市场数据？"
+    },
+    {
+      "text": "如何用自然语言查询股票名称与代码？",
+      "link": "/DeepSeek应用开发实战/30｜如何用自然语言查询股票名称与代码？"
+    },
+    {
+      "text": "如何抓取全部沪深A股的日K数据？",
+      "link": "/DeepSeek应用开发实战/31｜如何抓取全部沪深A股的日K数据？"
+    },
+    {
+      "text": "计划模式：如何让Agent有计划地进行股票数据分析？",
+      "link": "/DeepSeek应用开发实战/32｜计划模式：如何让Agent有计划地进行股票数据分析？"
+    },
+    {
+      "text": "简易量化策略之量能策略",
+      "link": "/DeepSeek应用开发实战/33-简易量化策略之量能策略"
+    },
+    {
+      "text": "Agent的前辈：FunctionCalling",
+      "link": "/DeepSeek应用开发实战/加餐1｜Agent的前辈：FunctionCalling"
+    },
+    {
+      "text": "直播回放：如何借力DeepSeek入局AI应用开发",
+      "link": "/DeepSeek应用开发实战/加餐2｜直播回放：如何借力DeepSeek入局AI应用开发"
+    },
+    {
+      "text": "加餐：使用AutoDL快速部署模型",
+      "link": "/DeepSeek应用开发实战/加餐：使用AutoDL快速部署模型"
+    },
+    {
+      "text": "前沿速递：如何学习与理解Google智能体协议A2A？",
+      "link": "/DeepSeek应用开发实战/加餐｜前沿速递：如何学习与理解Google智能体协议A2A？"
+    },
+    {
+      "text": "近水知鱼性，近山识鸟音",
+      "link": "/DeepSeek应用开发实战/结束语｜近水知鱼性，近山识鸟音"
+    },
+    {
+      "text": "来赴一场满分之约！",
+      "link": "/DeepSeek应用开发实战/结课测试｜来赴一场满分之约！"
+    },
+    {
+      "text": "DeepSeekHarness：插件化Agent框架与生态入门",
+      "link": "/DeepSeek应用开发实战/热点加餐｜DeepSeekHarness：插件化Agent框架与生态入门"
+    },
+    {
+      "text": "如何使用MCP&A2A实现多智能体股票助手",
+      "link": "/DeepSeek应用开发实战/直播加餐｜如何使用MCP&A2A实现多智能体股票助手"
+    }
+  ],
   "/DevOps实战笔记/": [
     {
       "text": "开篇词-从默默无闻到风靡全球，DevOps究竟有什么魔力？",
@@ -32714,6 +32884,18 @@ export const navItems = [
       "AI 与数据智能",
       "云原生与基础设施",
       "后端与中间件"
+    ]
+  },
+  {
+    "text": "DeepSeek应用开发实战",
+    "link": "/DeepSeek应用开发实战/开篇词｜借DeepSeek东风，开启AI应用开发之旅",
+    "count": 42,
+    "category": "ai",
+    "categoryLabel": "AI 与数据智能",
+    "tags": [
+      "AI 与数据智能",
+      "架构与分布式",
+      "前端与客户端"
     ]
   },
   {
