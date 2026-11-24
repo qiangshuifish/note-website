@@ -1,0 +1,247 @@
+# 10 | iOS平台音频采集：如何使用AudioQueue和AudioUnit采集音频？
+
+你好，我是展晓凯。今天我们来一起学习 iOS 平台的音频采集。
+
+iOS 平台提供了多套 API 来采集音频，分别是 AVAudioRecoder，AudioQueue 以及AudioUnit。这三种方法各有优缺点，适用于不同的场景，我们一起看一下。
+
+![](images/10/1.png)
+
+- AVAudioRecorder，类似于 AVAudioPlayer，属于端到端的 API，存在于 AVFoundation 框架中。当我们想指定一个路径将麦克风的声音录制下来的时候，就可以使用这一个 API。优点是简单易用，缺点是无法操控中间的数据。
+
+- AudioQueue，之前我们使用 AudioQueue 渲染过音频，其实 AudioQueue 也可以录制音频，也是对 AudioUnit 的封装，它允许开发者获取、操控中间的数据（按照配置的数据格式）。优点是灵活性较强，缺点是上手难度较高。
+
+- AudioUnit，是音频最底层的 API 接口，之前我们使用 AudioUnit 渲染过音频，和AudioQueue 一样，我们也可以使用它录制音频。当我们需要使用 VPIO（VoiceProcessIO）等处理音频的 AudioUnit、需要使用实时耳返或在低延迟场景下，必须使用这一层的 API。优点是灵活性最强，缺点是上手难度更高。
+
+这节课我会重点讲解如何使用 AudioQueue 与 AudioUnit 来采集音频，但在学习这两个接口之前，我们还需要先设置并激活一下录制场景下 AVAudioSession。
+
+## 设置 AVAudioSession
+
+要想使用 iOS 的麦克风录音，首先要为 App 声明使用麦克风的权限，在工程目录下找到info.plist，然后在里面新增麦克风权限的声明。
+
+```xml
+<key>NSMicrophoneUsageDescription</key>
+<string>microphoneDesciption</string>
+```
+
+这样添加完之后，就让系统知道了 App 要访问系统的麦克风权限。
+
+接下来需要判断一下麦克风的授权情况。如果已经询问过了，就根据实际授权的情况进行处理，如果未授权可以引导用户跳转设置页面重新打开，代码如下：
+
+```
+[[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpen
+}];
+```
+
+如果没有询问过用户是否授权，就调用询问接口。
+
+```
+[[AVAudioSession sharedInstance] requestRecordPermission:^(BOOL granted) {
+ if (granted) {
+   //获得授权
+ } else {
+   //未获得授权
+ }
+}];
+```
+
+根据实际获得授权的情况，来决定是否继续开启录音流程。
+
+当获得授权之后，就要开启一个音频会话了，即设置对应的 AVAudioSession，代码如下：
+
+```
+[[AVAudioSession sharedInstance] setPreferredIOBufferDuration:AUDIO_RECORD_BUFFER
+[[AVAudioSession sharedInstance] setPreferredSampleRate:48000 error:nil];
+[[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord
+[[AVAudioSession sharedInstance] setActive:YES error:nil];
+```
+
+代码的第一行是设置缓冲区的大小，一般设置得越大延迟越高，但是性能越好。如果需要实时耳返的话，一般设置 5～8ms；不需要实时耳返的场景，设置 23ms 左右即可。第二行是设置采样率，目前的主流设备可以都设置成 48k 的采样率，兼容性是最好的；第三行是设置Category，如果是不戴耳机或戴有线耳机的情况，根据上面的代码设置就可以，但是如果是蓝牙耳机想保留高音质采集，就需要这样设置：
+
+```
+[[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord
+```
+
+这里的麦克风使用的是机身麦克风，如果想使用蓝牙本身的麦克风，设置代码如下：
+
+```
+[[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord
+```
+
+最后，激活 AVAudioSession 之后，就可以使用具体的录音框架了，下面就让我们先来学习一下用 AudioQueue 来采集音频。
+
+## 如何使用 AudioQueue 采集音频？
+
+还记得我们第 1 节课使用 AudioQueue 来渲染音频的方法吗？和渲染音频相比，采集音频就相当于是一个相反的过程，我们先来看一下 AudioQueue 采集音频的结构图。
+
+![](images/10/2.png)
+
+- AudioQueue采集音频结构图
+
+从结构图里，我们可以看到 AudioQueue 的输入是左侧的麦克风，输出是把 BufferQueue 里面填充好数据的 buffer 回调给业务层，让业务层自己处理或者执行 IO 操作。
+
+下面我们再看一下 AudioQueue 录音的整个流程图。
+
+![](images/10/3.png)
+
+- AudioQueue录音流程图
+
+1. AudioQueue 把采集进来的音频填充到第一个 buffer 里。
+
+2. 填满了第一个 buffer 之后，会把第一个 buffer 返回给业务层处理，同时把采集进来的音频填充到第二个 buffer 里。
+
+3. 业务层把接收到的第一个 buffer 写到磁盘里。
+
+4. 业务层把第一个 buffer 再返还给 AudioQueue，也就是重新让 buffer 入队。
+
+5. AudioQueue 填充好了第二个 buffer 回调给业务端，同时把麦克风采集到的数据写到第三个buffer 里。
+
+6. 业务层把第二个 buffer 写到磁盘上，同时把第二个 buffer 再返还给 AudioQueue。
+
+你可以再回顾一下AudioQueue 渲染音频的数据流程，录制的数据运行流程恰恰是和音频渲染相反的一个过程：渲染音频是需要业务端来填充数据，然后给 AudioQueue 进行播放；采集音频是需要业务端把采集到的数据消费掉，然后再返回给 AudioQueue 来填充音频。
+
+在学习 AudioQueue 音频渲染的时候，我们了解了 AudioQueue 内部是可以自动做解码操作的，其实在采集音频过程中也有一个逆过程的处理，就是 AudioQueue 内部会根据我们指定的数据格式来执行压缩编码，你可以看一下流程图。
+
+![](images/10/4.png)
+
+在创建采集音频类型的 AudioQueue 的时候，要指定 dataFormat（ASBD 类型）参数，而这个 DataFormat 里有一个 mFormatID 属性，当这个属性被指定为 kAudioFormatMPEG4AAC的时候，AudioQueue 内部就会自动把采集到的 PCM 数据编码为 AAC 类型的数据返回给业务层。
+
+在实际使用过程中，你可以根据自己的需要来制定 dataFormat，如果你需要 PCM 数据，那么这里就不需要使用 AudioQueue 的编码能力，我们要根据自己的使用场景来做配置。
+
+在充分理解了 AudioQueue 的整体数据流程之后，我们再来看一下它的核心使用方法。第一步是创建采集音频类型的 AudioQueue。
+
+```
+AudioQueueNewInput(&dataformat, recoderCB, (__bridge void *)self, NULL, NULL, 0,
+```
+
+代码里的 dataFormat 代表期望 AudioQueue 采集音频之后返回给业务层的具体的音频格式，recoderCB 代表 AudioQueue 填充好一个 buffer 之后回调给业务层的方法，这个方法的实现如下：
+
+```
+static void recoderCB(void *aqData, AudioQueueRef inAQ, AudioQueueBufferRef inBuf
+   //1 inBuffer->mAudioData 处理 & IO
+   //2 重新入队
+   AudioQueueEnqueueBuffer(inAQ, inBuffer, 0, NULL);
+}
+```
+
+这个方法内部消费掉 inBuffer 里的音频数据，然后将这个 buffer 重新入队。
+
+当创建好一个 AudioQueue 之后，一般要为这个 AudioQueue 分配 3 个 buffer，然后依次入队。
+
+```
+for (int i = 0; i < kNumberBuffers; i++) {
+ AudioQueueAllocateBuffer(queueRef, self.bufferBytesSize, &buffers[i]);
+ AudioQueueEnqueueBuffer(queueRef, buffers[i], 0, NULL);
+}
+```
+
+其中代码里的 bufferBytesSize 代表每个 buffer 的数据大小，这个可以根据 dataFormat 与期望的数据长度（比如 50ms）来计算。
+
+最后调用 Start 方法来启动 AudioQueue。
+
+```
+AudioQueueStart(mQueue, NULL)
+```
+
+像 Stop、Reset 等方法这里我就不再赘述了。整体来看，AudioQueue 的使用其实比较简单，核心就是配置好 dataFormat，然后实现回调函数，再按照期望的 dataFormat 处理数据就可以了。
+
+## 如何使用 AudioUnit 采集音频？
+
+我们这个部分使用的 AudioUnit 接口，其实在专栏的第 2 节课已经详细地讲过了，所以这里我们就直接来看如何使用 AudioUnit 实现人声的采集，同时还会给耳机一个监听耳返。等完成这个功能之后，你就会感叹这在 iOS 平台上实现起来太简单了。
+
+在激活 AVAudioSession 之后，我们就要构造一个 AUGraph 了，构造 AUGraph 的过程和第 2节课渲染音频时构造的 AUGraph 几乎是一致的，这里就不再赘述了。由于这里我们要使用采集音频的能力，所以要启用 RemoteIO 这个 AudioUnit 的 InputElement，代码如下：
+
+```
+static UInt32 kInputBus = 1;
+UInt32 flag = 1;
+AudioUnitSetProperty(ioUnit, kAudioOutputUnitProperty_EnableIO, kAudioUnitScope_I
+```
+
+RemoteIO 这个 AudioUnit 其实是比较特别的，InputElement（kInputBus 的值为 1）代表的是麦克风，而 OutputElement 代表的是扬声器，上述这行代码就是启用 RemoteIOUnit 的InputElement。
+
+为了支持开发的 App 可以在后续扩展出 Mix 一轨伴奏这个功能，我们需要额外在 AUGraph 中增加 MultiChannelMixer 这个 AudioUnit。由于每个 AudioUnit 的输入输出格式并不相同，所以这里还要使用 AudioConvert 这个 AudioUnit 来把输入的 AudioUnit 连接到 MixerUnit 上。最终让 MixerUnit 连接上 RemoteIO 的 OutputElement，将声音送到耳机或者扬声器中。
+
+这里需要注意，如果没有插耳机的情况下需要 Mute（消音）掉这一路，否则就会出现啸叫的现象。到这里我们就把 AUGraph 构建出来了，如下图所示。
+
+![](images/10/5.png)
+
+如何把采集的音频存储成为一个文件呢？
+
+我们可以在 RemoteIO 这个节点的 OutputElement 增加一个回调，然后在回调方法中来拉取预期节点的数据，同时也可以去写文件，这种方式其实已经在音频渲染的时候使用过。首先给RemoteIO 这个 AudioUnit 的 OutputElement 增加一个回调。
+
+```
+AURenderCallbackStruct finalRenderProc;
+finalRenderProc.inputProc = &renderCallback;
+finalRenderProc.inputProcRefCon = (__bridge void *)self;
+status = AUGraphSetNodeInputCallback(_auGraph, _ioNode, 0, &finalRenderProc);
+```
+
+然后在上述的回调方法的实现中，把它的前一级 MixerUnit 的数据渲染出来，同时写文件。
+
+```javascript
+static OSStatus renderCallback(void *inRefCon,
+       AudioUnitRenderActionFlags *ioActionFlags, const AudioTimeStamp
+       *inTimeStamp, UInt32 inBusNumber, UInt32 inNumberFrames, AudioBufferList
+       *ioData){
+   OSStatus result = noErr;
+   __unsafe_unretained AudioRecorder *THIS = (__bridge AudioRecorder *)inRefCon;
+   AudioUnitRender(THIS->_mixerUnit, ioActionFlags,
+           inTimeStamp, 0, inNumberFrames, ioData);
+   //Write To File
+   return result;
+}
+```
+
+关于写文件，我们会在第 12 节课使用 AudioToolbox 来给文件编码，但是这里我们使用一个更高级的 API——ExtAudioFile 来写文件，其实这个 ExtAudioFile 内部封装了 AudioToolbox里面的 AudioConverterReference。iOS 提供的这个 API 只需要我们设置好输入格式和输出格式以及输出文件路径和文件格式。
+
+```
+AudioStreamBasicDescription destinationFormat;
+CFURLRef destinationURL;
+result = ExtAudioFileCreateWithURL(destinationURL, kAudioFileCAFType,
+       &destinationFormat, NULL, kAudioFileFlags_EraseFile, &audioFile);
+result = ExtAudioFileSetProperty(audioFile,
+       kExtAudioFileProperty_ClientDataFormat, sizeof(clientFormat),
+       &clientFormat);
+UInt32 codec = kAppleHardwareAudioCodecManufacturer;
+result = ExtAudioFileSetProperty(audioFile,
+       kExtAudioFileProperty_CodecManufacturer, sizeof(codec), &codec);
+```
+
+在需要给文件编码时，就直接写入数据。
+
+```
+ExtAudioFileWriteAsync(audioFile, inNumberFrames, ioData);
+```
+
+在停止写入的时候调用关闭方法即可。
+
+```
+ExtAudioFileDispose(audioFile);
+```
+
+注意，这里调用的是 WriteAsync，就是异步的方式来写文件，这样它不会阻塞 Remote IO 这个线程。在停止写入的时候，我们关闭这个方法就可以了。
+
+最终就可以得到我们想要的文件了，你可以从应用的沙盒中将保存的文件拿出来（在 XCode中用 Device 或 iExplorer 取出文件），然后播放试听一下。
+
+## 小结
+
+最后，我们一起来回顾一下今天的内容。
+
+在 iOS 平台采集音频数据，比较常用的就是 AVAudioRecoder，AudioQueue 以及 AudioUnit三套接口。
+
+- AVAudioRecorder 使用起来比较简单，如果是简单的录音，使用 AVAudioRecorder 就可以。但因为无法操控中间的数据，它提供不了更高级的能力支持。
+
+- 使用 AudioQueue 录制音频，灵活性比较强。如果只是获取内存中的录音数据，然后编码、输出，使用 AudioQueue 来采集音频会更适合。
+
+- 使用 AudioUnit 录制音频灵活性最强，如果要使用更多的音效处理以及实时的监听功能，那么使用 AudioUnit 会更方便一些。
+
+后续我们视频录制器项目中，使用的都是 AudioUnit，因为实现的场景不单单需要耳返，也需要音效的实时处理等功能。
+
+## 思考题
+
+你可以使用一下回森这个 App，这个 App 有一个特色的功能就是语音弹幕，它支持用户在观看音乐作品的同时演唱一段弹幕（启动音频采集），而从听到唱的过程中整个音乐作品播放是非常流畅的，这里我给你留两个问题：
+
+1. 这个 App 是如何实现启动录音的时候音乐作品可以流畅地播放的呢？
+
+2. 使用蓝牙耳机的情况下，在保证录制高音质音频的同时，音乐作品如何保持声音的流畅性呢？
+
+欢迎在评论区留下你的思考，也欢迎你把这节课分享给更多对音视频感兴趣的朋友，我们一起交流、共同进步。下节课再见！
