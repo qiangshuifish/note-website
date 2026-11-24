@@ -25146,6 +25146,96 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/手把手带你写一个MiniSpring/期末测试｜来赴一场满分之约吧！"
     }
   ],
+  "/手把手带你写一个MiniTomcat/": [
+    {
+      "text": "重造轮子，探究Tomcat的秘密",
+      "link": "/手把手带你写一个MiniTomcat/开篇词｜重造轮子，探究Tomcat的秘密"
+    },
+    {
+      "text": "持久的传奇：Tomcat的发展历程与框架演进",
+      "link": "/手把手带你写一个MiniTomcat/01｜持久的传奇：Tomcat的发展历程与框架演进"
+    },
+    {
+      "text": "初出茅庐：构造一个极简的HttpServer",
+      "link": "/手把手带你写一个MiniTomcat/02｜初出茅庐：构造一个极简的HttpServer"
+    },
+    {
+      "text": "动态Response：按照规范构造返回流",
+      "link": "/手把手带你写一个MiniTomcat/03｜动态Response：按照规范构造返回流"
+    },
+    {
+      "text": "各司其职的Server：拆分响应模块与处理模块",
+      "link": "/手把手带你写一个MiniTomcat/04｜各司其职的Server：拆分响应模块与处理模块"
+    },
+    {
+      "text": "Server性能提升：设计多个Processor",
+      "link": "/手把手带你写一个MiniTomcat/05｜Server性能提升：设计多个Processor"
+    },
+    {
+      "text": "规范化：引入HttpRequest与HttpResponse",
+      "link": "/手把手带你写一个MiniTomcat/06｜规范化：引入HttpRequest与HttpResponse"
+    },
+    {
+      "text": "对内的保护：引入门面模式封装内部实现类",
+      "link": "/手把手带你写一个MiniTomcat/07｜对内的保护：引入门面模式封装内部实现类"
+    },
+    {
+      "text": "解析参数：通过引入Cookie和Session避免反复登录",
+      "link": "/手把手带你写一个MiniTomcat/08｜解析参数：通过引入Cookie和Session避免反复登录"
+    },
+    {
+      "text": "有状态的Response：实现Session传递与Keep-alive",
+      "link": "/手把手带你写一个MiniTomcat/09｜有状态的Response：实现Session传递与Keep-alive"
+    },
+    {
+      "text": "ServletWrapper：如何维护Servlet生命周期及实现容器管理？",
+      "link": "/手把手带你写一个MiniTomcat/10｜ServletWrapper：如何维护Servlet生命周期及实现容器管理？"
+    },
+    {
+      "text": "多层容器：如何通过实现Context与Wrapper形成多层容器？",
+      "link": "/手把手带你写一个MiniTomcat/11｜多层容器：如何通过实现Context与Wrapper形成多层容器？"
+    },
+    {
+      "text": "Pipeline与Valve：如何实现容器间的调用、事务管理、权限验证？",
+      "link": "/手把手带你写一个MiniTomcat/12｜Pipeline与Valve：如何实现容器间的调用、事务管理、权限验证？"
+    },
+    {
+      "text": "Filter与Listener：如何实现过滤和持续监听？",
+      "link": "/手把手带你写一个MiniTomcat/13｜Filter与Listener：如何实现过滤和持续监听？"
+    },
+    {
+      "text": "多应用支持：拆分Context、BootStrap与路由转发",
+      "link": "/手把手带你写一个MiniTomcat/14｜多应用支持：拆分Context、BootStrap与路由转发"
+    },
+    {
+      "text": "类加载机制的改变：如何自定义ClassLoader？",
+      "link": "/手把手带你写一个MiniTomcat/15｜类加载机制的改变：如何自定义ClassLoader？"
+    },
+    {
+      "text": "大功告成：完成MiniTomcat",
+      "link": "/手把手带你写一个MiniTomcat/16｜大功告成：完成MiniTomcat"
+    },
+    {
+      "text": "更大的框架：MiniSpring与MiniTomcat集成",
+      "link": "/手把手带你写一个MiniTomcat/17｜更大的框架：MiniSpring与MiniTomcat集成"
+    },
+    {
+      "text": "高并发探讨：如何支持NIO？",
+      "link": "/手把手带你写一个MiniTomcat/18｜高并发探讨：如何支持NIO？"
+    },
+    {
+      "text": "Servlet与NIO的协同：如何在NIO模式下调用Servlet？",
+      "link": "/手把手带你写一个MiniTomcat/19｜Servlet与NIO的协同：如何在NIO模式下调用Servlet？"
+    },
+    {
+      "text": "像地质学家一样奋力往下挖",
+      "link": "/手把手带你写一个MiniTomcat/结束语｜像地质学家一样奋力往下挖"
+    },
+    {
+      "text": "来赴一场满分之约",
+      "link": "/手把手带你写一个MiniTomcat/结课测试｜来赴一场满分之约"
+    }
+  ],
   "/手把手带你写一个Web框架/": [
     {
       "text": "为什么我们要从零开发框架？",
@@ -43451,6 +43541,18 @@ export const navItems = [
       "后端与中间件",
       "云原生与基础设施",
       "数据库与存储"
+    ]
+  },
+  {
+    "text": "手把手带你写一个MiniTomcat",
+    "link": "/手把手带你写一个MiniTomcat/开篇词｜重造轮子，探究Tomcat的秘密",
+    "count": 22,
+    "category": "backend",
+    "categoryLabel": "后端与中间件",
+    "tags": [
+      "后端与中间件",
+      "云原生与基础设施",
+      "架构与分布式"
     ]
   },
   {
