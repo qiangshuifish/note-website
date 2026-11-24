@@ -5868,6 +5868,10 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/Java业务开发常见错误100例/05-HTTP调用：你考虑到超时、重试、并发了吗？"
     },
     {
+      "text": "20%的业务代码的Spring声明式事务，可能都没处理正确",
+      "link": "/Java业务开发常见错误100例/06-20%25的业务代码的Spring声明式事务，可能都没处理正确"
+    },
+    {
       "text": "20％的业务代码的Spring声明式事务，可能都没处理正确",
       "link": "/Java业务开发常见错误100例/06-20％的业务代码的Spring声明式事务，可能都没处理正确"
     },
@@ -34385,7 +34389,7 @@ export const navItems = [
   {
     "text": "Java业务开发常见错误100例",
     "link": "/Java业务开发常见错误100例/开篇词-业务代码真的会有这么多坑？",
-    "count": 48,
+    "count": 49,
     "category": "backend",
     "categoryLabel": "后端与中间件",
     "tags": [
