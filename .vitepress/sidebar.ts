@@ -7446,6 +7446,124 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/LLaMA3前沿模型实战课/结课测试｜来赴一场满分之约吧"
     }
   ],
+  "/LangChain实战课/": [
+    {
+      "text": "带你亲证AI应用开发的“奇点”时刻",
+      "link": "/LangChain实战课/开篇词｜带你亲证AI应用开发的“奇点”时刻"
+    },
+    {
+      "text": "LangChain系统安装和快速入门",
+      "link": "/LangChain实战课/01｜LangChain系统安装和快速入门"
+    },
+    {
+      "text": "用LangChain快速构建基于“易速鲜花”本地知识库的智能问答系统",
+      "link": "/LangChain实战课/02｜用LangChain快速构建基于“易速鲜花”本地知识库的智能问答系统"
+    },
+    {
+      "text": "模型I-O：输入提示、调用模型、解析输出",
+      "link": "/LangChain实战课/03｜模型I-O：输入提示、调用模型、解析输出"
+    },
+    {
+      "text": "提示工程（上）：用少样本FewShotTemplate和ExampleSelector创建应景文案",
+      "link": "/LangChain实战课/04｜提示工程（上）：用少样本FewShotTemplate和ExampleSelector创建应景文案"
+    },
+    {
+      "text": "提示工程（下）：用思维链和思维树提升模型思考质量",
+      "link": "/LangChain实战课/05｜提示工程（下）：用思维链和思维树提升模型思考质量"
+    },
+    {
+      "text": "调用模型：使用OpenAIAPI还是微调开源Llama2-ChatGLM？",
+      "link": "/LangChain实战课/06｜调用模型：使用OpenAIAPI还是微调开源Llama2-ChatGLM？"
+    },
+    {
+      "text": "输出解析：用OutputParser生成鲜花推荐列表",
+      "link": "/LangChain实战课/07｜输出解析：用OutputParser生成鲜花推荐列表"
+    },
+    {
+      "text": "链（上）：写一篇完美鲜花推文？用SequencialChain链接不同的组件",
+      "link": "/LangChain实战课/08｜链（上）：写一篇完美鲜花推文？用SequencialChain链接不同的组件"
+    },
+    {
+      "text": "链（下）：想学“育花”还是“插花”？用RouterChain确定客户意图",
+      "link": "/LangChain实战课/09｜链（下）：想学“育花”还是“插花”？用RouterChain确定客户意图"
+    },
+    {
+      "text": "记忆：通过Memory记住客户上次买花时的对话细节",
+      "link": "/LangChain实战课/10｜记忆：通过Memory记住客户上次买花时的对话细节"
+    },
+    {
+      "text": "代理（上）：ReAct框架，推理与行动的协同",
+      "link": "/LangChain实战课/11｜代理（上）：ReAct框架，推理与行动的协同"
+    },
+    {
+      "text": "代理（中）：AgentExecutor究竟是怎样驱动模型和工具完成任务的？",
+      "link": "/LangChain实战课/12｜代理（中）：AgentExecutor究竟是怎样驱动模型和工具完成任务的？"
+    },
+    {
+      "text": "代理（下）：结构化工具对话、Self-AskwithSearch以及Planandexecute代理",
+      "link": "/LangChain实战课/13｜代理（下）：结构化工具对话、Self-AskwithSearch以及Planandexecute代理"
+    },
+    {
+      "text": "工具和工具箱：LangChain中的Tool和Toolkits一览",
+      "link": "/LangChain实战课/14｜工具和工具箱：LangChain中的Tool和Toolkits一览"
+    },
+    {
+      "text": "检索增强生成：通过RAG助力鲜花运营",
+      "link": "/LangChain实战课/15｜检索增强生成：通过RAG助力鲜花运营"
+    },
+    {
+      "text": "连接数据库：通过链和代理查询鲜花信息",
+      "link": "/LangChain实战课/16｜连接数据库：通过链和代理查询鲜花信息"
+    },
+    {
+      "text": "回调函数：在AI应用中引入异步通信机制",
+      "link": "/LangChain实战课/17｜回调函数：在AI应用中引入异步通信机制"
+    },
+    {
+      "text": "CAMEL：通过角色扮演脑暴一个鲜花营销方案",
+      "link": "/LangChain实战课/18｜CAMEL：通过角色扮演脑暴一个鲜花营销方案"
+    },
+    {
+      "text": "BabyAGI：根据气候变化自动制定鲜花存储策略",
+      "link": "/LangChain实战课/19｜BabyAGI：根据气候变化自动制定鲜花存储策略"
+    },
+    {
+      "text": "部署一个鲜花网络电商的人脉工具（上）",
+      "link": "/LangChain实战课/20｜部署一个鲜花网络电商的人脉工具（上）"
+    },
+    {
+      "text": "部署一个鲜花网络电商的人脉工具（下）",
+      "link": "/LangChain实战课/21｜部署一个鲜花网络电商的人脉工具（下）"
+    },
+    {
+      "text": "易速鲜花聊天客服机器人的开发（上）",
+      "link": "/LangChain实战课/22｜易速鲜花聊天客服机器人的开发（上）"
+    },
+    {
+      "text": "易速鲜花聊天客服机器人的开发（下）",
+      "link": "/LangChain实战课/23｜易速鲜花聊天客服机器人的开发（下）"
+    },
+    {
+      "text": "人生的价值就在于创造",
+      "link": "/LangChain实战课/结束语｜人生的价值就在于创造"
+    },
+    {
+      "text": "来赴一场满分之约",
+      "link": "/LangChain实战课/结课测试｜来赴一场满分之约"
+    },
+    {
+      "text": "热点加餐：用LangGraph和A2A实现货币兑换Agent",
+      "link": "/LangChain实战课/热点加餐：用LangGraph和A2A实现货币兑换Agent"
+    },
+    {
+      "text": "LangChain的Tracing、Debug和LangSmith平台解读",
+      "link": "/LangChain实战课/直播加餐｜LangChain的Tracing、Debug和LangSmith平台解读"
+    },
+    {
+      "text": "LangChain表达式语言LCEL初探",
+      "link": "/LangChain实战课/直播加餐｜LangChain表达式语言LCEL初探"
+    }
+  ],
   "/Linux内核技术实战课/": [
     {
       "text": "开篇词-如何让Linux内核更好地服务应用程序？",
@@ -34792,6 +34910,18 @@ export const navItems = [
       "AI 与数据智能",
       "个人成长与表达",
       "数据库与存储"
+    ]
+  },
+  {
+    "text": "LangChain实战课",
+    "link": "/LangChain实战课/开篇词｜带你亲证AI应用开发的“奇点”时刻",
+    "count": 29,
+    "category": "ai",
+    "categoryLabel": "AI 与数据智能",
+    "tags": [
+      "AI 与数据智能",
+      "数据库与存储",
+      "个人成长与表达"
     ]
   },
   {
