@@ -3080,6 +3080,78 @@ export const sidebar: DefaultTheme.Sidebar = {
     {
       "text": "执行改造（上）：后端开发跑通测试",
       "link": "/ClaudeCode企业级老项目改造实战/19｜执行改造（上）：后端开发跑通测试"
+    },
+    {
+      "text": "执行改造（下）：前端开发和接口对接",
+      "link": "/ClaudeCode企业级老项目改造实战/20｜执行改造（下）：前端开发和接口对接"
+    },
+    {
+      "text": "实操课：一次完整改造的全流程演示+验收复盘",
+      "link": "/ClaudeCode企业级老项目改造实战/21｜实操课：一次完整改造的全流程演示+验收复盘"
+    },
+    {
+      "text": "核心五问：这门课的思路是如何解决问题的？",
+      "link": "/ClaudeCode企业级老项目改造实战/22｜核心五问：这门课的思路是如何解决问题的？"
+    },
+    {
+      "text": "换个功能再跑一遍：从0到1加一个Overview页面",
+      "link": "/ClaudeCode企业级老项目改造实战/23｜换个功能再跑一遍：从0到1加一个Overview页面"
+    },
+    {
+      "text": "建立学习框架：用AI快速拆解学习HermesAgent",
+      "link": "/ClaudeCode企业级老项目改造实战/24｜建立学习框架：用AI快速拆解学习HermesAgent"
+    },
+    {
+      "text": "两次翻译：把“基于HermesAgent的自动化测试”拆成技术方案",
+      "link": "/ClaudeCode企业级老项目改造实战/25｜两次翻译：把“基于HermesAgent的自动化测试”拆成技术方案"
+    },
+    {
+      "text": "跑通HermesAgent：HelloWorld之后再回看方案",
+      "link": "/ClaudeCode企业级老项目改造实战/26｜跑通HermesAgent：HelloWorld之后再回看方案"
+    },
+    {
+      "text": "让代码长出来：用提示词驱动写Skill套件",
+      "link": "/ClaudeCode企业级老项目改造实战/27｜让代码长出来：用提示词驱动写Skill套件"
+    },
+    {
+      "text": "跑通系统：填业务层，看见混沌测试真的跑起来",
+      "link": "/ClaudeCode企业级老项目改造实战/28｜跑通系统：填业务层，看见混沌测试真的跑起来"
+    },
+    {
+      "text": "实操：从一句话需求到7×24系统的全流程演示",
+      "link": "/ClaudeCode企业级老项目改造实战/29｜实操：从一句话需求到7×24系统的全流程演示"
+    },
+    {
+      "text": "第一个PR：在AI时代，开源commit依然是简历最值钱的资产",
+      "link": "/ClaudeCode企业级老项目改造实战/30｜第一个PR：在AI时代，开源commit依然是简历最值钱的资产"
+    },
+    {
+      "text": "第二个PR：让AI当你的Rust助教，搞定有难度的活",
+      "link": "/ClaudeCode企业级老项目改造实战/31｜第二个PR：让AI当你的Rust助教，搞定有难度的活"
+    },
+    {
+      "text": "实操：挑战开源的全流程演示和我的开源经验",
+      "link": "/ClaudeCode企业级老项目改造实战/32｜实操：挑战开源的全流程演示和我的开源经验"
+    },
+    {
+      "text": "改造SOP：三种形式、一套打法，把整门课带回你自己的项目",
+      "link": "/ClaudeCode企业级老项目改造实战/33｜改造SOP：三种形式、一套打法，把整门课带回你自己的项目"
+    },
+    {
+      "text": "少年依旧",
+      "link": "/ClaudeCode企业级老项目改造实战/结束语｜少年依旧"
+    },
+    {
+      "text": "来赴一场满分之约！",
+      "link": "/ClaudeCode企业级老项目改造实战/结课测试｜来赴一场满分之约！"
+    },
+    {
+      "text": "从阿里禁用ClaudeCode说起，聊聊我们学AI编程到底在学什么？",
+      "link": "/ClaudeCode企业级老项目改造实战/热点速递｜从阿里禁用ClaudeCode说起，聊聊我们学AI编程到底在学什么？"
+    },
+    {
+      "text": "SuperAgent实践：在模型之上，构建企业AI工作系统",
+      "link": "/ClaudeCode企业级老项目改造实战/直播分享｜SuperAgent实践：在模型之上，构建企业AI工作系统"
     }
   ],
   "/ClaudeCode工程化实战/": [
@@ -34069,7 +34141,7 @@ export const navItems = [
   {
     "text": "ClaudeCode企业级老项目改造实战",
     "link": "/ClaudeCode企业级老项目改造实战/开篇词｜怎么用ClaudeCode改好一个跑了几年的老项目？",
-    "count": 20,
+    "count": 38,
     "category": "ai",
     "categoryLabel": "AI 与数据智能",
     "tags": [
