@@ -10252,6 +10252,176 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/ReactHooks核心原理与实战/结课测试题｜这些ReactHooks的知识你都掌握了吗？"
     }
   ],
+  "/ReactNative新架构实战课/": [
+    {
+      "text": "为什么要选择ReactNative做你的跨端方案？",
+      "link": "/ReactNative新架构实战课/开篇词｜为什么要选择ReactNative做你的跨端方案？"
+    },
+    {
+      "text": "学习ReactNative，你需要掌握哪些知识？",
+      "link": "/ReactNative新架构实战课/01｜学习ReactNative，你需要掌握哪些知识？"
+    },
+    {
+      "text": "Component：搭建静态页面的正确思路是什么？",
+      "link": "/ReactNative新架构实战课/02｜Component：搭建静态页面的正确思路是什么？"
+    },
+    {
+      "text": "Style：关于样式你需要知道的三件事",
+      "link": "/ReactNative新架构实战课/03｜Style：关于样式你需要知道的三件事"
+    },
+    {
+      "text": "State：如何让页面“动”起来？",
+      "link": "/ReactNative新架构实战课/04｜State：如何让页面“动”起来？"
+    },
+    {
+      "text": "Image：选择适合你的图片加载方式",
+      "link": "/ReactNative新架构实战课/05｜Image：选择适合你的图片加载方式"
+    },
+    {
+      "text": "Pressable：如何实现一个体验好的点按组件？",
+      "link": "/ReactNative新架构实战课/06｜Pressable：如何实现一个体验好的点按组件？"
+    },
+    {
+      "text": "TextInput：如何实现一个体验好的输入框？",
+      "link": "/ReactNative新架构实战课/07｜TextInput：如何实现一个体验好的输入框？"
+    },
+    {
+      "text": "List：如何实现高性能的无限列表？",
+      "link": "/ReactNative新架构实战课/08｜List：如何实现高性能的无限列表？"
+    },
+    {
+      "text": "FastRefresh：提高UI调试效率神器",
+      "link": "/ReactNative新架构实战课/09｜FastRefresh：提高UI调试效率神器"
+    },
+    {
+      "text": "Debug：解决BUG思路有哪些？",
+      "link": "/ReactNative新架构实战课/10｜Debug：解决BUG思路有哪些？"
+    },
+    {
+      "text": "组件实战：如何实现瀑布流？",
+      "link": "/ReactNative新架构实战课/11｜组件实战：如何实现瀑布流？"
+    },
+    {
+      "text": "页面实战：如何搭建一个电商首页？",
+      "link": "/ReactNative新架构实战课/12｜页面实战：如何搭建一个电商首页？"
+    },
+    {
+      "text": "生态：ReactNativeAwesome",
+      "link": "/ReactNative新架构实战课/13｜生态：ReactNativeAwesome"
+    },
+    {
+      "text": "Reanimated：如何让动画变得更流畅？",
+      "link": "/ReactNative新架构实战课/14｜Reanimated：如何让动画变得更流畅？"
+    },
+    {
+      "text": "Gesture（上）：如何实现一个拖拽动效？",
+      "link": "/ReactNative新架构实战课/15｜Gesture（上）：如何实现一个拖拽动效？"
+    },
+    {
+      "text": "Gesture（中）：如何解决单视图多手势的冲突问题？",
+      "link": "/ReactNative新架构实战课/16｜Gesture（中）：如何解决单视图多手势的冲突问题？"
+    },
+    {
+      "text": "Gesture（下）：如何解决多视图多手势的冲突问题？",
+      "link": "/ReactNative新架构实战课/17｜Gesture（下）：如何解决多视图多手势的冲突问题？"
+    },
+    {
+      "text": "Navigation：页面之间怎么跳转？",
+      "link": "/ReactNative新架构实战课/18｜Navigation：页面之间怎么跳转？"
+    },
+    {
+      "text": "Redux：大型应用应该如何管理状态？",
+      "link": "/ReactNative新架构实战课/19｜Redux：大型应用应该如何管理状态？"
+    },
+    {
+      "text": "Sentry：线上错误与性能监控怎么处理？",
+      "link": "/ReactNative新架构实战课/20｜Sentry：线上错误与性能监控怎么处理？"
+    },
+    {
+      "text": "混合应用：如何从零开始集成ReactNative？",
+      "link": "/ReactNative新架构实战课/21｜混合应用：如何从零开始集成ReactNative？"
+    },
+    {
+      "text": "自定义组件：如何满足业务的个性化需求？",
+      "link": "/ReactNative新架构实战课/22｜自定义组件：如何满足业务的个性化需求？"
+    },
+    {
+      "text": "热更新：如何搭建一个热更新平台？",
+      "link": "/ReactNative新架构实战课/23｜热更新：如何搭建一个热更新平台？"
+    },
+    {
+      "text": "拆包：Metro拆包的工作原理是什么？",
+      "link": "/ReactNative新架构实战课/24｜拆包：Metro拆包的工作原理是什么？"
+    },
+    {
+      "text": "性能优化：如何设计一个合适的性能优化方案？",
+      "link": "/ReactNative新架构实战课/25｜性能优化：如何设计一个合适的性能优化方案？"
+    },
+    {
+      "text": "客户端优化：如何把性能提升到极致？",
+      "link": "/ReactNative新架构实战课/26｜客户端优化：如何把性能提升到极致？"
+    },
+    {
+      "text": "跨端的机遇：小程序、Flutter和ReactNative原理对比",
+      "link": "/ReactNative新架构实战课/27｜跨端的机遇：小程序、Flutter和ReactNative原理对比"
+    },
+    {
+      "text": "追本溯源：从第一版ReactNative开始学会读懂源码",
+      "link": "/ReactNative新架构实战课/28｜追本溯源：从第一版ReactNative开始学会读懂源码"
+    },
+    {
+      "text": "弄清现状：新架构预览版究竟长什么样？",
+      "link": "/ReactNative新架构实战课/29｜弄清现状：新架构预览版究竟长什么样？"
+    },
+    {
+      "text": "JavaScript引擎：双向通讯底层原理是什么？",
+      "link": "/ReactNative新架构实战课/30｜JavaScript引擎：双向通讯底层原理是什么？"
+    },
+    {
+      "text": "多线程：RN底层是如何保障交互体验的？",
+      "link": "/ReactNative新架构实战课/31｜多线程：RN底层是如何保障交互体验的？"
+    },
+    {
+      "text": "Fabric：新渲染器的演进之路",
+      "link": "/ReactNative新架构实战课/32｜Fabric：新渲染器的演进之路"
+    },
+    {
+      "text": "AI前沿：ChatGPT资料精选集",
+      "link": "/ReactNative新架构实战课/33｜AI前沿：ChatGPT资料精选集"
+    },
+    {
+      "text": "升级收益：这两年ReactNative都做了哪些升级？",
+      "link": "/ReactNative新架构实战课/34｜升级收益：这两年ReactNative都做了哪些升级？"
+    },
+    {
+      "text": "自动化：升级0.72新架构的步骤和关键",
+      "link": "/ReactNative新架构实战课/35｜自动化：升级0.72新架构的步骤和关键"
+    },
+    {
+      "text": "升新不升旧：自定义组件如何升级到新架构？",
+      "link": "/ReactNative新架构实战课/36｜升新不升旧：自定义组件如何升级到新架构？"
+    },
+    {
+      "text": "集中答疑：详解Android环境搭建",
+      "link": "/ReactNative新架构实战课/加餐｜集中答疑：详解Android环境搭建"
+    },
+    {
+      "text": "集中答疑：详解iOS环境搭建",
+      "link": "/ReactNative新架构实战课/加餐｜集中答疑：详解iOS环境搭建"
+    },
+    {
+      "text": "新架构探索之旅，马上开始",
+      "link": "/ReactNative新架构实战课/总结与展望｜新架构探索之旅，马上开始"
+    },
+    {
+      "text": "七年，我的跨端实践和探索",
+      "link": "/ReactNative新架构实战课/直播加餐｜七年，我的跨端实践和探索"
+    },
+    {
+      "text": "ReactNative的这些核心知识，你都掌握了吗？",
+      "link": "/ReactNative新架构实战课/阶段测试｜ReactNative的这些核心知识，你都掌握了吗？"
+    }
+  ],
   "/Redis核心技术与实战/": [
     {
       "text": "开篇词-这样学Redis，才能技高一筹",
@@ -36049,6 +36219,18 @@ export const navItems = [
       "前端与客户端",
       "技术管理与职场",
       "架构与分布式"
+    ]
+  },
+  {
+    "text": "ReactNative新架构实战课",
+    "link": "/ReactNative新架构实战课/开篇词｜为什么要选择ReactNative做你的跨端方案？",
+    "count": 42,
+    "category": "frontend",
+    "categoryLabel": "前端与客户端",
+    "tags": [
+      "前端与客户端",
+      "架构与分布式",
+      "产品与商业"
     ]
   },
   {
