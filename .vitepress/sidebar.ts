@@ -25040,6 +25040,112 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/手写Python虚拟机/导学｜三小时掌握C++（中）"
     }
   ],
+  "/手把手带你写一个MiniSpring/": [
+    {
+      "text": "“眼脑手”结合，搞定Spring框架底层原理",
+      "link": "/手把手带你写一个MiniSpring/开篇词｜“眼脑手”结合，搞定Spring框架底层原理"
+    },
+    {
+      "text": "原始IoC：如何通过BeanFactory实现原始版本的IoC容器？",
+      "link": "/手把手带你写一个MiniSpring/01｜原始IoC：如何通过BeanFactory实现原始版本的IoC容器？"
+    },
+    {
+      "text": "扩展Bean：如何配置constructor、property和init-method？",
+      "link": "/手把手带你写一个MiniSpring/02｜扩展Bean：如何配置constructor、property和init-method？"
+    },
+    {
+      "text": "依赖注入：如何给Bean注入值并解决循环依赖问题？",
+      "link": "/手把手带你写一个MiniSpring/03｜依赖注入：如何给Bean注入值并解决循环依赖问题？"
+    },
+    {
+      "text": "增强IoC容器：如何让我们的Spring支持注解？",
+      "link": "/手把手带你写一个MiniSpring/04｜增强IoC容器：如何让我们的Spring支持注解？"
+    },
+    {
+      "text": "实现完整的IoC容器：构建工厂体系并添加容器事件",
+      "link": "/手把手带你写一个MiniSpring/05｜实现完整的IoC容器：构建工厂体系并添加容器事件"
+    },
+    {
+      "text": "再回首：如何实现一个IoC容器？",
+      "link": "/手把手带你写一个MiniSpring/06｜再回首：如何实现一个IoC容器？"
+    },
+    {
+      "text": "原始MVC：如何通过单一的Servlet拦截请求分派任务？",
+      "link": "/手把手带你写一个MiniSpring/07｜原始MVC：如何通过单一的Servlet拦截请求分派任务？"
+    },
+    {
+      "text": "整合IoC和MVC：如何在Web环境中启动IoC容器？",
+      "link": "/手把手带你写一个MiniSpring/08｜整合IoC和MVC：如何在Web环境中启动IoC容器？"
+    },
+    {
+      "text": "分解Dispatcher：如何把专门的事情交给专门的部件去做？",
+      "link": "/手把手带你写一个MiniSpring/09｜分解Dispatcher：如何把专门的事情交给专门的部件去做？"
+    },
+    {
+      "text": "数据绑定-如何自动转换传入的参数？",
+      "link": "/手把手带你写一个MiniSpring/10｜数据绑定-如何自动转换传入的参数？"
+    },
+    {
+      "text": "ModelAndView：如何将处理结果返回给前端？",
+      "link": "/手把手带你写一个MiniSpring/11｜ModelAndView：如何将处理结果返回给前端？"
+    },
+    {
+      "text": "再回首：如何实现SpringMVC？",
+      "link": "/手把手带你写一个MiniSpring/12｜再回首：如何实现SpringMVC？"
+    },
+    {
+      "text": "JDBC访问框架：如何抽取JDBC模板并隔离数据库？",
+      "link": "/手把手带你写一个MiniSpring/13｜JDBC访问框架：如何抽取JDBC模板并隔离数据库？"
+    },
+    {
+      "text": "增强模板：如何抽取专门的部件完成专门的任务？",
+      "link": "/手把手带你写一个MiniSpring/14｜增强模板：如何抽取专门的部件完成专门的任务？"
+    },
+    {
+      "text": "mBatis：如何将SQL语句配置化？",
+      "link": "/手把手带你写一个MiniSpring/15｜mBatis：如何将SQL语句配置化？"
+    },
+    {
+      "text": "再回首：JdbcTemplate章节小结",
+      "link": "/手把手带你写一个MiniSpring/16｜再回首：JdbcTemplate章节小结"
+    },
+    {
+      "text": "动态代理：如何在运行时插入逻辑？",
+      "link": "/手把手带你写一个MiniSpring/17｜动态代理：如何在运行时插入逻辑？"
+    },
+    {
+      "text": "拦截器：如何在方法前后进行拦截？",
+      "link": "/手把手带你写一个MiniSpring/18｜拦截器：如何在方法前后进行拦截？"
+    },
+    {
+      "text": "Pointcut：如何批量匹配代理方法？",
+      "link": "/手把手带你写一个MiniSpring/19｜Pointcut：如何批量匹配代理方法？"
+    },
+    {
+      "text": "AutoProxyCreator：如何自动添加动态代理？",
+      "link": "/手把手带你写一个MiniSpring/20｜AutoProxyCreator：如何自动添加动态代理？"
+    },
+    {
+      "text": "再回首：如何实现SpringAOP",
+      "link": "/手把手带你写一个MiniSpring/21｜再回首：如何实现SpringAOP"
+    },
+    {
+      "text": "GPT编程（上）：如何用ChatGPT辅助我们编程？",
+      "link": "/手把手带你写一个MiniSpring/加餐｜GPT编程（上）：如何用ChatGPT辅助我们编程？"
+    },
+    {
+      "text": "GPT编程（下）：如何利用OpenAI的API解决语言处理类任务",
+      "link": "/手把手带你写一个MiniSpring/加餐｜GPT编程（下）：如何利用OpenAI的API解决语言处理类任务"
+    },
+    {
+      "text": "老兵回首，薪火相传",
+      "link": "/手把手带你写一个MiniSpring/结束语｜老兵回首，薪火相传"
+    },
+    {
+      "text": "来赴一场满分之约吧！",
+      "link": "/手把手带你写一个MiniSpring/期末测试｜来赴一场满分之约吧！"
+    }
+  ],
   "/手把手带你写一个Web框架/": [
     {
       "text": "为什么我们要从零开发框架？",
@@ -43333,6 +43439,18 @@ export const navItems = [
       "算法与计算机基础",
       "后端与中间件",
       "技术管理与职场"
+    ]
+  },
+  {
+    "text": "手把手带你写一个MiniSpring",
+    "link": "/手把手带你写一个MiniSpring/开篇词｜“眼脑手”结合，搞定Spring框架底层原理",
+    "count": 26,
+    "category": "backend",
+    "categoryLabel": "后端与中间件",
+    "tags": [
+      "后端与中间件",
+      "云原生与基础设施",
+      "数据库与存储"
     ]
   },
   {
