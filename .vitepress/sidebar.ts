@@ -12822,8 +12822,52 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/从0开始构建AgentHarness/12｜突破内存：基于阶梯降级的ContextCompaction策略"
     },
     {
+      "text": "记忆沉淀：状态外部化，基于文件系统的持久化记忆与待办管理",
+      "link": "/从0开始构建AgentHarness/13｜记忆沉淀：状态外部化，基于文件系统的持久化记忆与待办管理"
+    },
+    {
+      "text": "错误自愈：上下文感知的ErrorRecovery提示模板注入机制",
+      "link": "/从0开始构建AgentHarness/14｜错误自愈：上下文感知的ErrorRecovery提示模板注入机制"
+    },
+    {
       "text": "错误自愈：上下文感知的ErrorRecovery（错误恢复）提示模板注入机制",
       "link": "/从0开始构建AgentHarness/14｜错误自愈：上下文感知的ErrorRecovery（错误恢复）提示模板注入机制"
+    },
+    {
+      "text": "行为干预：防止Agent陷入“死循环”的SystemReminders机制",
+      "link": "/从0开始构建AgentHarness/15｜行为干预：防止Agent陷入“死循环”的SystemReminders机制"
+    },
+    {
+      "text": "防御纵深：利用Middleware实现高危命令拦截与飞书人工审批",
+      "link": "/从0开始构建AgentHarness/16｜防御纵深：利用Middleware实现高危命令拦截与飞书人工审批"
+    },
+    {
+      "text": "任务委派：引入Subagent隔离复杂探索任务的上下文瓶颈",
+      "link": "/从0开始构建AgentHarness/17｜任务委派：引入Subagent隔离复杂探索任务的上下文瓶颈"
+    },
+    {
+      "text": "成本与状态追踪：在Harness层拦截并记录Token消耗与执行耗时",
+      "link": "/从0开始构建AgentHarness/18｜成本与状态追踪：在Harness层拦截并记录Token消耗与执行耗时"
+    },
+    {
+      "text": "洞察黑盒：为Agent引入Tracing机制复盘失败决策路径",
+      "link": "/从0开始构建AgentHarness/19｜洞察黑盒：为Agent引入Tracing机制复盘失败决策路径"
+    },
+    {
+      "text": "科学度量：如何构建Benchmark自动化评估脚本，科学量化Harness引擎性能？",
+      "link": "/从0开始构建AgentHarness/20｜科学度量：如何构建Benchmark自动化评估脚本，科学量化Harness引擎性能？"
+    },
+    {
+      "text": "实战串讲（上）：拼装完整CLI引擎，完成未知项目的文件探索与重构",
+      "link": "/从0开始构建AgentHarness/21｜实战串讲（上）：拼装完整CLI引擎，完成未知项目的文件探索与重构"
+    },
+    {
+      "text": "实战串讲（下）：打造AgentOps小助手，在飞书中触发日志分析与故障修复审批",
+      "link": "/从0开始构建AgentHarness/22｜实战串讲（下）：打造AgentOps小助手，在飞书中触发日志分析与故障修复审批"
+    },
+    {
+      "text": "Agent的尽头是OS，大模型时代开发者的驾驭新征程",
+      "link": "/从0开始构建AgentHarness/结束语｜Agent的尽头是OS，大模型时代开发者的驾驭新征程"
     },
     {
       "text": "让你的Agent学会“慢思考+动手做事”",
@@ -34909,13 +34953,13 @@ export const navItems = [
   {
     "text": "从0开始构建AgentHarness",
     "link": "/从0开始构建AgentHarness/开篇词｜框架正在坍塌：像写操作系统一样，复刻OpenClaw的底层Harness",
-    "count": 15,
+    "count": 26,
     "category": "ai",
     "categoryLabel": "AI 与数据智能",
     "tags": [
       "AI 与数据智能",
-      "算法与计算机基础",
-      "前端与客户端"
+      "技术管理与职场",
+      "架构与分布式"
     ]
   },
   {
