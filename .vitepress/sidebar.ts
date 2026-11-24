@@ -11046,6 +11046,152 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/Rust程序设计（第2版）/译者序"
     }
   ],
+  "/Rust语言从入门到实战/": [
+    {
+      "text": "拥抱Rust浪潮，迎接更极致的编程体验",
+      "link": "/Rust语言从入门到实战/开篇词｜拥抱Rust浪潮，迎接更极致的编程体验"
+    },
+    {
+      "text": "快速入门：Rust中有哪些你不得不了解的基础语法？",
+      "link": "/Rust语言从入门到实战/01｜快速入门：Rust中有哪些你不得不了解的基础语法？"
+    },
+    {
+      "text": "所有权（上）：Rust是如何管理程序中的资源的？",
+      "link": "/Rust语言从入门到实战/02｜所有权（上）：Rust是如何管理程序中的资源的？"
+    },
+    {
+      "text": "所有权（下）：Rust中借用与引用的规则是怎样的？",
+      "link": "/Rust语言从入门到实战/03｜所有权（下）：Rust中借用与引用的规则是怎样的？"
+    },
+    {
+      "text": "字符串：对号入座，字符串其实没那么可怕！",
+      "link": "/Rust语言从入门到实战/04｜字符串：对号入座，字符串其实没那么可怕！"
+    },
+    {
+      "text": "复合类型（上）：结构体与面向对象特性",
+      "link": "/Rust语言从入门到实战/05｜复合类型（上）：结构体与面向对象特性"
+    },
+    {
+      "text": "复合类型（下）：枚举与模式匹配",
+      "link": "/Rust语言从入门到实战/06｜复合类型（下）：枚举与模式匹配"
+    },
+    {
+      "text": "类型与类型参数：给Rust小助手提供更多信息",
+      "link": "/Rust语言从入门到实战/07｜类型与类型参数：给Rust小助手提供更多信息"
+    },
+    {
+      "text": "Option-T-与Result-T,E-、迭代器",
+      "link": "/Rust语言从入门到实战/08｜Option-T-与Result-T,E-、迭代器"
+    },
+    {
+      "text": "初识trait：协议约束与能力配置",
+      "link": "/Rust语言从入门到实战/09｜初识trait：协议约束与能力配置"
+    },
+    {
+      "text": "再探trait：带类型参数的trait及traitobject",
+      "link": "/Rust语言从入门到实战/10｜再探trait：带类型参数的trait及traitobject"
+    },
+    {
+      "text": "常见trait解析：标准库中的常见trait应该怎么用？",
+      "link": "/Rust语言从入门到实战/11｜常见trait解析：标准库中的常见trait应该怎么用？"
+    },
+    {
+      "text": "智能指针：从所有权看智能指针",
+      "link": "/Rust语言从入门到实战/12｜智能指针：从所有权看智能指针"
+    },
+    {
+      "text": "独立王国：初步了解Rust异步并发编程",
+      "link": "/Rust语言从入门到实战/13｜独立王国：初步了解Rust异步并发编程"
+    },
+    {
+      "text": "tokio实战：编写一个网络命令行程序",
+      "link": "/Rust语言从入门到实战/14｜tokio实战：编写一个网络命令行程序"
+    },
+    {
+      "text": "tokio编程：在多任务之间操作同一片数据",
+      "link": "/Rust语言从入门到实战/15｜tokio编程：在多任务之间操作同一片数据"
+    },
+    {
+      "text": "tokio编程：使用channel在不同任务间通信？",
+      "link": "/Rust语言从入门到实战/16｜tokio编程：使用channel在不同任务间通信？"
+    },
+    {
+      "text": "tokio编程：Rust异步编程还有哪些需要注意的点？",
+      "link": "/Rust语言从入门到实战/17｜tokio编程：Rust异步编程还有哪些需要注意的点？"
+    },
+    {
+      "text": "错误处理系统：错误的构建、传递和处理",
+      "link": "/Rust语言从入门到实战/18｜错误处理系统：错误的构建、传递和处理"
+    },
+    {
+      "text": "Rust的宏体系：为自己的项目写一个简单的声明宏",
+      "link": "/Rust语言从入门到实战/19｜Rust的宏体系：为自己的项目写一个简单的声明宏"
+    },
+    {
+      "text": "生命周期：Rust如何做基本的生命周期符号标注？",
+      "link": "/Rust语言从入门到实战/20｜生命周期：Rust如何做基本的生命周期符号标注？"
+    },
+    {
+      "text": "Web开发（上）：如何使用Axum框架进行Web后端开发？",
+      "link": "/Rust语言从入门到实战/21｜Web开发（上）：如何使用Axum框架进行Web后端开发？"
+    },
+    {
+      "text": "Web开发（下）：如何实现一个TodoList应用？",
+      "link": "/Rust语言从入门到实战/22｜Web开发（下）：如何实现一个TodoList应用？"
+    },
+    {
+      "text": "Rust与大模型：用Candle做一个聊天机器人",
+      "link": "/Rust语言从入门到实战/23｜Rust与大模型：用Candle做一个聊天机器人"
+    },
+    {
+      "text": "Rust图像识别：利用YOLOv8识别对象",
+      "link": "/Rust语言从入门到实战/24｜Rust图像识别：利用YOLOv8识别对象"
+    },
+    {
+      "text": "RustGUI编程：用Slint为Chatbot实现一个界面",
+      "link": "/Rust语言从入门到实战/25｜RustGUI编程：用Slint为Chatbot实现一个界面"
+    },
+    {
+      "text": "RustGUI编程：用Slint为YOLOv8实现一个界面",
+      "link": "/Rust语言从入门到实战/26｜RustGUI编程：用Slint为YOLOv8实现一个界面"
+    },
+    {
+      "text": "RustBevy游戏开发：用300行代码做一个贪吃蛇游戏",
+      "link": "/Rust语言从入门到实战/27｜RustBevy游戏开发：用300行代码做一个贪吃蛇游戏"
+    },
+    {
+      "text": "Nom：用Rust写一个Parser解析器",
+      "link": "/Rust语言从入门到实战/28｜Nom：用Rust写一个Parser解析器"
+    },
+    {
+      "text": "Unsafe编程（上）：UnsafeRust中那些被封印的能力",
+      "link": "/Rust语言从入门到实战/29｜Unsafe编程（上）：UnsafeRust中那些被封印的能力"
+    },
+    {
+      "text": "Unsafe编程（下）：使用Rust为Python写一个扩展",
+      "link": "/Rust语言从入门到实战/30｜Unsafe编程（下）：使用Rust为Python写一个扩展"
+    },
+    {
+      "text": "第一章Rust基础篇思考题答案",
+      "link": "/Rust语言从入门到实战/答疑课堂（一）｜第一章Rust基础篇思考题答案"
+    },
+    {
+      "text": "第三章Rust应用篇思考题答案",
+      "link": "/Rust语言从入门到实战/答疑课堂（三）｜第三章Rust应用篇思考题答案"
+    },
+    {
+      "text": "第二章Rust进阶篇思考题答案",
+      "link": "/Rust语言从入门到实战/答疑课堂（二）｜第二章Rust进阶篇思考题答案"
+    },
+    {
+      "text": "未来让Rust带你“锈”到起飞",
+      "link": "/Rust语言从入门到实战/结束语｜未来让Rust带你“锈”到起飞"
+    },
+    {
+      "text": "来赴一场满分之约",
+      "link": "/Rust语言从入门到实战/结课测试｜来赴一场满分之约"
+    }
+  ],
   "/SQL必知必会/": [
     {
       "text": "开篇词丨SQL可能是你掌握的最有用的技能",
@@ -36499,6 +36645,18 @@ export const navItems = [
       "算法与计算机基础",
       "产品与商业",
       "安全与区块链"
+    ]
+  },
+  {
+    "text": "Rust语言从入门到实战",
+    "link": "/Rust语言从入门到实战/开篇词｜拥抱Rust浪潮，迎接更极致的编程体验",
+    "count": 36,
+    "category": "foundation",
+    "categoryLabel": "算法与计算机基础",
+    "tags": [
+      "算法与计算机基础",
+      "AI 与数据智能",
+      "后端与中间件"
     ]
   },
   {
