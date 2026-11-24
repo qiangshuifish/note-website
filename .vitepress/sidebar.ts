@@ -3168,6 +3168,10 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/ClaudeCode工程化实战/02｜过目不忘：ClaudeCode记忆系统与CLAUDE"
     },
     {
+      "text": "过目不忘：ClaudeCode记忆系统与CLAUDE.md",
+      "link": "/ClaudeCode工程化实战/02｜过目不忘：ClaudeCode记忆系统与CLAUDE.md"
+    },
+    {
       "text": "分而治之：Sub-Agents的核心概念与应用价值",
       "link": "/ClaudeCode工程化实战/03｜分而治之：Sub-Agents的核心概念与应用价值"
     },
@@ -3268,12 +3272,24 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/ClaudeCode工程化实战/结课测试｜来赴一场满分之约！"
     },
     {
+      "text": "热点加餐：源码泄露事故带来的架构验证与工程启示",
+      "link": "/ClaudeCode工程化实战/热点加餐：源码泄露事故带来的架构验证与工程启示"
+    },
+    {
       "text": "AI工程范式3.0：HarnessEngineering到底革新了什么？",
       "link": "/ClaudeCode工程化实战/热点加餐｜AI工程范式3.0：HarnessEngineering到底革新了什么？"
     },
     {
       "text": "Harness架构深度解析",
       "link": "/ClaudeCode工程化实战/热点加餐｜Harness架构深度解析"
+    },
+    {
+      "text": "LoopEngineering：如何把Agent的循环工程化",
+      "link": "/ClaudeCode工程化实战/热点加餐｜LoopEngineering：如何把Agent的循环工程化"
+    },
+    {
+      "text": "Workflow：编排载体的第三种选择",
+      "link": "/ClaudeCode工程化实战/热点加餐｜Workflow：编排载体的第三种选择"
     },
     {
       "text": "从OpenClaw到OpenCode：拆解爆款Agent的设计密码与工程范式",
@@ -34153,7 +34169,7 @@ export const navItems = [
   {
     "text": "ClaudeCode工程化实战",
     "link": "/ClaudeCode工程化实战/开篇词｜共生而非替代：极客和AI的共舞",
-    "count": 33,
+    "count": 37,
     "category": "ai",
     "categoryLabel": "AI 与数据智能",
     "tags": [
