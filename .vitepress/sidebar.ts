@@ -41946,6 +41946,116 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/跟着高手学复盘/春节荐书（二）-《人类简史》：故事的力量"
     }
   ],
+  "/跟阿铭学Linux/": [
+    {
+      "text": "作者简介",
+      "link": "/跟阿铭学Linux/作者简介"
+    },
+    {
+      "text": "看完了",
+      "link": "/跟阿铭学Linux/看完了"
+    },
+    {
+      "text": "第10章shell基础知识",
+      "link": "/跟阿铭学Linux/第10章shell基础知识"
+    },
+    {
+      "text": "第11章正则表达式",
+      "link": "/跟阿铭学Linux/第11章正则表达式"
+    },
+    {
+      "text": "第12章shell脚本",
+      "link": "/跟阿铭学Linux/第12章shell脚本"
+    },
+    {
+      "text": "第13章Linux系统管理技巧(1)",
+      "link": "/跟阿铭学Linux/第13章Linux系统管理技巧(1)"
+    },
+    {
+      "text": "第13章Linux系统管理技巧(2)",
+      "link": "/跟阿铭学Linux/第13章Linux系统管理技巧(2)"
+    },
+    {
+      "text": "第13章Linux系统管理技巧(3)",
+      "link": "/跟阿铭学Linux/第13章Linux系统管理技巧(3)"
+    },
+    {
+      "text": "第14章LNMP环境配置(1)",
+      "link": "/跟阿铭学Linux/第14章LNMP环境配置(1)"
+    },
+    {
+      "text": "第14章LNMP环境配置(2)",
+      "link": "/跟阿铭学Linux/第14章LNMP环境配置(2)"
+    },
+    {
+      "text": "第15章常用MySQL操作",
+      "link": "/跟阿铭学Linux/第15章常用MySQL操作"
+    },
+    {
+      "text": "第16章NFS服务配置",
+      "link": "/跟阿铭学Linux/第16章NFS服务配置"
+    },
+    {
+      "text": "第17章配置FTP服务",
+      "link": "/跟阿铭学Linux/第17章配置FTP服务"
+    },
+    {
+      "text": "第18章配置Tomcat",
+      "link": "/跟阿铭学Linux/第18章配置Tomcat"
+    },
+    {
+      "text": "第19章MySQLReplication配置",
+      "link": "/跟阿铭学Linux/第19章MySQLReplication配置"
+    },
+    {
+      "text": "第1章学习之初",
+      "link": "/跟阿铭学Linux/第1章学习之初"
+    },
+    {
+      "text": "第20章Linux集群",
+      "link": "/跟阿铭学Linux/第20章Linux集群"
+    },
+    {
+      "text": "第21章配置监控服务器",
+      "link": "/跟阿铭学Linux/第21章配置监控服务器"
+    },
+    {
+      "text": "第22章Docker容器",
+      "link": "/跟阿铭学Linux/第22章Docker容器"
+    },
+    {
+      "text": "第2章安装CentOS",
+      "link": "/跟阿铭学Linux/第2章安装CentOS"
+    },
+    {
+      "text": "第3章远程登录Linux系统",
+      "link": "/跟阿铭学Linux/第3章远程登录Linux系统"
+    },
+    {
+      "text": "第4章Linux文件和目录管理",
+      "link": "/跟阿铭学Linux/第4章Linux文件和目录管理"
+    },
+    {
+      "text": "第5章Linux系统用户与用户组管理",
+      "link": "/跟阿铭学Linux/第5章Linux系统用户与用户组管理"
+    },
+    {
+      "text": "第6章Linux磁盘管理",
+      "link": "/跟阿铭学Linux/第6章Linux磁盘管理"
+    },
+    {
+      "text": "第7章文本编辑工具Vim",
+      "link": "/跟阿铭学Linux/第7章文本编辑工具Vim"
+    },
+    {
+      "text": "第8章文档的压缩与打包",
+      "link": "/跟阿铭学Linux/第8章文档的压缩与打包"
+    },
+    {
+      "text": "第9章安装RPM包或源码包",
+      "link": "/跟阿铭学Linux/第9章安装RPM包或源码包"
+    }
+  ],
   "/软件工程之美/": [
     {
       "text": "开篇词-你为什么应该学好软件工程？",
@@ -48435,6 +48545,18 @@ export const navItems = [
       "技术管理与职场",
       "产品与商业",
       "个人成长与表达"
+    ]
+  },
+  {
+    "text": "跟阿铭学Linux",
+    "link": "/跟阿铭学Linux/作者简介",
+    "count": 27,
+    "category": "infra",
+    "categoryLabel": "云原生与基础设施",
+    "tags": [
+      "云原生与基础设施",
+      "技术管理与职场",
+      "数据库与存储"
     ]
   },
   {
