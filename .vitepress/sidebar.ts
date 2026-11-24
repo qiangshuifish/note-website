@@ -21474,6 +21474,108 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/大模型应用一站式开发/直播回放｜1小时带你入门大模型应用开发"
     }
   ],
+  "/大模型应用开发实战/": [
+    {
+      "text": "大模型应用开发时代，人人都是程序员",
+      "link": "/大模型应用开发实战/开篇词｜大模型应用开发时代，人人都是程序员"
+    },
+    {
+      "text": "用OpenAIAssistants的Function进行订单管理",
+      "link": "/大模型应用开发实战/01｜用OpenAIAssistants的Function进行订单管理"
+    },
+    {
+      "text": "OpenAIAssistants中的线程和Run状态解析",
+      "link": "/大模型应用开发实战/02｜OpenAIAssistants中的线程和Run状态解析"
+    },
+    {
+      "text": "用Assistants中的Codeinterpreter做数据分析",
+      "link": "/大模型应用开发实战/03｜用Assistants中的Codeinterpreter做数据分析"
+    },
+    {
+      "text": "用Assistants中的Filesearch（RAG）工具做知识检索",
+      "link": "/大模型应用开发实战/04｜用Assistants中的Filesearch（RAG）工具做知识检索"
+    },
+    {
+      "text": "用5种不同模型展示模型交互5大基本原则",
+      "link": "/大模型应用开发实战/05｜用5种不同模型展示模型交互5大基本原则"
+    },
+    {
+      "text": "通过设置思考框架，引导模型进行更好的推理",
+      "link": "/大模型应用开发实战/06｜通过设置思考框架，引导模型进行更好的推理"
+    },
+    {
+      "text": "用多步提示引导自动生成Python单元测试代码",
+      "link": "/大模型应用开发实战/07｜用多步提示引导自动生成Python单元测试代码"
+    },
+    {
+      "text": "用大模型实现自然语言的SQL查询",
+      "link": "/大模型应用开发实战/08｜用大模型实现自然语言的SQL查询"
+    },
+    {
+      "text": "构建能够读图的基于PDF的RAG系统",
+      "link": "/大模型应用开发实战/09｜构建能够读图的基于PDF的RAG系统"
+    },
+    {
+      "text": "通过Embedding构建基于关键词的推荐系统",
+      "link": "/大模型应用开发实战/10｜通过Embedding构建基于关键词的推荐系统"
+    },
+    {
+      "text": "长PDF文档的总结与评估策略",
+      "link": "/大模型应用开发实战/11｜长PDF文档的总结与评估策略"
+    },
+    {
+      "text": "用Assistants自主思考生成商业报告PPT",
+      "link": "/大模型应用开发实战/12｜用Assistants自主思考生成商业报告PPT"
+    },
+    {
+      "text": "以Qwen为例讲透参数高效微调（PEFT）",
+      "link": "/大模型应用开发实战/13｜以Qwen为例讲透参数高效微调（PEFT）"
+    },
+    {
+      "text": "以Llama3为例讲透QLoRA量化+微调",
+      "link": "/大模型应用开发实战/14｜以Llama3为例讲透QLoRA量化+微调"
+    },
+    {
+      "text": "OpenAI闭源模型的微调流程和FunctionCalling微调",
+      "link": "/大模型应用开发实战/15｜OpenAI闭源模型的微调流程和FunctionCalling微调"
+    },
+    {
+      "text": "多模态：整合大语言模型与Dall-E-StableDiffusionAPI",
+      "link": "/大模型应用开发实战/16｜多模态：整合大语言模型与Dall-E-StableDiffusionAPI"
+    },
+    {
+      "text": "GPT-4o最强多模态模型实战",
+      "link": "/大模型应用开发实战/17｜GPT-4o最强多模态模型实战"
+    },
+    {
+      "text": "多模态：用大语言模型进行TTS-ASR-OCR",
+      "link": "/大模型应用开发实战/18｜多模态：用大语言模型进行TTS-ASR-OCR"
+    },
+    {
+      "text": "Sora模型的原理和架构初探",
+      "link": "/大模型应用开发实战/19｜Sora模型的原理和架构初探"
+    },
+    {
+      "text": "如何通过ModerationAPI对生成内容进行安全审核？",
+      "link": "/大模型应用开发实战/20｜如何通过ModerationAPI对生成内容进行安全审核？"
+    },
+    {
+      "text": "LLM开发过程中的错误处理和Tracing",
+      "link": "/大模型应用开发实战/21｜LLM开发过程中的错误处理和Tracing"
+    },
+    {
+      "text": "如何在与LLM交互过程中省钱及控制RateLimits？",
+      "link": "/大模型应用开发实战/22｜如何在与LLM交互过程中省钱及控制RateLimits？"
+    },
+    {
+      "text": "再谈大模型应用开发",
+      "link": "/大模型应用开发实战/结束语｜再谈大模型应用开发"
+    },
+    {
+      "text": "来赴一场满分之约",
+      "link": "/大模型应用开发实战/结课测试｜来赴一场满分之约"
+    }
+  ],
   "/大规模数据处理实战/": [
     {
       "text": "开篇词-从这里开始，带你走上硅谷一线系统架构师之路",
@@ -41783,6 +41885,18 @@ export const navItems = [
       "产品与商业",
       "架构与分布式",
       "AI 与数据智能"
+    ]
+  },
+  {
+    "text": "大模型应用开发实战",
+    "link": "/大模型应用开发实战/开篇词｜大模型应用开发时代，人人都是程序员",
+    "count": 25,
+    "category": "ai",
+    "categoryLabel": "AI 与数据智能",
+    "tags": [
+      "AI 与数据智能",
+      "后端与中间件",
+      "产品与商业"
     ]
   },
   {
