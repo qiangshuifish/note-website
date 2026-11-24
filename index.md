@@ -2,7 +2,7 @@
 layout: home
 hero:
   name: "技术学习笔记"
-  text: "207 门课程 · 8000+ 篇文章"
+  text: "208 门课程 · 8000+ 篇文章"
   tagline: "涵盖 AI 编码、分布式系统、数据库、架构设计、算法数据结构等核心技术领域"
   actions:
     - theme: brand
