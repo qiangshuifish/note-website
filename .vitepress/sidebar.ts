@@ -2948,6 +2948,10 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/ClaudeCode企业级全链路开发实战/25｜MCP工具接入（下）：自建MCPServer，让Agent能做真正的事"
     },
     {
+      "text": "实操课：核心功能高级篇全流程演示",
+      "link": "/ClaudeCode企业级全链路开发实战/26｜实操课：核心功能高级篇全流程演示"
+    },
+    {
       "text": "实操课：核心功能高阶篇全流程演示",
       "link": "/ClaudeCode企业级全链路开发实战/26｜实操课：核心功能高阶篇全流程演示"
     },
@@ -2986,6 +2990,14 @@ export const sidebar: DefaultTheme.Sidebar = {
     {
       "text": "ClaudeCode源码泄漏：热闹看完，我们聊点真问题",
       "link": "/ClaudeCode企业级全链路开发实战/热点速递｜ClaudeCode源码泄漏：热闹看完，我们聊点真问题"
+    },
+    {
+      "text": "从阿里禁用ClaudeCode说起，聊聊我们学AI编程到底在学什么？",
+      "link": "/ClaudeCode企业级全链路开发实战/热点速递｜从阿里禁用ClaudeCode说起，聊聊我们学AI编程到底在学什么？"
+    },
+    {
+      "text": "SuperAgent实践：在模型之上，构建企业AI工作系统",
+      "link": "/ClaudeCode企业级全链路开发实战/直播分享｜SuperAgent实践：在模型之上，构建企业AI工作系统"
     }
   ],
   "/ClaudeCode企业级老项目改造实战/": [
@@ -34045,7 +34057,7 @@ export const navItems = [
   {
     "text": "ClaudeCode企业级全链路开发实战",
     "link": "/ClaudeCode企业级全链路开发实战/开篇词｜一个人用ClaudeCode造一个简版Dify，需要多久？",
-    "count": 36,
+    "count": 39,
     "category": "ai",
     "categoryLabel": "AI 与数据智能",
     "tags": [
