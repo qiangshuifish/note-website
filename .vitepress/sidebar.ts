@@ -22248,6 +22248,188 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/如何读懂一首诗/好诗相伴05｜见自己：我在诗中渡自己"
     }
   ],
+  "/学透Spring：从入门到项目实战/": [
+    {
+      "text": "业内推荐",
+      "link": "/学透Spring：从入门到项目实战/业内推荐"
+    },
+    {
+      "text": "前言",
+      "link": "/学透Spring：从入门到项目实战/前言"
+    },
+    {
+      "text": "后记",
+      "link": "/学透Spring：从入门到项目实战/后记"
+    },
+    {
+      "text": "看完了",
+      "link": "/学透Spring：从入门到项目实战/看完了"
+    },
+    {
+      "text": "第10章保护Web安全(1)",
+      "link": "/学透Spring：从入门到项目实战/第10章保护Web安全(1)"
+    },
+    {
+      "text": "第10章保护Web安全(2)",
+      "link": "/学透Spring：从入门到项目实战/第10章保护Web安全(2)"
+    },
+    {
+      "text": "第10章保护Web安全(3)",
+      "link": "/学透Spring：从入门到项目实战/第10章保护Web安全(3)"
+    },
+    {
+      "text": "第11章Web开发进阶(1)",
+      "link": "/学透Spring：从入门到项目实战/第11章Web开发进阶(1)"
+    },
+    {
+      "text": "第11章Web开发进阶(2)",
+      "link": "/学透Spring：从入门到项目实战/第11章Web开发进阶(2)"
+    },
+    {
+      "text": "第11章Web开发进阶(3)",
+      "link": "/学透Spring：从入门到项目实战/第11章Web开发进阶(3)"
+    },
+    {
+      "text": "第12章微服务与云原生应用",
+      "link": "/学透Spring：从入门到项目实战/第12章微服务与云原生应用"
+    },
+    {
+      "text": "第13章服务注册与发现(1)",
+      "link": "/学透Spring：从入门到项目实战/第13章服务注册与发现(1)"
+    },
+    {
+      "text": "第13章服务注册与发现(2)",
+      "link": "/学透Spring：从入门到项目实战/第13章服务注册与发现(2)"
+    },
+    {
+      "text": "第14章服务配置管理(1)",
+      "link": "/学透Spring：从入门到项目实战/第14章服务配置管理(1)"
+    },
+    {
+      "text": "第14章服务配置管理(2)",
+      "link": "/学透Spring：从入门到项目实战/第14章服务配置管理(2)"
+    },
+    {
+      "text": "第15章服务容错保护(1)",
+      "link": "/学透Spring：从入门到项目实战/第15章服务容错保护(1)"
+    },
+    {
+      "text": "第15章服务容错保护(2)",
+      "link": "/学透Spring：从入门到项目实战/第15章服务容错保护(2)"
+    },
+    {
+      "text": "第16章服务集成(1)",
+      "link": "/学透Spring：从入门到项目实战/第16章服务集成(1)"
+    },
+    {
+      "text": "第16章服务集成(2)",
+      "link": "/学透Spring：从入门到项目实战/第16章服务集成(2)"
+    },
+    {
+      "text": "第16章服务集成(3)",
+      "link": "/学透Spring：从入门到项目实战/第16章服务集成(3)"
+    },
+    {
+      "text": "第1章初识Spring",
+      "link": "/学透Spring：从入门到项目实战/第1章初识Spring"
+    },
+    {
+      "text": "第2章SpringFramework中的IoC容器(1)",
+      "link": "/学透Spring：从入门到项目实战/第2章SpringFramework中的IoC容器(1)"
+    },
+    {
+      "text": "第2章SpringFramework中的IoC容器(2)",
+      "link": "/学透Spring：从入门到项目实战/第2章SpringFramework中的IoC容器(2)"
+    },
+    {
+      "text": "第3章SpringFramework中的AOP",
+      "link": "/学透Spring：从入门到项目实战/第3章SpringFramework中的AOP"
+    },
+    {
+      "text": "第4章从SpringFramework到SpringBoot(1)",
+      "link": "/学透Spring：从入门到项目实战/第4章从SpringFramework到SpringBoot(1)"
+    },
+    {
+      "text": "第4章从SpringFramework到SpringBoot(2)",
+      "link": "/学透Spring：从入门到项目实战/第4章从SpringFramework到SpringBoot(2)"
+    },
+    {
+      "text": "第5章面向生产的SpringBoot(1)",
+      "link": "/学透Spring：从入门到项目实战/第5章面向生产的SpringBoot(1)"
+    },
+    {
+      "text": "第5章面向生产的SpringBoot(2)",
+      "link": "/学透Spring：从入门到项目实战/第5章面向生产的SpringBoot(2)"
+    },
+    {
+      "text": "第6章Spring中的JDBC(1)",
+      "link": "/学透Spring：从入门到项目实战/第6章Spring中的JDBC(1)"
+    },
+    {
+      "text": "第6章Spring中的JDBC(2)",
+      "link": "/学透Spring：从入门到项目实战/第6章Spring中的JDBC(2)"
+    },
+    {
+      "text": "第7章对象关系映射(1)",
+      "link": "/学透Spring：从入门到项目实战/第7章对象关系映射(1)"
+    },
+    {
+      "text": "第7章对象关系映射(2)",
+      "link": "/学透Spring：从入门到项目实战/第7章对象关系映射(2)"
+    },
+    {
+      "text": "第8章数据访问进阶(1)",
+      "link": "/学透Spring：从入门到项目实战/第8章数据访问进阶(1)"
+    },
+    {
+      "text": "第8章数据访问进阶(2)",
+      "link": "/学透Spring：从入门到项目实战/第8章数据访问进阶(2)"
+    },
+    {
+      "text": "第9章SpringMVC实践(1)",
+      "link": "/学透Spring：从入门到项目实战/第9章SpringMVC实践(1)"
+    },
+    {
+      "text": "第9章SpringMVC实践(2)",
+      "link": "/学透Spring：从入门到项目实战/第9章SpringMVC实践(2)"
+    },
+    {
+      "text": "第9章SpringMVC实践(3)",
+      "link": "/学透Spring：从入门到项目实战/第9章SpringMVC实践(3)"
+    },
+    {
+      "text": "第一部分Spring入门",
+      "link": "/学透Spring：从入门到项目实战/第一部分Spring入门"
+    },
+    {
+      "text": "第三部分使用Spring开发Web应用",
+      "link": "/学透Spring：从入门到项目实战/第三部分使用Spring开发Web应用"
+    },
+    {
+      "text": "第二部分Spring中的数据操作",
+      "link": "/学透Spring：从入门到项目实战/第二部分Spring中的数据操作"
+    },
+    {
+      "text": "第五部分附录",
+      "link": "/学透Spring：从入门到项目实战/第五部分附录"
+    },
+    {
+      "text": "第四部分使用Spring开发微服务",
+      "link": "/学透Spring：从入门到项目实战/第四部分使用Spring开发微服务"
+    },
+    {
+      "text": "附录A从SpringBoot2.升级到3.0",
+      "link": "/学透Spring：从入门到项目实战/附录A从SpringBoot2.升级到3.0"
+    },
+    {
+      "text": "附录B将应用程序打包为Docker镜像",
+      "link": "/学透Spring：从入门到项目实战/附录B将应用程序打包为Docker镜像"
+    },
+    {
+      "text": "附录C通过SpringNative打包本地镜像",
+      "link": "/学透Spring：从入门到项目实战/附录C通过SpringNative打包本地镜像"
+    }
+  ],
   "/安全攻防技能30讲/": [
     {
       "text": "开篇词-别说你没被安全困扰过",
@@ -41964,6 +42146,18 @@ export const navItems = [
     "tags": [
       "个人成长与表达",
       "技术管理与职场"
+    ]
+  },
+  {
+    "text": "学透Spring：从入门到项目实战",
+    "link": "/学透Spring：从入门到项目实战/业内推荐",
+    "count": 45,
+    "category": "backend",
+    "categoryLabel": "后端与中间件",
+    "tags": [
+      "后端与中间件",
+      "云原生与基础设施",
+      "安全与区块链"
     ]
   },
   {
