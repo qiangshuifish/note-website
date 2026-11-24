@@ -2758,6 +2758,10 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/B端体验设计入门课/开篇词｜为什么你的B端产品体验总是做不好？"
     },
     {
+      "text": "我们说的“B端”到底是什么？",
+      "link": "/B端体验设计入门课/01｜我们说的“B端”到底是什么？"
+    },
+    {
       "text": "设计是传递、放大企业产品价值的必要方法",
       "link": "/B端体验设计入门课/02｜设计是传递、放大企业产品价值的必要方法"
     },
@@ -33897,7 +33901,7 @@ export const navItems = [
   {
     "text": "B端体验设计入门课",
     "link": "/B端体验设计入门课/开篇词｜为什么你的B端产品体验总是做不好？",
-    "count": 21,
+    "count": 22,
     "category": "product",
     "categoryLabel": "产品与商业",
     "tags": [
