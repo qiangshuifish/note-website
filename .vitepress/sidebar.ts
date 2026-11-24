@@ -3310,6 +3310,10 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/Codex与LLM量化交易实战课/25｜构建K线分析与LLM信号页面"
     },
     {
+      "text": "构建策略回测与风险中心",
+      "link": "/Codex与LLM量化交易实战课/26｜构建策略回测与风险中心"
+    },
+    {
       "text": "回测、ML与LLM三种量化研究方法",
       "link": "/Codex与LLM量化交易实战课/27｜回测、ML与LLM三种量化研究方法"
     },
@@ -33949,7 +33953,7 @@ export const navItems = [
   {
     "text": "Codex与LLM量化交易实战课",
     "link": "/Codex与LLM量化交易实战课/开篇词｜AI能写策略，但不能替你承担交易风险",
-    "count": 39,
+    "count": 40,
     "category": "ai",
     "categoryLabel": "AI 与数据智能",
     "tags": [
