@@ -8778,6 +8778,164 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/OPC一人公司创业实战课/17｜留存：如何让客户持续付钱？"
     }
   ],
+  "/OpenClaw核心原理与实战/": [
+    {
+      "text": "VibeCoding时代，人人都能成为AgentBuilder",
+      "link": "/OpenClaw核心原理与实战/开篇词｜VibeCoding时代，人人都能成为AgentBuilder"
+    },
+    {
+      "text": "OpenClaw系统架构全景：如何设计高内聚低耦合的Agent系统？",
+      "link": "/OpenClaw核心原理与实战/01｜OpenClaw系统架构全景：如何设计高内聚低耦合的Agent系统？"
+    },
+    {
+      "text": "Local-First隐私哲学与数据主权：Agent本地优先有什么优势？",
+      "link": "/OpenClaw核心原理与实战/02｜Local-First隐私哲学与数据主权：Agent本地优先有什么优势？"
+    },
+    {
+      "text": "统一消息模型与多平台适配：如何构建Agent的“万能插座”？",
+      "link": "/OpenClaw核心原理与实战/03｜统一消息模型与多平台适配：如何构建Agent的“万能插座”？"
+    },
+    {
+      "text": "三层架构与执行流程总览：Agent如何完成感知-思考-行动循环？",
+      "link": "/OpenClaw核心原理与实战/04｜三层架构与执行流程总览：Agent如何完成感知-思考-行动循环？"
+    },
+    {
+      "text": "核心重试循环与七重容错策略：生产级Agent系统如何实现渐进式降级？",
+      "link": "/OpenClaw核心原理与实战/05｜核心重试循环与七重容错策略：生产级Agent系统如何实现渐进式降级？"
+    },
+    {
+      "text": "单次LLM尝试的完整流程：从工具注册开始发生了什么？",
+      "link": "/OpenClaw核心原理与实战/06｜单次LLM尝试的完整流程：从工具注册开始发生了什么？"
+    },
+    {
+      "text": "事件驱动的流式处理与状态管理：如何实现Thinking解析和状态处理？",
+      "link": "/OpenClaw核心原理与实战/07｜事件驱动的流式处理与状态管理：如何实现Thinking解析和状态处理？"
+    },
+    {
+      "text": "四层记忆架构设计：如何构建完整的记忆系统骨架？",
+      "link": "/OpenClaw核心原理与实战/08｜四层记忆架构设计：如何构建完整的记忆系统骨架？"
+    },
+    {
+      "text": "混合搜索、MMR去重与时间衰减：如何协作解决“准、不重、够新”？",
+      "link": "/OpenClaw核心原理与实战/09｜混合搜索、MMR去重与时间衰减：如何协作解决“准、不重、够新”？"
+    },
+    {
+      "text": "Embedding存储与优化：向量从哪来？数据怎么存？查询怎么优化？",
+      "link": "/OpenClaw核心原理与实战/10｜Embedding存储与优化：向量从哪来？数据怎么存？查询怎么优化？"
+    },
+    {
+      "text": "Agent集成与数据流全景：记忆如何与Agent闭环联动？",
+      "link": "/OpenClaw核心原理与实战/11｜Agent集成与数据流全景：记忆如何与Agent闭环联动？"
+    },
+    {
+      "text": "消息全链路与回复生成管线：消息从进入到回复经历了什么？",
+      "link": "/OpenClaw核心原理与实战/12｜消息全链路与回复生成管线：消息从进入到回复经历了什么？"
+    },
+    {
+      "text": "七层路由匹配引擎：如何实现精准的消息分发？",
+      "link": "/OpenClaw核心原理与实战/13｜七层路由匹配引擎：如何实现精准的消息分发？"
+    },
+    {
+      "text": "SessionKey构建与会话隔离策略：如何实现多租户记忆隔离？",
+      "link": "/OpenClaw核心原理与实战/14｜SessionKey构建与会话隔离策略：如何实现多租户记忆隔离？"
+    },
+    {
+      "text": "多Agent隔离与Subagent动态协作：如何让多个Agent分工协作？",
+      "link": "/OpenClaw核心原理与实战/15｜多Agent隔离与Subagent动态协作：如何让多个Agent分工协作？"
+    },
+    {
+      "text": "环境搭建：如何快速搭建OpenClaw开发环境？",
+      "link": "/OpenClaw核心原理与实战/16｜环境搭建：如何快速搭建OpenClaw开发环境？"
+    },
+    {
+      "text": "接入通道并配置多Agent：实现多场景助手",
+      "link": "/OpenClaw核心原理与实战/17｜接入通道并配置多Agent：实现多场景助手"
+    },
+    {
+      "text": "金融投研助手构建：如何用OpenClaw构建专业领域Agent？",
+      "link": "/OpenClaw核心原理与实战/18｜金融投研助手构建：如何用OpenClaw构建专业领域Agent？"
+    },
+    {
+      "text": "智能客服系统搭建：如何基于OpenClaw构建RAG智能客服？",
+      "link": "/OpenClaw核心原理与实战/19｜智能客服系统搭建：如何基于OpenClaw构建RAG智能客服？"
+    },
+    {
+      "text": "双层扩展体系与Plugin全貌：一个Agent框架如何变成万能生态？",
+      "link": "/OpenClaw核心原理与实战/20｜双层扩展体系与Plugin全貌：一个Agent框架如何变成万能生态？"
+    },
+    {
+      "text": "Hook系统深入：插件如何参与Agent生命周期的每一个关键时刻？",
+      "link": "/OpenClaw核心原理与实战/21｜Hook系统深入：插件如何参与Agent生命周期的每一个关键时刻？"
+    },
+    {
+      "text": "Provider、Skill与Channel实战：如何用三种插件类型覆盖80%开发场景？",
+      "link": "/OpenClaw核心原理与实战/22｜Provider、Skill与Channel实战：如何用三种插件类型覆盖80%25开发场景？"
+    },
+    {
+      "text": "PluginSDK分层与生态工程化：如何从插件开发者升级为生态贡献者？",
+      "link": "/OpenClaw核心原理与实战/23｜PluginSDK分层与生态工程化：如何从插件开发者升级为生态贡献者？"
+    },
+    {
+      "text": "五层递进式上下文防护：如何应对Token爆炸问题？",
+      "link": "/OpenClaw核心原理与实战/24｜五层递进式上下文防护：如何应对Token爆炸问题？"
+    },
+    {
+      "text": "三级故障转移链设计：如何保证Agent永不掉线？",
+      "link": "/OpenClaw核心原理与实战/25｜三级故障转移链设计：如何保证Agent永不掉线？"
+    },
+    {
+      "text": "冷却期与指数退避：如何让故障恢复既快又稳？",
+      "link": "/OpenClaw核心原理与实战/26｜冷却期与指数退避：如何让故障恢复既快又稳？"
+    },
+    {
+      "text": "从防护到实战：全链路如何故障恢复？",
+      "link": "/OpenClaw核心原理与实战/27｜从防护到实战：全链路如何故障恢复？"
+    },
+    {
+      "text": "自定义Skill开发：创建你的第一个Agent技能",
+      "link": "/OpenClaw核心原理与实战/28｜自定义Skill开发：创建你的第一个Agent技能"
+    },
+    {
+      "text": "Plugin开发入门：从工具注册到Hook接入",
+      "link": "/OpenClaw核心原理与实战/29｜Plugin开发入门：从工具注册到Hook接入"
+    },
+    {
+      "text": "业务场景定制开发实战：从需求到落地的完整开发流程",
+      "link": "/OpenClaw核心原理与实战/30｜业务场景定制开发实战：从需求到落地的完整开发流程"
+    },
+    {
+      "text": "多Agent协作系统构建：让Agent团队分工协作",
+      "link": "/OpenClaw核心原理与实战/31｜多Agent协作系统构建：让Agent团队分工协作"
+    },
+    {
+      "text": "Provider与ChannelPlugin开发：接入企业内部系统",
+      "link": "/OpenClaw核心原理与实战/32｜Provider与ChannelPlugin开发：接入企业内部系统"
+    },
+    {
+      "text": "威胁模型与安全基线：如何识别Agent六大风险并配置个人安全防线？",
+      "link": "/OpenClaw核心原理与实战/33｜威胁模型与安全基线：如何识别Agent六大风险并配置个人安全防线？"
+    },
+    {
+      "text": "工具策略管道与权限分级：如何精确控制多Agent的能力边界？",
+      "link": "/OpenClaw核心原理与实战/34｜工具策略管道与权限分级：如何精确控制多Agent的能力边界？"
+    },
+    {
+      "text": "循环检测与注入防御：如何在运行时防止Agent失控与被劫持？",
+      "link": "/OpenClaw核心原理与实战/35｜循环检测与注入防御：如何在运行时防止Agent失控与被劫持？"
+    },
+    {
+      "text": "Gateway、沙箱与安全审计：如何完成企业级安全部署的最后一公里？",
+      "link": "/OpenClaw核心原理与实战/36｜Gateway、沙箱与安全审计：如何完成企业级安全部署的最后一公里？"
+    },
+    {
+      "text": "从原理到实战，你已经是一名AgentBuilder",
+      "link": "/OpenClaw核心原理与实战/结束语｜从原理到实战，你已经是一名AgentBuilder"
+    },
+    {
+      "text": "来赴一场满分之约！",
+      "link": "/OpenClaw核心原理与实战/结课测试｜来赴一场满分之约！"
+    }
+  ],
   "/OpenResty从入门到实战/": [
     {
       "text": "开篇词-OpenResty，为你打开高性能开发的大门",
@@ -35462,6 +35620,18 @@ export const navItems = [
       "产品与商业",
       "AI 与数据智能",
       "技术管理与职场"
+    ]
+  },
+  {
+    "text": "OpenClaw核心原理与实战",
+    "link": "/OpenClaw核心原理与实战/开篇词｜VibeCoding时代，人人都能成为AgentBuilder",
+    "count": 39,
+    "category": "ai",
+    "categoryLabel": "AI 与数据智能",
+    "tags": [
+      "AI 与数据智能",
+      "架构与分布式",
+      "产品与商业"
     ]
   },
   {
