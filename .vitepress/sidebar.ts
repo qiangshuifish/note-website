@@ -6888,6 +6888,10 @@ export const sidebar: DefaultTheme.Sidebar = {
   ],
   "/Kubernetes源码剖析与实战/": [
     {
+      "text": "如何从源码视角深度学习Kubernetes？",
+      "link": "/Kubernetes源码剖析与实战/开篇词｜如何从源码视角深度学习Kubernetes？"
+    },
+    {
       "text": "究竟什么是云原生？",
       "link": "/Kubernetes源码剖析与实战/01｜究竟什么是云原生？"
     },
@@ -6982,6 +6986,126 @@ export const sidebar: DefaultTheme.Sidebar = {
     {
       "text": "Kubernetes路由构建源码剖析",
       "link": "/Kubernetes源码剖析与实战/24｜Kubernetes路由构建源码剖析"
+    },
+    {
+      "text": "KubernetesHTTP请求处理流程详解",
+      "link": "/Kubernetes源码剖析与实战/25｜KubernetesHTTP请求处理流程详解"
+    },
+    {
+      "text": "KubernetesHTTP请求逻辑核心功能点详解",
+      "link": "/Kubernetes源码剖析与实战/26｜KubernetesHTTP请求逻辑核心功能点详解"
+    },
+    {
+      "text": "Kubernetes如何进行请求参数校验？",
+      "link": "/Kubernetes源码剖析与实战/27｜Kubernetes如何进行请求参数校验？"
+    },
+    {
+      "text": "Kubernetes如何设置默认值？",
+      "link": "/Kubernetes源码剖析与实战/28｜Kubernetes如何设置默认值？"
+    },
+    {
+      "text": "Kubernetes默认值设置函数如何生成？",
+      "link": "/Kubernetes源码剖析与实战/29｜Kubernetes默认值设置函数如何生成？"
+    },
+    {
+      "text": "KubernetesAPI的版本兼容性机制详解",
+      "link": "/Kubernetes源码剖析与实战/30｜KubernetesAPI的版本兼容性机制详解"
+    },
+    {
+      "text": "Kubernetes中如何向稳定版本添加不稳定的功能？",
+      "link": "/Kubernetes源码剖析与实战/31｜Kubernetes中如何向稳定版本添加不稳定的功能？"
+    },
+    {
+      "text": "Kubernetes版本转换源码剖析",
+      "link": "/Kubernetes源码剖析与实战/32｜Kubernetes版本转换源码剖析"
+    },
+    {
+      "text": "kube-controller-mananger框架核心原理及源码剖析",
+      "link": "/Kubernetes源码剖析与实战/33｜kube-controller-mananger框架核心原理及源码剖析"
+    },
+    {
+      "text": "kube-controller-mananger控制器插件源码剖析",
+      "link": "/Kubernetes源码剖析与实战/34｜kube-controller-mananger控制器插件源码剖析"
+    },
+    {
+      "text": "kube-scheduler框架核心原理及源码剖析",
+      "link": "/Kubernetes源码剖析与实战/35｜kube-scheduler框架核心原理及源码剖析"
+    },
+    {
+      "text": "kube-scheduler调度器源码剖析（上）",
+      "link": "/Kubernetes源码剖析与实战/36｜kube-scheduler调度器源码剖析（上）"
+    },
+    {
+      "text": "kube-scheduler调度器源码剖析（下）",
+      "link": "/Kubernetes源码剖析与实战/37｜kube-scheduler调度器源码剖析（下）"
+    },
+    {
+      "text": "扩展能力：Kubernetes提供了哪些扩展机制？",
+      "link": "/Kubernetes源码剖析与实战/38｜扩展能力：Kubernetes提供了哪些扩展机制？"
+    },
+    {
+      "text": "扩展能力：横向层、客户端层、API层扩展机制详解",
+      "link": "/Kubernetes源码剖析与实战/39｜扩展能力：横向层、客户端层、API层扩展机制详解"
+    },
+    {
+      "text": "扩展能力：控制面层、基础设施层扩展机制详解",
+      "link": "/Kubernetes源码剖析与实战/40｜扩展能力：控制面层、基础设施层扩展机制详解"
+    },
+    {
+      "text": "组件配置：Kubernetes组件配置详解",
+      "link": "/Kubernetes源码剖析与实战/41｜组件配置：Kubernetes组件配置详解"
+    },
+    {
+      "text": "组件配置：Kubernetes组件配置开发实战",
+      "link": "/Kubernetes源码剖析与实战/42｜组件配置：Kubernetes组件配置开发实战"
+    },
+    {
+      "text": "FeatureGates（上）：Kubernetes中的FeatureGates设计",
+      "link": "/Kubernetes源码剖析与实战/43｜FeatureGates（上）：Kubernetes中的FeatureGates设计"
+    },
+    {
+      "text": "FeatureGates（下）：Kubernetes中的FeatureGates开发实战",
+      "link": "/Kubernetes源码剖析与实战/44｜FeatureGates（下）：Kubernetes中的FeatureGates开发实战"
+    },
+    {
+      "text": "LeaderElection：KubernetesLeaderElection原理解析",
+      "link": "/Kubernetes源码剖析与实战/45｜LeaderElection：KubernetesLeaderElection原理解析"
+    },
+    {
+      "text": "LeaderElection：在Kubernetes中使用LeaderElection的场景",
+      "link": "/Kubernetes源码剖析与实战/46｜LeaderElection：在Kubernetes中使用LeaderElection的场景"
+    },
+    {
+      "text": "LeaderElection：基于Lease的LeaderElection源码剖析",
+      "link": "/Kubernetes源码剖析与实战/47｜LeaderElection：基于Lease的LeaderElection源码剖析"
+    },
+    {
+      "text": "通过API接口的定义流程学习KubernetesAPIServer",
+      "link": "/Kubernetes源码剖析与实战/48｜通过API接口的定义流程学习KubernetesAPIServer"
+    },
+    {
+      "text": "动手实现一个KubernetesOperator",
+      "link": "/Kubernetes源码剖析与实战/49｜动手实现一个KubernetesOperator"
+    },
+    {
+      "text": "动手实现一个Kubernetes调度器插件",
+      "link": "/Kubernetes源码剖析与实战/50｜动手实现一个Kubernetes调度器插件"
+    },
+    {
+      "text": "LeaderElection开发实战",
+      "link": "/Kubernetes源码剖析与实战/51｜LeaderElection开发实战"
+    },
+    {
+      "text": "探索Kubernetes源码学习方法与学习价值",
+      "link": "/Kubernetes源码剖析与实战/加餐｜探索Kubernetes源码学习方法与学习价值"
+    },
+    {
+      "text": "如何在Kubernetes之路上走得更远？",
+      "link": "/Kubernetes源码剖析与实战/结束语｜如何在Kubernetes之路上走得更远？"
+    },
+    {
+      "text": "来赴一场满分之约！",
+      "link": "/Kubernetes源码剖析与实战/结课测试｜来赴一场满分之约！"
     }
   ],
   "/LLM自主智能体应用实战课/": [
@@ -34232,14 +34356,14 @@ export const navItems = [
   },
   {
     "text": "Kubernetes源码剖析与实战",
-    "link": "/Kubernetes源码剖析与实战/01｜究竟什么是云原生？",
-    "count": 24,
+    "link": "/Kubernetes源码剖析与实战/开篇词｜如何从源码视角深度学习Kubernetes？",
+    "count": 55,
     "category": "infra",
     "categoryLabel": "云原生与基础设施",
     "tags": [
       "云原生与基础设施",
       "后端与中间件",
-      "架构与分布式"
+      "产品与商业"
     ]
   },
   {
