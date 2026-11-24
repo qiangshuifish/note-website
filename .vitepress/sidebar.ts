@@ -5222,6 +5222,10 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/Go进阶·分布式爬虫实战/48-完善核心能力：Master请求转发与Worker资源管理"
     },
     {
+      "text": "服务治理：如何进行限流、熔断与认证？",
+      "link": "/Go进阶·分布式爬虫实战/49-服务治理：如何进行限流、熔断与认证？"
+    },
+    {
       "text": "不可阻挡的容器化：Docker核心技术与原理",
       "link": "/Go进阶·分布式爬虫实战/50｜不可阻挡的容器化：Docker核心技术与原理"
     },
@@ -34097,7 +34101,7 @@ export const navItems = [
   {
     "text": "Go进阶·分布式爬虫实战",
     "link": "/Go进阶·分布式爬虫实战/开篇词｜聚沙成塔，构建高性能、分布式爬虫项目",
-    "count": 58,
+    "count": 59,
     "category": "architecture",
     "categoryLabel": "架构与分布式",
     "tags": [
