@@ -163,6 +163,11 @@ def lecture_num(stem):
     return re.split(r'[｜：:]', stem, maxsplit=1)[0]
 
 
+def safe_image_dir(name):
+    """替换会截断 Markdown 图片链接的 ASCII 括号和空格。"""
+    return re.sub(r'[()\s]+', '-', name)
+
+
 def image_subdirs(pdf_paths):
     """为每个 PDF 计算图片子目录名。同编号讲次（如多场直播回放）改用完整文件名，避免图片互相覆盖。"""
     stems = [os.path.splitext(os.path.basename(p))[0] for p in pdf_paths]
@@ -173,9 +178,9 @@ def image_subdirs(pdf_paths):
     result = {}
     for p, stem, num in zip(pdf_paths, stems, nums):
         if counts[num] > 1:
-            result[p] = re.sub(r'[()｜\s]+', '-', stem)
+            result[p] = safe_image_dir(re.sub(r'｜+', '-', stem))
         else:
-            result[p] = num
+            result[p] = safe_image_dir(num)
     return result
 
 
@@ -293,7 +298,7 @@ def same_paragraph(prev, cur):
 def convert(pdf_path, out_dir, course_name, dry_run=False, img_subdir=None):
     doc, elements = collect(pdf_path, course_name)
     stem = os.path.splitext(os.path.basename(pdf_path))[0]
-    num = img_subdir or lecture_num(stem)
+    num = safe_image_dir(img_subdir or lecture_num(stem))
     img_dir = os.path.join(out_dir, 'images', num)
     heading = '# ' + stem.replace('｜', ' | ')
     parts = [heading]
@@ -411,13 +416,13 @@ def main():
         pdf_files = [input_path]
         default_out = REPO_ROOT / input_path.parent.name
     else:
-        pdf_files = sorted(p for p in input_path.iterdir() if p.suffix.lower() == '.pdf')
+        pdf_files = sorted(p for p in input_path.iterdir() if p.suffix.lower() == '.pdf' and not p.name.startswith('._'))
         default_out = REPO_ROOT / input_path.name
     if not pdf_files:
         Logger.error(f'输入目录中没有 PDF 文件: {input_path}')
         sys.exit(1)
 
-    siblings = pdf_files if input_path.is_dir() else sorted(p for p in input_path.parent.iterdir() if p.suffix.lower() == '.pdf')
+    siblings = pdf_files if input_path.is_dir() else sorted(p for p in input_path.parent.iterdir() if p.suffix.lower() == '.pdf' and not p.name.startswith('._'))
     subdirs = image_subdirs([str(p) for p in siblings])
 
     out_dir = Path(args.output).expanduser().resolve() if args.output else default_out
