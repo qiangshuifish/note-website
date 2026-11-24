@@ -3234,6 +3234,104 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/DDD实战课/期末测试-有关DDD的内容，你掌握了多少呢？"
     }
   ],
+  "/DeepSeekHarness前沿工程实践/": [
+    {
+      "text": "生逢其时：AI自进化浪潮下的DeepSeekHarness",
+      "link": "/DeepSeekHarness前沿工程实践/开篇词｜生逢其时：AI自进化浪潮下的DeepSeekHarness"
+    },
+    {
+      "text": "时之可逆：Context、插件与可撤销的Effect",
+      "link": "/DeepSeekHarness前沿工程实践/01｜时之可逆：Context、插件与可撤销的Effect"
+    },
+    {
+      "text": "空之协同：Service、inject与响应式依赖",
+      "link": "/DeepSeekHarness前沿工程实践/02｜空之协同：Service、inject与响应式依赖"
+    },
+    {
+      "text": "事件系统：五种分发模式及其适用场景",
+      "link": "/DeepSeekHarness前沿工程实践/03｜事件系统：五种分发模式及其适用场景"
+    },
+    {
+      "text": "插件树：声明式配置、isolate与HMR",
+      "link": "/DeepSeekHarness前沿工程实践/04｜插件树：声明式配置、isolate与HMR"
+    },
+    {
+      "text": "能力接入：CapabilitySeam与Tools",
+      "link": "/DeepSeekHarness前沿工程实践/05｜能力接入：CapabilitySeam与Tools"
+    },
+    {
+      "text": "工具流水线：CodeMode、守卫与执行边界",
+      "link": "/DeepSeekHarness前沿工程实践/06｜工具流水线：CodeMode、守卫与执行边界"
+    },
+    {
+      "text": "跨平台进程沙箱：Linux、macOS、Windows的实现与安全边界",
+      "link": "/DeepSeekHarness前沿工程实践/07｜跨平台进程沙箱：Linux、macOS、Windows的实现与安全边界"
+    },
+    {
+      "text": "会话日志：AppendOnlyLog与Projection",
+      "link": "/DeepSeekHarness前沿工程实践/08｜会话日志：AppendOnlyLog与Projection"
+    },
+    {
+      "text": "会话续接：Fork、Resume与崩溃修复",
+      "link": "/DeepSeekHarness前沿工程实践/09｜会话续接：Fork、Resume与崩溃修复"
+    },
+    {
+      "text": "上下文压缩：Compaction与裁剪",
+      "link": "/DeepSeekHarness前沿工程实践/10｜上下文压缩：Compaction与裁剪"
+    },
+    {
+      "text": "跨会话查询：读取、搜索与谱系追踪",
+      "link": "/DeepSeekHarness前沿工程实践/11｜跨会话查询：读取、搜索与谱系追踪"
+    },
+    {
+      "text": "上下文边界：工具输出与图片附件的外部持久化",
+      "link": "/DeepSeekHarness前沿工程实践/12｜上下文边界：工具输出与图片附件的外部持久化"
+    },
+    {
+      "text": "装配与驱动：Agent与AgentLoop",
+      "link": "/DeepSeekHarness前沿工程实践/13｜装配与驱动：Agent与AgentLoop"
+    },
+    {
+      "text": "工具与人设：AgentPreset预组装",
+      "link": "/DeepSeekHarness前沿工程实践/14｜工具与人设：AgentPreset预组装"
+    },
+    {
+      "text": "自动续跑：用Goal驱动长任务",
+      "link": "/DeepSeekHarness前沿工程实践/15｜自动续跑：用Goal驱动长任务"
+    },
+    {
+      "text": "委派任务：Subagent的创建、协作与回收",
+      "link": "/DeepSeekHarness前沿工程实践/16｜委派任务：Subagent的创建、协作与回收"
+    },
+    {
+      "text": "编排机制：模型驱动Workflow与固定策略Ralph",
+      "link": "/DeepSeekHarness前沿工程实践/17｜编排机制：模型驱动Workflow与固定策略Ralph"
+    },
+    {
+      "text": "规则系统：基于dsh扩展点搭建引擎",
+      "link": "/DeepSeekHarness前沿工程实践/18｜规则系统：基于dsh扩展点搭建引擎"
+    },
+    {
+      "text": "规则系统：让规则可生成、可审批、可生效",
+      "link": "/DeepSeekHarness前沿工程实践/19｜规则系统：让规则可生成、可审批、可生效"
+    },
+    {
+      "text": "Agent的规则进化：从异常请求中长出候选规则",
+      "link": "/DeepSeekHarness前沿工程实践/20｜Agent的规则进化：从异常请求中长出候选规则"
+    },
+    {
+      "text": "Agent的规则进化：评测与闭环",
+      "link": "/DeepSeekHarness前沿工程实践/21｜Agent的规则进化：评测与闭环"
+    },
+    {
+      "text": "风起于青萍之末",
+      "link": "/DeepSeekHarness前沿工程实践/结束语｜风起于青萍之末"
+    },
+    {
+      "text": "来赴一场满分之约！",
+      "link": "/DeepSeekHarness前沿工程实践/结课测试｜来赴一场满分之约！"
+    }
+  ],
   "/DevOps实战笔记/": [
     {
       "text": "开篇词-从默默无闻到风靡全球，DevOps究竟有什么魔力？",
@@ -32390,6 +32488,18 @@ export const navItems = [
       "架构与分布式",
       "产品与商业",
       "工程效能与测试"
+    ]
+  },
+  {
+    "text": "DeepSeekHarness前沿工程实践",
+    "link": "/DeepSeekHarness前沿工程实践/开篇词｜生逢其时：AI自进化浪潮下的DeepSeekHarness",
+    "count": 24,
+    "category": "ai",
+    "categoryLabel": "AI 与数据智能",
+    "tags": [
+      "AI 与数据智能",
+      "云原生与基础设施",
+      "后端与中间件"
     ]
   },
   {
