@@ -5324,6 +5324,80 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/HarnessAgent脚手架实战课/直播回放：5倍效率提升，用DeepAgents重构Agent开发流"
     }
   ],
+  "/JavaAgent：从Demo到生产级实践/": [
+    {
+      "text": "从“跑得通”到“敢上线”：Java开发者如何打赢AIAgent工程之战",
+      "link": "/JavaAgent：从Demo到生产级实践/开篇词｜从“跑得通”到“敢上线”：Java开发者如何打赢AIAgent工程之战"
+    },
+    {
+      "text": "基于SpringBootStarter，快速实现“天气查询Agent”",
+      "link": "/JavaAgent：从Demo到生产级实践/01｜基于SpringBootStarter，快速实现“天气查询Agent”"
+    },
+    {
+      "text": "PythonvsJVM生态：为什么80%的Agent项目最终会回到Java？",
+      "link": "/JavaAgent：从Demo到生产级实践/02｜PythonvsJVM生态：为什么80%25的Agent项目最终会回到Java？"
+    },
+    {
+      "text": "Embabel核心模型：从OODA到Actions、Conditions、Goals",
+      "link": "/JavaAgent：从Demo到生产级实践/03｜Embabel核心模型：从OODA到Actions、Conditions、Goals"
+    },
+    {
+      "text": "Spring生态整合：站在Spring、SpringAI肩膀上",
+      "link": "/JavaAgent：从Demo到生产级实践/04｜Spring生态整合：站在Spring、SpringAI肩膀上"
+    },
+    {
+      "text": "Java的绝招：强类型领域建模是复杂业务的关键",
+      "link": "/JavaAgent：从Demo到生产级实践/05｜Java的绝招：强类型领域建模是复杂业务的关键"
+    },
+    {
+      "text": "GOAPvsReAct：为什么复杂业务需要目标导向规划？",
+      "link": "/JavaAgent：从Demo到生产级实践/06｜GOAPvsReAct：为什么复杂业务需要目标导向规划？"
+    },
+    {
+      "text": "@Tool遇上MCP：标准化工具接口设计",
+      "link": "/JavaAgent：从Demo到生产级实践/07｜@Tool遇上MCP：标准化工具接口设计"
+    },
+    {
+      "text": "Embabel与RAG集成：让Agent真正“读懂”你的私有知识",
+      "link": "/JavaAgent：从Demo到生产级实践/08｜Embabel与RAG集成：让Agent真正“读懂”你的私有知识"
+    },
+    {
+      "text": "其他规划策略：UtilityAI和Supervisor",
+      "link": "/JavaAgent：从Demo到生产级实践/09｜其他规划策略：UtilityAI和Supervisor"
+    },
+    {
+      "text": "月省70%成本：企业级Agent的模型路由与缓存设计",
+      "link": "/JavaAgent：从Demo到生产级实践/10｜月省70%25成本：企业级Agent的模型路由与缓存设计"
+    },
+    {
+      "text": "不出事故的Agent：三层安全护栏设计防注入，防越权，防失控",
+      "link": "/JavaAgent：从Demo到生产级实践/11｜不出事故的Agent：三层安全护栏设计防注入，防越权，防失控"
+    },
+    {
+      "text": "测试策略：单元、集成、E2E三层测试体系保证质量",
+      "link": "/JavaAgent：从Demo到生产级实践/12｜测试策略：单元、集成、E2E三层测试体系保证质量"
+    },
+    {
+      "text": "系统集成：Agent能力与现有系统无缝对接",
+      "link": "/JavaAgent：从Demo到生产级实践/13｜系统集成：Agent能力与现有系统无缝对接"
+    },
+    {
+      "text": "Agent可观测性：打开黑盒，日志、追踪、性能剖析",
+      "link": "/JavaAgent：从Demo到生产级实践/14｜Agent可观测性：打开黑盒，日志、追踪、性能剖析"
+    },
+    {
+      "text": "从0到1：构建一个企业级智能保险Agent平台",
+      "link": "/JavaAgent：从Demo到生产级实践/15｜从0到1：构建一个企业级智能保险Agent平台"
+    },
+    {
+      "text": "课程结束，工程开始",
+      "link": "/JavaAgent：从Demo到生产级实践/结束语｜课程结束，工程开始"
+    },
+    {
+      "text": "来赴一场满分之约！",
+      "link": "/JavaAgent：从Demo到生产级实践/结课测试｜来赴一场满分之约！"
+    }
+  ],
   "/JavaScript核心原理解析/": [
     {
       "text": "开篇词-如何解决语言问题？",
@@ -33718,6 +33792,18 @@ export const navItems = [
       "AI 与数据智能",
       "技术管理与职场",
       "云原生与基础设施"
+    ]
+  },
+  {
+    "text": "JavaAgent：从Demo到生产级实践",
+    "link": "/JavaAgent：从Demo到生产级实践/开篇词｜从“跑得通”到“敢上线”：Java开发者如何打赢AIAgent工程之战",
+    "count": 18,
+    "category": "ai",
+    "categoryLabel": "AI 与数据智能",
+    "tags": [
+      "AI 与数据智能",
+      "后端与中间件",
+      "产品与商业"
     ]
   },
   {
