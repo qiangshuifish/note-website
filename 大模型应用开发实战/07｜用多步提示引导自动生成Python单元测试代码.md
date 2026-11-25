@@ -271,12 +271,12 @@ execute_user_message = {
                    ```python
                    # 导入
                    import pytest  # 用于单元测试
-                   {{根据需要插入其他导入}}
+                   &#123;&#123;根据需要插入其他导入&#125;&#125;
                    # 要测试的函数
                    {example_function}
                    # 单元测试
                    # 下面,每个测试用例都用一个元组表示,传递给 @pytest.mark.parametrize
-                   {{在此插入单元测试代码}}
+                   &#123;&#123;在此插入单元测试代码&#125;&#125;
                    ```""",
 }
 execute_messages = [

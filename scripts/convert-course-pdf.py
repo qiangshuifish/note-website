@@ -174,6 +174,11 @@ def safe_image_dir(name):
     return re.sub(r'[()\s]+', '-', name)
 
 
+def safe_md_stem(stem):
+    """文件名中的 % 会导致 VitePress 路由 decodeURIComponent 失败，替换为全角百分号。"""
+    return stem.replace('%', '％')
+
+
 def image_subdirs(pdf_paths):
     """为每个 PDF 计算图片子目录名。同编号讲次（如多场直播回放）改用完整文件名，避免图片互相覆盖。"""
     stems = [os.path.splitext(os.path.basename(p))[0] for p in pdf_paths]
@@ -381,7 +386,7 @@ def convert(pdf_path, out_dir, course_name, dry_run=False, img_subdir=None):
     flush_para()
     flush_code()
     md = redact_secrets('\n\n'.join(parts) + '\n')
-    out_path = os.path.join(out_dir, stem + '.md')
+    out_path = os.path.join(out_dir, safe_md_stem(stem) + '.md')
     if not dry_run:
         with open(out_path, 'w', encoding='utf-8') as fh:
             fh.write(md)
@@ -470,7 +475,7 @@ def main():
                 Logger.warn(f'空 PDF，已跳过 | {name}')
                 continue
             stem = pdf_path.stem
-            if args.skip_existing and (out_dir / (stem + '.md')).exists():
+            if args.skip_existing and (out_dir / (safe_md_stem(stem) + '.md')).exists():
                 skipped_existing += 1
                 Logger.info(f'已存在，跳过 | {name}')
                 continue

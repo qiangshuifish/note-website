@@ -223,7 +223,7 @@ const Counter = defineComponent({
 });
 ```
 
-上述代码中，render 函数返回的代码，就是 JSX 的写法，用来描述 HTML 模板内容。这里需要注意的是，所有 JSX 写法中都是用单大括号“{state.count}”来作为内部变量处理，而Vue.js 3 模板语法是通过双大括号来表示“{{state.count}}”，单大括号描述变量这个是 JSX通用写法，Vue.js 的 JSX 语法也是遵循了这个通用写法。
+上述代码中，render 函数返回的代码，就是 JSX 的写法，用来描述 HTML 模板内容。这里需要注意的是，所有 JSX 写法中都是用单大括号“&#123;state.count&#125;”来作为内部变量处理，而Vue.js 3 模板语法是通过双大括号来表示“&#123;&#123;state.count&#125;&#125;”，单大括号描述变量这个是 JSX通用写法，Vue.js 的 JSX 语法也是遵循了这个通用写法。
 
 在模板语法中，模板的 <script> 标签里有一段 JavaScript 逻辑代码，这段 JavaScript 的逻辑代码，就是 JSX 语法中的 defineComponent 里除掉 render 函数外剩下的代码内容，如下代码：
 

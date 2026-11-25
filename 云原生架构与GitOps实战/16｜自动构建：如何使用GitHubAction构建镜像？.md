@@ -218,7 +218,7 @@ $ git push -u origin main
 
 ![](images/16/6.png)
 
-在 Name 输入框中输入 DOCKERHUB_TOKEN，这样在 GitHub Action 的 Step 中，就可以通过 ${{ secrets.DOCKERHUB_TOKEN }} 表达式来获取它的值。
+在 Name 输入框中输入 DOCKERHUB_TOKEN，这样在 GitHub Action 的 Step 中，就可以通过 $&#123;&#123; secrets.DOCKERHUB_TOKEN &#125;&#125; 表达式来获取它的值。
 
 在 Secret 输入框中输入刚才我们复制的 Docker Hub Token，点击“Add secret”创建。
 
@@ -270,7 +270,7 @@ $ git push origin main
 
 4. 具体执行的步骤是什么
 
-需要注意的是，在创建 build.yaml 文件后，你需要创建自己的仓库，并将 kubernetes-example 的内容推送到你的仓库中，以便进行触发工作流的实验。其次，为了给 GitHubAction 工作流赋予镜像仓库的推送权限，我们还需要在 Docker Hub 中创建 Token，并将其配置到仓库的 Secrets 中。在配置时，需要注意 Secret Name 和工作流 Step 中的 ${{secrets.DOCKERHUB_TOKEN }} 表达式相互对应，以便工作流能够获取到正确的 Secrets。
+需要注意的是，在创建 build.yaml 文件后，你需要创建自己的仓库，并将 kubernetes-example 的内容推送到你的仓库中，以便进行触发工作流的实验。其次，为了给 GitHubAction 工作流赋予镜像仓库的推送权限，我们还需要在 Docker Hub 中创建 Token，并将其配置到仓库的 Secrets 中。在配置时，需要注意 Secret Name 和工作流 Step 中的 $&#123;&#123;secrets.DOCKERHUB_TOKEN &#125;&#125; 表达式相互对应，以便工作流能够获取到正确的 Secrets。
 
 配置完成后，当我们向 Main 分支推送新的提交时，GitHub Action 工作流将会被自动触发，工作流会自动构建 frontend 和 backend 镜像，并且会使用当前的 short commit id 作为镜像的Tag 推送到 Docker Hub 中。
 

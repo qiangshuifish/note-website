@@ -188,7 +188,7 @@ database:
 
 除了 values.yaml，我们还需要让 helm/templates 目录下的文件能够读取到 values.yaml 的内容，这就需要模板变量了。
 
-举一个最简单的例子，要读取 values.yaml 中的 frontend.image 字段，可以通过 “{{.Values.frontend.image }}” 模板变量来获取值。
+举一个最简单的例子，要读取 values.yaml 中的 frontend.image 字段，可以通过 “&#123;&#123;.Values.frontend.image &#125;&#125;” 模板变量来获取值。
 
 所以，要将这个“静态”的 Helm Chart 改造成“动态”的，我们只需要用模板变量来替换templates 目录下需要实现“动态”的字段。
 

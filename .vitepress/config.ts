@@ -134,6 +134,9 @@ export default defineConfig({
       ignoreDeadLinks: true,
     },
     config: (md) => {
+      // 课程正文中的 JSON 示例和数学公式含有花括号，禁用 markdown-it-attrs
+      // 避免行尾 {...} 被解析为 HTML 属性导致构建失败
+      md.core.ruler.disable('curly_attributes');
       md.use(vPreForMustache());
     },
   },

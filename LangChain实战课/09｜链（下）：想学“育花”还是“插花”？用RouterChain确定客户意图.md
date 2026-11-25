@@ -151,7 +151,7 @@ Given a raw text input to a language model select the model prompt best suited f
 << FORMATTING >>
 Return a markdown code snippet with a JSON object formatted to look like:
 ```json
-{{
+&#123;&#123;
    "destination": string \ name of the prompt to use or "DEFAULT"
    "next_inputs": string \ a potentially modified version of the original input
 }}

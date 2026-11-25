@@ -115,7 +115,7 @@ spec:
 
 显然，fluentd启动之后，它会从这两个目录里搜集日志信息，并转发给ElasticSearch保存。这样，我们通过ElasticSearch就可以很方便地检索这些日志了。
 
-需要注意的是，Docker容器里应用的日志，默认会保存在宿主机的/var/lib/docker/containers/{{.容器ID}}/{{.容器ID}}-json.log文件里，所以这个目录正是fluentd的搜集目标。
+需要注意的是，Docker容器里应用的日志，默认会保存在宿主机的/var/lib/docker/containers/&#123;&#123;.容器ID&#125;&#125;/&#123;&#123;.容器ID&#125;&#125;-json.log文件里，所以这个目录正是fluentd的搜集目标。
 
 那么， **DaemonSet又是如何保证每个Node上有且只有一个被管理的Pod呢？**
 

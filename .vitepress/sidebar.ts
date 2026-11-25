@@ -2318,8 +2318,8 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/AI重塑测试开发系统实践/05｜超越FunctionCall：MCP为何更胜一筹？"
     },
     {
-      "text": "测试提效20%：需求条目化与RAG实践",
-      "link": "/AI重塑测试开发系统实践/06｜测试提效20%25：需求条目化与RAG实践"
+      "text": "测试提效20％：需求条目化与RAG实践",
+      "link": "/AI重塑测试开发系统实践/06｜测试提效20％：需求条目化与RAG实践"
     },
     {
       "text": "告别手写接口测试：RAG+Text2SQL自动生成",
@@ -3666,8 +3666,8 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/Codex与LLM量化交易实战课/导读｜量化知识背景与研究能力地图"
     },
     {
-      "text": "AI能写量化交易，为什么90%的人实盘不赚钱？",
-      "link": "/Codex与LLM量化交易实战课/直播回放｜AI能写量化交易，为什么90%25的人实盘不赚钱？"
+      "text": "AI能写量化交易，为什么90％的人实盘不赚钱？",
+      "link": "/Codex与LLM量化交易实战课/直播回放｜AI能写量化交易，为什么90％的人实盘不赚钱？"
     }
   ],
   "/DDD实战课/": [
@@ -4358,8 +4358,8 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/FDE业务落地实战/02｜FDE与咨询、外包、驻场、售前有什么区别？"
     },
     {
-      "text": "为什么是现在：95%的AI项目卡在落地，一个人却能跑通产品闭环",
-      "link": "/FDE业务落地实战/03｜为什么是现在：95%25的AI项目卡在落地，一个人却能跑通产品闭环"
+      "text": "为什么是现在：95％的AI项目卡在落地，一个人却能跑通产品闭环",
+      "link": "/FDE业务落地实战/03｜为什么是现在：95％的AI项目卡在落地，一个人却能跑通产品闭环"
     },
     {
       "text": "中国机会：十年没走通的交付难题，FDE+AI能解吗？",
@@ -5678,8 +5678,8 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/JavaAgent：从Demo到生产级实践/01｜基于SpringBootStarter，快速实现“天气查询Agent”"
     },
     {
-      "text": "PythonvsJVM生态：为什么80%的Agent项目最终会回到Java？",
-      "link": "/JavaAgent：从Demo到生产级实践/02｜PythonvsJVM生态：为什么80%25的Agent项目最终会回到Java？"
+      "text": "PythonvsJVM生态：为什么80％的Agent项目最终会回到Java？",
+      "link": "/JavaAgent：从Demo到生产级实践/02｜PythonvsJVM生态：为什么80％的Agent项目最终会回到Java？"
     },
     {
       "text": "Embabel核心模型：从OODA到Actions、Conditions、Goals",
@@ -5710,8 +5710,8 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/JavaAgent：从Demo到生产级实践/09｜其他规划策略：UtilityAI和Supervisor"
     },
     {
-      "text": "月省70%成本：企业级Agent的模型路由与缓存设计",
-      "link": "/JavaAgent：从Demo到生产级实践/10｜月省70%25成本：企业级Agent的模型路由与缓存设计"
+      "text": "月省70％成本：企业级Agent的模型路由与缓存设计",
+      "link": "/JavaAgent：从Demo到生产级实践/10｜月省70％成本：企业级Agent的模型路由与缓存设计"
     },
     {
       "text": "不出事故的Agent：三层安全护栏设计防注入，防越权，防失控",
@@ -6070,10 +6070,6 @@ export const sidebar: DefaultTheme.Sidebar = {
     {
       "text": "HTTP调用：你考虑到超时、重试、并发了吗？",
       "link": "/Java业务开发常见错误100例/05-HTTP调用：你考虑到超时、重试、并发了吗？"
-    },
-    {
-      "text": "20%的业务代码的Spring声明式事务，可能都没处理正确",
-      "link": "/Java业务开发常见错误100例/06-20%25的业务代码的Spring声明式事务，可能都没处理正确"
     },
     {
       "text": "20％的业务代码的Spring声明式事务，可能都没处理正确",
@@ -8630,8 +8626,8 @@ export const sidebar: DefaultTheme.Sidebar = {
   ],
   "/MySQL运维实战课/": [
     {
-      "text": "理论+实践，带你解决90%以上的MySQL运维问题",
-      "link": "/MySQL运维实战课/开篇词｜理论+实践，带你解决90%25以上的MySQL运维问题"
+      "text": "理论+实践，带你解决90％以上的MySQL运维问题",
+      "link": "/MySQL运维实战课/开篇词｜理论+实践，带你解决90％以上的MySQL运维问题"
     },
     {
       "text": "快速上手数据库安装部署",
@@ -9072,8 +9068,8 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/OpenClaw核心原理与实战/21｜Hook系统深入：插件如何参与Agent生命周期的每一个关键时刻？"
     },
     {
-      "text": "Provider、Skill与Channel实战：如何用三种插件类型覆盖80%开发场景？",
-      "link": "/OpenClaw核心原理与实战/22｜Provider、Skill与Channel实战：如何用三种插件类型覆盖80%25开发场景？"
+      "text": "Provider、Skill与Channel实战：如何用三种插件类型覆盖80％开发场景？",
+      "link": "/OpenClaw核心原理与实战/22｜Provider、Skill与Channel实战：如何用三种插件类型覆盖80％开发场景？"
     },
     {
       "text": "PluginSDK分层与生态工程化：如何从插件开发者升级为生态贡献者？",
@@ -14898,8 +14894,8 @@ export const sidebar: DefaultTheme.Sidebar = {
       "link": "/云原生架构与GitOps实战/13｜容器化：如何为不同语言快速构建多平台镜像？"
     },
     {
-      "text": "容器化：如何将镜像体积缩减90%？",
-      "link": "/云原生架构与GitOps实战/14｜容器化：如何将镜像体积缩减90%25？"
+      "text": "容器化：如何将镜像体积缩减90％？",
+      "link": "/云原生架构与GitOps实战/14｜容器化：如何将镜像体积缩减90％？"
     },
     {
       "text": "容器化：如何选择最适合业务的基础镜像？",
@@ -47692,7 +47688,7 @@ export const navItems = [
   {
     "text": "Java业务开发常见错误100例",
     "link": "/Java业务开发常见错误100例/开篇词-业务代码真的会有这么多坑？",
-    "count": 49,
+    "count": 48,
     "category": "backend",
     "categoryLabel": "后端与中间件",
     "tags": [
@@ -47895,7 +47891,7 @@ export const navItems = [
   },
   {
     "text": "MySQL运维实战课",
-    "link": "/MySQL运维实战课/开篇词｜理论+实践，带你解决90%25以上的MySQL运维问题",
+    "link": "/MySQL运维实战课/开篇词｜理论+实践，带你解决90％以上的MySQL运维问题",
     "count": 53,
     "category": "database",
     "categoryLabel": "数据库与存储",
