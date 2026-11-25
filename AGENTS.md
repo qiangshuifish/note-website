@@ -59,7 +59,7 @@ Known source limitations: overlong code lines are truncated in the source PDFs, 
 
 ```bash
 node_modules/.bin/vitepress dev --port 5173   # preview at http://localhost:5173/note-website/
-NODE_OPTIONS=--max-old-space-size=12288 node_modules/.bin/vitepress build
+NODE_OPTIONS=--max-old-space-size=24576 node_modules/.bin/vitepress build
 ```
 
 Use the executables under `node_modules/.bin/` directly. Avoid `pnpm exec`: it once moved node_modules packages into `.ignored` and triggered network re-fetches.
