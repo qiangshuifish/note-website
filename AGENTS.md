@@ -66,6 +66,23 @@ Use the executables under `node_modules/.bin/` directly. Avoid `pnpm exec`: it o
 
 The image plugin `.vitepress/vpre-plugin.ts` rewrites relative image paths to GitHub raw URLs (branch `note-website`) in production builds and keeps local paths in dev. Images of a new course are unavailable online until the course is pushed to GitHub.
 
+## Publishing to GitHub Pages
+
+The site is served by GitHub Pages from the `gh-pages` branch root (legacy branch source). GitHub Actions builds run out of memory at this repo's size, so publish the local build by pushing `dist/` to `gh-pages`. The workflow `.github/workflows/deploy.yml` is dispatch-only and superseded by this flow.
+
+```bash
+NODE_OPTIONS=--max-old-space-size=24576 node_modules/.bin/vitepress build
+git fetch origin gh-pages
+git worktree add -B gh-pages /tmp/gh-pages-deploy origin/gh-pages   # first time only
+rsync -a --delete --exclude=.git --exclude=.nojekyll dist/ /tmp/gh-pages-deploy/
+touch /tmp/gh-pages-deploy/.nojekyll
+git -C /tmp/gh-pages-deploy add -A
+git -C /tmp/gh-pages-deploy commit -m 'Deploy: 更新站点'
+caffeinate -i git -C /tmp/gh-pages-deploy push origin gh-pages
+```
+
+Committing on top of the existing `gh-pages` history keeps each push incremental (HTML compresses well; a full 307-course update pushed ~140MB). Pages rebuilds automatically within a few minutes. Check progress with `gh api /repos/qiangshuifish/note-website/pages/builds/latest` and verify `https://qiangshuifish.github.io/note-website/` afterwards. Never commit `dist/` to the `note-website` branch.
+
 ## Git Workflow
 
 - Branch: `note-website` (current; GitHub raw image URLs point to this branch), `main` (default)
